@@ -5,10 +5,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Lineage from "./pages/Lineage";
-import Eboard from "./pages/Eboard";
 import Service from "./pages/Service";
+import MissBlackAndGold from "./pages/MissBlackAndGold";
+import FraternityHistory from "./pages/FraternityHistory";
+import MeetTheJewels from "./pages/MeetTheJewels";
+import NationalPrograms from "./pages/NationalPrograms";
+import Poems from "./pages/Poems";
+import BecomeAnAlpha from "./pages/BecomeAnAlpha";
+import ChapterHistory from "./pages/ChapterHistory";
+import Leadership from "./pages/Leadership";
+import MeetTheBrothers from "./pages/MeetTheBrothers";
+import Lineage from "./pages/Lineage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,10 +28,22 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/lineage" element={<Lineage />} />
-          <Route path="/eboard" element={<Eboard />} />
           <Route path="/service" element={<Service />} />
+          <Route path="/miss-black-and-gold" element={<MissBlackAndGold />} />
+          
+          {/* Alpha Phi Alpha Routes */}
+          <Route path="/fraternity-history" element={<FraternityHistory />} />
+          <Route path="/meet-the-jewels" element={<MeetTheJewels />} />
+          <Route path="/national-programs" element={<NationalPrograms />} />
+          <Route path="/poems" element={<Poems />} />
+          <Route path="/become-an-alpha" element={<BecomeAnAlpha />} />
+          
+          {/* Xi Iota Routes */}
+          <Route path="/chapter-history" element={<ChapterHistory />} />
+          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/meet-the-brothers" element={<MeetTheBrothers />} />
+          <Route path="/lineage" element={<Lineage />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
