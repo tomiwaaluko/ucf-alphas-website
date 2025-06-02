@@ -2,10 +2,6 @@
 import Hero from "../components/Hero";
 import Navigation from "../components/Navigation";
 import Greeting from "../components/Greeting";
-import About from "../components/About";
-import Lineage from "../components/Lineage";
-import Eboard from "../components/Eboard";
-import Service from "../components/Service";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -15,10 +11,6 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Greeting />
-      <About />
-      <Lineage />
-      <Eboard />
-      <Service />
       <Contact />
       <Footer />
     </div>

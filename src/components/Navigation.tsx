@@ -1,13 +1,17 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname === '/') {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
     setIsOpen(false);
   };
 
@@ -16,26 +20,26 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <span className="text-yellow-400 font-bold text-xl">ΑΦΑ</span>
+            <Link to="/" className="text-yellow-400 font-bold text-xl">ΑΦΑ</Link>
           </div>
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <button onClick={() => scrollToSection('hero')} className="text-white hover:text-yellow-400 transition-colors">
+              <Link to="/" className="text-white hover:text-yellow-400 transition-colors">
                 Home
-              </button>
-              <button onClick={() => scrollToSection('about')} className="text-white hover:text-yellow-400 transition-colors">
+              </Link>
+              <Link to="/about" className="text-white hover:text-yellow-400 transition-colors">
                 About
-              </button>
-              <button onClick={() => scrollToSection('lineage')} className="text-white hover:text-yellow-400 transition-colors">
+              </Link>
+              <Link to="/lineage" className="text-white hover:text-yellow-400 transition-colors">
                 Lineage
-              </button>
-              <button onClick={() => scrollToSection('eboard')} className="text-white hover:text-yellow-400 transition-colors">
+              </Link>
+              <Link to="/eboard" className="text-white hover:text-yellow-400 transition-colors">
                 Eboard
-              </button>
-              <button onClick={() => scrollToSection('service')} className="text-white hover:text-yellow-400 transition-colors">
+              </Link>
+              <Link to="/service" className="text-white hover:text-yellow-400 transition-colors">
                 Service
-              </button>
+              </Link>
               <button onClick={() => scrollToSection('contact')} className="text-white hover:text-yellow-400 transition-colors">
                 Contact
               </button>
@@ -56,21 +60,21 @@ const Navigation = () => {
       {isOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-sm">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <button onClick={() => scrollToSection('hero')} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
+            <Link to="/" onClick={() => setIsOpen(false)} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
               Home
-            </button>
-            <button onClick={() => scrollToSection('about')} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
+            </Link>
+            <Link to="/about" onClick={() => setIsOpen(false)} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
               About
-            </button>
-            <button onClick={() => scrollToSection('lineage')} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
+            </Link>
+            <Link to="/lineage" onClick={() => setIsOpen(false)} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
               Lineage
-            </button>
-            <button onClick={() => scrollToSection('eboard')} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
+            </Link>
+            <Link to="/eboard" onClick={() => setIsOpen(false)} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
               Eboard
-            </button>
-            <button onClick={() => scrollToSection('service')} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
+            </Link>
+            <Link to="/service" onClick={() => setIsOpen(false)} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
               Service
-            </button>
+            </Link>
             <button onClick={() => scrollToSection('contact')} className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left">
               Contact
             </button>
