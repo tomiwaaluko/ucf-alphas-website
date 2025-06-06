@@ -9,6 +9,7 @@ import Service from "./pages/Service";
 import MissBlackAndGold from "./pages/MissBlackAndGold";
 import FraternityHistory from "./pages/FraternityHistory";
 import MeetTheJewels from "./pages/MeetTheJewels";
+import JewelDetail from "./pages/JewelDetail";
 import NationalPrograms from "./pages/NationalPrograms";
 import Poems from "./pages/Poems";
 import BecomeAnAlpha from "./pages/BecomeAnAlpha";
@@ -35,6 +36,7 @@ const App = () => (
           {/* Alpha Phi Alpha Routes */}
           <Route path="/fraternity-history" element={<FraternityHistory />} />
           <Route path="/meet-the-jewels" element={<MeetTheJewels />} />
+          <Route path="/jewel/:id" element={<JewelDetail />} />
           <Route path="/national-programs" element={<NationalPrograms />} />
           <Route path="/poems" element={<Poems />} />
           <Route path="/become-an-alpha" element={<BecomeAnAlpha />} />
