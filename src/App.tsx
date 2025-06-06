@@ -11,6 +11,7 @@ import FraternityHistory from "./pages/FraternityHistory";
 import MeetTheJewels from "./pages/MeetTheJewels";
 import JewelDetail from "./pages/JewelDetail";
 import NationalPrograms from "./pages/NationalPrograms";
+import ProgramDetail from "./pages/ProgramDetail";
 import Poems from "./pages/Poems";
 import BecomeAnAlpha from "./pages/BecomeAnAlpha";
 import ChapterHistory from "./pages/ChapterHistory";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/meet-the-jewels" element={<MeetTheJewels />} />
           <Route path="/jewel/:id" element={<JewelDetail />} />
           <Route path="/national-programs" element={<NationalPrograms />} />
+          <Route path="/program/:programId" element={<ProgramDetail />} />
           <Route path="/poems" element={<Poems />} />
           <Route path="/become-an-alpha" element={<BecomeAnAlpha />} />
           
