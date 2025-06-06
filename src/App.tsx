@@ -15,6 +15,7 @@ import BecomeAnAlpha from "./pages/BecomeAnAlpha";
 import ChapterHistory from "./pages/ChapterHistory";
 import Leadership from "./pages/Leadership";
 import MeetTheBrothers from "./pages/MeetTheBrothers";
+import BrotherDetail from "./pages/BrotherDetail";
 import Lineage from "./pages/Lineage";
 import NotFound from "./pages/NotFound";
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/chapter-history" element={<ChapterHistory />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/meet-the-brothers" element={<MeetTheBrothers />} />
+          <Route path="/brother/:id" element={<BrotherDetail />} />
           <Route path="/lineage" element={<Lineage />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
