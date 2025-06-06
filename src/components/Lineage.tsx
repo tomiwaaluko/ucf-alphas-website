@@ -1,75 +1,112 @@
 
 const Lineage = () => {
-  const founders = [
-    "Henry Arthur Callis",
-    "Charles Henry Chapman", 
-    "Eugene Kinckle Jones",
-    "George Biddle Kelley",
-    "Nathaniel Allison Murray",
-    "Robert Harold Ogle",
-    "Vertner Woodson Tandy"
+  const lineageCards = [
+    {
+      name: "C.O.N.Q.U.E.R.",
+      semester: "Spring '24",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "S.O.V.E.R.E.I.G.N.",
+      semester: "Spring '23",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "E.M.P.I.R.E.",
+      semester: "Fall '22",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "T.R.I.U.M.P.H.",
+      semester: "Spring '22",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "L.E.G.A.C.Y.",
+      semester: "Fall '21",
+      image: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "V.I.C.T.O.R.Y.",
+      semester: "Spring '21",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "P.O.W.E.R.",
+      semester: "Fall '20",
+      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "D.O.M.I.N.A.T.E.",
+      semester: "Spring '20",
+      image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "E.X.C.E.L.",
+      semester: "Fall '19",
+      image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+      status: "Open"
+    },
+    {
+      name: "R.I.S.E.",
+      semester: "Spring '19",
+      image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+      status: "Open"
+    }
   ];
 
   return (
-    <section id="lineage" className="py-20 bg-gradient-to-br from-gray-900 to-black">
+    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-yellow-400">
-            Our Legacy
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Founded December 4, 1906, at Cornell University in Ithaca, New York, Alpha Phi Alpha stands 
-            as the first intercollegiate Greek-letter fraternity for African American men.
-          </p>
+          <h1 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-4">
+            Lineage
+          </h1>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-3xl font-bold mb-6 text-yellow-400">The Seven Jewels</h3>
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              Our fraternity was founded by seven visionary men who came together with a shared commitment 
-              to academic excellence, social responsibility, and the uplifting of humanity. These founders, 
-              known as "The Seven Jewels," established the foundation upon which our brotherhood continues to thrive.
-            </p>
-            <div className="grid grid-cols-1 gap-3">
-              {founders.map((founder, index) => (
-                <div key={index} className="flex items-center p-3 bg-black/30 rounded-lg border border-yellow-400/20">
-                  <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-black font-bold text-sm">{index + 1}</span>
-                  </div>
-                  <span className="text-white font-medium">{founder}</span>
+        {/* Cards Grid */}
+        <div className="grid gap-8 max-w-4xl mx-auto">
+          {lineageCards.map((card, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            >
+              <div className="flex flex-col md:flex-row">
+                {/* Image */}
+                <div className="md:w-1/3">
+                  <img 
+                    src={card.image}
+                    alt={card.name}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
                 </div>
-              ))}
+                
+                {/* Content */}
+                <div className="md:w-2/3 p-8 flex flex-col justify-center">
+                  <div className="text-center md:text-left">
+                    <h2 className="text-3xl md:text-4xl font-bold text-yellow-600 mb-2 tracking-wider">
+                      {card.name}
+                    </h2>
+                    <p className="text-yellow-500 text-lg mb-6 font-light">
+                      {card.semester}
+                    </p>
+                    <button className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition-colors duration-200 font-medium">
+                      {card.status}
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=600&fit=crop" 
-              alt="Historical setting"
-              className="rounded-xl shadow-2xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-xl"></div>
-            <div className="absolute bottom-6 left-6 text-white">
-              <p className="text-2xl font-bold">1906</p>
-              <p className="text-sm">Cornell University</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-black/50 backdrop-blur-sm border border-yellow-400/20 rounded-2xl p-8 md:p-12">
-          <div className="text-center">
-            <h3 className="text-3xl font-bold mb-6 text-yellow-400">Our Motto</h3>
-            <blockquote className="text-2xl md:text-3xl font-light text-white mb-6 italic">
-              "First of All, Servants of All, We Shall Transcend All"
-            </blockquote>
-            <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              This guiding principle reflects our commitment to leadership, service, and excellence 
-              in all endeavors, inspiring generations of Alpha men to make meaningful contributions 
-              to their communities and the world.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
