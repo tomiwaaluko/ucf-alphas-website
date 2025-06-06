@@ -6,7 +6,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
             <div className="flex items-center mb-6">
-              <span className="text-5xl font-bold text-yellow-400 mr-4">ΑΦΑ</span>
+              <img 
+                src="/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png" 
+                alt="Xi Iota Chapter Logo" 
+                className="h-16 w-16 mr-4"
+              />
               <div>
                 <h3 className="text-white font-bold text-xl">Xi Iota Chapter</h3>
                 <p className="text-gray-400">Alpha Phi Alpha Fraternity, Inc.</p>

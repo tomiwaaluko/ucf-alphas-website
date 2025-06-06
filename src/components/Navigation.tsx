@@ -24,7 +24,13 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-yellow-400 font-bold text-2xl tracking-wider">ΑΦΑ</Link>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png" 
+                alt="Xi Iota Chapter Logo" 
+                className="h-12 w-12"
+              />
+            </Link>
           </div>
           
           <div className="hidden md:block">
