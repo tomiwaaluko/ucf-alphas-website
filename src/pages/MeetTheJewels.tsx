@@ -310,7 +310,6 @@ const MeetTheJewels = () => {
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 whileHover={{ filter: "brightness(1.1)" }}
                               />
-
                               {/* Enhanced overlay with more information */}
                               <motion.div
                                 className={`absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col justify-end p-6 transition-all duration-500 ${
@@ -345,29 +344,41 @@ const MeetTheJewels = () => {
                                   </p>
                                   <p className="text-gray-400 text-sm mb-4 line-clamp-2">
                                     {jewel.description}
-                                  </p>
-
+                                  </p>{" "}
                                   <Link to={`/jewel/${jewel.id}`}>
                                     <Button
                                       variant="outline"
-                                      className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 font-semibold"
+                                      className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 font-semibold pointer-events-auto"
+                                      onMouseDown={(e) => e.stopPropagation()}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        e.preventDefault();
+                                        window.location.href = `/jewel/${jewel.id}`;
+                                      }}
                                     >
                                       Discover Legacy
                                     </Button>
                                   </Link>
                                 </motion.div>
-                              </motion.div>
-
+                              </motion.div>{" "}
                               {/* Always visible name bar */}
-                              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4">
+                              <motion.div
+                                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 transition-opacity duration-500"
+                                animate={{
+                                  opacity: hoveredCard === jewel.id ? 0 : 1,
+                                }}
+                                style={{
+                                  pointerEvents:
+                                    hoveredCard === jewel.id ? "none" : "auto",
+                                }}
+                              >
                                 <h4 className="text-white font-bold text-lg font-cinzel">
                                   {jewel.name}
                                 </h4>
                                 <p className="text-yellow-400 text-sm">
                                   {jewel.title}
                                 </p>
-                              </div>
-
+                              </motion.div>
                               {/* Jewel number badge */}
                               <motion.div
                                 className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-black font-bold text-lg font-cinzel shadow-xl"
