@@ -30,11 +30,10 @@ const Hero = () => {
           <p className="text-yellow-400 text-lg md:text-xl font-light tracking-[0.2em] uppercase">
             Xi Iota Chapter
           </p>
-        </motion.div>
-
+        </motion.div>{" "}
         {/* Main title */}
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-cinzel"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
@@ -44,7 +43,6 @@ const Hero = () => {
             494TH HOUSE OF ALPHA
           </span>
         </motion.h1>
-
         {/* Fraternity name */}
         <motion.h2
           className="text-2xl md:text-3xl lg:text-4xl font-light mb-12 text-gray-200"
@@ -53,18 +51,16 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.8 }}
         >
           Alpha Phi Alpha Fraternity, Inc.
-        </motion.h2>
-
+        </motion.h2>{" "}
         {/* Motto */}
         <motion.p
-          className="text-lg md:text-xl text-yellow-400 mb-16 font-light tracking-wide"
+          className="text-lg md:text-xl text-yellow-400 mb-16 font-light tracking-wide font-crimson italic"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
           "First of All, Servants of All, We Shall Transcend All"
         </motion.p>
-
         {/* Action buttons */}
         <motion.div
           className="flex flex-col sm:flex-row gap-6 justify-center"

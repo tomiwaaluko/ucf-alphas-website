@@ -3,6 +3,25 @@
 @tailwind utilities;
 
 @layer base {
+  /* Global font styles */
+  body {
+    font-family: "Lora", serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Cinzel", serif;
+  }
+
+  .quote {
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;

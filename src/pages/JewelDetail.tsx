@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
@@ -8,81 +7,87 @@ import { Link } from "react-router-dom";
 const jewelData = {
   "henry-callis": {
     name: "Henry Arthur Callis",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
+    image: "https://apa1906.net/wp-content/uploads/2018/08/Image-8@2x.png",
     bio: "Henry Arthur Callis was born in Rochester, New York in 1887. He was one of the founding members of Alpha Phi Alpha Fraternity, Inc. and served as the first Vice President of the organization. Callis was a physician and surgeon who dedicated his life to serving his community and advancing the cause of African American education and civil rights.",
     achievements: [
       "First Vice President of Alpha Phi Alpha Fraternity, Inc.",
       "Renowned physician and surgeon",
       "Advocate for African American education",
-      "Community leader and civil rights activist"
-    ]
+      "Community leader and civil rights activist",
+    ],
   },
   "charles-chapman": {
     name: "Charles Henry Chapman",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop&crop=face",
+    image:
+      "https://apa1906.net/wp-content/uploads/2018/08/efc77a04961ecfbe95d84981c48558b6@2x.png",
     bio: "Charles Henry Chapman was a founding member of Alpha Phi Alpha Fraternity, Inc. Born in 1886, Chapman was known for his dedication to academic excellence and his commitment to the principles of scholarship and service that became hallmarks of the fraternity.",
     achievements: [
       "Founding member of Alpha Phi Alpha Fraternity, Inc.",
       "Academic excellence advocate",
       "Committed to scholarship and service",
-      "Leader in early fraternity development"
-    ]
+      "Leader in early fraternity development",
+    ],
   },
   "eugene-jones": {
     name: "Eugene Kinckle Jones",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop&crop=face",
+    image:
+      "https://apa1906.net/wp-content/uploads/2018/08/e445b9b1f863a938bb14aa0403ae818b@2x.png",
     bio: "Eugene Kinckle Jones was a prominent social worker and civil rights leader. As one of the Seven Jewels, he helped establish the foundation of Alpha Phi Alpha and went on to become a significant figure in the National Urban League, serving as its executive secretary for many years.",
     achievements: [
       "Executive Secretary of the National Urban League",
       "Prominent social worker and civil rights leader",
       "Founding member of Alpha Phi Alpha Fraternity, Inc.",
-      "Advocate for African American advancement"
-    ]
+      "Advocate for African American advancement",
+    ],
   },
   "george-kelley": {
     name: "George Biddle Kelley",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop&crop=face",
+    image:
+      "https://apa1906.net/wp-content/uploads/2018/08/829c7a18781d10f5e1192abde73e8c9c@2x.png",
     bio: "George Biddle Kelley was the first African American certified public accountant in the state of New York. As one of the Seven Jewels, he brought financial expertise and business acumen to the early development of Alpha Phi Alpha Fraternity, Inc.",
     achievements: [
       "First African American CPA in New York State",
       "Founding member of Alpha Phi Alpha Fraternity, Inc.",
       "Business and financial expert",
-      "Pioneer in professional accounting"
-    ]
+      "Pioneer in professional accounting",
+    ],
   },
   "nathaniel-murray": {
     name: "Nathaniel Allison Murray",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop&crop=face",
+    image:
+      "https://apa1906.net/wp-content/uploads/2018/08/350cc52b1906736d4c3162883f62d3fa@2x.png",
     bio: "Nathaniel Allison Murray was one of the youngest founding members of Alpha Phi Alpha Fraternity, Inc. He was known for his intellectual prowess and his commitment to the academic mission of the fraternity, helping to establish the standards of scholarship that continue today.",
     achievements: [
       "Youngest founding member of Alpha Phi Alpha",
       "Intellectual leader and scholar",
       "Established academic standards for the fraternity",
-      "Advocate for higher education"
-    ]
+      "Advocate for higher education",
+    ],
   },
   "robert-ogle": {
     name: "Robert Harold Ogle",
-    image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=600&fit=crop&crop=face",
+    image:
+      "https://apa1906.net/wp-content/uploads/2018/08/eca08ce86ecae763e3dc860dc88a0adc@2x.png",
     bio: "Robert Harold Ogle was a founding member of Alpha Phi Alpha Fraternity, Inc. known for his dedication to the principles of brotherhood and service. He played a crucial role in establishing the organizational structure and rituals of the fraternity.",
     achievements: [
       "Founding member of Alpha Phi Alpha Fraternity, Inc.",
       "Instrumental in organizational development",
       "Advocate for brotherhood and service",
-      "Leader in fraternity ritual development"
-    ]
+      "Leader in fraternity ritual development",
+    ],
   },
   "vertner-tandy": {
     name: "Vertner Woodson Tandy",
-    image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=600&fit=crop&crop=face",
+    image:
+      "https://apa1906.net/wp-content/uploads/2018/08/c7a411545e971348810b98ce640fe70e@2x.png",
     bio: "Vertner Woodson Tandy was a pioneering architect and the first licensed African American architect in New York State. As one of the Seven Jewels, he brought artistic vision and professional expertise to Alpha Phi Alpha Fraternity, Inc., helping to design the fraternity's early symbols and traditions.",
     achievements: [
       "First licensed African American architect in New York State",
       "Founding member of Alpha Phi Alpha Fraternity, Inc.",
       "Designed fraternity symbols and traditions",
-      "Pioneer in architectural profession"
-    ]
-  }
+      "Pioneer in architectural profession",
+    ],
+  },
 };
 
 const JewelDetail = () => {
@@ -95,7 +100,9 @@ const JewelDetail = () => {
         <Navigation />
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-yellow-400 mb-4">Jewel Not Found</h1>
+            <h1 className="text-4xl font-bold text-yellow-400 mb-4">
+              Jewel Not Found
+            </h1>
             <Link to="/meet-the-jewels">
               <Button className="bg-yellow-400 text-black hover:bg-yellow-500">
                 Return to Meet the Jewels
@@ -115,11 +122,14 @@ const JewelDetail = () => {
         <section className="py-20">
           <div className="max-w-4xl mx-auto px-4">
             <Link to="/meet-the-jewels" className="inline-block mb-8">
-              <Button variant="outline" className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black">
+              <Button
+                variant="outline"
+                className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black"
+              >
                 ← Back to Meet the Jewels
               </Button>
             </Link>
-            
+
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
                 <img
@@ -128,7 +138,7 @@ const JewelDetail = () => {
                   className="w-full h-96 object-cover rounded-lg"
                 />
               </div>
-              
+
               <div>
                 <h1 className="text-4xl font-bold text-yellow-400 mb-6">
                   {jewel.name}
@@ -136,7 +146,7 @@ const JewelDetail = () => {
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
                   {jewel.bio}
                 </p>
-                
+
                 <h2 className="text-2xl font-semibold text-yellow-400 mb-4">
                   Notable Achievements
                 </h2>
