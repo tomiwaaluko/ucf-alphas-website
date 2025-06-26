@@ -33,14 +33,18 @@ const Hero = () => {
         </motion.div>{" "}
         {/* Main title */}
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-cinzel"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight font-cinzel"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
           <span className="text-white block mb-2">WELCOME TO THE</span>
           <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent">
-            494TH HOUSE OF ALPHA
+            494
+            <sup className="text-base md:text-lg lg:text-xl bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent align-top">
+              TH
+            </sup>{" "}
+            HOUSE OF ALPHA
           </span>
         </motion.h1>
         {/* Fraternity name */}

@@ -19,6 +19,7 @@ import MeetTheBrothers from "./pages/MeetTheBrothers";
 import BrotherDetail from "./pages/BrotherDetail";
 import Lineage from "./pages/Lineage";
 import LineageDetail from "./pages/LineageDetail";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/brother/:id" element={<BrotherDetail />} />
           <Route path="/lineage" element={<Lineage />} />
           <Route path="/lineage/:lineId" element={<LineageDetail />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

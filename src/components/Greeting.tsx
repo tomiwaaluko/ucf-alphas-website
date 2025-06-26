@@ -90,12 +90,20 @@ const Greeting = () => {
             viewport={{ once: true }}
           >
             <div className="relative">
-              <img
-                src="/lovable-uploads/3ab3677c-347e-4879-adef-d912371f9833.png"
-                alt="Joshua Thomas, President of Xi Iota Chapter"
-                className="w-full h-auto shadow-2xl border border-yellow-400/20"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 p-1">
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQFmhalX5A_Naw/profile-displayphoto-shrink_400_400/B4EZU4px5CG0Ao-/0/1740412233857?e=1756339200&v=beta&t=JfVSR-PVXBbTvJZBf9RV8PUwrAMijJZaB6fztyRh428"
+                  alt="Treylon Chukes, President of Xi Iota Chapter"
+                  className="w-full h-auto shadow-2xl"
+                />
+                <div className="absolute inset-1 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              {/* Decorative corner elements */}
+              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-4 border-l-4 border-yellow-400"></div>
+              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-yellow-400"></div>
+              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-4 border-l-4 border-yellow-400"></div>
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-4 border-r-4 border-yellow-400"></div>
             </div>
           </motion.div>
         </motion.div>

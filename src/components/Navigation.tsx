@@ -126,12 +126,12 @@ const Navigation = () => {
               >
                 Service
               </Link>
-              <button
-                onClick={() => scrollToSection("contact")}
+              <Link
+                to="/contact"
                 className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm font-cinzel"
               >
                 Contact
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -272,12 +272,13 @@ const Navigation = () => {
             >
               Service
             </Link>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="block text-white hover:text-yellow-400 px-3 py-2 w-full text-left"
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="block text-white hover:text-yellow-400 px-3 py-2"
             >
               Contact
-            </button>
+            </Link>
           </div>
         </div>
       )}

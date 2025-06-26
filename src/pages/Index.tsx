@@ -2,7 +2,6 @@
 import Hero from "../components/Hero";
 import Navigation from "../components/Navigation";
 import Greeting from "../components/Greeting";
-import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 const Index = () => {
@@ -11,7 +10,6 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Greeting />
-      <Contact />
       <Footer />
     </div>
   );
