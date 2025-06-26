@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import Navigation from "../components/Navigation";
 import Greeting from "../components/Greeting";

@@ -1,7 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section
       id="hero"
@@ -85,11 +88,7 @@ const Hero = () => {
             Learn More
           </motion.button>
           <motion.button
-            onClick={() =>
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => navigate("/contact")}
             className="border-2 border-yellow-400 text-yellow-400 px-8 py-4 text-lg font-medium hover:bg-yellow-400 hover:text-black transition-all duration-300 uppercase tracking-wider"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
