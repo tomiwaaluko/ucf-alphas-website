@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   // Detect mobile devices
   useEffect(() => {
@@ -22,6 +23,15 @@ const Hero = () => {
     return () => window.removeEventListener("resize", checkDevice);
   }, []);
 
+  // Lazy load video after component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 1500); // Load video after 1.5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -30,20 +40,21 @@ const Hero = () => {
       {/* Background with overlay */}
       <div className="absolute inset-0 bg-black"></div>
 
-      {/* Video Background - Desktop Only */}
-      {!isMobile && (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          style={{ filter: "brightness(0.4)" }}
-        >
-          <source src="/hero-background.mp4" type="video/mp4" />
-          {/* Fallback for browsers that don't support video */}
-        </video>
+      {/* YouTube Video Background - Desktop Only */}
+      {!isMobile && shouldLoadVideo && (
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+          <iframe
+            src="https://www.youtube.com/embed/1wLEli160gs?autoplay=1&mute=1&loop=1&playlist=1wLEli160gs&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=1"
+            title="Hero Background Video"
+            className="absolute top-0 left-0 w-full h-full pointer-events-none"
+            style={{
+              filter: "brightness(0.4)",
+              border: "none",
+            }}
+            allow="autoplay; encrypted-media"
+            allowFullScreen={false}
+          />
+        </div>
       )}
 
       <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-gray-900/80 to-black/90"></div>
