@@ -1,30 +1,39 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import { Calendar, Users, Trophy, Target, Heart, BookOpen } from "lucide-react";
+import {
+  Calendar,
+  Users,
+  Trophy,
+  Target,
+  Heart,
+  BookOpen,
+  Globe,
+  Scroll,
+} from "lucide-react";
 
 const FraternityHistory = () => {
   const timelineEvents = [
     {
       year: "1906",
-      title: "Founded at Cornell University",
+      title: "Founding of the Fraternity",
       description:
-        "Seven visionary men established Alpha Phi Alpha on December 4, 1906",
+        "Alpha Phi Alpha Fraternity, Inc. was founded on December 4, 1906, at Cornell University, as the first intercollegiate Greek-letter fraternity for African American men.",
       icon: Calendar,
     },
     {
-      year: "1911",
-      title: "First Alumni Chapter",
+      year: "1908",
+      title: "Incorporation",
       description:
-        "The first Alumni Chapter was established, expanding beyond college campuses",
-      icon: Users,
+        "The fraternity was officially incorporated on April 3, 1908, in Washington, D.C., enabling national expansion and governance.",
+      icon: Scroll,
     },
     {
-      year: "1945",
-      title: "Interracial Fraternity",
+      year: "1931",
+      title: "First International Chapter Established",
       description:
-        "Alpha Phi Alpha became interracial, staying true to 'first of firsts'",
-      icon: Heart,
+        "In 1931, Alpha Phi Alpha established its first international chapter in London, England. This milestone marked the beginning of the fraternity's global presence and influence.",
+      icon: Globe,
     },
   ];
 
@@ -36,8 +45,8 @@ const FraternityHistory = () => {
       color: "from-yellow-400 to-yellow-600",
     },
     {
-      title: "Fellowship",
-      description: "Brotherhood and lifelong bonds",
+      title: "Brotherhood",
+      description: "Clear, powerful, and directly tied to fraternal life",
       icon: Users,
       color: "from-yellow-300 to-yellow-500",
     },
@@ -56,8 +65,8 @@ const FraternityHistory = () => {
   ];
 
   const notableAlphas = [
-    "W.E.B. DuBois",
     "Martin Luther King Jr.",
+    "W.E.B. DuBois",
     "Thurgood Marshall",
     "Adam Clayton Powell Jr.",
     "Andrew Young",
@@ -183,6 +192,99 @@ const FraternityHistory = () => {
                     </motion.div>
                   ))}
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Values Grid */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2"
+            >
+              <div className="bg-gradient-to-br from-yellow-400/10 to-yellow-600/10 p-8 rounded-2xl border border-yellow-400/30 h-full">
+                <h3 className="text-3xl font-bold text-yellow-400 mb-6 font-cinzel">
+                  Our Mission
+                </h3>
+                <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                  Alpha Phi Alpha Fraternity, Inc. develops leaders, promotes
+                  brotherhood and academic excellence, while providing service
+                  and advocacy for our communities.
+                </p>
+
+                <h4 className="text-2xl font-bold text-yellow-400 mb-6 font-cinzel">
+                  Our Objectives
+                </h4>
+                <ul className="space-y-4 text-gray-300">
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                    <span>To stimulate the ambition of its members</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                    <span>
+                      To prepare them for the greatest usefulness in the causes
+                      of humanity, freedom, and dignity of the individual
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                    <span>
+                      To encourage the highest and noblest form of manhood
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                    <span>
+                      To aid downtrodden humanity in its efforts to achieve
+                      higher social, economic and intellectual status
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 p-6 rounded-xl border border-yellow-400/50">
+                <h4 className="text-xl font-bold text-yellow-400 mb-3 font-cinzel">
+                  Our Motto
+                </h4>
+                <p className="text-2xl font-crimson italic text-yellow-400">
+                  "First of All, Servants of All, We Shall Transcend All"
+                </p>
+              </div>
+
+              <div className="bg-black p-6 rounded-xl border border-yellow-400/20">
+                <h4 className="text-xl font-bold text-yellow-400 mb-3 font-cinzel">
+                  Our Aims
+                </h4>
+                <p className="text-gray-300">
+                  Manly Deeds, Scholarship, and Love for all Mankind
+                </p>
+              </div>
+
+              <div className="bg-black p-6 rounded-xl border border-yellow-400/20">
+                <h4 className="text-xl font-bold text-yellow-400 mb-3 font-cinzel">
+                  Founded
+                </h4>
+                <p className="text-gray-300">
+                  December 4, 1906
+                  <br />
+                  Cornell University
+                </p>
               </div>
             </motion.div>
           </div>
@@ -321,67 +423,10 @@ const FraternityHistory = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            "True to its form as the 'first of firsts,' Alpha Phi Alpha has been
-            interracial since 1945"
+            True to its form as the 'first of firsts,' Alpha Phi Alpha has been
+            interracial since 1945
           </motion.p>
         </div>
-      </section>
-
-      {/* Mission & Values Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="lg:col-span-2"
-            >
-              <div className="bg-gradient-to-br from-yellow-400/10 to-yellow-600/10 p-8 rounded-2xl border border-yellow-400/30 h-full">
-                <h3 className="text-3xl font-bold text-yellow-400 mb-6 font-cinzel">
-                  Our Mission
-                </h3>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  Alpha Phi Alpha Fraternity, Inc. develops leaders, promotes
-                  brotherhood and academic excellence, while providing service
-                  and advocacy for our communities.
-                </p>
-                <div className="text-2xl font-crimson italic text-yellow-400">
-                  "First of All, Servants of All, We Shall Transcend All"
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="bg-black p-6 rounded-xl border border-yellow-400/20">
-                <h4 className="text-xl font-bold text-yellow-400 mb-3 font-cinzel">
-                  Our Aims
-                </h4>
-                <p className="text-gray-300">
-                  Manly Deeds, Scholarship, and Love for all Mankind
-                </p>
-              </div>
-
-              <div className="bg-black p-6 rounded-xl border border-yellow-400/20">
-                <h4 className="text-xl font-bold text-yellow-400 mb-3 font-cinzel">
-                  Founded
-                </h4>
-                <p className="text-gray-300">
-                  December 4, 1906
-                  <br />
-                  Cornell University
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>{" "}
       </section>
 
       <Footer />

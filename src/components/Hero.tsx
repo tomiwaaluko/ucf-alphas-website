@@ -46,10 +46,17 @@ const Hero = () => {
           <iframe
             src="https://www.youtube.com/embed/1wLEli160gs?autoplay=1&mute=1&loop=1&playlist=1wLEli160gs&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=1"
             title="Hero Background Video"
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
+            className="absolute pointer-events-none"
             style={{
               filter: "brightness(0.4)",
               border: "none",
+              width: "100vw",
+              height: "56.25vw", // 16:9 aspect ratio
+              minHeight: "100vh",
+              minWidth: "177.78vh", // 16:9 aspect ratio
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
             }}
             allow="autoplay; encrypted-media"
             allowFullScreen={false}
