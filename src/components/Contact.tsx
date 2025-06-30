@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Instagram, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 
 const Contact = () => {
@@ -58,21 +58,20 @@ const Contact = () => {
                   <h4 className="text-white font-semibold mb-1 font-cinzel">
                     Email
                   </h4>
-                  <p className="text-gray-400">contact@xiiotaapa.org</p>
-                  <p className="text-gray-400">president@xiiotaapa.org</p>
+                  <p className="text-gray-400">apa@ucf.edu</p>
+                  <p className="text-gray-400">thesonsoft3@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 w-12 h-12 rounded-full flex items-center justify-center mr-4 mt-1">
-                  <Phone className="w-6 h-6 text-black" />
+                  <Instagram className="w-6 h-6 text-black" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1 font-cinzel">
-                    Phone
+                    Instagram
                   </h4>
-                  <p className="text-gray-400">(555) 123-4567</p>
-                  <p className="text-gray-400">Monday - Friday, 9AM - 5PM</p>
+                  <p className="text-gray-400">@ucf_alphas</p>
                 </div>
               </div>
 
@@ -84,21 +83,11 @@ const Contact = () => {
                   <h4 className="text-white font-semibold mb-1 font-cinzel">
                     Address
                   </h4>
-                  <p className="text-gray-400">Alpha Phi Alpha House</p>
-                  <p className="text-gray-400">123 University Avenue</p>
-                  <p className="text-gray-400">Campus City, State 12345</p>
+                  <p className="text-gray-400">P.O. Box 160157</p>
+                  <p className="text-gray-400">Orlando, FL 32816-8006</p>
+                  <p className="text-gray-400">United States</p>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-gray-900 to-black border border-yellow-400/20 rounded-xl p-6">
-              <h4 className="text-yellow-400 font-semibold mb-3 font-cinzel">
-                Chapter Meetings
-              </h4>
-              <p className="text-gray-300 mb-2">Every Wednesday at 7:00 PM</p>
-              <p className="text-gray-400 text-sm">
-                Student Union Building, Room 201
-              </p>
             </div>
           </div>
 
@@ -146,20 +135,15 @@ const Contact = () => {
                 <label className="block text-white font-medium mb-2">
                   Subject *
                 </label>
-                <select
+                <input
+                  type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
                   className="w-full bg-black/50 border border-yellow-400/30 rounded-lg px-4 py-3 text-white focus:border-yellow-400 focus:outline-none transition-colors"
-                >
-                  <option value="">Select a subject</option>
-                  <option value="membership">Membership Inquiry</option>
-                  <option value="partnership">Partnership Opportunity</option>
-                  <option value="event">Event Information</option>
-                  <option value="service">Service Projects</option>
-                  <option value="general">General Question</option>
-                </select>
+                  placeholder="Enter your subject"
+                />
               </div>
 
               <div className="mb-6">
