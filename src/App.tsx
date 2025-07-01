@@ -7,6 +7,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Service from "./pages/Service";
 import MissBlackAndGold from "./pages/MissBlackAndGold";
+import MissBlackAndGoldDetails from "./pages/MissBlackAndGoldDetails";
+import MissXiIotaDetails from "./pages/MissXiIotaDetails";
+import MissYellowRoseDetails from "./pages/MissYellowRoseDetails";
 import FraternityHistory from "./pages/FraternityHistory";
 import MeetTheJewels from "./pages/MeetTheJewels";
 import JewelDetail from "./pages/JewelDetail";
@@ -35,6 +38,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/service" element={<Service />} />
           <Route path="/miss-black-and-gold" element={<MissBlackAndGold />} />
+          <Route path="/miss-black-and-gold-details" element={<MissBlackAndGoldDetails />} />
+          <Route path="/miss-xi-iota-details" element={<MissXiIotaDetails />} />
+          <Route path="/miss-yellow-rose-details" element={<MissYellowRoseDetails />} />
           {/* Alpha Phi Alpha Routes */}
           <Route path="/fraternity-history" element={<FraternityHistory />} />
           <Route path="/meet-the-jewels" element={<MeetTheJewels />} />

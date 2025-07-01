@@ -23,6 +23,42 @@ const currentMissBlackAndGold = {
   university: "Howard University",
 };
 
+const currentMissXiIota = {
+  name: "Gabrielle Thompson",
+  year: "2024-2025",
+  image: "/placeholder.svg", // Replace with actual image
+  bio: "Gabrielle Thompson is a junior at the University of Central Florida majoring in Communications with a focus on Public Relations. She is passionate about community outreach, academic excellence, and representing the values of Xi Iota Chapter with grace and leadership.",
+  achievements: [
+    "Dean's List for 4 consecutive semesters",
+    "UCF Student Government Senator",
+    "Volunteer coordinator for local youth mentorship program",
+    "President of Communications Club",
+    "Recipient of the Leadership Excellence Award",
+  ],
+  platform: "Building bridges through communication and community service",
+  hometown: "Orlando, Florida",
+  major: "Communications",
+  university: "University of Central Florida",
+};
+
+const currentMissYellowRose = {
+  name: "Sophia Martinez",
+  year: "2024-2025",
+  image: "/placeholder.svg", // Replace with actual image
+  bio: "Sophia Martinez is a sophomore at the University of Central Florida majoring in Business Administration with a concentration in Marketing. She embodies the spirit of sisterhood and academic achievement while actively participating in community service initiatives.",
+  achievements: [
+    "Dean's List for 3 consecutive semesters",
+    "Business Student Council Vice President",
+    "Founder of 'Sisters Supporting Sisters' mentorship program",
+    "Volunteer at local women's shelter",
+    "Recipient of the Academic Achievement Scholarship",
+  ],
+  platform: "Empowering women through education and entrepreneurship",
+  hometown: "Tampa, Florida",
+  major: "Business Administration",
+  university: "University of Central Florida",
+};
+
 const previousWinners = [
   {
     name: "Jasmine Williams",
@@ -42,32 +78,12 @@ const previousWinners = [
     image: "/placeholder.svg",
     university: "Hampton University",
   },
-  {
-    name: "Alexis Thompson",
-    year: "2020-2021",
-    image: "/placeholder.svg",
-    university: "Florida A&M University",
-  },
-  {
-    name: "Maya Robinson",
-    year: "2019-2020",
-    image: "/placeholder.svg",
-    university: "Morehouse College",
-  },
-  {
-    name: "Zoe Anderson",
-    year: "2018-2019",
-    image: "/placeholder.svg",
-    university: "Clark Atlanta University",
-  },
 ];
 
 const MissBlackAndGold = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
-  const currentMissRef = useRef<HTMLDivElement>(null);
   const isHeroInView = useInView(heroRef);
-  const isCurrentMissInView = useInView(currentMissRef);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -75,7 +91,6 @@ const MissBlackAndGold = () => {
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <div
@@ -186,54 +201,88 @@ const MissBlackAndGold = () => {
             </div>
           </motion.section>
 
-          {/* Current Miss Black and Gold Section */}
+          {/* Royal Court Section */}
           <motion.section
-            ref={currentMissRef}
-            className="py-20 bg-gradient-to-br from-yellow-400/5 via-transparent to-yellow-600/5 relative overflow-hidden"
+            className="py-20 bg-gradient-to-br from-black via-gray-900/20 to-black relative overflow-hidden"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-yellow-400/3 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-yellow-600/3 rounded-full blur-3xl"></div>
+              <div className="absolute top-10 left-10 w-72 h-72 bg-yellow-400/2 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-600/2 rounded-full blur-3xl"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-yellow-400/1 to-transparent rounded-full"></div>
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 relative z-10">
               <motion.div
-                className="text-center mb-16"
+                className="text-center mb-20"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-cinzel">
-                  Current{" "}
-                  <span className="text-yellow-400">Miss Black and Gold</span>
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6"></div>
-                <p className="text-xl text-gray-300">
-                  {currentMissBlackAndGold.year}
-                </p>
+                <motion.h2
+                  className="text-5xl md:text-7xl font-bold mb-8 font-cinzel leading-tight"
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-yellow-400">Introducing Our</span>
+                  <br />
+                  <span className="text-white">2025-2026</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                    Royal Court
+                  </span>
+                </motion.h2>
+
+                <motion.div
+                  className="mb-8"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6"></div>
+                  <span className="inline-block bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 px-8 py-3 rounded-full border border-yellow-400/30 backdrop-blur-sm text-yellow-400 font-semibold text-lg">
+                    Excellence • Elegance • Leadership
+                  </span>
+                </motion.div>
+
+                <motion.p
+                  className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  Meet the exceptional women who represent the highest ideals of
+                  scholarship, service, and sisterhood in our community.
+                </motion.p>
               </motion.div>
 
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                {/* Image Section */}
+              {/* Royal Court Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Miss Black and Gold */}
                 <motion.div
-                  className="relative"
-                  initial={{ x: -100, opacity: 0 }}
-                  animate={
-                    isCurrentMissInView
-                      ? { x: 0, opacity: 1 }
-                      : { x: -100, opacity: 0 }
-                  }
-                  transition={{ duration: 1, delay: 0.2 }}
+                  className="relative group"
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
                 >
-                  <div className="relative group">
+                  <motion.div
+                    className="relative bg-gradient-to-br from-gray-900/80 to-black/80 rounded-3xl border border-yellow-400/30 backdrop-blur-sm overflow-hidden"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     {/* Decorative frame */}
                     <motion.div
-                      className="absolute -inset-4 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 rounded-3xl blur-xl"
+                      className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 rounded-3xl blur-xl"
                       animate={{
                         scale: [1, 1.05, 1],
                         opacity: [0.3, 0.6, 0.3],
@@ -241,148 +290,238 @@ const MissBlackAndGold = () => {
                       transition={{ duration: 4, repeat: Infinity }}
                     />
 
-                    <motion.div
-                      className="relative bg-gradient-to-br from-gray-900/80 to-black/80 p-2 rounded-3xl border border-yellow-400/30 backdrop-blur-sm"
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.3 }}
-                    >
+                    {/* Image Container */}
+                    <div className="relative h-96 overflow-hidden">
                       <img
                         src={currentMissBlackAndGold.image}
                         alt={currentMissBlackAndGold.name}
-                        className="w-full h-[600px] object-cover rounded-2xl"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                    </motion.div>
 
-                    {/* Crown decorative element */}
-                    <motion.div
-                      className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-xl"
-                      animate={{
-                        rotate: [0, 10, -10, 0],
-                        scale: [1, 1.1, 1],
-                      }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                    >
-                      <span className="text-2xl">👑</span>
-                    </motion.div>
+                      {/* Title badge */}
+                      <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-4 py-2 rounded-full font-bold text-sm">
+                        Miss Black & Gold
+                      </div>
 
-                    {/* Decorative corner elements */}
-                    <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-yellow-400/50"></div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 border-r-2 border-t-2 border-yellow-400/50"></div>
-                    <div className="absolute -bottom-2 -left-2 w-6 h-6 border-l-2 border-b-2 border-yellow-400/50"></div>
-                    <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-yellow-400/50"></div>
-                  </div>
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <motion.h3
+                        className="text-2xl font-bold text-yellow-400 mb-2 font-cinzel"
+                        initial={{ opacity: 0.8 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        {currentMissBlackAndGold.name}
+                      </motion.h3>
+                      <p className="text-gray-400 font-semibold mb-2">
+                        {currentMissBlackAndGold.university}
+                      </p>
+                      <p className="text-gray-400 text-sm mb-3">
+                        {currentMissBlackAndGold.major}
+                      </p>
+                      <p className="text-gray-300 text-sm line-clamp-3">
+                        Platform: {currentMissBlackAndGold.platform}
+                      </p>
+
+                      {/* Decorative line */}
+                      <motion.div
+                        className="w-16 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 mt-4 mb-4"
+                        initial={{ width: 0 }}
+                        whileHover={{ width: "4rem" }}
+                        transition={{ duration: 0.3 }}
+                      />
+
+                      {/* Learn More Button */}
+                      <motion.button
+                        className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 text-sm"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() =>
+                          (window.location.href =
+                            "/miss-black-and-gold-details")
+                        }
+                      >
+                        Learn More
+                      </motion.button>
+                    </div>
+
+                    {/* Decorative corner accent */}
+                    <div className="absolute bottom-4 right-4 w-3 h-3 bg-yellow-400/40 rounded-full"></div>
+                  </motion.div>
                 </motion.div>
 
-                {/* Bio Section */}
+                {/* Miss Xi Iota */}
                 <motion.div
-                  className="relative"
-                  style={{ y: textY }}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={
-                    isCurrentMissInView
-                      ? { x: 0, opacity: 1 }
-                      : { x: 100, opacity: 0 }
-                  }
-                  transition={{ duration: 1, delay: 0.4 }}
+                  className="relative group"
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
                 >
-                  <motion.h3
-                    className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4 font-cinzel"
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={
-                      isCurrentMissInView
-                        ? { y: 0, opacity: 1 }
-                        : { y: 30, opacity: 0 }
-                    }
-                    transition={{ duration: 1, delay: 0.6 }}
-                  >
-                    {currentMissBlackAndGold.name}
-                  </motion.h3>
-
                   <motion.div
-                    className="mb-6 space-y-2"
-                    initial={{ opacity: 0 }}
-                    animate={
-                      isCurrentMissInView ? { opacity: 1 } : { opacity: 0 }
-                    }
-                    transition={{ duration: 1, delay: 0.8 }}
+                    className="relative bg-gradient-to-br from-gray-900/80 to-black/80 rounded-3xl border border-yellow-400/30 backdrop-blur-sm overflow-hidden"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <div className="flex flex-wrap gap-4 mb-4">
-                      <span className="bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 px-4 py-2 rounded-full border border-yellow-400/30 backdrop-blur-sm text-yellow-400 font-semibold">
-                        {currentMissBlackAndGold.university}
-                      </span>
-                      <span className="bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 px-4 py-2 rounded-full border border-yellow-400/30 backdrop-blur-sm text-yellow-400 font-semibold">
-                        {currentMissBlackAndGold.major}
-                      </span>
+                    {/* Decorative frame */}
+                    <motion.div
+                      className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 rounded-3xl blur-xl"
+                      animate={{
+                        scale: [1, 1.05, 1],
+                        opacity: [0.3, 0.6, 0.3],
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                    />
+
+                    {/* Image Container */}
+                    <div className="relative h-96 overflow-hidden">
+                      <img
+                        src={currentMissXiIota.image}
+                        alt={currentMissXiIota.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+
+                      {/* Title badge */}
+                      <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-4 py-2 rounded-full font-bold text-sm">
+                        Miss Xi Iota
+                      </div>
+
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <p className="text-yellow-400 font-semibold text-lg">
-                      Platform: {currentMissBlackAndGold.platform}
-                    </p>
-                    <p className="text-gray-400">
-                      Hometown: {currentMissBlackAndGold.hometown}
-                    </p>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <motion.h3
+                        className="text-2xl font-bold text-yellow-400 mb-2 font-cinzel"
+                        initial={{ opacity: 0.8 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        {currentMissXiIota.name}
+                      </motion.h3>
+                      <p className="text-gray-400 font-semibold mb-2">
+                        {currentMissXiIota.university}
+                      </p>
+                      <p className="text-gray-400 text-sm mb-3">
+                        {currentMissXiIota.major}
+                      </p>
+                      <p className="text-gray-300 text-sm line-clamp-3">
+                        Platform: {currentMissXiIota.platform}
+                      </p>
+
+                      {/* Decorative line */}
+                      <motion.div
+                        className="w-16 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 mt-4 mb-4"
+                        initial={{ width: 0 }}
+                        whileHover={{ width: "4rem" }}
+                        transition={{ duration: 0.3 }}
+                      />
+
+                      {/* Learn More Button */}
+                      <motion.button
+                        className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 text-sm"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() =>
+                          (window.location.href = "/miss-xi-iota-details")
+                        }
+                      >
+                        Learn More
+                      </motion.button>
+                    </div>
+
+                    {/* Decorative corner accent */}
+                    <div className="absolute bottom-4 right-4 w-3 h-3 bg-yellow-400/40 rounded-full"></div>
                   </motion.div>
+                </motion.div>
 
-                  <motion.p
-                    className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8"
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={
-                      isCurrentMissInView
-                        ? { y: 0, opacity: 1 }
-                        : { y: 30, opacity: 0 }
-                    }
-                    transition={{ duration: 1, delay: 1 }}
-                  >
-                    {currentMissBlackAndGold.bio}
-                  </motion.p>
-
-                  {/* Achievements */}
+                {/* Miss Yellow Rose */}
+                <motion.div
+                  className="relative group"
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                >
                   <motion.div
-                    className="space-y-4"
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={
-                      isCurrentMissInView
-                        ? { y: 0, opacity: 1 }
-                        : { y: 50, opacity: 0 }
-                    }
-                    transition={{ duration: 1, delay: 1.2 }}
+                    className="relative bg-gradient-to-br from-gray-900/80 to-black/80 rounded-3xl border border-yellow-400/30 backdrop-blur-sm overflow-hidden"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <h4 className="text-2xl font-bold text-yellow-400 mb-4 font-cinzel">
-                      Notable Achievements
-                    </h4>
-                    {currentMissBlackAndGold.achievements.map(
-                      (achievement, index) => (
-                        <motion.div
-                          key={index}
-                          className="flex items-start space-x-3"
-                          initial={{ x: 50, opacity: 0 }}
-                          animate={
-                            isCurrentMissInView
-                              ? { x: 0, opacity: 1 }
-                              : { x: 50, opacity: 0 }
-                          }
-                          transition={{
-                            duration: 0.8,
-                            delay: 1.4 + index * 0.1,
-                          }}
-                        >
-                          <motion.div
-                            className="flex-shrink-0 w-3 h-3 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mt-2"
-                            animate={{
-                              scale: [1, 1.2, 1],
-                              opacity: [0.7, 1, 0.7],
-                            }}
-                            transition={{
-                              duration: 3,
-                              repeat: Infinity,
-                              delay: index * 0.2,
-                            }}
-                          />
-                          <p className="text-gray-300 leading-relaxed">
-                            {achievement}
-                          </p>
-                        </motion.div>
-                      )
-                    )}
+                    {/* Decorative frame */}
+                    <motion.div
+                      className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 rounded-3xl blur-xl"
+                      animate={{
+                        scale: [1, 1.05, 1],
+                        opacity: [0.3, 0.6, 0.3],
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, delay: 2 }}
+                    />
+
+                    {/* Image Container */}
+                    <div className="relative h-96 overflow-hidden">
+                      <img
+                        src={currentMissYellowRose.image}
+                        alt={currentMissYellowRose.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+
+                      {/* Title badge */}
+                      <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-4 py-2 rounded-full font-bold text-sm">
+                        Miss Yellow Rose
+                      </div>
+
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <motion.h3
+                        className="text-2xl font-bold text-yellow-400 mb-2 font-cinzel"
+                        initial={{ opacity: 0.8 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        {currentMissYellowRose.name}
+                      </motion.h3>
+                      <p className="text-gray-400 font-semibold mb-2">
+                        {currentMissYellowRose.university}
+                      </p>
+                      <p className="text-gray-400 text-sm mb-3">
+                        {currentMissYellowRose.major}
+                      </p>
+                      <p className="text-gray-300 text-sm line-clamp-3">
+                        Platform: {currentMissYellowRose.platform}
+                      </p>
+
+                      {/* Decorative line */}
+                      <motion.div
+                        className="w-16 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 mt-4 mb-4"
+                        initial={{ width: 0 }}
+                        whileHover={{ width: "4rem" }}
+                        transition={{ duration: 0.3 }}
+                      />
+
+                      {/* Learn More Button */}
+                      <motion.button
+                        className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 text-sm"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() =>
+                          (window.location.href = "/miss-yellow-rose-details")
+                        }
+                      >
+                        Learn More
+                      </motion.button>
+                    </div>
+
+                    {/* Decorative corner accent */}
+                    <div className="absolute bottom-4 right-4 w-3 h-3 bg-yellow-400/40 rounded-full"></div>
                   </motion.div>
                 </motion.div>
               </div>
@@ -492,15 +631,6 @@ const MissBlackAndGold = () => {
                     </motion.div>
 
                     {/* Floating crown for hover effect */}
-                    <motion.div
-                      className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl"
-                      animate={{
-                        rotate: [0, 10, -10, 0],
-                      }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                    >
-                      <span className="text-sm">👑</span>
-                    </motion.div>
                   </motion.div>
                 ))}
               </div>
