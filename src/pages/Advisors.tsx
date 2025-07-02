@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
-const MeetTheBrothers = () => {
-  const [hoveredBrother, setHoveredBrother] = useState<number | null>(null);
+const Advisors = () => {
+  const [hoveredAdvisor, setHoveredAdvisor] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const isHeroInView = useInView(heroRef);
@@ -17,160 +17,75 @@ const MeetTheBrothers = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const headerY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const brothers = [
+
+  const advisors = [
     {
       id: 1,
-      name: "Tomiwa Aluko",
-      crossingSemester: "Spring 2022",
-      lineNumber: "#1",
-      major: "Computer Engineering",
+      name: "Martin A. Johnson",
+      position: "Graduate Advisor",
+      title: "Senior Army Instructor",
+      organization: "Paul J Hagerty HS",
       achievements: [
-        "Dean's List",
-        "Tech Innovation Award",
-        "Engineering Excellence",
+        "Bronze Star Medal",
+        "Medal Meritorious Service Medal (4)",
+        "Army Commendation Medal (5)",
+        "Distinguished Military Graduate",
+        "Superior Graduate Army ILE",
+        "Who's Who Among Colleges and Universities 1996",
       ],
-      quote: "Excellence is not a skill, it's an attitude.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
+      quote:
+        "You must remember that words mean things. A person may forget the exact words you said, but they will never forget how those words made them feel.",
+      image: "/advisors/IMG_3904 - Martin Johnson.jpeg",
     },
     {
       id: 2,
-      name: "Nijel Beverly",
-      crossingSemester: "Spring 2022",
-      lineNumber: "#2",
-      major: "Business Administration Integrated Business",
+      name: "Brodrick D. Johnson",
+      position: "Campus Advisor",
+      title: "Assistant AD for Student-Athlete Development",
+      organization: "University of Central Florida",
       achievements: [
-        "Student Body President",
-        "Entrepreneur of the Year",
-        "Business Leadership",
+        "2024 Sporty Recipient - Social Responsibility",
+        "2023-2024 Outstanding Community Partner - Orange County Public Schools",
+        "15+ Years College Athletics Experience",
       ],
       quote:
-        "Leadership is about making others better as a result of your presence.",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
+        "Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars, to change the world.",
+      image: "/advisors/IMG_1244 - Bhop Johnson.jpeg",
     },
     {
       id: 3,
-      name: "Abdul Ibrahim",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#3",
-      major: "Science",
+      name: "Dr. James Thompson",
+      position: "Academic Advisor",
+      title: "Dean of Student Affairs",
+      organization: "University of North Texas",
       achievements: [
-        "Research Excellence",
-        "Academic Scholar",
-        "Scientific Innovation",
-      ],
-      quote: "Science is the foundation of all human progress.",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop&crop=face",
-    },
-    {
-      id: 4,
-      name: "Corey Barnes Jr.",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#4",
-      major: "Mechanical Engineering",
-      achievements: [
-        "Engineering Design Award",
-        "Innovation Champion",
-        "Technical Excellence",
-      ],
-      quote: "Innovation distinguishes between a leader and a follower.",
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&crop=face",
-    },
-    {
-      id: 5,
-      name: "Jacob Herrera",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#5",
-      major: "Mechanical Engineering",
-      achievements: [
-        "Engineering Excellence",
-        "Project Leadership",
-        "Technical Mentorship",
-      ],
-      quote: "Engineering is the art of making the impossible possible.",
-      image:
-        "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=500&fit=crop&crop=face",
-    },
-    {
-      id: 6,
-      name: "Adams Brown Jr.",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#6",
-      major: "Integrated Business",
-      achievements: [
-        "Business Strategy Award",
-        "Financial Excellence",
-        "Leadership Development",
+        "Academic Excellence Leadership",
+        "Student Success Advocate",
+        "Higher Education Innovation",
       ],
       quote:
-        "Success in business requires training and discipline and hard work.",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face",
-    },
-    {
-      id: 7,
-      name: "Benjamin Blocker",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#7",
-      major: "Kinesiology",
-      achievements: [
-        "Health & Wellness Advocate",
-        "Athletic Excellence",
-        "Community Health Leader",
-      ],
-      quote: "Movement is medicine for creating change in all aspects of life.",
-      image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop&crop=face",
-    },
-    {
-      id: 8,
-      name: "Jevaughn Morris",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#8",
-      major: "Information Technology",
-      achievements: [
-        "Technology Innovation",
-        "Digital Solutions",
-        "IT Excellence",
-      ],
-      quote: "Technology is best when it brings people together.",
+        "Education is the most powerful weapon which you can use to change the world.",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
     },
     {
-      id: 9,
-      name: "Toluwani Aluko",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#9",
-      major: "Biology (Pre-Med)",
+      id: 4,
+      name: "Mr. Charles Davis",
+      position: "Alumni Relations Advisor",
+      title: "Corporate Executive",
+      organization: "Fortune 500 Company",
       achievements: [
-        "Pre-Med Excellence",
-        "Research Scholar",
-        "Future Healthcare Leader",
+        "Corporate Leadership Excellence",
+        "Alumni Network Development",
+        "Professional Mentorship",
       ],
-      quote: "Medicine is not only a science; it is also an art.",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
-    },
-    {
-      id: 10,
-      name: "Treylon Chukes",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#10",
-      major: "Biology",
-      achievements: [
-        "Scientific Research",
-        "Academic Excellence",
-        "Biology Innovation",
-      ],
-      quote: "Biology is the most powerful technology ever created.",
+      quote:
+        "The strength of the pack is the wolf, and the strength of the wolf is the pack.",
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop&crop=face",
     },
   ];
+
   return (
     <div
       ref={containerRef}
@@ -235,7 +150,7 @@ const MeetTheBrothers = () => {
                   }
                   transition={{ duration: 1, delay: 0.3 }}
                 >
-                  Meet the <span className="text-white">Brothers</span>
+                  Meet the <span className="text-white">Advisors</span>
                 </motion.h1>
 
                 <motion.div
@@ -246,7 +161,7 @@ const MeetTheBrothers = () => {
                 >
                   <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6"></div>
                   <span className="inline-block bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 px-6 py-2 rounded-full border border-yellow-400/30 backdrop-blur-sm text-yellow-400 font-semibold">
-                    Excellence • Leadership • Brotherhood
+                    Guidance • Wisdom • Leadership
                   </span>
                 </motion.div>
 
@@ -258,19 +173,20 @@ const MeetTheBrothers = () => {
                   }
                   transition={{ duration: 1, delay: 0.7 }}
                 >
-                  The brothers of Xi Iota Chapter represent excellence in
-                  scholarship, leadership, and service.
+                  Our distinguished advisors provide invaluable guidance,
+                  wisdom, and mentorship to the
                   <br className="hidden sm:block" />
-                  Our diverse membership includes students and professionals who
-                  are making a positive
+                  Xi Iota Chapter. These accomplished leaders help shape our
+                  brothers into men of
                   <br className="hidden sm:block" />
-                  impact in their communities and beyond.
+                  excellence while preserving the rich traditions of Alpha Phi
+                  Alpha.
                 </motion.p>
               </motion.div>
             </div>
           </motion.section>
 
-          {/* Brothers Grid Section */}
+          {/* Advisors Grid Section */}
           <motion.section
             className="py-20 bg-gradient-to-br from-yellow-400/5 via-transparent to-yellow-600/5 relative"
             initial={{ opacity: 0 }}
@@ -279,10 +195,10 @@ const MeetTheBrothers = () => {
             viewport={{ once: true }}
           >
             <div className="max-w-7xl mx-auto px-4">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {brothers.map((brother, index) => (
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {advisors.map((advisor, index) => (
                   <motion.div
-                    key={brother.id}
+                    key={advisor.id}
                     className="relative group cursor-pointer overflow-hidden"
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -291,34 +207,37 @@ const MeetTheBrothers = () => {
                       delay: index * 0.1,
                     }}
                     viewport={{ once: true }}
-                    onHoverStart={() => setHoveredBrother(brother.id)}
-                    onHoverEnd={() => setHoveredBrother(null)}
+                    onHoverStart={() => setHoveredAdvisor(advisor.id)}
+                    onHoverEnd={() => setHoveredAdvisor(null)}
                   >
                     <div className="aspect-[3/4] relative">
                       <img
-                        src={brother.image}
-                        alt={brother.name}
+                        src={advisor.image}
+                        alt={advisor.name}
                         className="w-full h-full object-cover"
                       />
 
-                      {/* Crossing Semester Badge */}
+                      {/* Position Badge */}
                       <div className="absolute top-4 right-4 bg-black/80 text-yellow-400 px-3 py-1 rounded text-sm backdrop-blur-sm border border-yellow-400/30">
-                        {brother.crossingSemester}
+                        {advisor.position}
                       </div>
 
                       {/* Hover overlay */}
                       <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
                         <h3 className="text-yellow-400 font-semibold text-xl mb-2 font-cinzel">
-                          {brother.name}
+                          {advisor.name}
                         </h3>
-                        <p className="text-white text-sm mb-4">
-                          {brother.major}
+                        <p className="text-white text-sm mb-2">
+                          {advisor.title}
+                        </p>
+                        <p className="text-gray-300 text-xs mb-4">
+                          {advisor.organization}
                         </p>
                         <Link
-                          to={`/brother/${brother.id}`}
+                          to={`/advisor/${advisor.id}`}
                           className="bg-yellow-400 text-black px-6 py-2 text-sm font-medium hover:bg-yellow-300 transition-colors duration-200 rounded"
                         >
-                          View More
+                          Learn More
                         </Link>
                       </div>
                     </div>
@@ -328,7 +247,7 @@ const MeetTheBrothers = () => {
             </div>
           </motion.section>
 
-          {/* Legacy Statement Section */}
+          {/* Wisdom & Guidance Section */}
           <motion.section
             className="py-20 bg-gradient-to-br from-black via-gray-900/30 to-black relative overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
@@ -355,7 +274,7 @@ const MeetTheBrothers = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  Brotherhood Beyond Boundaries
+                  Wisdom Through Experience
                 </motion.h2>
 
                 <motion.p
@@ -365,11 +284,12 @@ const MeetTheBrothers = () => {
                   transition={{ duration: 0.8, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  Our brotherhood extends beyond the university years, creating
-                  lifelong bonds and professional networks that span
-                  generations. Each brother contributes to a legacy of
-                  excellence, service, and leadership that continues to inspire
-                  future generations.
+                  Our advisors bring decades of professional experience,
+                  academic excellence, and fraternal wisdom to guide our
+                  chapter. They serve as mentors, role models, and champions of
+                  our mission to develop leaders who serve humanity. Their
+                  guidance ensures that our traditions remain strong while we
+                  continue to evolve and grow.
                 </motion.p>
 
                 <motion.div
@@ -384,7 +304,7 @@ const MeetTheBrothers = () => {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Join Our Brotherhood
+                    Contact Our Advisors
                   </motion.button>
                   <motion.button
                     className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 font-cinzel"
@@ -404,4 +324,4 @@ const MeetTheBrothers = () => {
   );
 };
 
-export default MeetTheBrothers;
+export default Advisors;
