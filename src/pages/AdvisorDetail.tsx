@@ -111,7 +111,7 @@ const AdvisorDetail = () => {
       ],
       hometown: "Jonesboro, Arkansas",
       organizations: ["Alpha Phi Alpha Fraternity, Inc."],
-      initiatedChapter: "Theta Upsilon",
+      initiatedChapter: "Mu Omicron Lambda",
       currentChapter: "Delta Xi Lambda",
       linkedin: "https://www.linkedin.com/in/brodrick-johnson-2294a9128",
       email: "bjohnson@athletics.ucf.edu",
