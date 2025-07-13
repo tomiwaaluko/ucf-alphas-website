@@ -1,7 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import { ArrowLeft, Linkedin, Mail, MapPin, BookOpen } from "lucide-react";
+import {
+  ArrowLeft,
+  Linkedin,
+  Mail,
+  MapPin,
+  BookOpen,
+  Building,
+} from "lucide-react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -33,6 +40,7 @@ const BrotherDetail = () => {
     email?: string;
     achievements: string[];
     quote: string;
+    organizations: string[];
   }
 
   const brotherData: { [key: string]: BrotherData } = {
@@ -42,7 +50,7 @@ const BrotherDetail = () => {
       position: "Active Member",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face",
-      bio: "Tomiwa is a Computer Engineering major who brings innovative thinking and technical expertise to our chapter. As one of the Spring 2022 line brothers, he has been instrumental in developing our chapter's digital presence and technological initiatives. He is passionate about using engineering solutions to solve real-world problems and mentors younger students in STEM fields.",
+      bio: "Tomiwa Aluko is a Computer Engineering major who brings innovative thinking and technical expertise to the chapter. As one of the Spring 2022 line brothers, he has been instrumental in developing the chapter's digital presence and technological initiatives.\n\nHe is passionate about using engineering solutions to solve real-world problems and actively mentors younger students in STEM fields. Tomiwa's dedication to excellence and community service exemplifies the values of scholarship and leadership.",
       major: "Computer Engineering",
       year: "Senior",
       hometown: "Lagos, Nigeria",
@@ -60,57 +68,53 @@ const BrotherDetail = () => {
         "Engineering Excellence",
       ],
       quote: "Excellence is not a skill, it's an attitude.",
+      organizations: [],
     },
     "2": {
       name: "Nijel Beverly",
       crossingSemester: "Spring 2022",
-      position: "Active Member",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=600&fit=crop&crop=face",
-      bio: "Nijel is pursuing Business Administration Integrated Business and serves as a bridge between our chapter and the business community. His entrepreneurial spirit and leadership abilities make him a natural mentor for brothers interested in business ventures. He has organized several networking events and business workshops for the chapter.",
-      major: "Business Administration Integrated Business",
-      year: "Senior",
-      hometown: "Kingston, Jamaica",
-      interests: [
-        "Entrepreneurship",
-        "Investment Strategy",
-        "Public Speaking",
-        "Networking",
-      ],
-      linkedin: "https://linkedin.com/in/nijel-beverly",
-      email: "nijel.beverly@example.com",
+      position: "Graduate",
+      image: "/brothers/Nijel Beverly.jpg",
+      bio: "Nijel Beverly is a Milwaukee, Wisconsin native with a creative mind, a heart for people, and a hustle that never quits. He is a graduate of the University of Central Florida, where he earned his degree in Business Management while building a name for himself in sports media, digital content, and campus leadership.\n\nNijel has always believed in the power of storytelling — whether through short films, hype videos, or social campaigns. Over the years, he has interned with a sports agency and UCF Athletics' video team, managing everything from editing and shooting content to running social media and designing graphics. He has also served as Community Outreach Chair for the NAACP and led event coordination with student organizations like Knights of the Roundtable.\n\nOutside of work, Nijel loves documenting life, growing his skills in acting and visual storytelling through digital media, and staying grounded in his roots and faith.",
+      major: "Business Administration - Integrated Business",
+      year: "Graduate",
+      hometown: "Milwaukee, Wisconsin",
+      interests: ["Video editing and graphic design", "Acting", "Working out"],
+      linkedin: "https://www.linkedin.com/in/nijel-beverly-ab7451285",
+      email: "nijelbeverly@gmail.com",
       achievements: [
-        "Student Body President",
-        "Entrepreneur of the Year",
-        "Business Leadership",
+        "UCF Athletics editor",
+        "First Generation",
+        "Event of the Year as program coordinator (KORT)",
       ],
       quote:
-        "Leadership is about making others better as a result of your presence.",
+        "Our deepest fear is not that we are inadequate, but that we are powerful beyond measure.",
+      organizations: ["NAACP", "Knights of the Roundtable"],
     },
     "3": {
       name: "Abdul Ibrahim",
       crossingSemester: "Fall 2024",
-      position: "Neophyte",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=600&fit=crop&crop=face",
-      bio: "Abdul is a Science major who represents the newest generation of Alpha men. His dedication to academic excellence and scientific research exemplifies our fraternity's commitment to scholarship. He is actively involved in research projects and aims to pursue graduate studies in his field.",
-      major: "Science",
-      year: "Sophomore",
-      hometown: "Accra, Ghana",
-      interests: [
-        "Scientific Research",
-        "Laboratory Work",
-        "Academic Tutoring",
-        "Chess",
-      ],
-      linkedin: "https://linkedin.com/in/abdul-ibrahim",
-      email: "abdul.ibrahim@example.com",
+      position: "Active Member",
+      image: "/brothers/Abdul Ibrahim.PNG",
+      bio: "Abdul Ibrahim is a senior at the University of Central Florida majoring in Health Sciences on the pre-clinical track. Upon graduation, he aspires to become an Orthopedic Physician Associate. As a proud Nigerian, his cultural background has instilled in him values of discipline, perseverance, and integrity.\n\nAbdul is passionate about health and wellness, and he enjoys staying active through sports and regular exercise. He considers himself a dedicated, goal-oriented individual who values teamwork, lifelong learning, and service to others. His commitment to excellence is evident in his academic achievements and leadership roles within various organizations.",
+      major: "Health Sciences Pre-Clinical",
+      year: "Senior",
+      hometown: "Miami, Florida",
+      interests: ["Sports", "Exercising", "Gaming"],
+      linkedin: "https://www.linkedin.com/in/aibrahim0121",
+      email: "ab637481@ucf.edu",
       achievements: [
-        "Research Excellence",
-        "Academic Scholar",
-        "Scientific Innovation",
+        "Dean's List 5x",
+        "President's List 3x",
+        "UCF Chapter of SISTUHS INC. Sankofa Award for Health",
+        "Association of Pre-Physician Associates Honor Member 3x",
+        "UCF Section of NCNW Presidential Hall of Fame Award",
       ],
-      quote: "Science is the foundation of all human progress.",
+      quote: "It's either you got it or you don't",
+      organizations: [
+        "Black Men in Medicine (Former President and Charter Member)",
+        "Men of Integrity",
+      ],
     },
     "4": {
       name: "Corey Barnes Jr.",
@@ -118,7 +122,7 @@ const BrotherDetail = () => {
       position: "Neophyte",
       image:
         "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=600&fit=crop&crop=face",
-      bio: "Corey is a Mechanical Engineering major who brings technical innovation and problem-solving skills to our brotherhood. His passion for engineering design and sustainable technology aligns perfectly with our commitment to community service and progress.",
+      bio: "Corey Barnes Jr. is a Mechanical Engineering major who brings technical innovation and problem-solving skills to the brotherhood. His passion for engineering design and sustainable technology aligns perfectly with the fraternity's commitment to community service and progress.\n\nCorey's analytical mindset and dedication to environmental sustainability drive his academic pursuits and personal projects. He is known for his collaborative approach to engineering challenges and his commitment to developing solutions that benefit both the community and the environment.",
       major: "Mechanical Engineering",
       year: "Junior",
       hometown: "Birmingham, AL",
@@ -136,6 +140,7 @@ const BrotherDetail = () => {
         "Technical Excellence",
       ],
       quote: "Innovation distinguishes between a leader and a follower.",
+      organizations: [],
     },
     "5": {
       name: "Jacob Herrera",
@@ -143,7 +148,7 @@ const BrotherDetail = () => {
       position: "Neophyte",
       image:
         "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=500&h=600&fit=crop&crop=face",
-      bio: "Jacob is a Mechanical Engineering major known for his collaborative approach to problem-solving and his commitment to mentoring fellow students. His technical skills and leadership qualities make him a valuable addition to our chapter.",
+      bio: "Jacob Herrera is a Mechanical Engineering major known for his collaborative approach to problem-solving and his commitment to mentoring fellow students. His technical skills and leadership qualities make him a valuable addition to the chapter.\n\nJacob excels in project management and team leadership, consistently demonstrating excellence in engineering ethics and technical execution. His dedication to helping others succeed, combined with his innovative thinking, has made him a respected peer and mentor within the engineering community.",
       major: "Mechanical Engineering",
       year: "Junior",
       hometown: "San Antonio, TX",
@@ -161,6 +166,7 @@ const BrotherDetail = () => {
         "Technical Mentorship",
       ],
       quote: "Engineering is the art of making the impossible possible.",
+      organizations: [],
     },
     "6": {
       name: "Adams Brown Jr.",
@@ -168,7 +174,7 @@ const BrotherDetail = () => {
       position: "Neophyte",
       image:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=600&fit=crop&crop=face",
-      bio: "Adams is studying Integrated Business and brings a strategic mindset to our chapter's operations. His analytical skills and business acumen have been valuable in planning chapter events and financial initiatives.",
+      bio: "Adams Brown Jr. is studying Integrated Business and brings a strategic mindset to the chapter's operations. His analytical skills and business acumen have been valuable in planning chapter events and financial initiatives.\n\nAdams demonstrates exceptional leadership potential through his understanding of business strategy and financial analysis. His commitment to professional development and his ability to think strategically about organizational growth make him an asset to any team or project he joins.",
       major: "Integrated Business",
       year: "Sophomore",
       hometown: "Charlotte, NC",
@@ -187,106 +193,93 @@ const BrotherDetail = () => {
       ],
       quote:
         "Success in business requires training and discipline and hard work.",
+      organizations: [],
     },
     "7": {
       name: "Benjamin Blocker",
       crossingSemester: "Fall 2024",
-      position: "Neophyte",
-      image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=600&fit=crop&crop=face",
-      bio: "Benjamin is a Kinesiology major who promotes health and wellness throughout our chapter and community. His expertise in human movement and fitness has made him a go-to resource for brothers seeking to improve their physical and mental well-being.",
+      position: "Active Member",
+      image: "/brothers/Benjamin Blocker.jpeg",
+      bio: "Benjamin Blocker is a Kinesiology major from Jacksonville, Florida, with a passion for health, fitness, and helping others achieve their wellness goals. He believes that physical activity and proper nutrition are key to living a fulfilling life, and he enjoys sharing this knowledge with others.\n\nOutside of academics, Benjamin loves working out, playing sports, and staying active. He also has a strong interest in music and enjoys discovering new artists and genres. His goal is to become a physical therapist and help people recover from injuries while promoting healthy lifestyles.\n\nBenjamin is committed to excellence in everything he does and always strives to be a positive influence in his community and among his brothers.",
       major: "Kinesiology",
       year: "Junior",
-      hometown: "Memphis, TN",
+      hometown: "Jacksonville, Florida",
       interests: [
-        "Health & Wellness",
-        "Athletic Training",
-        "Community Fitness Programs",
-        "Nutrition",
+        "Working out",
+        "Playing sports",
+        "Music",
+        "Health and wellness",
       ],
-      linkedin: "https://linkedin.com/in/benjamin-blocker",
-      email: "benjamin.blocker@example.com",
+      linkedin: "https://www.linkedin.com/in/benjamin-blocker-59698b266/",
+      email: "be991046@ucf.edu",
       achievements: [
-        "Health & Wellness Advocate",
-        "Athletic Excellence",
-        "Community Health Leader",
+        "Dean's List",
+        "Kinesiology Program Excellence",
+        "Community Health Advocate",
       ],
-      quote: "Movement is medicine for creating change in all aspects of life.",
+      quote: "Excellence is not a skill, it's an attitude.",
+      organizations: [
+        "Black Undergraduate Kinesiology Association (Former President, Former Membership Chair, and charter member)",
+        "Black Men in Medicine (Former Fundraising Chair and Former Parliamentarian)",
+      ],
     },
     "8": {
       name: "Jevaughn Morris",
       crossingSemester: "Fall 2024",
-      position: "Neophyte",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face",
-      bio: "Jevaughn is an Information Technology major who manages our chapter's digital infrastructure and online presence. His technical skills and innovative approach to problem-solving have modernized many of our operational processes.",
+      position: "Graduate",
+      image: "/brothers/Jevaughn Morris.jpg",
+      bio: "Jevaughn Morris is a graduating senior majoring in Information Technology. He enjoys exploring different areas of technology such as web development, data analytics, and cybersecurity, working on personal projects outside the classroom whenever possible.\n\nWhether experimenting with new tools or solving problems through code, Jevaughn finds practical ways to apply what he learns. Alongside his interest in technology, he is also learning photo editing and graphic design, which allows him to tap into his creative side.\n\nJevaughn finds joy in giving back through community service, especially when working with local communities and mentoring the younger generation. In his free time, he enjoys spending time with friends and is always open to trying something new.",
       major: "Information Technology",
-      year: "Sophomore",
-      hometown: "Kingston, Jamaica",
-      interests: [
-        "Cybersecurity",
-        "Web Development",
-        "Digital Innovation",
-        "Gaming",
-      ],
-      linkedin: "https://linkedin.com/in/jevaughn-morris",
-      email: "jevaughn.morris@example.com",
+      year: "Graduate",
+      hometown: "Coral Springs, FL",
+      interests: ["Sports", "Video Games", "Cooking", "Music", "Fitness"],
+      linkedin: "https://www.linkedin.com/in/jevmorris2/",
+      email: "je280952@ucf.edu",
       achievements: [
-        "Technology Innovation",
-        "Digital Solutions",
-        "IT Excellence",
+        "Spring '24 Deans List",
+        "2025 NSBE Communication Zone Committee Member of the Year",
       ],
-      quote: "Technology is best when it brings people together.",
+      quote: "Never put off until tomorrow what can be done today",
+      organizations: ["NSBE"],
     },
     "9": {
       name: "Toluwani Aluko",
       crossingSemester: "Fall 2024",
-      position: "Neophyte",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=600&fit=crop&crop=face",
-      bio: "Toluwani is pursuing Biology (Pre-Med) with aspirations of becoming a physician. His commitment to healthcare and service to others embodies the fraternity's principles. He volunteers at local clinics and organizes health awareness events in the community.",
-      major: "Biology (Pre-Med)",
+      position: "Active Member",
+      image: "/brothers/Toluwani Aluko.jpg",
+      bio: "Toluwani Aluko is a Nigerian-American Biology major on the pre-health track at the University of Central Florida, with aspirations of becoming a dentist. He is passionate about healthcare and committed to making a positive impact in underserved communities.\n\nOutside of academics, Toluwani enjoys reading and playing basketball, which help him stay balanced and focused. He is always eager to learn and grow, consistently demonstrating dedication to both his academic pursuits and personal development.",
+      major: "Biology (Pre-Health)",
       year: "Junior",
-      hometown: "Ibadan, Nigeria",
-      interests: [
-        "Medical Research",
-        "Community Health",
-        "Volunteer Medicine",
-        "Tennis",
-      ],
-      linkedin: "https://linkedin.com/in/toluwani-aluko",
-      email: "toluwani.aluko@example.com",
+      hometown: "Miami, Florida",
+      interests: ["Reading", "Basketball"],
+      linkedin: "www.linkedin.com/in/toluwani-aluko-909997306",
+      email: "ol847219@ucf.edu",
       achievements: [
-        "Pre-Med Excellence",
-        "Research Scholar",
-        "Future Healthcare Leader",
+        "National Award of the Conrad Challenge Innovator Certificate",
+        "Congresswoman Ileana Ros-Lehtinen Congressional Award for Community Service",
+        "City of West Park Commendation of Community Service",
       ],
-      quote: "Medicine is not only a science; it is also an art.",
+      quote: "The future belongs to those who prepare for it today",
+      organizations: [],
     },
     "10": {
       name: "Treylon Chukes",
       crossingSemester: "Fall 2024",
       position: "Chapter President",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=600&fit=crop&crop=face",
-      bio: "Treylon serves as our Chapter President and is a Biology major with a passion for scientific research and leadership. His vision and dedication have guided our chapter through significant growth and achievement. He balances academic excellence with exceptional leadership skills.",
-      major: "Biology",
-      year: "Senior",
-      hometown: "New Orleans, LA",
-      interests: [
-        "Biological Research",
-        "Leadership Development",
-        "Community Outreach",
-        "Music",
-      ],
-      linkedin: "https://linkedin.com/in/treylon-chukes",
-      email: "treylon.chukes@example.com",
+      image: "/brothers/Treylon Chukes.jpeg",
+      bio: "Treylon Chukes is a dedicated and motivated individual with a strong passion for medicine and helping others. He is an undergraduate student at UCF majoring in Biology on the Pre-Health track, and he has had the opportunity to grow through various leadership and academic roles.\n\nTreylon serves as the Chapter President of the Xi Iota Chapter and has also served as a charter member and former First Vice President of the Black Men in Medicine UCF Chapter. These experiences have helped him develop a sense of discipline, empathy, and purpose, especially as he works toward a career in anesthesia.\n\nOutside of academics, Treylon enjoys working on mechanical projects, and he always looks for ways to give back to his community and grow as a leader.",
+      major: "Biology Pre-Health",
+      year: "Junior",
+      hometown: "Quincy, FL/ USA",
+      interests: [],
+      linkedin: "https://www.linkedin.com/in/tchukes",
+      email: "tr319165@ucf.edu",
       achievements: [
-        "Scientific Research",
-        "Academic Excellence",
-        "Biology Innovation",
+        "Chapter President of Xi Iota Chapter",
+        "Charter member and former First Vice President of Black Men in Medicine UCF Chapter",
       ],
-      quote: "Biology is the most powerful technology ever created.",
+      quote: "It's not over when you fail, it's over when you quit",
+      organizations: ["Black Men in Medicine UCF Chapter"],
     },
   };
   const brother = brotherData[id || "1"];
@@ -634,6 +627,23 @@ const BrotherDetail = () => {
                     </div>
                   </div>
 
+                  {/* Organizations */}
+                  <div className="bg-gradient-to-br from-gray-900/80 to-black/80 p-5 rounded-2xl border border-yellow-400/20 backdrop-blur-sm">
+                    <div className="flex items-center mb-3">
+                      <Building className="h-5 w-5 text-yellow-400 mr-2" />
+                      <h3 className="text-lg font-bold text-yellow-400 font-cinzel">
+                        Organizations
+                      </h3>
+                    </div>
+                    <div className="space-y-2">
+                      {brother.organizations.map((org, index) => (
+                        <div key={index}>
+                          <p className="text-white text-sm">{org}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Interests */}
                   <div className="bg-gradient-to-br from-gray-900/80 to-black/80 p-5 rounded-2xl border border-yellow-400/20 backdrop-blur-sm">
                     <h3 className="text-lg font-bold text-yellow-400 mb-3 font-cinzel">
@@ -660,77 +670,6 @@ const BrotherDetail = () => {
                   </div>
                 </motion.div>
               </div>
-            </div>
-          </motion.section>
-          {/* Call to Action - Simplified */}
-          <motion.section
-            className="py-20 bg-gradient-to-br from-black via-gray-900/30 to-black relative overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="max-w-4xl mx-auto px-4 text-center">
-              <motion.div
-                className="bg-gradient-to-br from-gray-900/80 to-black/80 p-12 rounded-3xl border border-yellow-400/30 backdrop-blur-sm relative overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Decorative elements */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-yellow-400/50"></div>
-                <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-yellow-400/50"></div>
-                <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-yellow-400/50"></div>
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-yellow-400/50"></div>
-
-                <motion.h2
-                  className="text-4xl md:text-5xl font-bold text-yellow-400 mb-8 font-cinzel"
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  Join Our Brotherhood
-                </motion.h2>
-
-                <motion.p
-                  className="text-xl text-gray-300 mb-8 leading-relaxed"
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  Interested in becoming part of our brotherhood? Learn more
-                  about opportunities to join the Xi Iota Chapter of Alpha Phi
-                  Alpha Fraternity, Inc.
-                </motion.p>
-
-                <motion.div
-                  className="flex flex-col sm:flex-row gap-4 justify-center"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.button
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-yellow-400/40 transition-all duration-300 font-cinzel"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Learn About Membership
-                  </motion.button>
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Link
-                      to="/meet-the-brothers"
-                      className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 font-cinzel inline-block"
-                    >
-                      Meet Other Brothers
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
             </div>
           </motion.section>
         </div>

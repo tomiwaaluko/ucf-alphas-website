@@ -11,7 +11,7 @@ const ChapterHistory = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-yellow-400 mb-8">
               Chapter History
             </h1>
-            <div className="text-gray-300 space-y-6">
+            {/* <div className="text-gray-300 space-y-6">
               {" "}
               <p className="text-lg">
                 The Xi Iota Chapter of Alpha Phi Alpha Fraternity, Inc. was
@@ -40,7 +40,7 @@ const ChapterHistory = () => {
                 Mankind through our programmatic efforts, community involvement,
                 and service and philanthropic initiatives.
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
