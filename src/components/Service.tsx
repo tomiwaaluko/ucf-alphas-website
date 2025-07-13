@@ -10,7 +10,6 @@ import {
   Pause,
 } from "lucide-react";
 import { motion } from "framer-motion";
-// import InstagramFeed from "./InstagramFeed"; // Temporarily disabled
 
 const Service = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -389,9 +388,6 @@ const Service = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Instagram Feed Section - Temporarily disabled */}
-      {/* <InstagramFeed /> */}
     </section>
   );
 };
