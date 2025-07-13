@@ -54,35 +54,49 @@ const Advisors = () => {
     },
     {
       id: 3,
-      name: "Dr. James Thompson",
-      position: "Academic Advisor",
-      title: "Dean of Student Affairs",
-      organization: "University of North Texas",
+      name: "Terrell Alexander",
+      position: "Advisor",
+      title: "Sergeant, Community Partnership Unit",
+      organization: "UCF Police Department",
       achievements: [
-        "Academic Excellence Leadership",
-        "Student Success Advocate",
-        "Higher Education Innovation",
+        "Double Knight - UCF Graduate",
+        "B.S. Public Administration (2018)",
+        "Master's in Management (PMSM) (Spring 2023)",
+        "Orange County Sheriff's Office Experience",
       ],
-      quote:
-        "Education is the most powerful weapon which you can use to change the world.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
+      quote: "The time is always right to do what is right.",
+      image: "/advisors/img_8257 - Terrell Alexander.jpeg",
     },
     {
       id: 4,
-      name: "Mr. Charles Davis",
-      position: "Alumni Relations Advisor",
-      title: "Corporate Executive",
-      organization: "Fortune 500 Company",
+      name: "Gedeon Richemond",
+      position: "Advisor",
+      title: "Cloud Engineer",
+      organization: "Technology Industry",
       achievements: [
-        "Corporate Leadership Excellence",
-        "Alumni Network Development",
-        "Professional Mentorship",
+        "B.S. Information Technology - UCF",
+        "First-Generation Haitian American",
+        "Technology Innovation",
+        "Brotherhood & Manly Deeds Advocate",
       ],
       quote:
-        "The strength of the pack is the wolf, and the strength of the wolf is the pack.",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop&crop=face",
+        "Values Brotherhood and Manly Deeds when it comes to Alpha and strives to continue to uphold the vision of our Jewels every day.",
+      image: "/advisors/headshot - Gedeon Richemond.jpg",
+    },
+    {
+      id: 5,
+      name: "Daniel Helligar",
+      position: "Advisor",
+      title: "Attorney",
+      organization: "Legal Practice",
+      achievements: [
+        "Legal Expertise",
+        "Professional Mentorship",
+        "Alumni Leadership",
+      ],
+      quote:
+        "Dedicated to providing legal guidance and professional mentorship to our brothers.",
+      image: "/advisors/Helligar_Daniel_bio_print - Daniel Helligar.jpeg",
     },
   ];
 
@@ -153,7 +167,7 @@ const Advisors = () => {
                   Meet the <span className="text-white">Advisors</span>
                 </motion.h1>
 
-                <motion.div
+                {/* <motion.div
                   className="mb-8"
                   initial={{ opacity: 0 }}
                   animate={isHeroInView ? { opacity: 1 } : { opacity: 0 }}
@@ -163,7 +177,7 @@ const Advisors = () => {
                   <span className="inline-block bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 px-6 py-2 rounded-full border border-yellow-400/30 backdrop-blur-sm text-yellow-400 font-semibold">
                     Guidance • Wisdom • Leadership
                   </span>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.p
                   className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
@@ -244,77 +258,6 @@ const Advisors = () => {
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </motion.section>
-
-          {/* Wisdom & Guidance Section */}
-          <motion.section
-            className="py-20 bg-gradient-to-br from-black via-gray-900/30 to-black relative overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="max-w-4xl mx-auto px-4 text-center">
-              <motion.div
-                className="bg-gradient-to-br from-gray-900/80 to-black/80 p-12 md:p-16 rounded-3xl border border-yellow-400/30 backdrop-blur-sm relative overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Decorative elements */}
-                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-yellow-400/50"></div>
-                <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-yellow-400/50"></div>
-                <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-yellow-400/50"></div>
-                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-yellow-400/50"></div>
-
-                <motion.h2
-                  className="text-4xl md:text-5xl font-bold text-yellow-400 mb-8 font-cinzel"
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  Wisdom Through Experience
-                </motion.h2>
-
-                <motion.p
-                  className="text-xl text-gray-300 mb-8 leading-relaxed"
-                  initial={{ y: 30, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  Our advisors bring decades of professional experience,
-                  academic excellence, and fraternal wisdom to guide our
-                  chapter. They serve as mentors, role models, and champions of
-                  our mission to develop leaders who serve humanity. Their
-                  guidance ensures that our traditions remain strong while we
-                  continue to evolve and grow.
-                </motion.p>
-
-                <motion.div
-                  className="flex flex-col sm:flex-row gap-4 justify-center"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.button
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-yellow-400/40 transition-all duration-300 font-cinzel"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Contact Our Advisors
-                  </motion.button>
-                  <motion.button
-                    className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 font-cinzel"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Learn More
-                  </motion.button>
-                </motion.div>
-              </motion.div>
             </div>
           </motion.section>
         </div>

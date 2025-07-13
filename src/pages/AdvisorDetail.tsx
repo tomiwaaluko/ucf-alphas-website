@@ -125,64 +125,64 @@ const AdvisorDetail = () => {
         "Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars, to change the world.",
     },
     "3": {
-      name: "Dr. James Thompson",
-      position: "Academic Advisor",
-      title: "Dean of Student Affairs",
-      organization: "University of North Texas",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face",
-      bio: "Dr. James Thompson serves as the Academic Advisor, focusing on the educational success and personal development of chapter members. As Dean of Student Affairs at UNT, he brings a deep understanding of higher education systems and student support services. His commitment to academic excellence and holistic student development aligns perfectly with Alpha Phi Alpha's emphasis on scholarship. Dr. Thompson works closely with brothers to ensure they maintain high academic standards while actively participating in fraternal activities and community service.",
-      yearsOfService: "Spring 2018",
-      education: "Ed.D. in Higher Education Administration, Harvard University",
-      specialties: [
-        "Academic Success Coaching",
-        "Student Development",
-        "Higher Education Policy",
-        "Leadership Education",
-      ],
-      hometown: "Dallas, Texas",
+      name: "Terrell Alexander",
+      position: "Advisor",
+      title: "Sergeant, Community Partnership Unit",
+      organization: "UCF Police Department",
+      image: "/advisors/img_8257 - Terrell Alexander.jpeg",
+      bio: "Brother Terrell Alexander's story reflects determination, resilience, and a strong commitment to learning and growth, embodying the essence of being a lifelong learner.\n\nBefore joining UCF, Brother Alexander worked at the Orange County Sheriff's Office, where he enjoyed his role but felt a growing desire for further education. Seeking opportunities to serve and learn, he decided to join the UCF Police Department.\n\nAs a double Knight, Brother Alexander has achieved a rare feat by earning his undergraduate degree in Public Administration in 2018 and a Master's in Management (PMSM) in Spring 2023. His journey, filled with challenges, has shaped him into the accomplished individual he is today.\n\nBrother Alexander currently serves as Sergeant of the Community Partnership Unit, which is responsible for recruiting and overseeing public safety internships, Mighty Knights Self-Defense courses, and all public safety community outreach initiatives. His dedication to community service and education makes him an invaluable advisor to the Xi Iota Chapter.",
+      yearsOfService: "Spring 2023",
+      education:
+        "Master's in Management (PMSM), Spring 2023\nBachelor's in Public Administration, 2018",
+      specialties: ["Fishing", "Learning and being creative"],
+      hometown: "Auburndale, Florida",
       organizations: ["Alpha Phi Alpha Fraternity, Inc."],
-      initiatedChapter: "Beta Delta Lambda",
-      currentChapter: "Beta Delta Lambda",
-      linkedin: "https://linkedin.com/in/james-thompson-edd",
-      email: "james.thompson@unt.edu",
-      achievements: [
-        "Academic Excellence Leadership",
-        "Student Success Advocate",
-        "Higher Education Innovation",
-      ],
-      quote:
-        "Education is the most powerful weapon which you can use to change the world.",
+      initiatedChapter: "Delta Xi Lambda",
+      currentChapter: "Delta Xi Lambda",
+      linkedin:
+        "https://www.linkedin.com/in/terrell-a-alexander-msm-hr-b19085230",
+      email: "Bromasteratarms@gmail.com",
+      achievements: ["Double Knight - UCF Graduate"],
+      quote: "The time is always right to do what is right.",
     },
     "4": {
-      name: "Mr. Charles Davis",
-      position: "Alumni Relations Advisor",
-      title: "Corporate Executive",
-      organization: "Fortune 500 Company",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=600&fit=crop&crop=face",
-      bio: "Mr. Charles Davis serves as the Alumni Relations Advisor, maintaining strong connections between current brothers and the broader Alpha Phi Alpha community. With his extensive corporate background and leadership experience, he facilitates networking opportunities and mentorship programs that bridge the gap between college and career success. Charles is instrumental in organizing alumni events and creating pathways for professional development. His commitment to lifelong brotherhood ensures that Xi Iota Chapter members remain connected to their fraternal family throughout their careers.",
-      yearsOfService: "Fall 2020",
-      education: "MBA in Management, Northwestern Kellogg",
-      specialties: [
-        "Alumni Engagement",
-        "Corporate Relations",
-        "Professional Mentorship",
-        "Network Development",
-      ],
-      hometown: "Chicago, Illinois",
-      organizations: ["Alpha Phi Alpha Fraternity, Inc."],
-      initiatedChapter: "Beta Phi Lambda",
-      currentChapter: "Beta Phi Lambda",
-      linkedin: "https://linkedin.com/in/charles-davis-executive",
-      email: "charles.davis@fortune500.com",
-      achievements: [
-        "Corporate Leadership Excellence",
-        "Alumni Network Development",
-        "Professional Mentorship",
-      ],
-      quote:
-        "The strength of the pack is the wolf, and the strength of the wolf is the pack.",
+      name: "Gedeon Richemond",
+      position: "Advisor",
+      title: "Cloud Engineer",
+      organization: "Kraft & Kennedy, Inc.",
+      image: "/advisors/headshot - Gedeon Richemond.jpg",
+      bio: "Brother Gedeon Richemond was born in Sommerville, Massachusetts and raised in Bradenton, Florida alongside his four sisters as first-generation Haitian Americans. Brother Richemond is a graduate from the University of Central Florida with a Bachelor of Science in Information Technology.\n\nAs a kid, he was fascinated with Technology and often taking apart devices or learning more about it using his Windows XP computer. He is an avid Boston sports fan from the Boston Red Sox, Boston Celtics, New England Patriots, etc.\n\nBrother Richemond values Brotherhood and Manly Deeds when it comes to Alpha and strives to continue to uphold the vision of our Jewels every day. In his free time, he enjoys working out, going to Disney World or Universal with his fiancée, and enjoying time with family and friends.\n\nCurrently working as a Cloud Engineer in the technology industry, Brother Richemond brings his passion for technology and innovation to his advisory role with the Xi Iota Chapter.",
+      yearsOfService: "Spring 2017",
+      education:
+        "Bachelor of Science in Information Technology, University of Central Florida",
+      specialties: [],
+      hometown: "Bradenton, Florida",
+      organizations: [],
+      initiatedChapter: "Xi Iota",
+      currentChapter: "Delta Xi Lambda",
+      linkedin: "https://www.linkedin.com/in/gedeonrichemond/",
+      email: "",
+      achievements: [],
+      quote: "",
+    },
+    "5": {
+      name: "Daniel Helligar",
+      position: "Advisor",
+      title: "Attorney",
+      organization: "",
+      image: "/advisors/Helligar_Daniel_bio_print - Daniel Helligar.jpeg",
+      bio: "",
+      yearsOfService: "Spring 2017",
+      education: "",
+      specialties: [],
+      hometown: "Kissimmee, Florida",
+      organizations: [],
+      initiatedChapter: "Xi Iota",
+      currentChapter: "Delta Xi Lambda",
+      linkedin: "",
+      email: "",
+      achievements: [],
+      quote: "",
     },
   };
 
@@ -321,17 +321,19 @@ const AdvisorDetail = () => {
                   {advisor.name}
                 </motion.h1>
 
-                <motion.div
-                  className="mb-6"
-                  initial={{ opacity: 0 }}
-                  animate={isHeroInView ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                >
-                  <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-4"></div>
-                  <p className="text-lg text-gray-300 italic max-w-2xl mx-auto">
-                    "{advisor.quote}"
-                  </p>
-                </motion.div>
+                {advisor.quote && (
+                  <motion.div
+                    className="mb-6"
+                    initial={{ opacity: 0 }}
+                    animate={isHeroInView ? { opacity: 1 } : { opacity: 0 }}
+                    transition={{ duration: 1, delay: 0.4 }}
+                  >
+                    <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-4"></div>
+                    <p className="text-lg text-gray-300 italic max-w-2xl mx-auto">
+                      "{advisor.quote}"
+                    </p>
+                  </motion.div>
+                )}
 
                 {/* Position and Organization Badges */}
                 <motion.div
