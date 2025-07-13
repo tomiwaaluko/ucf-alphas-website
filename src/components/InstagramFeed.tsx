@@ -256,7 +256,7 @@ const InstagramFeed = () => {
           </div>
 
           <motion.a
-            href="https://instagram.com/your-chapter-handle" // Replace with your actual Instagram handle
+            href="https://instagram.com/xiiotaalphaphibeta"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-pink-600 hover:to-purple-700 transition-all transform hover:scale-105"
@@ -264,7 +264,7 @@ const InstagramFeed = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Instagram className="w-5 h-5 mr-2" />
-            Follow @XiIotaAPA
+            Follow @xiiotaalphaphibeta
             <ExternalLink className="w-4 h-4 ml-2" />
           </motion.a>
         </motion.div>
@@ -368,7 +368,7 @@ const InstagramFeed = () => {
           viewport={{ once: true }}
         >
           <motion.a
-            href="https://instagram.com/your-chapter-handle" // Replace with your actual Instagram handle
+            href="https://instagram.com/xiiotaalphaphibeta"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:from-pink-600 hover:to-purple-700 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/30"

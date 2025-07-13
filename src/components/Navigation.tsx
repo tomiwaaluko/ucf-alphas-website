@@ -133,6 +133,12 @@ const Navigation = () => {
                 Service
               </Link>
               <Link
+                to="/social"
+                className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm font-cinzel"
+              >
+                Social
+              </Link>
+              <Link
                 to="/contact"
                 className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm font-cinzel"
               >
@@ -284,6 +290,13 @@ const Navigation = () => {
               className="block text-white hover:text-yellow-400 px-3 py-2"
             >
               Service
+            </Link>
+            <Link
+              to="/social"
+              onClick={() => setIsOpen(false)}
+              className="block text-white hover:text-yellow-400 px-3 py-2"
+            >
+              Social
             </Link>
             <Link
               to="/contact"
