@@ -23,15 +23,18 @@ const MeetTheBrothers = () => {
       name: "Tomiwa Aluko",
       crossingSemester: "Spring 2022",
       lineNumber: "#1",
-      major: "Computer Engineering",
+      major: "Computer Engineering, Minor in Technology Entrepreneurship",
       achievements: [
-        "Dean's List",
-        "Tech Innovation Award",
-        "Engineering Excellence",
+        "Assistant East Area Director of the Florida Federation of Alpha Chapters (2024 - Present)",
+        "Senator for the UCF Chapter of the National Society of Black Engineers (2024 - Present)",
+        "President of the Xi Iota Chapter (2023 - 2024)",
+        "Young Pillar Scholarship, Miami-Dade County Black Affairs Advisory Board (2025)",
+        "Outstanding Officer of the Year, UCF Knights of the Roundtable (2024)",
+        "Dean's List, College of Engineering and Computer Science, UCF (2024, 2025)",
       ],
-      quote: "Excellence is not a skill, it's an attitude.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
+      quote:
+        "Knowledge can be communicated, but not wisdom. One can find it, live it, be fortified by it, do wonders through it, but one cannot communicate and teach it.",
+      image: "/brothers/Tomiwa Aluko.jpg",
     },
     {
       id: 2,

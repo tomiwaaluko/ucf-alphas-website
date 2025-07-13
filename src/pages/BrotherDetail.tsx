@@ -48,27 +48,51 @@ const BrotherDetail = () => {
       name: "Tomiwa Aluko",
       crossingSemester: "Spring 2022",
       position: "Active Member",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face",
-      bio: "Tomiwa Aluko is a Computer Engineering major who brings innovative thinking and technical expertise to the chapter. As one of the Spring 2022 line brothers, he has been instrumental in developing the chapter's digital presence and technological initiatives.\n\nHe is passionate about using engineering solutions to solve real-world problems and actively mentors younger students in STEM fields. Tomiwa's dedication to excellence and community service exemplifies the values of scholarship and leadership.",
-      major: "Computer Engineering",
+      image: "/brothers/Tomiwa Aluko.jpg",
+      bio: [
+        "Tomiwa Aluko is a Computer Engineering major at the University of Central Florida with a minor in Technology Entrepreneurship. Driven by a passion for technology and community leadership, he blends technical expertise with a deep-rooted commitment to service and mentorship.",
+        'Born and raised in Miami, FL, Tomiwa is a first-generation Nigerian-American whose values are grounded in faith, discipline, and education. From a young age, he was drawn to service and community action—beginning in elementary school through Joshua\'s Heart Foundation, where he participated in food and supply distributions for underserved families. These early experiences instilled in him a strong sense of empathy and civic responsibility. His interest in technology emerged alongside this, as he became the go-to "tech kid" in his family—building computers, exploring software tools, and more.',
+        "In high school, Tomiwa enrolled in a STEM-focused magnet program, where he began to refine his academic interests in engineering while also embracing leadership. Recognizing a need for cultural representation and support among Black students, he informally organized a peer network to promote inclusivity, representation, and mentorship. His involvement in organizations like 5000 Role Models of Excellence and 100 Black Men of America further shaped his sense of purpose as a servant-leader.",
+        "At UCF, Tomiwa immediately immersed himself in the campus community. He joined the National Society of Black Engineers (NSBE), where he later became a Senator, helping coordinate national conventions and overseeing programs to support engineering students of color. He also joined the Xi Iota Chapter—a decision inspired by his father, a decades-long member of the fraternity. Rising through the ranks, Tomiwa has served as Chapter Secretary, Chapter President, and now the Assistant East Area Director. In his roles, he's spearheaded initiatives such as youth mentorship programs, on campus educational and social events, and educational outreach events in collaboration with local graduate chapters.",
+        "Mentorship is a core part of Tomiwa's identity. He currently mentors students through NSBE and the Young Men of Distinction program, offering guidance on academics, career planning, and personal growth. He has also led multiple workshops teaching peers how to build ePortfolios, optimize LinkedIn profiles, and present themselves professionally—turning a gap in student resources into an annual tradition.",
+        "With a vision for combining technology and service, Tomiwa aspires to become a software engineering leader in the tech industry—whether through launching his own startup or driving innovation in a mission-driven company. Through every step of his journey, he remains committed to uplifting others, paying forward the mentorship he received, and representing his culture with pride and excellence.",
+      ].join("\n\n"),
+      major: "Computer Engineering, Minor in Technology Entrepreneurship",
       year: "Senior",
-      hometown: "Lagos, Nigeria",
+      hometown: "Miami, FL",
       interests: [
-        "Software Engineering",
-        "Robotics",
-        "Mentoring",
-        "Community Tech Projects",
+        "Gaming",
+        "Anime",
+        "Computer Building",
+        "Sports",
+        "Stocks/Crypto",
+        "Engineering new ideas",
       ],
-      linkedin: "https://linkedin.com/in/tomiwa-aluko",
-      email: "tomiwa.aluko@example.com",
+      linkedin: "https://www.linkedin.com/in/olatomiwaaluko/",
+      email: "ol034547@ucf.edu",
       achievements: [
-        "Dean's List",
-        "Tech Innovation Award",
-        "Engineering Excellence",
+        "Assistant East Area Director of the Florida Federation of Alpha Chapters (2024 - Present)",
+        "Senator for the UCF Chapter of the National Society of Black Engineers (2024 - Present)",
+        "President of the Xi Iota Chapter (2023 - 2024)",
+        "Secretary of the Xi Iota Chapter (2022 - 2023)",
+        "Historian of the Xi Iota Chapter (2024 - 2025)",
+        "Associate Editor of the Sphinx of the Xi Iota Chapter (2024 - 2025)",
+        "Office Assistant for UCF First Year Experience (2023 - 2024)",
+        "Young Pillar Scholarship, Miami-Dade County Black Affairs Advisory Board (2025)",
+        "Outstanding Officer of the Year, UCF Knights of the Roundtable (2024)",
+        "Dean's List, College of Engineering and Computer Science, UCF (2024, 2025)",
+        "CodePath Web Development Course Certificate (Intermediate)",
+        "CodePath Technical Interview Prep Course Certificate (Intermediate)",
+        "Brother of the Year, Xi Iota Chapter (2023)",
+        "City of West Park Commendation (2020)",
+        "Congressional Certificate of Special Recognition, U.S. House of Representatives (2017, 2018)",
       ],
-      quote: "Excellence is not a skill, it's an attitude.",
-      organizations: [],
+      quote:
+        "Knowledge can be communicated, but not wisdom. One can find it, live it, be fortified by it, do wonders through it, but one cannot communicate and teach it.",
+      organizations: [
+        "National Society of Black Engineers",
+        "Institute of Electronics and Electrical Engineers",
+      ],
     },
     "2": {
       name: "Nijel Beverly",
@@ -537,9 +561,18 @@ const BrotherDetail = () => {
                     <h2 className="text-2xl font-bold text-yellow-400 mb-4 font-cinzel">
                       About
                     </h2>
-                    <p className="text-gray-300 leading-relaxed">
-                      {brother.bio}
-                    </p>
+                    <div className="max-h-80 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-yellow-400/30 scrollbar-track-gray-800/20">
+                      <div className="space-y-4">
+                        {brother.bio.split("\n\n").map((paragraph, index) => (
+                          <p
+                            key={index}
+                            className="text-gray-300 leading-relaxed"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
                   {/* Achievements Grid */}
@@ -547,21 +580,23 @@ const BrotherDetail = () => {
                     <h2 className="text-2xl font-bold text-yellow-400 mb-4 font-cinzel">
                       Achievements
                     </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {brother.achievements.map((achievement, index) => (
-                        <motion.div
-                          key={index}
-                          className="flex items-center space-x-3 bg-yellow-400/10 p-3 rounded-xl border border-yellow-400/20"
-                          initial={{ x: -20, opacity: 0 }}
-                          whileInView={{ x: 0, opacity: 1 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          viewport={{ once: true }}
-                        >
-                          <span className="text-white font-semibold text-sm">
-                            {achievement}
-                          </span>
-                        </motion.div>
-                      ))}
+                    <div className="max-h-80 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-yellow-400/30 scrollbar-track-gray-800/20">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {brother.achievements.map((achievement, index) => (
+                          <motion.div
+                            key={index}
+                            className="flex items-center space-x-3 bg-yellow-400/10 p-3 rounded-xl border border-yellow-400/20"
+                            initial={{ x: -20, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                          >
+                            <span className="text-white font-semibold text-sm">
+                              {achievement}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
