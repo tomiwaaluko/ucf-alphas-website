@@ -469,7 +469,24 @@ const MeetTheJewels = () => {
                     description: "Cornell University",
                   },
                   {
-                    number: "118",
+                    number: (() => {
+                      const foundingDate = new Date(1906, 11, 4); // December 4, 1906
+                      const currentDate = new Date();
+                      const currentYear = currentDate.getFullYear();
+                      const currentYearFoundingDate = new Date(
+                        currentYear,
+                        11,
+                        4
+                      ); // December 4 of current year
+
+                      // If we haven't reached December 4th this year, use last year's anniversary
+                      const yearsOfLegacy =
+                        currentDate >= currentYearFoundingDate
+                          ? currentYear - 1906
+                          : currentYear - 1907;
+
+                      return yearsOfLegacy.toString();
+                    })(),
                     label: "Years of Legacy",
                     description: "Still Growing",
                   },
