@@ -1,11 +1,12 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const NationalPrograms = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -243,7 +244,7 @@ const NationalPrograms = () => {
                       className={`relative overflow-hidden rounded-3xl ${program.bgColor} ${program.borderColor} border-2 hover:border-yellow-400/60 transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl hover:shadow-yellow-400/20 backdrop-blur-sm`}
                     >
                       {/* Animated Background Gradient */}
-                      <motion.div
+                      {/* <motion.div
                         className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 via-transparent to-yellow-400/5"
                         animate={{
                           x: [-100, 400, -100],
@@ -253,7 +254,7 @@ const NationalPrograms = () => {
                           repeat: Infinity,
                           ease: "linear",
                         }}
-                      />
+                      /> */}
 
                       {/* Decorative Background Elements */}
                       <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
@@ -671,6 +672,7 @@ const NationalPrograms = () => {
                     className="relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-yellow-400/40 transition-all duration-300 font-cinzel"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => navigate('/contact')}
                   >
                     Contact Us to Learn More
                   </motion.button>
