@@ -210,7 +210,7 @@ const BecomeAnAlpha = () => {
                 opportunities.
               </p>
 
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <p className="text-lg text-yellow-400 font-semibold">
                   "First of All, Servants of All, We Shall Transcend All"
                 </p>
@@ -218,7 +218,7 @@ const BecomeAnAlpha = () => {
                   For more information, please contact us through our official
                   channels.
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.section>
