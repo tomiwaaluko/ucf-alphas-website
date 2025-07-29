@@ -8,7 +8,7 @@ const leadershipData = [
   {
     name: "Treylon Chukes",
     position: "President",
-    image: "public/brothers/Treylon Chukes.jpeg",
+    image: "/brothers/Treylon Chukes.jpeg",
     description:
       "Leading the chapter with vision and dedication to Alpha Phi Alpha's principles.",
     responsibilities: [

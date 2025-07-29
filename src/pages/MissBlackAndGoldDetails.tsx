@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react";
 const currentMissBlackAndGold = {
   name: "Maia-Tené McCarthy",
   year: "2025-2026",
-  image: "/public/missbgcourt/Maia-McCarthy.jpeg",
+  image: "/missbgcourt/Maia-McCarthy.jpeg",
   bio: "Maia-Tené McCarthy is a passionate advocate, creative, and leader committed to using her voice and talents to uplift others. As a first-generation college student with proud Jamaican roots, she carries her heritage and family's sacrifices into every space she enters. She is a member of Alpha Kappa Psi, where she has sharpened her business and leadership skills to support her goals in film and law. As Miss Black & Gold, a film student, and a future legal professional, she is dedicated to merging storytelling with advocacy to create space for underrepresented voices. Whether managing film sets, writing scripts, or speaking up for change, she leads with purpose, clarity, and heart. She does not just chase dreams—she builds pathways for others to follow.",
   achievements: [
     "Dean's list every semester since enrollment",

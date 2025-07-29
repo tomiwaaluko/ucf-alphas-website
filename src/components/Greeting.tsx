@@ -92,7 +92,7 @@ const Greeting = () => {
             <div className="relative">
               <div className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 p-1">
                 <img
-                  src="public/brothers/Treylon Chukes.jpeg"
+                  src="/brothers/Treylon Chukes.jpeg"
                   alt="Treylon Chukes, President of Xi Iota Chapter"
                   className="w-full h-auto shadow-2xl"
                 />

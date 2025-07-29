@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react";
 const currentMissXiIota = {
   name: "Taylor Fordham",
   year: "2025-2026",
-  image: "/public/missbgcourt/Taylor-Fordham.png",
+  image: "/missbgcourt/Taylor-Fordham.png",
   bio: "Hello! My name is Taylor Fordham, and I'm a nursing major currently attending the BSN program at UCF's main campus. My favorite color is pink, which perfectly matches my compassionate and creative personality. I'm passionate about helping others, which is why I love working with elementary students to build their foundations in math and reading. You can usually find me crocheting, dancing or reading manga—right now, I'm especially obsessed with Chainsaw Man. I'm excited to bring empathy, energy, and a personal touch to my future career in nursing, where I hope to make a lasting impact on every life I encounter.",
   achievements: [
     "Formally Accepted to the UCF BSN program (main campus)",
