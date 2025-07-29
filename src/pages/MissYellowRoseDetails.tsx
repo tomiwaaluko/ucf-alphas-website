@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react";
 const currentMissYellowRose = {
   name: "Courtney Edgecombe",
   year: "2025-2026",
-  image: "/public/missbgcourt/courtney-edgecombe.jpeg",
+  image: "/missbgcourt/courtney-edgecombe.jpeg",
   bio: "Born and raised in Nassau, Bahamas, Courtney Edgecombe is a proud international student at the University of Central Florida, majoring in Real Estate. She wants to become a real estate developer one day. Courtney is not only ambitious but also deeply values mentorship, empowerment, and service. Her journey has been filled with challenges, but she remains steadfast in her belief that faith and resilience will open doors to unimaginable opportunities.",
   achievements: [
     "Lewis foundation scholar",
