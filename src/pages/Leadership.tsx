@@ -8,7 +8,7 @@ const leadershipData = [
   {
     name: "Treylon Chukes",
     position: "President",
-    image: "/leadership/treylon-chukes.jpg",
+    image: "public/brothers/Treylon Chukes.jpeg",
     description:
       "Leading the chapter with vision and dedication to Alpha Phi Alpha's principles.",
     responsibilities: [
@@ -249,7 +249,7 @@ const Leadership = () => {
                       transition={{ duration: 0.3 }}
                     >
                       {/* Image Container */}
-                      <div className="relative h-80 overflow-hidden">
+                      <div className="relative h-64 overflow-hidden">
                         <motion.div
                           className="absolute -inset-2 bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 rounded-3xl blur-xl"
                           animate={{
@@ -265,7 +265,7 @@ const Leadership = () => {
                         <img
                           src={leader.image}
                           alt={leader.name}
-                          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 bg-gray-900/20"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125 bg-gray-900/20 object-[70%_30%] brightness-75"
                         />
                         {/* Overlay gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -341,7 +341,7 @@ const Leadership = () => {
           </motion.section>
 
           {/* Call to Action Section */}
-          <motion.section
+          {/* <motion.section
             className="py-20 bg-gradient-to-br from-black via-gray-900/30 to-black relative overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -354,7 +354,6 @@ const Leadership = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Decorative corner elements */}
                 <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-yellow-400/50"></div>
                 <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-yellow-400/50"></div>
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-yellow-400/50"></div>
@@ -407,7 +406,7 @@ const Leadership = () => {
                 </motion.div>
               </motion.div>
             </div>
-          </motion.section>
+          </motion.section> */}
         </div>
         <Footer />
       </div>
