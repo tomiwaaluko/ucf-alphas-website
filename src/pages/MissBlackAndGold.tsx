@@ -6,77 +6,78 @@ import { Button } from "@/components/ui/button";
 
 // Sample data - replace with actual information
 const currentMissBlackAndGold = {
-  name: "Ashley Johnson",
-  year: "2024-2025",
-  image: "/placeholder.svg", // Replace with actual image
-  bio: "Ashley Johnson is a senior at Howard University majoring in Political Science with a minor in International Relations. She is passionate about social justice, women's empowerment, and community service. Ashley has been actively involved in various campus organizations and has volunteered over 200 hours in community outreach programs.",
+  name: "Maia-Tené McCarthy",
+  year: "2025-2026",
+  image: "/public/missbgcourt/Maia-McCarthy.jpeg",
+  bio: "I'm a passionate advocate, creative, and leader committed to using my voice and talents to uplift others. As a first-generation college student with proud Jamaican roots, I carry my heritage and family's sacrifices into every space I enter. I'm a member of Alpha Kappa Psi, where I've sharpened my business and leadership skills to support my goals in film and law. As Miss Black & Gold, a film student, and a future legal professional, I'm dedicated to merging storytelling with advocacy to create space for underrepresented voices. Whether I'm managing film sets, writing scripts, or speaking up for change, I lead with purpose, clarity, and heart. I don't just chase dreams—I build pathways for others to follow.",
   achievements: [
-    "Dean's List for 6 consecutive semesters",
-    "Student Government Association Vice President",
-    "Founder of 'Women in Leadership' campus organization",
-    "Volunteer coordinator for local homeless shelter",
-    "Recipient of the Academic Excellence Scholarship",
+    "Dean's list every semester since I've been here",
+    "Member of Alpha Kappa Psi Professional Business Fraternity",
+    "Film major with Certification in Litigation & Advocacy",
+    "Minor in Music",
+    "First-generation college student",
   ],
-  platform: "Empowering young women through education and mentorship",
-  hometown: "Atlanta, Georgia",
-  major: "Political Science",
-  university: "Howard University",
+  platform: "Advocating for Opportunities for Students of Color in Film",
+  hometown: "Brooklyn, New York / Montego Bay, Jamaica",
+  major: "Film major. Certification in Litigation & Advocacy. Minor in Music",
+  university: "University of Central Florida",
 };
 
 const currentMissXiIota = {
-  name: "Gabrielle Thompson",
-  year: "2024-2025",
-  image: "/placeholder.svg", // Replace with actual image
-  bio: "Gabrielle Thompson is a junior at the University of Central Florida majoring in Communications with a focus on Public Relations. She is passionate about community outreach, academic excellence, and representing the values of Xi Iota Chapter with grace and leadership.",
+  name: "Taylor Fordham",
+  year: "2025-2026",
+  image: "/public/missbgcourt/Taylor-Fordham.png",
+  bio: "Hello! My name is Taylor Fordham, and I'm a nursing major currently attending the BSN program at UCF's main campus. My favorite color is pink, which perfectly matches my compassionate and creative personality. I'm passionate about helping others, which is why I love working with elementary students to build their foundations in math and reading. You can usually find me crocheting, dancing or reading manga—right now, I'm especially obsessed with Chainsaw Man. I'm excited to bring empathy, energy, and a personal touch to my future career in nursing, where I hope to make a lasting impact on every life I encounter.",
   achievements: [
-    "Dean's List for 4 consecutive semesters",
-    "UCF Student Government Senator",
-    "Volunteer coordinator for local youth mentorship program",
-    "President of Communications Club",
-    "Recipient of the Leadership Excellence Award",
+    "Formally Accepted to the UCF BSN program (main campus)",
+    "Interned at a Public Defender's office",
+    "Works as a Certified Nursing Assistant",
+    "Member of African Student Organization",
+    "Member of UCF Mock Trial",
   ],
-  platform: "Building bridges through communication and community service",
-  hometown: "Orlando, Florida",
-  major: "Communications",
+  platform: "Engaging and Enriching Generations through Education",
+  hometown: "Daytona Beach, Florida",
+  major: "Nursing Major",
   university: "University of Central Florida",
 };
 
 const currentMissYellowRose = {
-  name: "Sophia Martinez",
-  year: "2024-2025",
-  image: "/placeholder.svg", // Replace with actual image
-  bio: "Sophia Martinez is a sophomore at the University of Central Florida majoring in Business Administration with a concentration in Marketing. She embodies the spirit of sisterhood and academic achievement while actively participating in community service initiatives.",
+  name: "Courtney Edgecombe",
+  year: "2025-2026",
+  image: "/public/missbgcourt/courtney-edgecombe.jpeg",
+  bio: "Born and raised in Nassau, Bahamas, Courtney Edgecombe is a proud international student at the University of Central Florida, majoring in Real Estate. She wants to become a real estate developer one day. Courtney is not only ambitious but also deeply values mentorship, empowerment, and service. Her journey has been filled with challenges, but she remains steadfast in her belief that faith and resilience will open doors to unimaginable opportunities.",
   achievements: [
-    "Dean's List for 3 consecutive semesters",
-    "Business Student Council Vice President",
-    "Founder of 'Sisters Supporting Sisters' mentorship program",
-    "Volunteer at local women's shelter",
-    "Recipient of the Academic Achievement Scholarship",
+    "Lewis foundation scholar",
+    "President of NCNW",
+    "Miss Yellow Rose",
+    "Member of National Council of Negro Women",
+    "Member of Rekonstruktion Dance Troupe",
   ],
-  platform: "Empowering women through education and entrepreneurship",
-  hometown: "Tampa, Florida",
-  major: "Business Administration",
+  platform: "Sustainable living",
+  hometown: "Nassau, Bahamas",
+  major: "Real Estate Major",
   university: "University of Central Florida",
 };
 
 const previousWinners = [
   {
-    name: "Jasmine Williams",
+    name: "Grace Castelin",
+    year: "2024-2025",
+    image: "/public/missbgcourt/previouswinners/Grace-Castelin.png",
+    major: "B.A. in Political Science",
+  },
+  {
+    name: "Ta'mia Brownlee",
     year: "2023-2024",
-    image: "/placeholder.svg",
-    university: "Spelman College",
+    image: "public/missbgcourt/previouswinners/Tamia-Shade1.png",
+    major:
+      "M.S. Medical Physiology and Pharmacology B.S. in Biology with a minor in Sociology",
   },
   {
-    name: "Brianna Davis",
+    name: "Jourdan Campbell",
     year: "2022-2023",
-    image: "/placeholder.svg",
-    university: "North Carolina A&T",
-  },
-  {
-    name: "Destiny Brown",
-    year: "2021-2022",
-    image: "/placeholder.svg",
-    university: "Hampton University",
+    image: "public/missbgcourt/previouswinners/Jourdan-Campbell.png",
+    major: "B.S. Psychology - Neuroscience",
   },
 ];
 
@@ -382,7 +383,7 @@ const MissBlackAndGold = () => {
                       <img
                         src={currentMissXiIota.image}
                         alt={currentMissXiIota.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                       />
 
                       {/* Title badge */}
@@ -468,7 +469,7 @@ const MissBlackAndGold = () => {
                       <img
                         src={currentMissYellowRose.image}
                         alt={currentMissYellowRose.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                       />
 
                       {/* Title badge */}
@@ -592,7 +593,11 @@ const MissBlackAndGold = () => {
                         <img
                           src={winner.image}
                           alt={winner.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${
+                            winner.name === "Grace Castelin"
+                              ? "object-cover object-top"
+                              : "object-cover"
+                          }`}
                         />
 
                         {/* Year badge */}
@@ -614,7 +619,7 @@ const MissBlackAndGold = () => {
                           {winner.name}
                         </motion.h3>
                         <p className="text-gray-400 font-semibold">
-                          {winner.university}
+                          {winner.major}
                         </p>
 
                         {/* Decorative line */}
@@ -638,7 +643,7 @@ const MissBlackAndGold = () => {
           </motion.section>
 
           {/* Call to Action Section */}
-          <motion.section
+          {/* <motion.section
             className="py-20"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -651,7 +656,6 @@ const MissBlackAndGold = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Decorative corner elements */}
                 <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-yellow-400/50"></div>
                 <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-yellow-400/50"></div>
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-yellow-400/50"></div>
@@ -709,7 +713,7 @@ const MissBlackAndGold = () => {
                 </motion.div>
               </motion.div>
             </div>
-          </motion.section>
+          </motion.section> */}
         </div>
         <Footer />
       </div>

@@ -6,21 +6,21 @@ import { ArrowLeft } from "lucide-react";
 
 // Sample data - this would match the data from MissBlackAndGold.tsx
 const currentMissBlackAndGold = {
-  name: "Ashley Johnson",
-  year: "2024-2025",
-  image: "/placeholder.svg",
-  bio: "Ashley Johnson is a senior at Howard University majoring in Political Science with a minor in International Relations. She is passionate about social justice, women's empowerment, and community service. Ashley has been actively involved in various campus organizations and has volunteered over 200 hours in community outreach programs.",
+  name: "Maia-Tené McCarthy",
+  year: "2025-2026",
+  image: "/public/missbgcourt/Maia-McCarthy.jpeg",
+  bio: "Maia-Tené McCarthy is a passionate advocate, creative, and leader committed to using her voice and talents to uplift others. As a first-generation college student with proud Jamaican roots, she carries her heritage and family's sacrifices into every space she enters. She is a member of Alpha Kappa Psi, where she has sharpened her business and leadership skills to support her goals in film and law. As Miss Black & Gold, a film student, and a future legal professional, she is dedicated to merging storytelling with advocacy to create space for underrepresented voices. Whether managing film sets, writing scripts, or speaking up for change, she leads with purpose, clarity, and heart. She does not just chase dreams—she builds pathways for others to follow.",
   achievements: [
-    "Dean's List for 6 consecutive semesters",
-    "Student Government Association Vice President",
-    "Founder of 'Women in Leadership' campus organization",
-    "Volunteer coordinator for local homeless shelter",
-    "Recipient of the Academic Excellence Scholarship",
+    "Dean's list every semester since enrollment",
+    "Member of Alpha Kappa Psi Professional Business Fraternity",
+    "Film major with Certification in Litigation & Advocacy",
+    "Minor in Music",
+    "First-generation college student",
   ],
-  platform: "Empowering young women through education and mentorship",
-  hometown: "Atlanta, Georgia",
-  major: "Political Science",
-  university: "Howard University",
+  platform: "Advocating for Opportunities for Students of Color in Film",
+  hometown: "Brooklyn, New York / Montego Bay, Jamaica",
+  major: "Film Major | Music Minor",
+  university: "University of Central Florida",
 };
 
 const MissBlackAndGoldDetails = () => {
