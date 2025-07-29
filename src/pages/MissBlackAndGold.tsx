@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 const currentMissBlackAndGold = {
   name: "Maia-Tené McCarthy",
   year: "2025-2026",
-  image: "/public/missbgcourt/Maia-McCarthy.jpeg",
+  image: "/missbgcourt/Maia-McCarthy.jpeg",
   bio: "I'm a passionate advocate, creative, and leader committed to using my voice and talents to uplift others. As a first-generation college student with proud Jamaican roots, I carry my heritage and family's sacrifices into every space I enter. I'm a member of Alpha Kappa Psi, where I've sharpened my business and leadership skills to support my goals in film and law. As Miss Black & Gold, a film student, and a future legal professional, I'm dedicated to merging storytelling with advocacy to create space for underrepresented voices. Whether I'm managing film sets, writing scripts, or speaking up for change, I lead with purpose, clarity, and heart. I don't just chase dreams—I build pathways for others to follow.",
   achievements: [
     "Dean's list every semester since I've been here",
@@ -26,7 +26,7 @@ const currentMissBlackAndGold = {
 const currentMissXiIota = {
   name: "Taylor Fordham",
   year: "2025-2026",
-  image: "/public/missbgcourt/Taylor-Fordham.png",
+  image: "/missbgcourt/Taylor-Fordham.png",
   bio: "Hello! My name is Taylor Fordham, and I'm a nursing major currently attending the BSN program at UCF's main campus. My favorite color is pink, which perfectly matches my compassionate and creative personality. I'm passionate about helping others, which is why I love working with elementary students to build their foundations in math and reading. You can usually find me crocheting, dancing or reading manga—right now, I'm especially obsessed with Chainsaw Man. I'm excited to bring empathy, energy, and a personal touch to my future career in nursing, where I hope to make a lasting impact on every life I encounter.",
   achievements: [
     "Formally Accepted to the UCF BSN program (main campus)",
@@ -44,7 +44,7 @@ const currentMissXiIota = {
 const currentMissYellowRose = {
   name: "Courtney Edgecombe",
   year: "2025-2026",
-  image: "/public/missbgcourt/courtney-edgecombe.jpeg",
+  image: "/missbgcourt/courtney-edgecombe.jpeg",
   bio: "Born and raised in Nassau, Bahamas, Courtney Edgecombe is a proud international student at the University of Central Florida, majoring in Real Estate. She wants to become a real estate developer one day. Courtney is not only ambitious but also deeply values mentorship, empowerment, and service. Her journey has been filled with challenges, but she remains steadfast in her belief that faith and resilience will open doors to unimaginable opportunities.",
   achievements: [
     "Lewis foundation scholar",
@@ -63,20 +63,20 @@ const previousWinners = [
   {
     name: "Grace Castelin",
     year: "2024-2025",
-    image: "/public/missbgcourt/previouswinners/Grace-Castelin.png",
+    image: "/missbgcourt/previouswinners/Grace-Castelin.png",
     major: "B.A. in Political Science",
   },
   {
     name: "Ta'mia Brownlee",
     year: "2023-2024",
-    image: "public/missbgcourt/previouswinners/Tamia-Shade1.png",
+    image: "/missbgcourt/previouswinners/Tamia-Shade1.png",
     major:
       "M.S. Medical Physiology and Pharmacology B.S. in Biology with a minor in Sociology",
   },
   {
     name: "Jourdan Campbell",
     year: "2022-2023",
-    image: "public/missbgcourt/previouswinners/Jourdan-Campbell.png",
+    image: "/missbgcourt/previouswinners/Jourdan-Campbell.png",
     major: "B.S. Psychology - Neuroscience",
   },
 ];
@@ -340,10 +340,9 @@ const MissBlackAndGold = () => {
                         className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 text-sm"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() =>
-                          (window.location.href =
-                            "/miss-black-and-gold-details")
-                        }
+                        onClick={() => {
+                          window.open("/miss-black-and-gold-details", "_self");
+                        }}
                       >
                         Learn More
                       </motion.button>
@@ -427,9 +426,9 @@ const MissBlackAndGold = () => {
                         className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 text-sm"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() =>
-                          (window.location.href = "/miss-xi-iota-details")
-                        }
+                        onClick={() => {
+                          window.open("/miss-xi-iota-details", "_self");
+                        }}
                       >
                         Learn More
                       </motion.button>
@@ -513,9 +512,9 @@ const MissBlackAndGold = () => {
                         className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 text-sm"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() =>
-                          (window.location.href = "/miss-yellow-rose-details")
-                        }
+                        onClick={() => {
+                          window.open("/miss-yellow-rose-details", "_self");
+                        }}
                       >
                         Learn More
                       </motion.button>
