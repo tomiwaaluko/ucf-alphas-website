@@ -199,7 +199,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-purple-600 to-purple-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Fall21.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -397,7 +397,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-green-600 to-green-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Spring 23.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -468,14 +468,14 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
   },
   sovereign: {
     id: "sovereign",
-    name: "THE FIVE PHARAOHS of X's INTERMINABLE REIGN",
+    name: "THE FIVE P.X.I.R.",
     nickname: "",
     year: 2022,
     semester: "Spring",
     description: "",
     fullDescription: "",
     color: "from-yellow-600 to-yellow-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Spring22alt.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -535,7 +535,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-orange-600 to-red-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Fall20.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -634,7 +634,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-violet-600 to-purple-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Spring19.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -726,7 +726,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-yellow-600 to-orange-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Spring18.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -797,7 +797,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-emerald-600 to-teal-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Spring17.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -903,7 +903,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-rose-600 to-pink-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Fall15all.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -967,7 +967,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-teal-600 to-cyan-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Spring15.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -1052,7 +1052,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-green-600 to-emerald-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Spring13Faces.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -1140,7 +1140,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-blue-600 to-indigo-800",
-    image: "/placeholder.svg",
+    image: "/lineage/Fall11.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -2927,10 +2927,9 @@ const LineageDetail = () => {
                 <img
                   src={lineData.image}
                   alt={lineData.name}
-                  className="w-full h-96 object-cover"
-                />
-                <div
-                  className={`absolute inset-0 bg-gradient-to-t ${lineData.color} opacity-60`}
+                  className={`w-full h-96 ${
+                    lineId === "power" ? "object-contain" : "object-cover"
+                  }`}
                 />
                 {/* Special charter overlay */}
                 {isCharter && (

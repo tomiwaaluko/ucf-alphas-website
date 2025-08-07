@@ -48,8 +48,7 @@ const lineageCards = [
     name: "UnLaw.P.H.U.L Answers",
     fullName: "",
     semester: "Spring 2023",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    image: "/lineage/Spring 23.jpg",
     icon: Award,
     color: "from-green-400 to-emerald-500",
     description: "",
@@ -60,8 +59,7 @@ const lineageCards = [
     name: "THE FIVE PHARAOHS of X's INTERMINABLE REIGN",
     fullName: "",
     semester: "Spring 2022",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    image: "/lineage/Spring22.jpg",
     icon: Shield,
     color: "from-blue-400 to-indigo-500",
     description: "",
@@ -72,8 +70,7 @@ const lineageCards = [
     name: "The Last Survivors of I.S.F.E.T",
     fullName: "",
     semester: "Fall 2021",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    image: "/lineage/Fall21.jpg",
     icon: Star,
     color: "from-purple-400 to-pink-500",
     description: "",
@@ -84,8 +81,7 @@ const lineageCards = [
     name: "The C.R.I.S.I.S.",
     fullName: "",
     semester: "Fall 2020",
-    image:
-      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    image: "/lineage/Fall20.jpg",
     icon: Zap,
     color: "from-orange-400 to-red-500",
     description: "",
@@ -96,8 +92,7 @@ const lineageCards = [
     name: "The 9th D.I.M.E.N.S.I.O.N.",
     fullName: "",
     semester: "Spring 2019",
-    image:
-      "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
+    image: "/lineage/Spring19.jpg",
     icon: Flame,
     color: "from-violet-400 to-purple-500",
     description: "",
@@ -108,20 +103,7 @@ const lineageCards = [
     name: "The Rage of 6 P.A.T.H.S.",
     fullName: "",
     semester: "Spring 2018",
-    image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
-    icon: Crown,
-    color: "from-yellow-500 to-orange-500",
-    description: "",
-    members: 6,
-  },
-  {
-    id: "rise",
-    name: "The Rage of 6 P.A.T.H.S.",
-    fullName: "",
-    semester: "Spring 2018",
-    image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    image: "/lineage/Spring18.jpg",
     icon: Crown,
     color: "from-yellow-500 to-orange-500",
     description: "",
@@ -132,8 +114,7 @@ const lineageCards = [
     name: "The 11 P.H.A.C.E.S. of Phrozen Met3amorphosis",
     fullName: "",
     semester: "Spring 2017",
-    image:
-      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+    image: "/lineage/Spring17line.jpg",
     icon: Users,
     color: "from-emerald-400 to-teal-500",
     description: "",
@@ -144,8 +125,7 @@ const lineageCards = [
     name: "The A.P.H.I.liates of Resurrected Enlightenment",
     fullName: "",
     semester: "Fall 2015",
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+    image: "/lineage/Fall15.jpg",
     icon: Trophy,
     color: "from-rose-400 to-pink-500",
     description: "",
@@ -156,8 +136,7 @@ const lineageCards = [
     name: "The E.N.C.O.R.E.",
     fullName: "",
     semester: "Spring 2015",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+    image: "/lineage/Spring15dbz.jpg",
     icon: Target,
     color: "from-teal-400 to-cyan-500",
     description: "",
@@ -168,8 +147,7 @@ const lineageCards = [
     name: "The A.P.H.T.E.R.M.A.T.H.",
     fullName: "",
     semester: "Spring 2013",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    image: "/lineage/Spring13.jpg",
     icon: Award,
     color: "from-green-400 to-emerald-500",
     description: "",
@@ -180,8 +158,7 @@ const lineageCards = [
     name: "Ice Cold Trauma",
     fullName: "",
     semester: "Fall 2011",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    image: "/lineage/Fall11.jpg",
     icon: Shield,
     color: "from-blue-400 to-indigo-500",
     description: "",
