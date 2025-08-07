@@ -80,98 +80,545 @@ const lineageCards = [
     members: 5,
   },
   {
-    id: "triumph",
-    name: "T.R.I.U.M.P.H.",
-    fullName:
-      "True Righteous Individuals Upholding Moral Principles Harmoniously",
-    semester: "Spring 2021",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
-    icon: Award,
-    color: "from-green-400 to-emerald-500",
-    description:
-      "Triumphant brothers who overcame challenges and set new achievement standards.",
-    members: 7,
-  },
-  {
     id: "legacy",
-    name: "L.E.G.A.C.Y.",
-    fullName: "Leaders Establishing Great Achievement Creating Years",
+    name: "The C.R.I.S.I.S.",
+    fullName: "",
     semester: "Fall 2020",
     image:
       "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
     icon: Zap,
     color: "from-orange-400 to-red-500",
-    description:
-      "Legendary founders who created the framework for future success.",
-    members: 4,
-  },
-  {
-    id: "victory",
-    name: "V.I.C.T.O.R.Y.",
-    fullName:
-      "Visionary Individuals Creating Transformative Outstanding Results Yearly",
-    semester: "Spring 2020",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
-    icon: Target,
-    color: "from-teal-400 to-cyan-500",
-    description:
-      "Victorious brothers who transformed the chapter during challenging times.",
-    members: 6,
-  },
-  {
-    id: "power",
-    name: "P.O.W.E.R.",
-    fullName: "Persistent Outstanding Warriors Establishing Respect",
-    semester: "Fall 2019",
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
-    icon: Trophy,
-    color: "from-rose-400 to-pink-500",
-    description:
-      "Powerful leaders who established the chapter's competitive spirit.",
-    members: 5,
+    description: "",
+    members: 10,
   },
   {
     id: "dominate",
-    name: "D.O.M.I.N.A.T.E.",
-    fullName:
-      "Driven Outstanding Men Inspiring Noble Achievement Through Excellence",
+    name: "The 9th D.I.M.E.N.S.I.O.N.",
+    fullName: "",
     semester: "Spring 2019",
     image:
       "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
     icon: Flame,
     color: "from-violet-400 to-purple-500",
-    description:
-      "Dominant force that shaped the early identity of the Xi Iota Chapter.",
-    members: 8,
-  },
-  {
-    id: "excel",
-    name: "E.X.C.E.L.",
-    fullName: "Extraordinary eXcellent Champions Establishing Leadership",
-    semester: "Fall 2018",
-    image:
-      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
-    icon: Users,
-    color: "from-emerald-400 to-teal-500",
-    description:
-      "Excellence personified, setting the academic and leadership standards.",
-    members: 7,
+    description: "",
+    members: 9,
   },
   {
     id: "rise",
-    name: "R.I.S.E.",
-    fullName: "Righteous Individuals Striving Eternally",
+    name: "The Rage of 6 P.A.T.H.S.",
+    fullName: "",
     semester: "Spring 2018",
     image:
       "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
     icon: Crown,
     color: "from-yellow-500 to-orange-500",
-    description:
-      "The founding fathers of Xi Iota Chapter, rising to establish our legacy.",
-    members: 12,
+    description: "",
+    members: 6,
+  },
+  {
+    id: "rise",
+    name: "The Rage of 6 P.A.T.H.S.",
+    fullName: "",
+    semester: "Spring 2018",
+    image:
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    icon: Crown,
+    color: "from-yellow-500 to-orange-500",
+    description: "",
+    members: 6,
+  },
+  {
+    id: "excel",
+    name: "The 11 P.H.A.C.E.S. of Phrozen Met3amorphosis",
+    fullName: "",
+    semester: "Spring 2017",
+    image:
+      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+    icon: Users,
+    color: "from-emerald-400 to-teal-500",
+    description: "",
+    members: 11,
+  },
+  {
+    id: "power",
+    name: "The A.P.H.I.liates of Resurrected Enlightenment",
+    fullName: "",
+    semester: "Fall 2015",
+    image:
+      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+    icon: Trophy,
+    color: "from-rose-400 to-pink-500",
+    description: "",
+    members: 5,
+  },
+  {
+    id: "victory",
+    name: "The E.N.C.O.R.E.",
+    fullName: "",
+    semester: "Spring 2015",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+    icon: Target,
+    color: "from-teal-400 to-cyan-500",
+    description: "",
+    members: 8,
+  },
+  {
+    id: "triumph",
+    name: "The A.P.H.T.E.R.M.A.T.H.",
+    fullName: "",
+    semester: "Spring 2013",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    icon: Award,
+    color: "from-green-400 to-emerald-500",
+    description: "",
+    members: 9,
+  },
+  {
+    id: "trauma",
+    name: "Ice Cold Trauma",
+    fullName: "",
+    semester: "Fall 2011",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    icon: Shield,
+    color: "from-blue-400 to-indigo-500",
+    description: "",
+    members: 7,
+  },
+  {
+    id: "sacrifice",
+    name: "The S.A.C.R.I.PHICE",
+    fullName: "",
+    semester: "Fall 2010",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    icon: Star,
+    color: "from-gray-400 to-gray-600",
+    description: "",
+    members: 6,
+  },
+  {
+    id: "everlast",
+    name: "The Everlast-ing P.H.I.R.E",
+    fullName: "",
+    semester: "Fall 2009",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    icon: Flame,
+    color: "from-red-400 to-orange-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "secret",
+    name: "The Six Egyptians Chosen for the Rebirth & Emancipation of T3 (S.E.C.R.E.T3.)",
+    fullName: "",
+    semester: "Spring 2009",
+    image:
+      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    icon: Crown,
+    color: "from-purple-400 to-violet-500",
+    description: "",
+    members: 6,
+  },
+  {
+    id: "deep",
+    name: "5 Degrees of Enlightened Executive Privilege (D.E.E.P.)",
+    fullName: "",
+    semester: "Spring 2008",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    icon: Shield,
+    color: "from-blue-400 to-indigo-500",
+    description: "",
+    members: 5,
+  },
+  {
+    id: "rumble",
+    name: "The Rumble in the Jungle",
+    fullName: "",
+    semester: "Fall 2007",
+    image:
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    icon: Zap,
+    color: "from-green-400 to-teal-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "centennial",
+    name: "4 Pharaohs of the Centennial Massacre",
+    fullName: "",
+    semester: "Fall 2006",
+    image:
+      "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
+    icon: Crown,
+    color: "from-red-400 to-pink-500",
+    description: "",
+    members: 4,
+  },
+  {
+    id: "guardians",
+    name: "Guardians of the Temple Light",
+    fullName: "",
+    semester: "Fall 2005",
+    image:
+      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+    icon: Star,
+    color: "from-amber-400 to-yellow-500",
+    description: "",
+    members: 4,
+  },
+  {
+    id: "destructors",
+    name: "Five Destructors of the Sixth Dynasty",
+    fullName: "",
+    semester: "Spring 2005",
+    image:
+      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+    icon: Trophy,
+    color: "from-purple-400 to-red-500",
+    description: "",
+    members: 5,
+  },
+  {
+    id: "prodigal",
+    name: "Five Prodigal Sons of the Fifth Disciple",
+    fullName: "",
+    semester: "Spring 2004",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+    icon: Award,
+    color: "from-indigo-400 to-blue-500",
+    description: "",
+    members: 5,
+  },
+  {
+    id: "curse",
+    name: "Curse of Knowledge",
+    fullName: "",
+    semester: "Fall 2002",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    icon: Target,
+    color: "from-gray-400 to-black",
+    description: "",
+    members: 1,
+  },
+  {
+    id: "sphinx",
+    name: "Sole Survivor of the Sphinx",
+    fullName: "",
+    semester: "Spring 2002",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    icon: Crown,
+    color: "from-yellow-400 to-amber-500",
+    description: "",
+    members: 1,
+  },
+  {
+    id: "phoenix",
+    name: "The 5 Disciples of the P.H.O.E.N.I.X.",
+    fullName: "",
+    semester: "Fall 2001",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    icon: Flame,
+    color: "from-orange-400 to-red-500",
+    description: "",
+    members: 5,
+  },
+  {
+    id: "aphinity",
+    name: "The Aphinity",
+    fullName: "",
+    semester: "Fall 2000",
+    image:
+      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    icon: Shield,
+    color: "from-blue-400 to-purple-500",
+    description: "",
+    members: 3,
+  },
+  {
+    id: "pharaoh",
+    name: "The Last Sons of the 2nd Pharaoh",
+    fullName: "",
+    semester: "Spring 2000",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    icon: Users,
+    color: "from-teal-400 to-green-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "timex",
+    name: "T.I.M.E.X.",
+    fullName: "",
+    semester: "Fall 1999",
+    image:
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    icon: Trophy,
+    color: "from-gray-400 to-slate-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "keepers",
+    name: "Keepers of the Lost Process",
+    fullName: "",
+    semester: "Fall 1997",
+    image:
+      "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
+    icon: Star,
+    color: "from-emerald-400 to-green-500",
+    description: "",
+    members: 7,
+  },
+  {
+    id: "masked",
+    name: "Masked Soldiers of Destruction",
+    fullName: "",
+    semester: "Spring 1997",
+    image:
+      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+    icon: Zap,
+    color: "from-red-400 to-black",
+    description: "",
+    members: 4,
+  },
+  {
+    id: "rightstu",
+    name: "The Right Stu",
+    fullName: "",
+    semester: "Spring 1996",
+    image:
+      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+    icon: Award,
+    color: "from-cyan-400 to-blue-500",
+    description: "",
+    members: 8,
+  },
+  {
+    id: "gfunk",
+    name: "G-Funk",
+    fullName: "",
+    semester: "Spring 1996",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+    icon: Crown,
+    color: "from-violet-400 to-purple-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "disciple",
+    name: "The Last Disciple of King Solomon's Tomb",
+    fullName: "",
+    semester: "Fall 1995",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    icon: Shield,
+    color: "from-amber-400 to-yellow-500",
+    description: "",
+    members: 1,
+  },
+  {
+    id: "disasters",
+    name: "Natural Disasters",
+    fullName: "",
+    semester: "Spring 1994",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    icon: Flame,
+    color: "from-orange-400 to-red-500",
+    description: "",
+    members: 3,
+  },
+  {
+    id: "hardway",
+    name: "2 The Hard Way",
+    fullName: "",
+    semester: "Spring 1993",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    icon: Target,
+    color: "from-slate-400 to-gray-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "littlerock",
+    name: "Little Rock Nine",
+    fullName: "",
+    semester: "Fall 1992",
+    image:
+      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    icon: Users,
+    color: "from-indigo-400 to-blue-500",
+    description: "",
+    members: 7,
+  },
+  {
+    id: "conceptions",
+    name: "Conceptions of the Mind",
+    fullName: "",
+    semester: "Fall 1990",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    icon: Crown,
+    color: "from-purple-400 to-violet-500",
+    description: "",
+    members: 3,
+  },
+  {
+    id: "quietstorm",
+    name: "Quiet Storm",
+    fullName: "",
+    semester: "Spring 1990",
+    image:
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    icon: Trophy,
+    color: "from-gray-400 to-blue-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "fall89",
+    name: "Fall 1989",
+    fullName: "",
+    semester: "Fall 1989",
+    image:
+      "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
+    icon: Star,
+    color: "from-teal-400 to-green-500",
+    description: "",
+    members: 3,
+  },
+  {
+    id: "facesofdeath",
+    name: "Faces of Death",
+    fullName: "",
+    semester: "Spring 1989",
+    image:
+      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+    icon: Zap,
+    color: "from-red-400 to-black",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "demolition",
+    name: "The Demolition Team",
+    fullName: "",
+    semester: "Fall 1986",
+    image:
+      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+    icon: Award,
+    color: "from-orange-400 to-red-500",
+    description: "",
+    members: 6,
+  },
+  {
+    id: "sources",
+    name: "Two Selected Sources",
+    fullName: "",
+    semester: "Spring 1985",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+    icon: Shield,
+    color: "from-blue-400 to-indigo-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "fourseasons",
+    name: "Four Seasons",
+    fullName: "",
+    semester: "Fall 1984",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    icon: Crown,
+    color: "from-green-400 to-teal-500",
+    description: "",
+    members: 4,
+  },
+  {
+    id: "tenacious",
+    name: "The Tenacious Trio of Terror",
+    fullName: "",
+    semester: "Spring 1984",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    icon: Flame,
+    color: "from-red-400 to-pink-500",
+    description: "",
+    members: 3,
+  },
+  {
+    id: "masters",
+    name: "The Masters of Manipulation",
+    fullName: "",
+    semester: "Spring 1983",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    icon: Target,
+    color: "from-purple-400 to-violet-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "fourth",
+    name: "The Fourth One",
+    fullName: "",
+    semester: "Fall 1982",
+    image:
+      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    icon: Users,
+    color: "from-gray-400 to-slate-500",
+    description: "",
+    members: 2,
+  },
+  {
+    id: "notorious",
+    name: "The Notorious Three",
+    fullName: "",
+    semester: "Spring 1982",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    icon: Trophy,
+    color: "from-blue-400 to-indigo-500",
+    description: "",
+    members: 3,
+  },
+  {
+    id: "second",
+    name: "The Second One",
+    fullName: "",
+    semester: "Spring 1980",
+    image:
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    icon: Star,
+    color: "from-amber-400 to-yellow-500",
+    description: "",
+    members: 3,
+  },
+  {
+    id: "charter",
+    name: "The Minor Jewels",
+    fullName: "Charter Line",
+    semester: "June 16, 1979",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    icon: Crown,
+    color: "from-yellow-400 via-amber-500 to-yellow-600",
+    description: "The seven young men who established Xi Iota Chapter",
+    members: 7,
+    isCharter: true,
   },
 ];
 
@@ -394,6 +841,7 @@ interface LineageCardProps {
     color: string;
     description: string;
     members: number;
+    isCharter?: boolean;
   };
   index: number;
   IconComponent: React.ComponentType<{ className?: string }>;
@@ -404,6 +852,7 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const isEven = index % 2 === 0;
+  const isCharter = line.isCharter;
 
   return (
     <motion.div
@@ -413,20 +862,46 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
     >
+      {/* Special Charter Crown for Charter Line */}
+      {isCharter && (
+        <motion.div
+          className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20"
+          initial={{ opacity: 0, y: -20, scale: 0.8 }}
+          animate={
+            isInView
+              ? { opacity: 1, y: 0, scale: 1 }
+              : { opacity: 0, y: -20, scale: 0.8 }
+          }
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <div className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-6 py-2 rounded-full font-bold text-sm shadow-2xl border-2 border-yellow-300">
+            👑 CHARTER LINE 👑
+          </div>
+        </motion.div>
+      )}
+
       <motion.div
-        className="bg-gradient-to-br from-gray-900/90 to-black/90 rounded-3xl overflow-hidden border border-yellow-400/20 backdrop-blur-sm shadow-2xl relative"
+        className={`bg-gradient-to-br ${
+          isCharter
+            ? "from-yellow-900/90 to-amber-900/90 border-yellow-400/50"
+            : "from-gray-900/90 to-black/90 border-yellow-400/20"
+        } rounded-3xl overflow-hidden backdrop-blur-sm shadow-2xl relative`}
         whileHover={{ scale: 1.02, y: -10 }}
         transition={{ duration: 0.3 }}
       >
-        {/* Glowing border effect */}
+        {/* Enhanced glowing border effect for charter */}
         <motion.div
-          className="absolute -inset-1 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 rounded-3xl blur-lg"
+          className={`absolute -inset-1 ${
+            isCharter
+              ? "bg-gradient-to-r from-yellow-400/40 to-amber-500/40"
+              : "bg-gradient-to-r from-yellow-400/20 to-yellow-600/20"
+          } rounded-3xl blur-lg`}
           animate={{
-            opacity: [0.2, 0.4, 0.2],
+            opacity: isCharter ? [0.4, 0.8, 0.4] : [0.2, 0.4, 0.2],
             scale: [1, 1.02, 1],
           }}
           transition={{
-            duration: 4,
+            duration: isCharter ? 2 : 4,
             repeat: Infinity,
             delay: index * 0.5,
           }}
@@ -445,7 +920,27 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
                 alt={line.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div
+                className={`absolute inset-0 ${
+                  isCharter
+                    ? "bg-gradient-to-t from-yellow-900/80 via-amber-900/20 to-transparent"
+                    : "bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                }`}
+              ></div>
+
+              {/* Special charter overlay */}
+              {isCharter && (
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-amber-500/10"
+                  animate={{
+                    opacity: [0.1, 0.3, 0.1],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                  }}
+                />
+              )}
             </div>
           </div>
 
@@ -457,7 +952,11 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.h2
-                className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-3 font-cinzel tracking-wider"
+                className={`text-3xl lg:text-4xl font-bold mb-3 font-cinzel tracking-wider ${
+                  isCharter
+                    ? "text-yellow-300 drop-shadow-lg"
+                    : "text-yellow-400"
+                }`}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -465,7 +964,9 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
               </motion.h2>
 
               <motion.p
-                className="text-gray-400 text-lg mb-4 font-medium"
+                className={`text-lg mb-4 font-medium ${
+                  isCharter ? "text-yellow-200" : "text-gray-400"
+                }`}
                 initial={{ y: 20, opacity: 0 }}
                 animate={
                   isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
@@ -476,7 +977,9 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
               </motion.p>
 
               <motion.p
-                className="text-gray-300 text-base mb-6 leading-relaxed"
+                className={`text-base mb-6 leading-relaxed ${
+                  isCharter ? "text-amber-100" : "text-gray-300"
+                }`}
                 initial={{ y: 20, opacity: 0 }}
                 animate={
                   isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
@@ -494,15 +997,33 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
                 }
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                <div className="flex items-center bg-yellow-400/20 px-4 py-2 rounded-full border border-yellow-400/30">
-                  <span className="text-yellow-400 font-bold">
+                <div
+                  className={`flex items-center px-4 py-2 rounded-full ${
+                    isCharter
+                      ? "bg-yellow-300/30 border border-yellow-300/50"
+                      : "bg-yellow-400/20 border border-yellow-400/30"
+                  }`}
+                >
+                  <span
+                    className={`font-bold ${
+                      isCharter ? "text-yellow-200" : "text-yellow-400"
+                    }`}
+                  >
                     {line.semester}
                   </span>
                 </div>
 
-                <div className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+                <div
+                  className={`flex items-center px-4 py-2 rounded-full ${
+                    isCharter
+                      ? "bg-amber-800/50 text-amber-200"
+                      : "bg-gray-800/50 text-gray-400"
+                  }`}
+                >
                   <Users className="w-5 h-5 mr-2" />
-                  <span className="font-semibold">{line.members} Brothers</span>
+                  <span className="font-semibold">
+                    {line.members} {isCharter ? "Founding Fathers" : "Brothers"}
+                  </span>
                 </div>
               </motion.div>
 
@@ -511,14 +1032,18 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
                 onClick={() => onLearnMore(line.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold py-3 px-8 rounded-xl transition-all duration-300 flex items-center justify-center shadow-2xl hover:shadow-yellow-400/40 font-cinzel"
+                className={`font-bold py-3 px-8 rounded-xl transition-all duration-300 flex items-center justify-center shadow-2xl font-cinzel ${
+                  isCharter
+                    ? "bg-gradient-to-r from-yellow-300 to-amber-400 text-amber-900 hover:shadow-yellow-300/50"
+                    : "bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:shadow-yellow-400/40"
+                }`}
                 initial={{ y: 20, opacity: 0 }}
                 animate={
                   isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
                 }
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                Learn More
+                {isCharter ? "Learn More" : "Learn More"}
                 <ChevronRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </motion.button>
             </motion.div>
