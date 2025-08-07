@@ -18,41 +18,65 @@ import { useNavigate } from "react-router-dom";
 const lineageCards = [
   {
     id: "conquer",
-    name: "C.O.N.Q.U.E.R.",
-    fullName: "Champions Of New Quarters Unleashing Excellence Righteously",
+    name: "The Vanguard",
+    fullName: "",
     semester: "Fall 2024",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
     icon: Crown,
     color: "from-yellow-400 to-amber-500",
-    description:
-      "The newest generation of Alpha men, forging new paths of excellence and leadership.",
+    description: "",
+    members: 8,
+    dp: "Tre 'K.I.L.L. S.W.I.T.C.H.' Steward",
+    adp: "Camari 'PHrontrunner' Nelson",
+    chapters: "ADP: Khadeem 'Lock J.A.W.' Chronicle",
+    lineMembers: [
+      { number: 1, name: "Abdul 'PHlash Bang' Ibrahim" },
+      { number: 2, name: "-" },
+      { number: 3, name: "Corey 'Shakespeare' Barnes Jr." },
+      { number: 4, name: "Jacob 'PHlast Lane' Herrera" },
+      { number: 5, name: "-" },
+      { number: 6, name: "Adams 'sixth Sense' Brown Jr." },
+      { number: 7, name: "Benjamin 'Pressure Point' Blocker" },
+      { number: 8, name: "Jevaughn 'Informer' Morris" },
+      { number: 9, name: "Toluwani 'PHrostB.I.T.E.' Aluko" },
+      { number: 10, name: "Treylon 'PHinal Lap' Chukes" },
+    ],
+  },
+  {
+    id: "unlaw",
+    name: "UnLaw.P.H.U.L Answers",
+    fullName: "",
+    semester: "Spring 2023",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    icon: Award,
+    color: "from-green-400 to-emerald-500",
+    description: "",
     members: 8,
   },
   {
     id: "sovereign",
-    name: "S.O.V.E.R.E.I.G.N.",
-    fullName: "Sons Of Victory Establishing Royal Excellence In Great Nobility",
+    name: "THE FIVE PHARAOHS of X's INTERMINABLE REIGN",
+    fullName: "",
     semester: "Spring 2022",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
     icon: Shield,
     color: "from-blue-400 to-indigo-500",
-    description:
-      "Royal leaders who established lasting traditions and elevated chapter standards.",
-    members: 6,
+    description: "",
+    members: 5,
   },
   {
     id: "empire",
-    name: "E.M.P.I.R.E.",
-    fullName: "Exceptional Men Pursuing Innovation Righteousness Excellence",
+    name: "The Last Survivors of I.S.F.E.T",
+    fullName: "",
     semester: "Fall 2021",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
     icon: Star,
     color: "from-purple-400 to-pink-500",
-    description:
-      "Builders of the modern chapter foundation, establishing innovative programs.",
+    description: "",
     members: 5,
   },
   {

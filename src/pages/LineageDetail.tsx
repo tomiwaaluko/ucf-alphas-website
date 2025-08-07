@@ -26,73 +26,110 @@ interface LineageDetailData {
   values: string[];
 }
 
+interface DeanStaff {
+  name: string;
+  position: string;
+}
+
+interface LineageDetailData {
+  id: string;
+  name: string;
+  nickname: string;
+  year: number;
+  semester?: string;
+  description: string;
+  fullDescription: string;
+  color: string;
+  image: string;
+  motto: string;
+  members: Member[];
+  values: string[];
+  deanStaff?: DeanStaff[];
+}
+
 const lineageDetailData: { [key: string]: LineageDetailData } = {
   conquer: {
     id: "conquer",
-    name: "Conquer",
-    nickname: "The Conquerors",
-    year: 2019,
-    description:
-      "A line that exemplifies determination and excellence, conquering every challenge with brotherhood and dedication.",
-    fullDescription:
-      "The Conquer line stands as a testament to the unwavering spirit of Alpha Phi Alpha. Through their journey, they have demonstrated that with brotherhood, determination, and dedication, any obstacle can be overcome. Their legacy continues to inspire future generations of Alpha men to face challenges head-on and emerge victorious.",
+    name: "The Vanguard",
+    nickname: "",
+    year: 2024,
+    semester: "Fall",
+    description: "",
+    fullDescription: "",
     color: "from-red-600 to-red-800",
     image: "/placeholder.svg",
-    motto: "Victory Through Unity",
-    values: ["Determination", "Excellence", "Brotherhood", "Leadership"],
+    motto: "",
+    values: [],
+    deanStaff: [
+      {
+        name: "Tre 'K.I.L.L. S.W.I.T.C.H.' Steward",
+        position: "DP",
+      },
+      {
+        name: "Camari 'PHrontrunner' Nelson",
+        position: "ADP",
+      },
+      {
+        name: "Khadeem 'Lock J.A.W.' Chronicle",
+        position: "ADP",
+      },
+    ],
     members: [
       {
-        name: "Michael Johnson",
-        nickname: "Ace",
-        position: "Line President",
-        year: 2019,
-        achievements: [
-          "Dean's List",
-          "Student Government",
-          "Community Service Award",
-        ],
+        name: "Abdul Ibrahim",
+        nickname: "PHlash Bang",
+        position: "1",
+        year: 2024,
+        achievements: [],
       },
       {
-        name: "David Williams",
-        nickname: "Titan",
-        year: 2019,
-        achievements: ["Academic Excellence", "Leadership Recognition"],
+        name: "Corey Barnes Jr.",
+        nickname: "Shakespeare",
+        position: "3",
+        year: 2024,
+        achievements: [],
       },
       {
-        name: "Christopher Davis",
-        nickname: "Phoenix",
-        year: 2019,
-        achievements: ["Athletic Achievement", "Scholarship Recipient"],
+        name: "Jacob Herrera",
+        nickname: "PHlast Lane",
+        position: "4",
+        year: 2024,
+        achievements: [],
       },
       {
-        name: "Anthony Brown",
-        nickname: "Storm",
-        year: 2019,
-        achievements: ["Community Leader", "Honor Society"],
+        name: "Adams Brown Jr.",
+        nickname: "6ixth Sense",
+        position: "6",
+        year: 2024,
+        achievements: [],
       },
       {
-        name: "Marcus Wilson",
-        nickname: "Thunder",
-        year: 2019,
-        achievements: ["Research Excellence", "Mentorship Program"],
+        name: "Benjamin Blocker",
+        nickname: "Pressure Point",
+        position: "7",
+        year: 2024,
+        achievements: [],
       },
       {
-        name: "James Anderson",
-        nickname: "Lightning",
-        year: 2019,
-        achievements: ["Service Leadership", "Academic Honor"],
+        name: "Jevaughn Morris",
+        nickname: "Informer",
+        position: "8",
+        year: 2024,
+        achievements: [],
       },
       {
-        name: "Robert Taylor",
-        nickname: "Warrior",
-        year: 2019,
-        achievements: ["Athletic Excellence", "Community Impact"],
+        name: "Toluwani Aluko",
+        nickname: "PHrostB.I.T.E.",
+        position: "9",
+        year: 2024,
+        achievements: [],
       },
       {
-        name: "Kenneth Thomas",
-        nickname: "Champion",
-        year: 2019,
-        achievements: ["Leadership Award", "Academic Achievement"],
+        name: "Treylon Chukes",
+        nickname: "PHinal Lap",
+        position: "10",
+        year: 2024,
+        achievements: [],
       },
     ],
   },
@@ -155,190 +192,337 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
   },
   elevate: {
     id: "elevate",
-    name: "Elevate",
-    nickname: "The Elevated",
+    name: "The Last Survivors of I.S.F.E.T",
+    nickname: "",
     year: 2021,
-    description:
-      "Rising above expectations and elevating the standards of excellence in service and scholarship.",
-    fullDescription:
-      "The Elevate line represents the continuous pursuit of excellence and the elevation of standards within Alpha Phi Alpha. These brothers have consistently raised the bar in academics, service, and leadership, inspiring others to reach new heights of achievement and personal growth.",
+    semester: "Fall",
+    description: "",
+    fullDescription: "",
     color: "from-purple-600 to-purple-800",
     image: "/placeholder.svg",
-    motto: "Rise Above Excellence",
-    values: ["Excellence", "Innovation", "Growth", "Inspiration"],
+    motto: "",
+    values: [],
+    deanStaff: [
+      {
+        name: "Eldrick 'Static Shock' Clapp",
+        position: "DP",
+      },
+      {
+        name: "Raeshaun 'ProPHessor X' Coonce",
+        position: "ADP",
+      },
+    ],
     members: [
       {
-        name: "Xavier Rodriguez",
-        nickname: "Summit",
-        position: "Line President",
+        name: "Tre Steward",
+        nickname: "K.I.L.L.S.W.I.T.C.H.",
+        position: "1",
         year: 2021,
-        achievements: [
-          "Outstanding Leadership",
-          "Academic Excellence",
-          "Innovation Award",
-        ],
+        achievements: [],
       },
       {
-        name: "Mason Lewis",
-        nickname: "Peak",
+        name: "Desmond Richebonod",
+        nickname: "INVOL.C",
+        position: "2",
         year: 2021,
-        achievements: ["Research Excellence", "Community Leadership"],
+        achievements: [],
       },
       {
-        name: "Lucas Lee",
-        nickname: "Apex",
+        name: "Brandon Mullings",
+        nickname: "HEPHAESTUS",
+        position: "3",
         year: 2021,
-        achievements: ["Scholarship Recipient", "Service Recognition"],
+        achievements: [],
       },
       {
-        name: "Ethan Walker",
-        nickname: "Zenith",
+        name: "Jeffrey Cherisma",
+        nickname: "ICfolate",
+        position: "4",
         year: 2021,
-        achievements: ["Academic Honor", "Leadership Development"],
+        achievements: [],
       },
       {
-        name: "Noah Hall",
-        nickname: "Pinnacle",
+        name: "Rick Pierre-Louis",
+        nickname: "PHilomathic",
+        position: "6",
         year: 2021,
-        achievements: ["Excellence in Service", "Mentorship Award"],
-      },
-      {
-        name: "Logan Allen",
-        nickname: "Crown",
-        year: 2021,
-        achievements: ["Student Leadership", "Community Impact"],
-      },
-      {
-        name: "Carter Young",
-        nickname: "Sovereign",
-        year: 2021,
-        achievements: ["Academic Achievement", "Service Excellence"],
+        achievements: [],
       },
     ],
   },
   illuminate: {
     id: "illuminate",
-    name: "Illuminate",
-    nickname: "The Illuminators",
+    name: "THE FIVE PHARAOHS of X's INTERMINABLE REIGN",
+    nickname: "",
     year: 2022,
-    description:
-      "Bringing light to the community and illuminating the path for future generations of Alpha men.",
-    fullDescription:
-      "The Illuminate line serves as beacons of hope and guidance within their communities. Through their dedication to service and mentorship, they have illuminated pathways for others to follow, embodying the true spirit of Alpha Phi Alpha's mission to uplift humanity.",
+    semester: "Spring",
+    description: "",
+    fullDescription: "",
     color: "from-yellow-600 to-yellow-800",
     image: "/placeholder.svg",
-    motto: "Light the Way Forward",
-    values: ["Guidance", "Service", "Mentorship", "Hope"],
+    motto: "",
+    values: [],
+    deanStaff: [
+      {
+        name: "Raeshaun 'ProPHessor X' Coonce",
+        position: "DP",
+      },
+      {
+        name: "Brendan 'Winter S.O.L.D.I.E.R' Toney",
+        position: "ADP",
+      },
+    ],
     members: [
       {
-        name: "Adrian Hernandez",
-        nickname: "Beacon",
-        position: "Line President",
+        name: "Jordan Bolds",
+        nickname: "C.O.L.O.S.S.U.S.",
+        position: "1",
         year: 2022,
-        achievements: [
-          "Community Leadership",
-          "Mentorship Excellence",
-          "Service Award",
-        ],
+        achievements: [],
       },
       {
-        name: "Julian King",
-        nickname: "Radiance",
+        name: "Sergio Bodden",
+        nickname: "HYPNOS",
+        position: "2",
         year: 2022,
-        achievements: ["Academic Excellence", "Leadership Recognition"],
+        achievements: [],
       },
       {
-        name: "Dominic Wright",
-        nickname: "Luminary",
+        name: "Nijel Beverly",
+        nickname: "THE M.I.S.S.I.O.N.",
+        position: "3",
         year: 2022,
-        achievements: ["Research Achievement", "Community Service"],
+        achievements: [],
       },
       {
-        name: "Sebastian Lopez",
-        nickname: "Prism",
+        name: "Olatomiwa Aluko",
+        nickname: "EXILE",
+        position: "4",
         year: 2022,
-        achievements: ["Innovation Award", "Academic Honor"],
+        achievements: [],
       },
       {
-        name: "Mateo Hill",
-        nickname: "Aurora",
+        name: "Steven Woodbury",
+        nickname: "ENDorphin",
+        position: "5",
         year: 2022,
-        achievements: ["Service Excellence", "Leadership Development"],
-      },
-      {
-        name: "Diego Scott",
-        nickname: "Solar",
-        year: 2022,
-        achievements: ["Scholarship Award", "Community Impact"],
-      },
-      {
-        name: "Emilio Green",
-        nickname: "Flame",
-        year: 2022,
-        achievements: ["Academic Achievement", "Mentorship Recognition"],
-      },
-      {
-        name: "Ricardo Adams",
-        nickname: "Glow",
-        year: 2022,
-        achievements: ["Leadership Excellence", "Service Recognition"],
-      },
-      {
-        name: "Fernando Baker",
-        nickname: "Shine",
-        year: 2022,
-        achievements: ["Research Excellence", "Community Leadership"],
+        achievements: [],
       },
     ],
   },
   transcend: {
     id: "transcend",
-    name: "Transcend",
-    nickname: "The Transcendent",
+    name: "UnLaw.P.H.U.L Answers",
+    nickname: "",
     year: 2023,
-    description:
-      "Transcending boundaries and expectations while upholding the highest ideals of Alpha Phi Alpha.",
-    fullDescription:
-      "The Transcend line represents the newest generation of Alpha men who continue to push boundaries and exceed expectations. Their commitment to excellence and innovation ensures that the legacy of Alpha Phi Alpha will continue to evolve and inspire future generations.",
+    semester: "Spring",
+    description: "",
+    fullDescription: "",
     color: "from-green-600 to-green-800",
     image: "/placeholder.svg",
-    motto: "Beyond Limits, Beyond Excellence",
-    values: ["Innovation", "Excellence", "Vision", "Legacy"],
+    motto: "",
+    values: [],
+    deanStaff: [
+      {
+        name: "Rick 'PHilomathic' Pierre-Louis",
+        position: "DP",
+      },
+      {
+        name: "Tre 'K.I.L.L.S.W.I.T.C.H.' Steward",
+        position: "ADP",
+      },
+      {
+        name: "Nijel 'THE M.I.S.S.I.O.N.' Beverly",
+        position: "ADP",
+      },
+    ],
     members: [
       {
-        name: "Alexander Gonzalez",
-        nickname: "Infinity",
-        position: "Line President",
+        name: "Camari Nelson",
+        nickname: "PHrontrunner",
+        position: "1",
         year: 2023,
-        achievements: [
-          "Outstanding Leadership",
-          "Innovation Excellence",
-          "Academic Achievement",
-        ],
+        achievements: [],
       },
       {
-        name: "Benjamin Nelson",
-        nickname: "Beyond",
+        name: "Samuel Vallon",
+        nickname: "SoulFly",
+        position: "2",
         year: 2023,
-        achievements: ["Research Recognition", "Service Leadership"],
+        achievements: [],
       },
       {
-        name: "Samuel Carter",
-        nickname: "Limitless",
+        name: "Nehito Dorval",
+        nickname: "MorPHeus",
+        position: "5",
         year: 2023,
-        achievements: ["Academic Excellence", "Community Impact"],
+        achievements: [],
       },
       {
-        name: "Daniel Mitchell",
-        nickname: "Eternal",
+        name: "Khadeem Chronicle",
+        nickname: "Lock J.A.W.",
+        position: "6",
         year: 2023,
-        achievements: ["Leadership Development", "Scholarship Award"],
+        achievements: [],
       },
       {
-        name: "Andrew Perez",
-        nickname: "Ascend",
+        name: "Rashawn Hendricks",
+        nickname: "UnPHorseen",
+        position: "7",
         year: 2023,
-        achievements: ["Service Excellence", "Academic Honor"],
+        achievements: [],
+      },
+      {
+        name: "Jonathan Weaver",
+        nickname: "Juggernaut",
+        position: "8",
+        year: 2023,
+        achievements: [],
+      },
+      {
+        name: "Miles Coats",
+        nickname: "PerPHectionist",
+        position: "10",
+        year: 2023,
+        achievements: [],
+      },
+    ],
+  },
+  unlaw: {
+    id: "unlaw",
+    name: "UnLaw.P.H.U.L Answers",
+    nickname: "",
+    year: 2023,
+    semester: "Spring",
+    description: "",
+    fullDescription: "",
+    color: "from-green-600 to-green-800",
+    image: "/placeholder.svg",
+    motto: "",
+    values: [],
+    deanStaff: [
+      {
+        name: "Rick 'PHilomathic' Pierre-Louis",
+        position: "DP",
+      },
+      {
+        name: "Tre 'K.I.L.L.S.W.I.T.C.H.' Steward",
+        position: "ADP",
+      },
+      {
+        name: "Nijel 'THE M.I.S.S.I.O.N.' Beverly",
+        position: "ADP",
+      },
+    ],
+    members: [
+      {
+        name: "Camari Nelson",
+        nickname: "PHrontrunner",
+        position: "1",
+        year: 2023,
+        achievements: [],
+      },
+      {
+        name: "Samuel Vallon",
+        nickname: "SoulFly",
+        position: "2",
+        year: 2023,
+        achievements: [],
+      },
+      {
+        name: "Nehito Dorval",
+        nickname: "MorPHeus",
+        position: "5",
+        year: 2023,
+        achievements: [],
+      },
+      {
+        name: "Khadeem Chronicle",
+        nickname: "Lock J.A.W.",
+        position: "6",
+        year: 2023,
+        achievements: [],
+      },
+      {
+        name: "Rashawn Hendricks",
+        nickname: "UnPHorseen",
+        position: "7",
+        year: 2023,
+        achievements: [],
+      },
+      {
+        name: "Jonathan Weaver",
+        nickname: "Juggernaut",
+        position: "8",
+        year: 2023,
+        achievements: [],
+      },
+      {
+        name: "Miles Coats",
+        nickname: "PerPHectionist",
+        position: "10",
+        year: 2023,
+        achievements: [],
+      },
+    ],
+  },
+  sovereign: {
+    id: "sovereign",
+    name: "THE FIVE PHARAOHS of X's INTERMINABLE REIGN",
+    nickname: "",
+    year: 2022,
+    semester: "Spring",
+    description: "",
+    fullDescription: "",
+    color: "from-yellow-600 to-yellow-800",
+    image: "/placeholder.svg",
+    motto: "",
+    values: [],
+    deanStaff: [
+      {
+        name: "Raeshaun 'ProPHessor X' Coonce",
+        position: "DP",
+      },
+      {
+        name: "Brendan 'Winter S.O.L.D.I.E.R' Toney",
+        position: "ADP",
+      },
+    ],
+    members: [
+      {
+        name: "Jordan Bolds",
+        nickname: "C.O.L.O.S.S.U.S.",
+        position: "1",
+        year: 2022,
+        achievements: [],
+      },
+      {
+        name: "Sergio Bodden",
+        nickname: "HYPNOS",
+        position: "2",
+        year: 2022,
+        achievements: [],
+      },
+      {
+        name: "Nijel Beverly",
+        nickname: "THE M.I.S.S.I.O.N.",
+        position: "3",
+        year: 2022,
+        achievements: [],
+      },
+      {
+        name: "Olatomiwa Aluko",
+        nickname: "EXILE",
+        position: "4",
+        year: 2022,
+        achievements: [],
+      },
+      {
+        name: "Steven Woodbury",
+        nickname: "ENDorphin",
+        position: "5",
+        year: 2022,
+        achievements: [],
       },
     ],
   },
@@ -396,23 +580,10 @@ const LineageDetail = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl md:text-7xl font-bold mb-4"
+                className="text-5xl md:text-7xl font-bold mb-4 text-yellow-400"
               >
-                <span
-                  className={`bg-gradient-to-r ${lineData.color} bg-clip-text text-transparent`}
-                >
-                  {lineData.name}
-                </span>
+                {lineData.name}
               </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-2xl text-yellow-400 font-semibold mb-2"
-              >
-                {lineData.nickname}
-              </motion.p>
 
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -421,28 +592,11 @@ const LineageDetail = () => {
                 className="flex items-center text-gray-400 mb-6"
               >
                 <Calendar className="w-5 h-5 mr-2" />
-                <span>Crossed {lineData.year}</span>
+                <span>
+                  Crossed {lineData.semester || "Fall"} {lineData.year}
+                </span>
                 <Users className="w-5 h-5 ml-6 mr-2" />
                 <span>{lineData.members.length} Members</span>
-              </motion.div>
-
-              <motion.p
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-lg text-gray-300 leading-relaxed mb-6"
-              >
-                {lineData.fullDescription}
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 backdrop-blur-sm rounded-lg p-4 border border-yellow-500/30"
-              >
-                <h3 className="text-yellow-400 font-bold mb-2">Line Motto</h3>
-                <p className="text-white italic">"{lineData.motto}"</p>
               </motion.div>
             </div>
 
@@ -469,29 +623,38 @@ const LineageDetail = () => {
           </div>
         </motion.div>
 
-        {/* Values Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="max-w-7xl mx-auto px-4 mb-16"
-        >
-          <h2 className="text-3xl font-bold text-center mb-8">Core Values</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {lineData.values.map((value, index) => (
-              <motion.div
-                key={value}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-lg p-4 text-center border border-yellow-500/20"
-              >
-                <Award className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">{value}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {/* Dean Staff Section */}
+        {lineData.deanStaff && lineData.deanStaff.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="max-w-7xl mx-auto px-4 mb-16"
+          >
+            <h2 className="text-3xl font-bold text-center mb-12">Dean Staff</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {lineData.deanStaff.map((staff, index) => (
+                <motion.div
+                  key={staff.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-yellow-500/20 shadow-lg"
+                >
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-white mb-1">
+                      {staff.name}
+                    </h3>
+                    <p className="text-yellow-400 font-semibold">
+                      {staff.position}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         {/* Members Section */}
         <motion.div
@@ -511,38 +674,19 @@ const LineageDetail = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-yellow-500/20 shadow-lg"
               >
-                <div className="text-center mb-4">
+                <div className="text-center">
                   <h3 className="text-xl font-bold text-white mb-1">
                     {member.name}
                   </h3>
                   <p className="text-yellow-400 font-semibold">
-                    "{member.nickname}"
+                    {member.nickname}
                   </p>
                   {member.position && (
                     <p className="text-gray-400 text-sm mt-1">
-                      {member.position}
+                      #{member.position}
                     </p>
                   )}
                 </div>
-
-                {member.achievements && member.achievements.length > 0 && (
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-300 mb-2">
-                      Achievements
-                    </h4>
-                    <div className="space-y-1">
-                      {member.achievements.map((achievement, achIndex) => (
-                        <div
-                          key={achIndex}
-                          className="flex items-center text-sm text-gray-400"
-                        >
-                          <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2 flex-shrink-0" />
-                          {achievement}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </motion.div>
             ))}
           </div>
