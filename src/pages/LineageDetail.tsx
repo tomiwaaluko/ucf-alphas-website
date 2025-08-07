@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Users, Calendar, Award } from "lucide-react";
 import Navigation from "../components/Navigation";
@@ -57,7 +57,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-red-600 to-red-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -143,7 +143,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     fullDescription:
       "The Persist line embodies the true essence of perseverance. In the face of unprecedented challenges and global uncertainty, these brothers demonstrated unwavering commitment to their goals and to each other. Their journey exemplifies how persistence and brotherhood can overcome any obstacle.",
     color: "from-blue-600 to-blue-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "Strength Through Persistence",
     values: ["Perseverance", "Commitment", "Unity", "Resilience"],
     members: [
@@ -259,7 +259,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-yellow-600 to-yellow-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -319,7 +319,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-green-600 to-green-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -1218,7 +1218,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-gray-600 to-gray-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -1289,7 +1289,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-red-600 to-orange-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -1332,7 +1332,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-purple-600 to-violet-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -1403,7 +1403,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-green-600 to-teal-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -1446,7 +1446,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-red-600 to-pink-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -1503,7 +1503,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-amber-600 to-yellow-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1547,7 +1547,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-purple-600 to-red-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -1611,7 +1611,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-gray-600 to-black",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1634,7 +1634,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-yellow-600 to-amber-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1657,7 +1657,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-orange-600 to-red-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1708,7 +1708,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-blue-600 to-purple-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1745,7 +1745,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-teal-600 to-green-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1775,7 +1775,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-gray-600 to-slate-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1805,7 +1805,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-red-600 to-black",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1849,7 +1849,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-cyan-600 to-blue-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1921,7 +1921,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-violet-600 to-purple-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1951,7 +1951,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-amber-600 to-yellow-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -1974,7 +1974,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-orange-600 to-red-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2011,7 +2011,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-indigo-600 to-blue-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2076,7 +2076,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-purple-600 to-violet-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2113,7 +2113,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-gray-600 to-blue-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2143,7 +2143,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-teal-600 to-green-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2180,7 +2180,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-red-600 to-black",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2210,7 +2210,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-orange-600 to-red-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2268,7 +2268,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-blue-600 to-indigo-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2298,7 +2298,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-red-600 to-pink-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2335,7 +2335,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-purple-600 to-violet-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2365,7 +2365,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-gray-600 to-slate-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2395,7 +2395,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-blue-600 to-indigo-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2432,7 +2432,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-amber-600 to-yellow-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2469,7 +2469,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-green-600 to-teal-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2513,7 +2513,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-slate-600 to-gray-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2543,7 +2543,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-emerald-600 to-green-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2608,7 +2608,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-indigo-600 to-blue-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [],
@@ -2659,7 +2659,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-blue-600 to-indigo-800",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "",
     values: [],
     deanStaff: [
@@ -2720,7 +2720,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     fullDescription:
       "On June 16, 1979, seven young men made history by establishing the Xi Iota Chapter of Alpha Phi Alpha Fraternity, Incorporated. These Minor Jewels laid the foundation for over four decades of brotherhood, scholarship, and service that continues to this day.",
     color: "from-yellow-400 via-amber-500 to-yellow-600",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     motto: "First of the Finest",
     values: ["Foundation", "Legacy", "Brotherhood", "Excellence"],
     deanStaff: [],
@@ -2781,6 +2781,11 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
 const LineageDetail = () => {
   const { lineId } = useParams<{ lineId: string }>();
   const navigate = useNavigate();
+
+  // Calculate years of legacy from founding date (June 16, 1979)
+  const foundingDate = new Date("1979-06-16");
+  const currentDate = new Date();
+  const yearsOfLegacy = currentDate.getFullYear() - foundingDate.getFullYear();
 
   const lineData = lineId ? lineageDetailData[lineId] : null;
   const isCharter = lineId === "charter";
@@ -2911,7 +2916,9 @@ const LineageDetail = () => {
                   transition={{ duration: 0.8, delay: 0.5 }}
                   className="text-amber-800 text-lg leading-relaxed mb-6"
                 >
-                  {lineData.fullDescription}
+                  {isCharter
+                    ? `On June 16, 1979, seven young men made history by establishing the Xi Iota Chapter of Alpha Phi Alpha Fraternity, Incorporated. These Minor Jewels laid the foundation for over ${yearsOfLegacy} years of brotherhood, scholarship, and service that continues to this day.`
+                    : lineData.fullDescription}
                 </motion.p>
               )}
             </div>
@@ -3066,7 +3073,7 @@ const LineageDetail = () => {
                         delay: index * 0.3,
                       }}
                     >
-                      ⭐
+                      â­
                     </motion.div>
                   )}
 

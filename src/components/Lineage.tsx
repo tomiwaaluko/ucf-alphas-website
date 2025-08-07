@@ -21,8 +21,7 @@ const lineageCards = [
     name: "The Vanguard",
     fullName: "",
     semester: "Fall 2024",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    image: "/placeholder.svg",
     icon: Crown,
     color: "from-yellow-400 to-amber-500",
     description: "",
@@ -114,7 +113,7 @@ const lineageCards = [
     name: "The 11 P.H.A.C.E.S. of Phrozen Met3amorphosis",
     fullName: "",
     semester: "Spring 2017",
-    image: "/lineage/Spring17line.jpg",
+    image: "/lineage/Spring17.jpg",
     icon: Users,
     color: "from-emerald-400 to-teal-500",
     description: "",
@@ -136,7 +135,7 @@ const lineageCards = [
     name: "The E.N.C.O.R.E.",
     fullName: "",
     semester: "Spring 2015",
-    image: "/lineage/Spring15dbz.jpg",
+    image: "/lineage/Spring15.jpg",
     icon: Target,
     color: "from-teal-400 to-cyan-500",
     description: "",
@@ -169,8 +168,7 @@ const lineageCards = [
     name: "The S.A.C.R.I.PHICE",
     fullName: "",
     semester: "Fall 2010",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Star,
     color: "from-gray-400 to-gray-600",
     description: "",
@@ -181,8 +179,7 @@ const lineageCards = [
     name: "The Everlast-ing P.H.I.R.E",
     fullName: "",
     semester: "Fall 2009",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Flame,
     color: "from-red-400 to-orange-500",
     description: "",
@@ -193,8 +190,7 @@ const lineageCards = [
     name: "The Six Egyptians Chosen for the Rebirth & Emancipation of T3 (S.E.C.R.E.T3.)",
     fullName: "",
     semester: "Spring 2009",
-    image:
-      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Crown,
     color: "from-purple-400 to-violet-500",
     description: "",
@@ -205,8 +201,7 @@ const lineageCards = [
     name: "5 Degrees of Enlightened Executive Privilege (D.E.E.P.)",
     fullName: "",
     semester: "Spring 2008",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Shield,
     color: "from-blue-400 to-indigo-500",
     description: "",
@@ -217,8 +212,7 @@ const lineageCards = [
     name: "The Rumble in the Jungle",
     fullName: "",
     semester: "Fall 2007",
-    image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Zap,
     color: "from-green-400 to-teal-500",
     description: "",
@@ -229,8 +223,7 @@ const lineageCards = [
     name: "4 Pharaohs of the Centennial Massacre",
     fullName: "",
     semester: "Fall 2006",
-    image:
-      "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Crown,
     color: "from-red-400 to-pink-500",
     description: "",
@@ -241,8 +234,7 @@ const lineageCards = [
     name: "Guardians of the Temple Light",
     fullName: "",
     semester: "Fall 2005",
-    image:
-      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Star,
     color: "from-amber-400 to-yellow-500",
     description: "",
@@ -253,8 +245,7 @@ const lineageCards = [
     name: "Five Destructors of the Sixth Dynasty",
     fullName: "",
     semester: "Spring 2005",
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Trophy,
     color: "from-purple-400 to-red-500",
     description: "",
@@ -265,8 +256,7 @@ const lineageCards = [
     name: "Five Prodigal Sons of the Fifth Disciple",
     fullName: "",
     semester: "Spring 2004",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Award,
     color: "from-indigo-400 to-blue-500",
     description: "",
@@ -277,8 +267,7 @@ const lineageCards = [
     name: "Curse of Knowledge",
     fullName: "",
     semester: "Fall 2002",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Target,
     color: "from-gray-400 to-black",
     description: "",
@@ -289,8 +278,7 @@ const lineageCards = [
     name: "Sole Survivor of the Sphinx",
     fullName: "",
     semester: "Spring 2002",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Crown,
     color: "from-yellow-400 to-amber-500",
     description: "",
@@ -301,8 +289,7 @@ const lineageCards = [
     name: "The 5 Disciples of the P.H.O.E.N.I.X.",
     fullName: "",
     semester: "Fall 2001",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Flame,
     color: "from-orange-400 to-red-500",
     description: "",
@@ -313,8 +300,7 @@ const lineageCards = [
     name: "The Aphinity",
     fullName: "",
     semester: "Fall 2000",
-    image:
-      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Shield,
     color: "from-blue-400 to-purple-500",
     description: "",
@@ -325,8 +311,7 @@ const lineageCards = [
     name: "The Last Sons of the 2nd Pharaoh",
     fullName: "",
     semester: "Spring 2000",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Users,
     color: "from-teal-400 to-green-500",
     description: "",
@@ -337,8 +322,7 @@ const lineageCards = [
     name: "T.I.M.E.X.",
     fullName: "",
     semester: "Fall 1999",
-    image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Trophy,
     color: "from-gray-400 to-slate-500",
     description: "",
@@ -349,8 +333,7 @@ const lineageCards = [
     name: "Keepers of the Lost Process",
     fullName: "",
     semester: "Fall 1997",
-    image:
-      "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Star,
     color: "from-emerald-400 to-green-500",
     description: "",
@@ -361,8 +344,7 @@ const lineageCards = [
     name: "Masked Soldiers of Destruction",
     fullName: "",
     semester: "Spring 1997",
-    image:
-      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Zap,
     color: "from-red-400 to-black",
     description: "",
@@ -373,8 +355,7 @@ const lineageCards = [
     name: "The Right Stu",
     fullName: "",
     semester: "Spring 1996",
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Award,
     color: "from-cyan-400 to-blue-500",
     description: "",
@@ -385,8 +366,7 @@ const lineageCards = [
     name: "G-Funk",
     fullName: "",
     semester: "Spring 1996",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Crown,
     color: "from-violet-400 to-purple-500",
     description: "",
@@ -397,8 +377,7 @@ const lineageCards = [
     name: "The Last Disciple of King Solomon's Tomb",
     fullName: "",
     semester: "Fall 1995",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Shield,
     color: "from-amber-400 to-yellow-500",
     description: "",
@@ -409,8 +388,7 @@ const lineageCards = [
     name: "Natural Disasters",
     fullName: "",
     semester: "Spring 1994",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Flame,
     color: "from-orange-400 to-red-500",
     description: "",
@@ -421,8 +399,7 @@ const lineageCards = [
     name: "2 The Hard Way",
     fullName: "",
     semester: "Spring 1993",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Target,
     color: "from-slate-400 to-gray-500",
     description: "",
@@ -433,8 +410,7 @@ const lineageCards = [
     name: "Little Rock Nine",
     fullName: "",
     semester: "Fall 1992",
-    image:
-      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Users,
     color: "from-indigo-400 to-blue-500",
     description: "",
@@ -445,8 +421,7 @@ const lineageCards = [
     name: "Conceptions of the Mind",
     fullName: "",
     semester: "Fall 1990",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Crown,
     color: "from-purple-400 to-violet-500",
     description: "",
@@ -457,8 +432,7 @@ const lineageCards = [
     name: "Quiet Storm",
     fullName: "",
     semester: "Spring 1990",
-    image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Trophy,
     color: "from-gray-400 to-blue-500",
     description: "",
@@ -469,8 +443,7 @@ const lineageCards = [
     name: "Fall 1989",
     fullName: "",
     semester: "Fall 1989",
-    image:
-      "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Star,
     color: "from-teal-400 to-green-500",
     description: "",
@@ -481,8 +454,7 @@ const lineageCards = [
     name: "Faces of Death",
     fullName: "",
     semester: "Spring 1989",
-    image:
-      "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Zap,
     color: "from-red-400 to-black",
     description: "",
@@ -493,8 +465,7 @@ const lineageCards = [
     name: "The Demolition Team",
     fullName: "",
     semester: "Fall 1986",
-    image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Award,
     color: "from-orange-400 to-red-500",
     description: "",
@@ -505,8 +476,7 @@ const lineageCards = [
     name: "Two Selected Sources",
     fullName: "",
     semester: "Spring 1985",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Shield,
     color: "from-blue-400 to-indigo-500",
     description: "",
@@ -517,8 +487,7 @@ const lineageCards = [
     name: "Four Seasons",
     fullName: "",
     semester: "Fall 1984",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Crown,
     color: "from-green-400 to-teal-500",
     description: "",
@@ -529,8 +498,7 @@ const lineageCards = [
     name: "The Tenacious Trio of Terror",
     fullName: "",
     semester: "Spring 1984",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Flame,
     color: "from-red-400 to-pink-500",
     description: "",
@@ -541,8 +509,7 @@ const lineageCards = [
     name: "The Masters of Manipulation",
     fullName: "",
     semester: "Spring 1983",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Target,
     color: "from-purple-400 to-violet-500",
     description: "",
@@ -553,8 +520,7 @@ const lineageCards = [
     name: "The Fourth One",
     fullName: "",
     semester: "Fall 1982",
-    image:
-      "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Users,
     color: "from-gray-400 to-slate-500",
     description: "",
@@ -565,8 +531,7 @@ const lineageCards = [
     name: "The Notorious Three",
     fullName: "",
     semester: "Spring 1982",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Trophy,
     color: "from-blue-400 to-indigo-500",
     description: "",
@@ -577,8 +542,7 @@ const lineageCards = [
     name: "The Second One",
     fullName: "",
     semester: "Spring 1980",
-    image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Star,
     color: "from-amber-400 to-yellow-500",
     description: "",
@@ -589,8 +553,7 @@ const lineageCards = [
     name: "The Minor Jewels",
     fullName: "Charter Line",
     semester: "June 16, 1979",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
     icon: Crown,
     color: "from-yellow-400 via-amber-500 to-yellow-600",
     description: "The seven young men who established Xi Iota Chapter",
@@ -608,6 +571,11 @@ const Lineage = () => {
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  // Calculate years of legacy from founding date (June 16, 1979)
+  const foundingDate = new Date("1979-06-16");
+  const currentDate = new Date();
+  const yearsOfLegacy = currentDate.getFullYear() - foundingDate.getFullYear();
 
   const handleLearnMore = (lineId: string) => {
     navigate(`/lineage/${lineId}`);
@@ -708,7 +676,7 @@ const Lineage = () => {
                     0
                   ),
                 },
-                { label: "Years of Legacy", value: "7+" },
+                { label: "Years of Legacy", value: `${yearsOfLegacy}+` },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -852,7 +820,7 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-6 py-2 rounded-full font-bold text-sm shadow-2xl border-2 border-yellow-300">
-            👑 CHARTER LINE 👑
+            CHARTER LINE
           </div>
         </motion.div>
       )}
@@ -999,7 +967,7 @@ const LineageCard = ({ line, index, onLearnMore }: LineageCardProps) => {
                 >
                   <Users className="w-5 h-5 mr-2" />
                   <span className="font-semibold">
-                    {line.members} {isCharter ? "Founding Fathers" : "Brothers"}
+                    {line.members} {isCharter ? "Charter Members" : "Brothers"}
                   </span>
                 </div>
               </motion.div>
