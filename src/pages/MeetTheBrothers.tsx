@@ -88,14 +88,10 @@ const MeetTheBrothers = () => {
       crossingSemester: "Fall 2024",
       lineNumber: "#5",
       major: "Mechanical Engineering",
-      achievements: [
-        "Engineering Excellence",
-        "Project Leadership",
-        "Technical Mentorship",
-      ],
-      quote: "Engineering is the art of making the impossible possible.",
-      image:
-        "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=400&h=500&fit=crop&crop=face",
+      achievements: ["Dedicated scholar"],
+      quote:
+        "The question isn't who is going to let me; it's who is going to stop me.",
+      image: "/brothers/Jacob Herrera.jpeg",
     },
     {
       id: 6,
