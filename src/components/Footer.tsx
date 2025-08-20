@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="bg-black border-t border-yellow-400/20 py-16">
@@ -30,52 +32,36 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("greetings")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                <Link
+                  to="/"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-300 font-medium"
                 >
-                  About
-                </button>
+                  Home
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("lineage")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                <Link
+                  to="/chapter-history"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-300 font-medium"
                 >
-                  Lineage
-                </button>
+                  Chapter History
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("leadership")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                <Link
+                  to="/leadership"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-300 font-medium"
                 >
                   Leadership
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("service")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                <Link
+                  to="/service"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-300 font-medium"
                 >
                   Service
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
