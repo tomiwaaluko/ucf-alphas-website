@@ -106,8 +106,7 @@ const MeetTheBrothers = () => {
       ],
       quote:
         "Success in business requires training and discipline and hard work.",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face",
+      image: "/brothers/Adams Brown.jpeg",
     },
     {
       id: 7,
@@ -162,6 +161,22 @@ const MeetTheBrothers = () => {
       ],
       quote: "It's not over when you fail, it's over when you quit",
       image: "/brothers/Treylon Chukes.jpeg",
+    },
+    {
+      id: 11,
+      name: "Theodore Alexander Johnson",
+      crossingSemester: "Fall 2024",
+      lineNumber: "#11",
+      major: "Business Analytics",
+      achievements: [
+        "Mr. Blue & White at University of The Bahamas",
+        "Internal Auditor on the Executive Board of the Student Government Association",
+        "Treasurer for the National Pan-Hellenic Council (NPHC)",
+        "Treasurer and Dean of Education at Phi Mu Chapter",
+      ],
+      quote:
+        "I look into the eyes of so many people, and I wish to see them all shine as bright as they possibly can within this lifetime.",
+      image: "/brothers/Theodore Johnson.jpeg",
     },
   ];
   return (

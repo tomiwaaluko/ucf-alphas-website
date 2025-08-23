@@ -190,8 +190,7 @@ const BrotherDetail = () => {
       name: "Adams Brown Jr.",
       crossingSemester: "Fall 2024",
       position: "Neophyte",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=600&fit=crop&crop=face",
+      image: "/brothers/Adams Brown.jpeg",
       bio: "Adams Brown Jr. is studying Integrated Business and brings a strategic mindset to the chapter's operations. His analytical skills and business acumen have been valuable in planning chapter events and financial initiatives.\n\nAdams demonstrates exceptional leadership potential through his understanding of business strategy and financial analysis. His commitment to professional development and his ability to think strategically about organizational growth make him an asset to any team or project he joins.",
       major: "Integrated Business",
       year: "Sophomore",
@@ -298,6 +297,32 @@ const BrotherDetail = () => {
       ],
       quote: "It's not over when you fail, it's over when you quit",
       organizations: ["Black Men in Medicine UCF Chapter"],
+    },
+    "11": {
+      name: "Theodore Alexander Johnson",
+      crossingSemester: "Fall 2024",
+      position: "Assistant District Director",
+      image: "/brothers/Theodore Johnson.jpeg",
+      bio: "Theodore A. Johnson is an international transfer student and proud native of New Providence, The Bahamas. He is currently a sophomore at the University of Central Florida, where he is pursuing a degree in Business Analytics with aspirations of using data-driven solutions to impact the fields of finance, business, and community development.\n\nA dedicated leader and servant, Theodore became a spring 2024 initiate of Alpha Phi Alpha Fraternity, Incorporated through the Phi Mu Chapter at the University of The Bahamas. Since then, he has continued to embody the fraternity's values of scholarship, leadership, and service. At the University of The Bahamas, Theodore distinguished himself through active involvement in campus leadership and community engagement. He proudly represented the student body as Mr. Blue & White, served as Internal Auditor on the Executive Board of the Student Government Association, and held the position of Treasurer for the National Pan-Hellenic Council (NPHC). Within his fraternity chapter, he also served as Treasurer and Dean of Education, roles in which he helped to strengthen financial stewardship, programming, and the academic success of his peers.\n\nNow at UCF, Theodore continues to build on his legacy of service and leadership. His journey reflects a commitment to bridging cultures, uplifting his community, and developing as a global leader prepared to make meaningful contributions both in The Bahamas and internationally.",
+      major: "Business Analytics",
+      year: "Sophomore",
+      hometown: "Nassau, The Bahamas",
+      interests: ["Sports", "Networking", "Community engagement"],
+      linkedin:
+        "https://www.linkedin.com/in/theodore-johnson-cams-cirm-158738200",
+      email: "th151492@ucf.edu",
+      achievements: [
+        "Mr. Blue & White at University of The Bahamas",
+        "Internal Auditor on the Executive Board of the Student Government Association",
+        "Treasurer for the National Pan-Hellenic Council (NPHC)",
+        "Treasurer and Dean of Education at Phi Mu Chapter",
+      ],
+      quote:
+        "I look into the eyes of so many people, and I wish to see them all shine as bright as they possibly can within this lifetime.",
+      organizations: [
+        "Alpha Phi Alpha Fraternity Inc.",
+        "Order of Omega (Alpha Alpha Chi Chapter)",
+      ],
     },
   };
   const brother = brotherData[id || "1"];
@@ -497,7 +522,7 @@ const BrotherDetail = () => {
                       <img
                         src={brother.image}
                         alt={brother.name}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${brother.name === "Theodore Alexander Johnson" ? "object-cover object-top" : "object-cover"}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                     </div>
@@ -653,6 +678,22 @@ const BrotherDetail = () => {
                           </p>
                         </div>
                       </div>
+                      {brother.name === "Theodore Alexander Johnson" && (
+                        <>
+                          <div>
+                            <h4 className="font-semibold text-gray-400 text-sm">
+                              Initiated
+                            </h4>
+                            <p className="text-white text-sm">Phi Mu | Spring 2024</p>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-400 text-sm">
+                              Current
+                            </h4>
+                            <p className="text-white text-sm">Xi Iota</p>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
 
