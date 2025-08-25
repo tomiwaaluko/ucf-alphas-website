@@ -7,6 +7,8 @@ import { Analytics } from "@vercel/analytics/react";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Service from "./pages/Service";
+import ServiceGallery from "./pages/ServiceGallery";
+import ServiceGalleryDetail from "./pages/ServiceGalleryDetail";
 import MissBlackAndGold from "./pages/MissBlackAndGold";
 import MissBlackAndGoldDetails from "./pages/MissBlackAndGoldDetails";
 import MissXiIotaDetails from "./pages/MissXiIotaDetails";
@@ -40,6 +42,11 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/service" element={<Service />} />
+          <Route path="/service-gallery" element={<ServiceGallery />} />
+          <Route
+            path="/service-gallery/:id"
+            element={<ServiceGalleryDetail />}
+          />
           <Route path="/miss-black-and-gold" element={<MissBlackAndGold />} />
           <Route
             path="/miss-black-and-gold-details"

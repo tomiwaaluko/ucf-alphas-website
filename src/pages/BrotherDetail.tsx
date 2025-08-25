@@ -522,7 +522,11 @@ const BrotherDetail = () => {
                       <img
                         src={brother.image}
                         alt={brother.name}
-                        className={`w-full h-full ${brother.name === "Theodore Alexander Johnson" ? "object-cover object-top" : "object-cover"}`}
+                        className={`w-full h-full ${
+                          brother.name === "Theodore Alexander Johnson"
+                            ? "object-cover object-top"
+                            : "object-cover"
+                        }`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                     </div>
@@ -684,7 +688,9 @@ const BrotherDetail = () => {
                             <h4 className="font-semibold text-gray-400 text-sm">
                               Initiated
                             </h4>
-                            <p className="text-white text-sm">Phi Mu | Spring 2024</p>
+                            <p className="text-white text-sm">
+                              Phi Mu | Spring 2024
+                            </p>
                           </div>
                           <div>
                             <h4 className="font-semibold text-gray-400 text-sm">

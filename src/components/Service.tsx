@@ -8,8 +8,12 @@ import {
   ChevronRight,
   Play,
   Pause,
+  Camera,
+  FolderOpen,
+  ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Service = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -319,6 +323,151 @@ const Service = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Service Gallery Section */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-yellow-400 mb-4">
+              Service Gallery
+            </h3>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Explore our community service events and see the impact we're
+              making together
+            </p>
+          </div>
+
+          <div className="bg-black/60 backdrop-blur-sm border border-yellow-400/30 rounded-3xl p-8">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {/* Featured Event Preview Cards */}
+              <Link to="/service-gallery/1">
+                <motion.div
+                  className="bg-gradient-to-br from-gray-900/80 to-black/80 rounded-2xl overflow-hidden border border-yellow-400/20 hover:border-yellow-400/40 transition-all group cursor-pointer"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src="/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png"
+                      alt="Community Food Drive"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div className="absolute top-4 right-4 bg-black/70 text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">
+                      12 Photos
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h4 className="text-white font-bold text-lg mb-1">
+                        Community Food Drive
+                      </h4>
+                      <p className="text-gray-300 text-sm">
+                        Holiday Season 2024
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-yellow-400">
+                        <FolderOpen className="w-4 h-4 mr-2" />
+                        <span className="text-sm font-medium">View Event</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-yellow-400 transition-colors" />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+
+              <Link to="/service-gallery/2">
+                <motion.div
+                  className="bg-gradient-to-br from-gray-900/80 to-black/80 rounded-2xl overflow-hidden border border-yellow-400/20 hover:border-yellow-400/40 transition-all group cursor-pointer"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src="/lovable-uploads/229d7c7e-989f-4a85-9217-4c0597abfc8c.png"
+                      alt="Educational Mentorship"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div className="absolute top-4 right-4 bg-black/70 text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">
+                      8 Photos
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h4 className="text-white font-bold text-lg mb-1">
+                        Educational Mentorship
+                      </h4>
+                      <p className="text-gray-300 text-sm">Spring 2024</p>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-yellow-400">
+                        <FolderOpen className="w-4 h-4 mr-2" />
+                        <span className="text-sm font-medium">View Event</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-yellow-400 transition-colors" />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+
+              <Link to="/service-gallery/3">
+                <motion.div
+                  className="bg-gradient-to-br from-gray-900/80 to-black/80 rounded-2xl overflow-hidden border border-yellow-400/20 hover:border-yellow-400/40 transition-all group cursor-pointer"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
+                      alt="Youth Leadership Workshop"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div className="absolute top-4 right-4 bg-black/70 text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">
+                      15 Photos
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h4 className="text-white font-bold text-lg mb-1">
+                        Youth Leadership Workshop
+                      </h4>
+                      <p className="text-gray-300 text-sm">Fall 2024</p>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-yellow-400">
+                        <FolderOpen className="w-4 h-4 mr-2" />
+                        <span className="text-sm font-medium">View Event</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-yellow-400 transition-colors" />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+            </div>
+
+            <div className="text-center">
+              <Link to="/service-gallery">
+                <motion.button
+                  className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-2xl font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/30 inline-flex items-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Camera className="w-5 h-5 mr-2" />
+                  View Full Gallery
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </motion.button>
+              </Link>
+            </div>
           </div>
         </motion.div>
 
