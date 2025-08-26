@@ -5,9 +5,11 @@ import {
   Send,
   Phone,
   MessageCircle,
+  Loader2,
 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { sendContactEmail, EmailData } from "@/lib/resend";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,12 +19,41 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
-    alert("Thank you for your message! We will get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const result = await sendContactEmail(formData as EmailData);
+
+      if (result.success) {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you for your message! We will get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: result.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "An unexpected error occurred. Please try again later.",
+      });
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -40,7 +71,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["apa@ucf.edu", "thesonsoft3@gmail.com"],
+      details: ["email@ucfalphas.org", "apa@ucf.edu"],
       color: "from-yellow-400 to-yellow-500",
     },
     {
@@ -305,24 +336,53 @@ const Contact = () => {
                   ></textarea>
                 </motion.div>
 
+                {/* Status Message */}
+                {submitStatus.type && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 rounded-xl border ${
+                      submitStatus.type === "success"
+                        ? "bg-green-900/50 border-green-400/50 text-green-400"
+                        : "bg-red-900/50 border-red-400/50 text-red-400"
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </motion.div>
+                )}
+
                 <motion.button
                   type="submit"
+                  disabled={isSubmitting}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-xl font-bold text-lg hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-xl hover:shadow-yellow-400/40 flex items-center justify-center relative overflow-hidden group"
+                  whileHover={{
+                    scale: isSubmitting ? 1 : 1.02,
+                    y: isSubmitting ? 0 : -2,
+                  }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  className={`w-full px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl flex items-center justify-center relative overflow-hidden group ${
+                    isSubmitting
+                      ? "bg-gray-600 cursor-not-allowed"
+                      : "bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-300 hover:to-yellow-400 hover:shadow-yellow-400/40"
+                  }`}
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
                     initial={{ x: -100 }}
-                    whileHover={{ x: 100 }}
+                    whileHover={{ x: isSubmitting ? -100 : 100 }}
                     transition={{ duration: 0.6 }}
                   />
-                  <Send className="w-6 h-6 mr-3 relative z-10" />
-                  <span className="relative z-10">Send Message</span>
+                  {isSubmitting ? (
+                    <Loader2 className="w-6 h-6 mr-3 relative z-10 animate-spin" />
+                  ) : (
+                    <Send className="w-6 h-6 mr-3 relative z-10" />
+                  )}
+                  <span className="relative z-10">
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </span>
                 </motion.button>
               </div>
             </form>
