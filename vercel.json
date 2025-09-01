@@ -8,6 +8,11 @@
       "runtime": "@vercel/node@3.2.14"
     }
   },
+  "build": {
+    "env": {
+      "NODE_VERSION": "20"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
