@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { sendContactEmail, EmailData } from "@/lib/resend";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,9 +30,17 @@ const Contact = () => {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      const result = await sendContactEmail(formData as EmailData);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      if (result.success) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         setSubmitStatus({
           type: "success",
           message: "Thank you for your message! We will get back to you soon.",

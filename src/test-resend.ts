@@ -1,29 +1,40 @@
-// Test file to check Resend configuration
-console.log("Environment Variables Check:");
-console.log(
-  "VITE_RESEND_API_KEY:",
-  import.meta.env.VITE_RESEND_API_KEY ? "Set" : "Not set"
-);
-console.log("VITE_FROM_EMAIL:", import.meta.env.VITE_FROM_EMAIL);
-console.log("VITE_TO_EMAIL:", import.meta.env.VITE_TO_EMAIL);
+// Test file to check API endpoint configuration
+console.log("API Test Configuration:");
+console.log("Testing /api/contact endpoint...");
 
-// Test the Resend import
-import { sendContactEmail } from "./lib/resend";
-
-// Test function
-window.testResend = async () => {
+// Test function for the new API endpoint
+window.testContactAPI = async () => {
   const testData = {
     name: "Test User",
     email: "test@example.com",
     subject: "Test Subject",
-    message: "This is a test message",
+    message: "This is a test message from the contact API",
   };
 
-  const result = await sendContactEmail(testData);
-  console.log("Test result:", result);
-  return result;
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(testData),
+    });
+
+    const result = await response.json();
+    console.log("API Test result:", {
+      status: response.status,
+      success: result.success,
+      message: result.message || result.error,
+      data: result.data,
+    });
+
+    return result;
+  } catch (error) {
+    console.error("API Test error:", error);
+    return { success: false, error: "Failed to test API" };
+  }
 };
 
 console.log(
-  "Resend test function loaded. Call window.testResend() in console to test."
+  "Contact API test function loaded. Call window.testContactAPI() in console to test."
 );
