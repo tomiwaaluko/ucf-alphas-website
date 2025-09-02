@@ -5,7 +5,11 @@
   "installCommand": "npm install",
   "functions": {
     "api/**/*.ts": {
-      "runtime": "@vercel/node@3.2.14",
+      "runtime": "@vercel/node@latest",
+      "maxDuration": 30
+    },
+    "api/**/*.js": {
+      "runtime": "@vercel/node@latest",
       "maxDuration": 30
     }
   },
