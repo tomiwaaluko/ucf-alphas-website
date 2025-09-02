@@ -19,16 +19,15 @@ export default function handler(req, res) {
         method: req.method,
         nodeVersion: process.version,
         timestamp: new Date().toISOString(),
-        envCount: Object.keys(process.env).length
-      }
+        envCount: Object.keys(process.env).length,
+      },
     });
-
   } catch (error) {
     console.error("Simple function error:", error);
     return res.status(500).json({
       success: false,
       error: "Simple function failed",
-      message: String(error)
+      message: String(error),
     });
   }
 }

@@ -24,7 +24,10 @@ module.exports = async function handler(req, res) {
     console.log("Method:", req.method);
     console.log("Body:", JSON.stringify(req.body, null, 2));
     console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY);
-    console.log("RESEND_API_KEY length:", process.env.RESEND_API_KEY?.length || 0);
+    console.log(
+      "RESEND_API_KEY length:",
+      process.env.RESEND_API_KEY?.length || 0
+    );
     console.log("TO_EMAIL:", process.env.TO_EMAIL);
     console.log("FROM_EMAIL:", process.env.FROM_EMAIL);
 
@@ -34,7 +37,7 @@ module.exports = async function handler(req, res) {
       return res.status(500).json({
         success: false,
         error: "Email service not configured",
-        debug: "RESEND_API_KEY missing"
+        debug: "RESEND_API_KEY missing",
       });
     }
 
@@ -43,7 +46,7 @@ module.exports = async function handler(req, res) {
       return res.status(500).json({
         success: false,
         error: "Email service not configured",
-        debug: "TO_EMAIL missing"
+        debug: "TO_EMAIL missing",
       });
     }
 
@@ -54,7 +57,12 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({
         success: false,
         error: "All fields are required",
-        debug: { name: !!name, email: !!email, subject: !!subject, message: !!message }
+        debug: {
+          name: !!name,
+          email: !!email,
+          subject: !!subject,
+          message: !!message,
+        },
       });
     }
 
@@ -65,7 +73,9 @@ module.exports = async function handler(req, res) {
     // Send email
     console.log("Sending email...");
     const { data, error } = await resend.emails.send({
-      from: `UCF Alphas Contact <${process.env.FROM_EMAIL || 'onboarding@resend.dev'}>`,
+      from: `UCF Alphas Contact <${
+        process.env.FROM_EMAIL || "onboarding@resend.dev"
+      }>`,
       to: [process.env.TO_EMAIL],
       subject: `New Contact Form: ${subject}`,
       html: `
@@ -74,7 +84,7 @@ module.exports = async function handler(req, res) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${message.replace(/\n/g, "<br>")}</p>
       `,
       replyTo: email,
     });
@@ -84,9 +94,9 @@ module.exports = async function handler(req, res) {
       return res.status(500).json({
         success: false,
         error: "Failed to send email",
-        debug: { 
-          error: typeof error === 'object' ? JSON.stringify(error) : error 
-        }
+        debug: {
+          error: typeof error === "object" ? JSON.stringify(error) : error,
+        },
       });
     }
 
@@ -95,9 +105,8 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({
       success: true,
       message: "Email sent successfully",
-      data: { id: data?.id }
+      data: { id: data?.id },
     });
-
   } catch (error) {
     console.error("Contact API error:", error);
     return res.status(500).json({
@@ -105,8 +114,8 @@ module.exports = async function handler(req, res) {
       error: "An unexpected error occurred",
       debug: {
         message: error?.message || String(error),
-        stack: error?.stack?.substring(0, 500)
-      }
+        stack: error?.stack?.substring(0, 500),
+      },
     });
   }
 };

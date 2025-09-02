@@ -22,7 +22,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       hasToEmail: !!process.env.TO_EMAIL,
       toEmail: process.env.TO_EMAIL,
       hasFromEmail: !!process.env.FROM_EMAIL,
-      fromEmail: process.env.FROM_EMAIL
+      fromEmail: process.env.FROM_EMAIL,
     };
 
     console.log("Step 2: Environment check completed", envCheck);
@@ -33,7 +33,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
       const { Resend } = await import("resend");
       console.log("Step 4: Resend imported successfully", typeof Resend);
-      
+
       if (!process.env.RESEND_API_KEY) {
         throw new Error("API key missing");
       }
@@ -41,17 +41,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.log("Step 5: Creating Resend client...");
       const resend = new Resend(process.env.RESEND_API_KEY);
       console.log("Step 6: Resend client created successfully");
-      
+
       resendImportResult = {
         imported: true,
         clientCreated: true,
-        type: typeof resend
+        type: typeof resend,
       };
     } catch (importError) {
       console.error("Step X: Resend import/init failed:", importError);
       resendImportResult = {
         imported: false,
-        error: importError instanceof Error ? importError.message : String(importError)
+        error:
+          importError instanceof Error
+            ? importError.message
+            : String(importError),
       };
     }
 
@@ -60,9 +63,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       message: "Import test completed",
       environment: envCheck,
       resendTest: resendImportResult,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
-
   } catch (error) {
     console.error("Function error:", error);
     return res.status(500).json({
@@ -70,8 +72,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       error: "Function failed",
       debug: {
         message: error instanceof Error ? error.message : String(error),
-        stack: error instanceof Error ? error.stack?.substring(0, 500) : undefined
-      }
+        stack:
+          error instanceof Error ? error.stack?.substring(0, 500) : undefined,
+      },
     });
   }
 }

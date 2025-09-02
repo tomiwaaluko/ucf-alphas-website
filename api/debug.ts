@@ -29,10 +29,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         hasToEmail: !!process.env.TO_EMAIL,
         hasFromEmail: !!process.env.FROM_EMAIL,
         nodeVersion: process.version,
-        timestamp: new Date().toISOString()
-      }
+        timestamp: new Date().toISOString(),
+      },
     });
-
   } catch (error) {
     console.error("Basic function error:", error);
     return res.status(500).json({
@@ -40,8 +39,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       error: "Basic function failed",
       debug: {
         message: error instanceof Error ? error.message : String(error),
-        stack: error instanceof Error ? error.stack : undefined
-      }
+        stack: error instanceof Error ? error.stack : undefined,
+      },
     });
   }
 }
