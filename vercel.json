@@ -3,16 +3,6 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "installCommand": "npm install",
-  "functions": {
-    "api/**/*.ts": {
-      "runtime": "@vercel/node@latest",
-      "maxDuration": 30
-    },
-    "api/**/*.js": {
-      "runtime": "@vercel/node@latest",
-      "maxDuration": 30
-    }
-  },
   "build": {
     "env": {
       "NODE_VERSION": "20"
