@@ -108,18 +108,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     "RESEND_API_KEY length:",
     process.env.RESEND_API_KEY?.length || 0
   );
+  console.log(
+    "RESEND_API_KEY prefix:",
+    process.env.RESEND_API_KEY?.substring(0, 10) || "undefined"
+  );
   console.log("TO_EMAIL exists:", !!process.env.TO_EMAIL);
   console.log("TO_EMAIL value:", process.env.TO_EMAIL);
   console.log("FROM_EMAIL exists:", !!process.env.FROM_EMAIL);
   console.log("FROM_EMAIL value:", process.env.FROM_EMAIL);
   console.log("NODE_ENV:", process.env.NODE_ENV);
   console.log("VERCEL_ENV:", process.env.VERCEL_ENV);
-  console.log(
-    "All env vars:",
-    Object.keys(process.env).filter(
-      (key) => key.includes("RESEND") || key.includes("EMAIL")
-    )
-  );
+  console.log("Request method:", req.method);
+  console.log("Request body type:", typeof req.body);
+  console.log("Request body:", JSON.stringify(req.body, null, 2));
   console.log("========================");
 
   // Handle preflight requests
@@ -129,6 +130,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // Only allow POST requests
   if (req.method !== "POST") {
+    console.error("Invalid method:", req.method);
     return res.status(405).json({
       success: false,
       error: "Method not allowed. Only POST requests are accepted.",
@@ -150,6 +152,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
+    // Validate API key format
+    if (!process.env.RESEND_API_KEY.startsWith("re_")) {
+      console.error("RESEND_API_KEY has invalid format");
+      return res.status(500).json({
+        success: false,
+        error:
+          "Email service is not configured properly. Please try again later.",
+        debug: "RESEND_API_KEY invalid format",
+      });
+    }
+
     // Check if recipient email is configured
     if (!process.env.TO_EMAIL) {
       console.error("TO_EMAIL is not configured");
@@ -165,9 +178,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // Validate and sanitize input data
+    console.log("Validating contact data...");
     const contactData = validateContactData(req.body);
+    console.log("Contact data validated:", {
+      name: contactData.name,
+      email: contactData.email,
+      subject: contactData.subject,
+    });
 
     // Initialize Resend client with the API key
+    console.log("Initializing Resend client...");
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     // Create email content
@@ -182,6 +202,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     // Send email via Resend
+    console.log("Calling Resend API...");
     const { data: emailResponse, error } = await resend.emails.send({
       from: `UCF Alphas Contact Form <${fromEmail}>`,
       to: [process.env.TO_EMAIL],
@@ -191,8 +212,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     if (error) {
-      console.error("Resend API error:", {
+      console.error("Resend API error details:", {
         error,
+        errorType: typeof error,
+        errorMessage: error?.message || "No message",
+        errorName: error?.name || "No name",
         timestamp: new Date().toISOString(),
         requestData: {
           from: fromEmail,
@@ -203,7 +227,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json({
         success: false,
         error: "Failed to send email. Please try again later.",
-        debug: typeof error === "object" ? JSON.stringify(error) : error,
+        debug: {
+          type: typeof error,
+          message: error?.message || "No error message",
+          name: error?.name || "No error name",
+          error: typeof error === "object" ? JSON.stringify(error) : error,
+        },
       });
     }
 
@@ -215,19 +244,34 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       data: { id: emailResponse?.id },
     });
   } catch (error) {
-    console.error("Contact API error:", error);
+    console.error("Contact API error details:", {
+      error,
+      errorType: typeof error,
+      errorMessage: error instanceof Error ? error.message : "Unknown error",
+      errorStack: error instanceof Error ? error.stack : "No stack",
+      timestamp: new Date().toISOString(),
+    });
 
     // Return user-friendly error messages
     if (error instanceof Error && error.message.includes("required")) {
       return res.status(400).json({
         success: false,
         error: error.message,
+        debug: {
+          type: "ValidationError",
+          message: error.message,
+        },
       });
     }
 
     return res.status(500).json({
       success: false,
       error: "An unexpected error occurred. Please try again later.",
+      debug: {
+        type: typeof error,
+        message: error instanceof Error ? error.message : "Unknown error",
+        error: error instanceof Error ? error.toString() : String(error),
+      },
     });
   }
 }
