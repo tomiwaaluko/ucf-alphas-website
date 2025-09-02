@@ -104,8 +104,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Debug environment variables
   console.log("=== Environment Debug ===");
   console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY);
+  console.log(
+    "RESEND_API_KEY length:",
+    process.env.RESEND_API_KEY?.length || 0
+  );
   console.log("TO_EMAIL exists:", !!process.env.TO_EMAIL);
+  console.log("TO_EMAIL value:", process.env.TO_EMAIL);
   console.log("FROM_EMAIL exists:", !!process.env.FROM_EMAIL);
+  console.log("FROM_EMAIL value:", process.env.FROM_EMAIL);
+  console.log("NODE_ENV:", process.env.NODE_ENV);
+  console.log("VERCEL_ENV:", process.env.VERCEL_ENV);
   console.log(
     "All env vars:",
     Object.keys(process.env).filter(
@@ -131,18 +139,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Check if API key is configured
     if (!process.env.RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not configured");
+      console.error(
+        "Available env vars:",
+        Object.keys(process.env).filter((key) => key.includes("RESEND"))
+      );
       return res.status(500).json({
         success: false,
         error: "Email service is not configured. Please try again later.",
+        debug: "RESEND_API_KEY missing",
       });
     }
 
     // Check if recipient email is configured
     if (!process.env.TO_EMAIL) {
       console.error("TO_EMAIL is not configured");
+      console.error(
+        "Available env vars:",
+        Object.keys(process.env).filter((key) => key.includes("EMAIL"))
+      );
       return res.status(500).json({
         success: false,
         error: "Email service is not configured. Please try again later.",
+        debug: "TO_EMAIL missing",
       });
     }
 
@@ -173,10 +191,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     if (error) {
-      console.error("Resend API error:", error);
+      console.error("Resend API error:", {
+        error,
+        timestamp: new Date().toISOString(),
+        requestData: {
+          from: fromEmail,
+          to: process.env.TO_EMAIL,
+          subject: `New Contact Form: ${contactData.subject}`,
+        },
+      });
       return res.status(500).json({
         success: false,
         error: "Failed to send email. Please try again later.",
+        debug: typeof error === "object" ? JSON.stringify(error) : error,
       });
     }
 

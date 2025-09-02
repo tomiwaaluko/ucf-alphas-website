@@ -29,3 +29,23 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Documentation and development files (exclude from production)
+*.md
+!README.md
+API_README.md
+DEPLOYMENT_CHECKLIST.md
+
+# Testing files
+*test*.ts
+*test*.js
+test-*
+
+# Development scripts
+*.ps1
+update_lineage_details.ps1
+clean_images.ps1
+replace_images.ps1
+
+# API testing endpoints
+api/test.ts
