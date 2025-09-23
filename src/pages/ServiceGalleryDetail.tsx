@@ -87,6 +87,148 @@ const ServiceGalleryDetail = () => {
         },
       ],
     },
+    "2": {
+      title: "Head Start Literacy & Disney Gala Service",
+      date: "April 4, 2025",
+      location: "Head Start to Literacy & Disney",
+      participants: 8,
+      description:
+        "On April 4, 2025, the Xi Iota Chapter of Alpha Phi Alpha Fraternity, Inc. had the incredible opportunity to give back by passing out and reading books to the youth at Head Start to Literacy, alongside our brothers from Delta Xi Lambda. Promoting education and empowerment-one page at a time! Later that day, we also assisted in setting up Disney's 'Celebrate the Children's Gala,' continuing our commitment to service and community impact.",
+      tags: ["Education", "Literacy", "Service", "Disney"],
+      photos: [
+        {
+          id: 1,
+          url: "/service-gallery/headstart-literacy-disney-gala-service/IMG_7541.jpg",
+          caption: "",
+          photographer: "",
+          likes: 28,
+        },
+        {
+          id: 2,
+          url: "/service-gallery/headstart-literacy-disney-gala-service/IMG_7542.jpg",
+          caption: "",
+          photographer: "",
+          likes: 22,
+        },
+        {
+          id: 3,
+          url: "/service-gallery/headstart-literacy-disney-gala-service/IMG_7543.jpg",
+          caption: "",
+          photographer: "",
+          likes: 31,
+        },
+      ],
+    },
+    "3": {
+      title: "UCF Campus Tour & KSFAN Mentorship",
+      date: "Recent Monday",
+      location: "UCF Campus",
+      participants: 6,
+      description:
+        "This past Monday, the Xi Iota Chapter of Alpha Phi Alpha Fraternity, Inc. welcomed the KSFAN to the campus of UCF. Brothers helped tour the students around campus, sharing insights on college life, academic success, and the legacy of Alpha. It was an honor to inspire the next generation and show them what it means to strive for excellence! Wishing these young men the best in their future endeavors.",
+      tags: ["Leadership", "Scholarship", "Mentorship", "UCF"],
+      photos: [
+        {
+          id: 1,
+          url: "/service-gallery/ucf-campus-tour-ksfan-mentorship/IMG_7545.jpg",
+          caption: "",
+          photographer: "",
+          likes: 25,
+        },
+        {
+          id: 2,
+          url: "/service-gallery/ucf-campus-tour-ksfan-mentorship/IMG_7546.jpg",
+          caption: "",
+          photographer: "",
+          likes: 19,
+        },
+        {
+          id: 3,
+          url: "/service-gallery/ucf-campus-tour-ksfan-mentorship/IMG_7547.jpg",
+          caption: "",
+          photographer: "",
+          likes: 27,
+        },
+        {
+          id: 4,
+          url: "/service-gallery/ucf-campus-tour-ksfan-mentorship/IMG_7548.jpg",
+          caption: "",
+          photographer: "",
+          likes: 23,
+        },
+      ],
+    },
+    "4": {
+      title: "Black History Month Outreach",
+      date: "February 7-8, 2025",
+      location: "Jones High School & Rollins College",
+      participants: 10,
+      description:
+        "The Xi Iota Chapter of Alpha Phi Alpha Fraternity, Inc. alongside NPHC UCF continued our Black History Month outreach by visiting Jones High School (Feb. 7th) and Rollins College for their Upward Bound Program (Feb. 8th). We connected with students, shared the legacy of the Divine Nine, and emphasized the importance of brotherhood, education and service. The impact of Black history is felt every day, and we remain committed to honoring that legacy.",
+      tags: ["Black History Month", "Divine Nine", "Education", "Upward Bound"],
+      photos: [
+        {
+          id: 1,
+          url: "/service-gallery/black-history-month-jones-rollins-outreach/IMG_7550.jpg",
+          caption: "",
+          photographer: "",
+          likes: 35,
+        },
+        {
+          id: 2,
+          url: "/service-gallery/black-history-month-jones-rollins-outreach/IMG_7551.jpg",
+          caption: "",
+          photographer: "",
+          likes: 29,
+        },
+      ],
+    },
+    "5": {
+      title: "Forsyth Woods Elementary Christmas Gift Giving",
+      date: "December 3, 2024",
+      location: "Forsyth Woods Elementary School",
+      participants: 8,
+      description:
+        "On Tuesday, December 3rd, the brothers of the Xi Iota Chapter of Alpha Phi Alpha Fraternity Inc. had to the opportunity to be apart of a Christmas gift giving at Forsyth Woods Elementary school. We exuberated the holiday spirit while providing gifts to children who normally are not able to have a traditional Christmas experience.",
+      tags: ["Christmas", "Youth Support", "Holiday Spirit", "Gift Giving"],
+      photos: [
+        {
+          id: 1,
+          url: "/service-gallery/forsyth-woods-elementary-christmas-gift-giving/IMG_7553.jpg",
+          caption: "",
+          photographer: "",
+          likes: 42,
+        },
+        {
+          id: 2,
+          url: "/service-gallery/forsyth-woods-elementary-christmas-gift-giving/IMG_7554.jpg",
+          caption: "",
+          photographer: "",
+          likes: 38,
+        },
+        {
+          id: 3,
+          url: "/service-gallery/forsyth-woods-elementary-christmas-gift-giving/IMG_7555.jpg",
+          caption: "",
+          photographer: "",
+          likes: 33,
+        },
+        {
+          id: 4,
+          url: "/service-gallery/forsyth-woods-elementary-christmas-gift-giving/IMG_7556.jpg",
+          caption: "",
+          photographer: "",
+          likes: 26,
+        },
+        {
+          id: 5,
+          url: "/service-gallery/forsyth-woods-elementary-christmas-gift-giving/IMG_7557.jpg",
+          caption: "",
+          photographer: "",
+          likes: 31,
+        },
+      ],
+    },
     // Add more events as needed
   };
 
@@ -291,21 +433,6 @@ const ServiceGalleryDetail = () => {
                         </button>
                       </div>
                     </div>
-
-                    <div className="p-4">
-                      <p className="text-gray-300 text-sm mb-2 line-clamp-2">
-                        {photo.caption}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-yellow-400 text-xs">
-                          📸 {photo.photographer}
-                        </span>
-                        <div className="flex items-center text-gray-400 text-xs">
-                          <Heart className="w-3 h-3 mr-1" />
-                          {photo.likes + (likedImages.has(photo.id) ? 1 : 0)}
-                        </div>
-                      </div>
-                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -363,37 +490,6 @@ const ServiceGalleryDetail = () => {
                   </button>
                 </>
               )}
-
-              {/* Photo info */}
-              <div className="absolute bottom-4 left-4 right-4 bg-black/70 text-white p-4 rounded-lg backdrop-blur-sm">
-                <p className="text-lg mb-2">
-                  {event.photos[selectedImage].caption}
-                </p>
-                <div className="flex items-center justify-between text-sm text-gray-300">
-                  <span>📸 {event.photos[selectedImage].photographer}</span>
-                  <div className="flex items-center space-x-4">
-                    <button
-                      onClick={() => toggleLike(event.photos[selectedImage].id)}
-                      className={`flex items-center space-x-1 transition-colors ${
-                        likedImages.has(event.photos[selectedImage].id)
-                          ? "text-red-400"
-                          : "text-gray-300 hover:text-red-400"
-                      }`}
-                    >
-                      <Heart className="w-4 h-4" />
-                      <span>
-                        {event.photos[selectedImage].likes +
-                          (likedImages.has(event.photos[selectedImage].id)
-                            ? 1
-                            : 0)}
-                      </span>
-                    </button>
-                    <span className="text-gray-400">
-                      {selectedImage + 1} / {event.photos.length}
-                    </span>
-                  </div>
-                </div>
-              </div>
             </motion.div>
           </motion.div>
         )}

@@ -19,35 +19,42 @@ const Service = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  // Slideshow media data - you can replace these with your own images/videos
+  // Slideshow media data - updated with real service event photos
   const slideshowMedia = [
     {
       type: "image",
-      src: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
-      title: "Community Food Drive",
+      src: "/service-gallery/metro-orlando-food-distribution/IMG_7537.jpg",
+      title: "Metro Orlando Food Distribution",
       description:
-        "Providing meals to families in need during the holiday season",
+        "Brothers dedicated their time serving the Metro Orlando community by assisting with food packaging and distribution for families in need",
     },
     {
       type: "image",
-      src: "/lovable-uploads/229d7c7e-989f-4a85-9217-4c0597abfc8c.png",
-      title: "Educational Mentorship",
+      src: "/service-gallery/headstart-literacy-disney-gala-service/IMG_7541.jpg",
+      title: "Head Start Literacy & Disney Gala Service",
       description:
-        "One-on-one tutoring sessions helping students achieve academic excellence",
+        "Reading books to youth at Head Start to Literacy and assisting with Disney's 'Celebrate the Children's Gala'",
     },
     {
       type: "image",
-      src: "/lovable-uploads/3ab3677c-347e-4879-adef-d912371f9833.png",
-      title: "Health & Wellness Fair",
+      src: "/service-gallery/ucf-campus-tour-ksfan-mentorship/IMG_7545.jpg",
+      title: "UCF Campus Tour & KSFAN Mentorship",
       description:
-        "Free health screenings and wellness education for our community",
+        "Brothers toured students around UCF campus, sharing insights on college life and the legacy of Alpha",
     },
     {
       type: "image",
-      src: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop",
-      title: "Youth Leadership Workshop",
+      src: "/service-gallery/black-history-month-jones-rollins-outreach/IMG_7550.jpg",
+      title: "Black History Month Outreach",
       description:
-        "Empowering the next generation through leadership development programs",
+        "Visiting Jones High School and Rollins College to share the legacy of the Divine Nine and emphasize brotherhood and education",
+    },
+    {
+      type: "image",
+      src: "/service-gallery/forsyth-woods-elementary-christmas-gift-giving/IMG_7553.jpg",
+      title: "Forsyth Woods Elementary Christmas Gift Giving",
+      description:
+        "Providing Christmas gifts to children at Forsyth Woods Elementary, bringing holiday spirit to those in need",
     },
   ];
 
@@ -355,21 +362,19 @@ const Service = () => {
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
-                      src="/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png"
-                      alt="Community Food Drive"
+                      src="/service-gallery/metro-orlando-food-distribution/IMG_7537.jpg"
+                      alt="Metro Orlando Food Distribution"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div className="absolute top-4 right-4 bg-black/70 text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">
-                      12 Photos
+                      3 Photos
                     </div>
                     <div className="absolute bottom-4 left-4 right-4">
                       <h4 className="text-white font-bold text-lg mb-1">
-                        Community Food Drive
+                        Metro Orlando Food Distribution
                       </h4>
-                      <p className="text-gray-300 text-sm">
-                        Holiday Season 2024
-                      </p>
+                      <p className="text-gray-300 text-sm">May 29, 2024</p>
                     </div>
                   </div>
                   <div className="p-4">
@@ -392,19 +397,19 @@ const Service = () => {
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
-                      src="/lovable-uploads/229d7c7e-989f-4a85-9217-4c0597abfc8c.png"
-                      alt="Educational Mentorship"
+                      src="/service-gallery/headstart-literacy-disney-gala-service/IMG_7541.jpg"
+                      alt="Head Start Literacy & Disney Gala Service"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div className="absolute top-4 right-4 bg-black/70 text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">
-                      8 Photos
+                      3 Photos
                     </div>
                     <div className="absolute bottom-4 left-4 right-4">
                       <h4 className="text-white font-bold text-lg mb-1">
-                        Educational Mentorship
+                        Head Start Literacy & Disney Gala
                       </h4>
-                      <p className="text-gray-300 text-sm">Spring 2024</p>
+                      <p className="text-gray-300 text-sm">April 4, 2025</p>
                     </div>
                   </div>
                   <div className="p-4">
@@ -427,19 +432,19 @@ const Service = () => {
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop"
-                      alt="Youth Leadership Workshop"
+                      src="/service-gallery/ucf-campus-tour-ksfan-mentorship/IMG_7545.jpg"
+                      alt="UCF Campus Tour & KSFAN Mentorship"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div className="absolute top-4 right-4 bg-black/70 text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">
-                      15 Photos
+                      4 Photos
                     </div>
                     <div className="absolute bottom-4 left-4 right-4">
                       <h4 className="text-white font-bold text-lg mb-1">
-                        Youth Leadership Workshop
+                        UCF Campus Tour & KSFAN Mentorship
                       </h4>
-                      <p className="text-gray-300 text-sm">Fall 2024</p>
+                      <p className="text-gray-300 text-sm">Recent Monday</p>
                     </div>
                   </div>
                   <div className="p-4">
