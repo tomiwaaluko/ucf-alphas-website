@@ -30,15 +30,16 @@ const ServiceGallery = () => {
   const galleryEvents = [
     {
       id: 1,
-      title: "Community Food Drive",
-      date: "December 15, 2024",
-      location: "Orlando Community Center",
-      participants: 25,
-      photoCount: 12,
-      coverImage: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
+      title: "Metro Orlando Food Distribution",
+      date: "May 29, 2024",
+      location: "Metro Orlando Community",
+      participants: 4,
+      photoCount: 3,
+      coverImage:
+        "/service-gallery/metro-orlando-food-distribution/IMG_7537.jpg",
       description:
-        "Our annual holiday food drive helped provide meals to over 100 families in need during the holiday season.",
-      tags: ["Community Outreach", "Holiday Service", "Food Security"],
+        "Brothers Ibrahim, Brown, Blocker, and Chukes dedicated their time to serving the Metro Orlando community by assisting with the packaging and distribution of food for families in need, addressing food insecurity and supporting those facing hardship.",
+      tags: ["Community Outreach", "Food Security", "Servants of All"],
     },
     {
       id: 2,

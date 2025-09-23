@@ -53,55 +53,37 @@ const ServiceGalleryDetail = () => {
     }
   > = {
     "1": {
-      title: "Community Food Drive",
-      date: "December 15, 2024",
-      location: "Orlando Community Center",
-      participants: 25,
+      title: "Metro Orlando Food Distribution",
+      date: "May 29, 2024",
+      location: "Metro Orlando Community",
+      participants: 4,
       description:
-        "Our annual holiday food drive helped provide meals to over 100 families in need during the holiday season. Brothers worked tirelessly to collect, sort, and distribute food items to ensure every family had a memorable holiday meal.",
-      tags: ["Community Outreach", "Holiday Service", "Food Security"],
+        "On Thursday, May 29th, Brothers Ibrahim, Brown, Blocker, and Chukes dedicated their time to serving the Metro Orlando community by assisting with the packaging and distribution of food for families in need. Their efforts contributed to a meaningful initiative aimed at addressing food insecurity and supporting those facing hardship in the area.",
+      tags: ["Community Outreach", "Food Security", "Servants of All"],
       photos: [
         {
           id: 1,
-          url: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
-          caption: "Brothers organizing food donations for distribution",
-          photographer: "Tomiwa Aluko",
-          likes: 15,
+          url: "/service-gallery/metro-orlando-food-distribution/IMG_7537.jpg",
+          caption:
+            "Brothers Ibrahim and Brown organizing food donations in safety vests at the distribution center",
+          photographer: "Event Coordinator",
+          likes: 24,
         },
         {
           id: 2,
-          url: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop",
-          caption: "Community members receiving holiday meal packages",
-          photographer: "Benjamin Blocker",
-          likes: 22,
-        },
-        {
-          id: 3,
-          url: "https://images.unsplash.com/photo-1593113616828-82830db12678?w=800&h=600&fit=crop",
-          caption: "Volunteers sorting through donated canned goods",
-          photographer: "Abdul Ibrahim",
+          url: "/service-gallery/metro-orlando-food-distribution/IMG_7538.jpg",
+          caption:
+            "Brother working to package fresh produce and essential items for families in need",
+          photographer: "Event Coordinator",
           likes: 18,
         },
         {
-          id: 4,
-          url: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
-          caption: "Brothers loading delivery vehicles with food packages",
-          photographer: "Treylon Chukes",
-          likes: 12,
-        },
-        {
-          id: 5,
-          url: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop",
-          caption: "Team photo after successful food distribution",
-          photographer: "Theodore Johnson",
-          likes: 31,
-        },
-        {
-          id: 6,
-          url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
-          caption: "Setting up distribution tables at the community center",
-          photographer: "Jevaughn Morris",
-          likes: 9,
+          id: 3,
+          url: "/service-gallery/metro-orlando-food-distribution/IMG_7540.jpg",
+          caption:
+            "Team photo of Brothers Ibrahim, Brown, Blocker, and Chukes after completing the food distribution service",
+          photographer: "Community Volunteer",
+          likes: 32,
         },
       ],
     },
