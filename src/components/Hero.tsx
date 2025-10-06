@@ -40,8 +40,8 @@ const Hero = () => {
       {/* Background with overlay */}
       <div className="absolute inset-0 bg-black"></div>
 
-      {/* YouTube Video Background - Desktop Only */}
-      {!isMobile && shouldLoadVideo && (
+      {/* YouTube Video Background - Desktop and Mobile */}
+      {shouldLoadVideo && (
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
           <iframe
             src="https://www.youtube.com/embed/1wLEli160gs?autoplay=1&mute=1&loop=1&playlist=1wLEli160gs&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&widgetid=1"
@@ -65,16 +65,6 @@ const Hero = () => {
       )}
 
       <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-gray-900/80 to-black/90"></div>
-
-      {/* Subtle pattern overlay - Mobile Only */}
-      {isMobile && (
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fbbf24' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        ></div>
-      )}
 
       <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
         {/* Chapter name in smaller text */}
