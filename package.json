@@ -8,10 +8,12 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:api": "node dev-api-server.cjs",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:contact": "node test-contact-api.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

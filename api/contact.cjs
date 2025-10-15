@@ -36,8 +36,7 @@ module.exports = async function handler(req, res) {
       console.error("RESEND_API_KEY missing");
       return res.status(500).json({
         success: false,
-        error:
-          "Email service not configured. Please contact the administrator.",
+        error: "Email service not configured. Please contact the administrator.",
         debug: "RESEND_API_KEY is not set in environment variables",
       });
     }
@@ -46,8 +45,7 @@ module.exports = async function handler(req, res) {
       console.error("TO_EMAIL missing");
       return res.status(500).json({
         success: false,
-        error:
-          "Email service not configured. Please contact the administrator.",
+        error: "Email service not configured. Please contact the administrator.",
         debug: "TO_EMAIL is not set in environment variables",
       });
     }
@@ -89,7 +87,7 @@ module.exports = async function handler(req, res) {
     // If using a custom domain, use: `UCF Alphas Contact <noreply@yourdomain.com>`
     // If using Resend's default domain, use: `onboarding@resend.dev`
     const fromEmail = process.env.FROM_EMAIL || "onboarding@resend.dev";
-
+    
     console.log("Attempting to send email from:", fromEmail);
     console.log("Sending to:", process.env.TO_EMAIL);
 
@@ -153,36 +151,28 @@ module.exports = async function handler(req, res) {
 
     if (error) {
       console.error("Resend API error:", JSON.stringify(error, null, 2));
-
+      
       // Provide specific error messages based on common Resend errors
       let errorMessage = "Failed to send email";
       let errorDetails = error;
-
+      
       if (error.message) {
-        if (
-          error.message.includes("not verified") ||
-          error.message.includes("verify")
-        ) {
-          errorMessage =
-            "The sender email address is not verified. Please verify your domain in Resend.";
+        if (error.message.includes("not verified") || error.message.includes("verify")) {
+          errorMessage = "The sender email address is not verified. Please verify your domain in Resend.";
         } else if (error.message.includes("API key")) {
-          errorMessage =
-            "Invalid API key. Please check your Resend API key configuration.";
+          errorMessage = "Invalid API key. Please check your Resend API key configuration.";
         } else if (error.message.includes("rate limit")) {
           errorMessage = "Rate limit exceeded. Please try again later.";
         } else {
           errorMessage = error.message;
         }
       }
-
+      
       return res.status(500).json({
         success: false,
         error: errorMessage,
         debug: {
-          error:
-            typeof errorDetails === "object"
-              ? JSON.stringify(errorDetails)
-              : String(errorDetails),
+          error: typeof errorDetails === "object" ? JSON.stringify(errorDetails) : String(errorDetails),
         },
       });
     }
@@ -196,16 +186,15 @@ module.exports = async function handler(req, res) {
     });
   } catch (error) {
     console.error("Contact API unexpected error:", error);
-
+    
     // Log more detailed error information
     console.error("Error name:", error?.name);
     console.error("Error message:", error?.message);
     console.error("Error stack:", error?.stack);
-
+    
     return res.status(500).json({
       success: false,
-      error:
-        "An unexpected error occurred while processing your request. Please try again later.",
+      error: "An unexpected error occurred while processing your request. Please try again later.",
       debug: {
         name: error?.name,
         message: error?.message || String(error),
