@@ -224,7 +224,8 @@ export default async function handler(req, res) {
         success: false,
         error: "Failed to send email",
         details: error.message || "Unknown error occurred",
-        rawError: typeof error === "object" ? JSON.stringify(error) : String(error),
+        rawError:
+          typeof error === "object" ? JSON.stringify(error) : String(error),
       });
     }
 
