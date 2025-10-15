@@ -47,5 +47,9 @@ update_lineage_details.ps1
 clean_images.ps1
 replace_images.ps1
 
+# Development API server (CommonJS version for local dev only)
+dev-api-server.cjs
+api/*.cjs
+
 # API testing endpoints
 api/test.ts

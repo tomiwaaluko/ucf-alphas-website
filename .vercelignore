@@ -1,0 +1,20 @@
+# Ignore development-only files
+dev-api-server.cjs
+api/contact.cjs
+test-contact-api.js
+
+# Ignore documentation
+CONTACT_API_SETUP.md
+CONTACT_FIX_GUIDE.md
+CONTACT_ERROR_FIX_SUMMARY.md
+CONTACT_FORM_FIX_README.md
+LOCAL_SETUP.md
+STATUS.md
+SUCCESS.md
+
+# Ignore setup scripts
+setup-contact-form.ps1
+setup-contact-form.bat
+
+# Ignore environment example
+.env.example
