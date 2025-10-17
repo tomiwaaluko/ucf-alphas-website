@@ -2,7 +2,16 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { Award, Users, Calendar, Trophy, FileText, X } from "lucide-react";
+import {
+  Award,
+  Users,
+  Calendar,
+  Trophy,
+  FileText,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -13,10 +22,11 @@ import {
 const CharlesHWesleyAward = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedImage, setSelectedImage] = useState<{
-    src: string;
+    src: string | string[];
     title: string;
     fullCaption: string;
   } | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -36,18 +46,18 @@ const CharlesHWesleyAward = () => {
       images: [
         {
           src: "/CHWPhotos/jun14.png",
-          title: "Brother's Keeper – June 14, 2024",
+          title: "Brother's Keeper – June 14, 2025",
           shortCaption: "Supporting elder brothers through hands-on service",
           fullCaption:
-            "Brother's Keeper – June 14, 2024. Both chapters served an elderly Alpha brother by cleaning and maintaining his property. This early-year act of service reinforced the fraternity's value of intergenerational brotherhood.",
+            "Brother's Keeper – June 14, 2025. Both chapters served an elderly Alpha brother by cleaning and maintaining his property. This early-year act of service reinforced the fraternity's value of intergenerational brotherhood.",
         },
         {
           src: "/lovable-uploads/wesley-award/national-programs-4.jpg",
-          title: "Brother's Keeper Service Project – August 24, 2024",
+          title: "Brother's Keeper Service Project – August 24, 2025",
           shortCaption:
             "Supporting DXL charter member through national initiative",
           fullCaption:
-            "Brother's Keeper Service Project – August 24, 2024. Xi Iota and Delta Xi Lambda collaborated to support DXL charter member Bro. Felton A. Johnson through Alpha's national initiative, Brother's Keeper. Brothers completed yard work, removed debris, and maintained the property, reinforcing Alpha's value of lifelong brotherhood and intergenerational care.",
+            "Brother's Keeper Service Project – August 24, 2025. Xi Iota and Delta Xi Lambda collaborated to support DXL charter member Bro. Felton A. Johnson through Alpha's national initiative, Brother's Keeper. Brothers completed yard work, removed debris, and maintained the property, reinforcing Alpha's value of lifelong brotherhood and intergenerational care.",
         },
         {
           src: "/lovable-uploads/wesley-award/national-programs-5.jpg",
@@ -88,7 +98,7 @@ const CharlesHWesleyAward = () => {
         "Founders' Day events, Black and Gold ball, MLK days, Fundraising, etc.",
       images: [
         {
-          src: "/lovable-uploads/wesley-award/alpha-functions-1.jpg",
+          src: "/lovable-uploads/wesley-award/alpha-3.jpg",
           title: "Founders' Day Celebration – December 4, 2024",
           shortCaption: "Honoring the legacy of our seven jewels",
           fullCaption:
@@ -175,13 +185,6 @@ const CharlesHWesleyAward = () => {
           fullCaption:
             "Leadership Summit - Chapter officers participating in intensive leadership development training, skill-building workshops, and networking opportunities with brothers from across the region.",
         },
-        {
-          src: "/lovable-uploads/wesley-award/conferences-4.jpg",
-          title: "Fellowship Luncheon with Xi Iota Alumni – April 4, 2025",
-          shortCaption: "Mentorship and professional development",
-          fullCaption:
-            "Fellowship Luncheon with Xi Iota Alumni - April 4, 2025. After completing the literacy event, Xi Iota brothers joined alumni from DXL for a brotherhood luncheon emphasizing mentorship, leadership, and professional development.",
-        },
       ],
     },
     {
@@ -194,36 +197,46 @@ const CharlesHWesleyAward = () => {
         {
           src: "/CHWPhotos/jun18.png",
           title:
-            "Community Food Distribution with Zeta Phi Beta – June 18, 2024",
+            "Community Food Distribution with Zeta Phi Beta – June 18, 2025",
           shortCaption:
             "Cross-organizational collaboration for community benefit",
           fullCaption:
-            "Community Food Distribution with Zeta Phi Beta - June 18, 2024. Xi Iota and DXL joined the Sigma Epsilon Chapter of Zeta Phi Beta Sorority, Inc. to distribute food and household items to Orlando residents, promoting collaboration across Greek organizations for community benefit.",
+            "Community Food Distribution with Zeta Phi Beta - June 18, 2025. Xi Iota and DXL joined the Sigma Epsilon Chapter of Zeta Phi Beta Sorority, Inc. to distribute food and household items to Orlando residents, promoting collaboration across Greek organizations for community benefit.",
         },
         {
           src: "/CHWPhotos/sept18.png",
           title:
-            "Livingston Street Church Food Drives – Aug 21 & Sept 18, 2024",
+            "Livingston Street Church Food Drives – Aug 21 & Sept 18, 2025",
           shortCaption: "Addressing food insecurity in Orlando",
           fullCaption:
-            "Livingston Street Church Food Drives - August 21 & September 18, 2024. Both chapters partnered with Livingston Street Church of God to distribute food and household supplies to underserved families. These recurring service initiatives demonstrate consistency in addressing food insecurity in Orlando.",
+            "Livingston Street Church Food Drives - August 21 & September 18, 2025. Both chapters partnered with Livingston Street Church of God to distribute food and household supplies to underserved families. These recurring service initiatives demonstrate consistency in addressing food insecurity in Orlando.",
         },
         {
           src: "/CHWPhotos/oct8.png",
-          title: "Literacy Domain Day at Callahan Head Start – October 8, 2024",
+          title: "Literacy Domain Day at Callahan Head Start – October 8, 2025",
           shortCaption: "Promoting literacy and youth development",
           fullCaption:
-            "Literacy Domain Day at Callahan Head Start - October 8, 2024. Both chapters participated in Literacy Domain Day, where brothers read to children and distributed books to promote literacy and educational engagement. The event emphasized mentorship and Alpha's dedication to youth development.",
+            "Literacy Domain Day at Callahan Head Start - October 8, 2025. Both chapters participated in Literacy Domain Day, where brothers read to children and distributed books to promote literacy and educational engagement. The event emphasized mentorship and Alpha's dedication to youth development.",
         },
         {
-          src: "/lovable-uploads/wesley-award/service-5.jpg",
+          src: [
+            "/CHWPhotos/nov9/IMG_7428.png",
+            "/CHWPhotos/nov9/IMG_7429.png",
+            "/CHWPhotos/nov9/IMG_7430.png",
+            "/CHWPhotos/nov9/IMG_7431.png",
+          ],
           title: "Community Food Distribution with YMOD – November 9, 2024",
           shortCaption: "Partnerships across community organizations",
           fullCaption:
             "Community Food Distribution with YMOD - November 9, 2024. Xi Iota joined forces with DXL and the Young Men of Distinction (YMOD) program to distribute food to Orlando families in need. The event fostered partnerships across community organizations while promoting collective service.",
         },
         {
-          src: "/lovable-uploads/wesley-award/service-6.jpg",
+          src: [
+            "/CHWPhotos/dec3/IMG_7432.png",
+            "/CHWPhotos/dec3/IMG_7433.png",
+            "/CHWPhotos/dec3/IMG_7434.png",
+            "/CHWPhotos/dec3/IMG_7435.png",
+          ],
           title:
             "Christmas Gift Giveaway at Forsyth Woods Elementary – Dec 3, 2024",
           shortCaption: "Spreading holiday joy to students",
@@ -231,14 +244,19 @@ const CharlesHWesleyAward = () => {
             "Christmas Gift Giveaway at Forsyth Woods Elementary - December 3, 2024. Brothers from both chapters celebrated the holiday season by providing gifts to students at Forsyth Woods Elementary School, spreading joy and ensuring that every child experienced a memorable Christmas.",
         },
         {
-          src: "/lovable-uploads/wesley-award/service-7.jpg",
+          src: [
+            "/CHWPhotos/dec16/IMG_7436.png",
+            "/CHWPhotos/dec16/IMG_7437.png",
+            "/CHWPhotos/dec16/IMG_7438.png",
+            "/CHWPhotos/dec16/IMG_7439.png",
+          ],
           title: "Second Harvest Food Bank Collaboration – December 16, 2024",
           shortCaption: "Large-scale servant leadership and impact",
           fullCaption:
             "Second Harvest Food Bank Collaboration - December 16, 2024. Xi Iota and Delta Xi Lambda worked alongside community volunteers at Second Harvest Food Bank, packaging 1,455 boxes and 21,825 meals for families across Central Florida. This project reflected large-scale servant leadership and measurable community impact.",
         },
         {
-          src: "/lovable-uploads/wesley-award/service-8.jpg",
+          src: ["/CHWPhotos/apr4.png", "/CHWPhotos/april4.png"],
           title:
             "Head Start Literacy Event & Disney's Children's Gala – April 4, 2025",
           shortCaption: "Education and empowerment through literacy",
@@ -401,18 +419,23 @@ const CharlesHWesleyAward = () => {
                                 delay: imgIndex * 0.1,
                               }}
                               viewport={{ once: true }}
-                              onClick={() =>
+                              onClick={() => {
                                 setSelectedImage({
                                   src: image.src,
                                   title: image.title,
                                   fullCaption: image.fullCaption,
-                                })
-                              }
+                                });
+                                setCurrentImageIndex(0);
+                              }}
                             >
                               <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-2 border-yellow-400/20 group-hover:border-yellow-400/50 transition-all duration-300 overflow-hidden relative">
                                 {/* Actual Image */}
                                 <img
-                                  src={image.src}
+                                  src={
+                                    Array.isArray(image.src)
+                                      ? image.src[0]
+                                      : image.src
+                                  }
                                   alt={image.title}
                                   className="absolute inset-0 w-full h-full object-cover"
                                 />
@@ -423,6 +446,14 @@ const CharlesHWesleyAward = () => {
                                     Click to view details
                                   </span>
                                 </div>
+
+                                {/* Multiple Images Indicator */}
+                                {Array.isArray(image.src) &&
+                                  image.src.length > 1 && (
+                                    <div className="absolute top-3 right-3 bg-black/70 text-yellow-400 text-xs font-bold px-2 py-1 rounded-full border border-yellow-400/50">
+                                      {image.src.length} photos
+                                    </div>
+                                  )}
                               </div>
 
                               {/* Title */}
@@ -449,11 +480,19 @@ const CharlesHWesleyAward = () => {
         {/* Image Detail Modal */}
         <Dialog
           open={selectedImage !== null}
-          onOpenChange={(open) => !open && setSelectedImage(null)}
+          onOpenChange={(open) => {
+            if (!open) {
+              setSelectedImage(null);
+              setCurrentImageIndex(0);
+            }
+          }}
         >
           <DialogContent className="bg-gradient-to-br from-gray-900 to-black border-2 border-yellow-400/40 max-w-4xl max-h-[90vh] overflow-y-auto">
             <button
-              onClick={() => setSelectedImage(null)}
+              onClick={() => {
+                setSelectedImage(null);
+                setCurrentImageIndex(0);
+              }}
               className="absolute top-4 right-4 text-gray-400 hover:text-yellow-400 transition-colors z-50"
               aria-label="Close"
             >
@@ -464,14 +503,55 @@ const CharlesHWesleyAward = () => {
               {selectedImage?.title}
             </DialogTitle>
 
-            {/* Expanded Image */}
+            {/* Expanded Image with Carousel */}
             {selectedImage?.src && (
-              <div className="mb-6 rounded-xl overflow-hidden border-2 border-yellow-400/30">
+              <div className="mb-6 rounded-xl overflow-hidden border-2 border-yellow-400/30 relative">
                 <img
-                  src={selectedImage.src}
+                  src={
+                    Array.isArray(selectedImage.src)
+                      ? selectedImage.src[currentImageIndex]
+                      : selectedImage.src
+                  }
                   alt={selectedImage.title}
                   className="w-full h-auto object-contain max-h-[50vh]"
                 />
+
+                {/* Carousel Navigation */}
+                {Array.isArray(selectedImage.src) &&
+                  selectedImage.src.length > 1 && (
+                    <>
+                      {/* Previous Button */}
+                      <button
+                        onClick={() =>
+                          setCurrentImageIndex((prev) =>
+                            prev === 0 ? selectedImage.src.length - 1 : prev - 1
+                          )
+                        }
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-yellow-400/90 text-white hover:text-black transition-all p-3 rounded-full border-2 border-yellow-400/50 hover:border-yellow-400"
+                        aria-label="Previous image"
+                      >
+                        <ChevronLeft className="w-6 h-6" />
+                      </button>
+
+                      {/* Next Button */}
+                      <button
+                        onClick={() =>
+                          setCurrentImageIndex((prev) =>
+                            prev === selectedImage.src.length - 1 ? 0 : prev + 1
+                          )
+                        }
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-yellow-400/90 text-white hover:text-black transition-all p-3 rounded-full border-2 border-yellow-400/50 hover:border-yellow-400"
+                        aria-label="Next image"
+                      >
+                        <ChevronRight className="w-6 h-6" />
+                      </button>
+
+                      {/* Image Counter */}
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-yellow-400 px-4 py-2 rounded-full border border-yellow-400/50 font-bold">
+                        {currentImageIndex + 1} / {selectedImage.src.length}
+                      </div>
+                    </>
+                  )}
               </div>
             )}
 
