@@ -215,6 +215,222 @@ const FFACAwards = () => {
               </motion.div>
             </div>
           </section>
+
+          {/* Community Service Section */}
+          <section className="py-20 relative">
+            <div className="max-w-6xl mx-auto px-4 relative">
+              <motion.h2
+                className="text-4xl md:text-5xl font-bold text-yellow-400 mb-12 text-center font-cinzel"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                Community Service
+              </motion.h2>
+
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Brother's Keeper – June 14, 2024",
+                    description:
+                      "Both chapters served an elderly Alpha brother by cleaning and maintaining his property. This early-year act of service reinforced the fraternity's value of intergenerational brotherhood.",
+                  },
+                  {
+                    title:
+                      "Community Food Distribution with Zeta Phi Beta – June 18, 2024",
+                    description:
+                      "Xi Iota and DXL joined the Sigma Epsilon Chapter of Zeta Phi Beta Sorority, Inc. to distribute food and household items to Orlando residents, promoting collaboration across Greek organizations for community benefit.",
+                  },
+                  {
+                    title:
+                      "Livingston Street Church Food Drives – August 21 & September 18, 2024",
+                    description:
+                      "Both chapters partnered with Livingston Street Church of God to distribute food and household supplies to underserved families. These recurring service initiatives demonstrate consistency in addressing food insecurity in Orlando.",
+                  },
+                  {
+                    title: "Brother's Keeper Service Project – August 24, 2024",
+                    description:
+                      "Xi Iota and Delta Xi Lambda collaborated to support DXL charter member Bro. Felton A. Johnson through Alpha's national initiative, Brother's Keeper. Brothers completed yard work, removed debris, and maintained the property, reinforcing Alpha's value of lifelong brotherhood and intergenerational care.",
+                  },
+                  {
+                    title:
+                      "Literacy Domain Day at Callahan Head Start – October 8, 2024",
+                    description:
+                      "Both chapters participated in Literacy Domain Day, where brothers read to children and distributed books to promote literacy and educational engagement. The event emphasized mentorship and Alpha's dedication to youth development.",
+                  },
+                  {
+                    title:
+                      "A Voteless People is a Hopeless People – October 29, 2024",
+                    description:
+                      "Xi Iota hosted a voter education seminar in collaboration with the UCF NAACP Chapter and Equal Ground, supported by DXL alumni. The event informed attendees about ballot measures, voting rights, and civic engagement, continuing Alpha's historical advocacy for political empowerment.",
+                  },
+                  {
+                    title: "Brother's Keeper Yard Service – November 2, 2024",
+                    description:
+                      "Undergraduates and alumni reunited to assist Bro. Felton Johnson, performing additional yard cleanup and home care. This ongoing collaboration demonstrates consistency in supporting elder brothers through hands-on service.",
+                  },
+                  {
+                    title:
+                      "Community Food Distribution with YMOD – November 9, 2024",
+                    description:
+                      "Xi Iota joined forces with DXL and the Young Men of Distinction (YMOD) program to distribute food to Orlando families in need. The event fostered partnerships across community organizations while promoting collective service.",
+                  },
+                  {
+                    title:
+                      "Christmas Gift Giveaway at Forsyth Woods Elementary – December 3, 2024",
+                    description:
+                      "Brothers from both chapters celebrated the holiday season by providing gifts to students at Forsyth Woods Elementary School, spreading joy and ensuring that every child experienced a memorable Christmas.",
+                  },
+                  {
+                    title:
+                      "Second Harvest Food Bank Collaboration – December 16, 2024",
+                    description:
+                      "Xi Iota and Delta Xi Lambda worked alongside community volunteers at Second Harvest Food Bank, packaging 1,455 boxes and 21,825 meals for families across Central Florida. This project reflected large-scale servant leadership and measurable community impact.",
+                  },
+                  {
+                    title: "MLK Commemorative Luncheon – January 17, 2025",
+                    description:
+                      "The Xi Iota Chapter attended DXL's MLK Commemorative Luncheon, honoring Dr. King's leadership and Alpha's historical role in civil rights. The event served as a moment of unity and reflection on purpose and progress.",
+                  },
+                  {
+                    title: "Orlando MLK Parade – January 18, 2025",
+                    description:
+                      "Brothers from both chapters proudly marched together in the annual MLK Parade, representing Alpha Phi Alpha and honoring Dr. King's enduring legacy of equality, justice, and service.",
+                  },
+                  {
+                    title: "MLK Day of Service – January 20, 2025",
+                    description:
+                      'Xi Iota and DXL partnered with Orlando Alphas and the NAACP for the MLK Million Dollar Pack Initiative, assembling meal kits for local families. The collaboration embodied Alpha\'s mission of "Service to All."',
+                  },
+                  {
+                    title:
+                      "Head Start Literacy Event & Disney's Celebrate the Children's Gala – April 4, 2025",
+                    description:
+                      "Xi Iota brothers joined DXL at Head Start Orlando to read to children and assist with Disney's Children's Gala, advancing Alpha's mission of education and empowerment through literacy.",
+                  },
+                ].map((event, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-gradient-to-r from-yellow-400/10 to-transparent border-l-4 border-yellow-400 p-6 rounded-r-lg backdrop-blur-sm"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <h3 className="text-xl font-bold text-yellow-400 mb-2 font-cinzel">
+                      {event.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      {event.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Alpha Participation Section */}
+          <section className="py-20 relative bg-gradient-to-b from-transparent to-yellow-400/5">
+            <div className="max-w-6xl mx-auto px-4 relative">
+              <motion.h2
+                className="text-4xl md:text-5xl font-bold text-yellow-400 mb-12 text-center font-cinzel"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                Alpha Participation
+              </motion.h2>
+
+              <div className="space-y-6">
+                {[
+                  {
+                    title:
+                      "94th Southern Regional Convention – Atlanta, GA (March 7–10, 2025)",
+                    description:
+                      "Both chapters attended the regional convention, participating in leadership workshops, Alpha trainings, and networking sessions. Xi Iota and DXL also held a joint brotherhood dinner, fostering mentorship and fraternal unity.",
+                  },
+                  {
+                    title:
+                      "Fellowship Luncheon with Xi Iota Alumni – April 4, 2025",
+                    description:
+                      "After completing the literacy event, Xi Iota brothers joined alumni from DXL for a brotherhood luncheon emphasizing mentorship, leadership, and professional development.",
+                  },
+                ].map((event, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-gradient-to-r from-yellow-400/10 to-transparent border-l-4 border-yellow-400 p-6 rounded-r-lg backdrop-blur-sm"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <h3 className="text-xl font-bold text-yellow-400 mb-2 font-cinzel">
+                      {event.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      {event.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.p
+                className="text-gray-400 italic text-center mt-8"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                Other National Programs are listed under Community/Campus
+                Involvement
+              </motion.p>
+            </div>
+          </section>
+
+          {/* Awards/Recognition Section */}
+          <section className="py-20 relative">
+            <div className="max-w-6xl mx-auto px-4 relative">
+              <motion.h2
+                className="text-4xl md:text-5xl font-bold text-yellow-400 mb-12 text-center font-cinzel"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                Awards/Recognition
+              </motion.h2>
+
+              <motion.div
+                className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 border-2 border-yellow-400 p-8 rounded-2xl backdrop-blur-sm shadow-2xl shadow-yellow-400/20"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-start gap-6">
+                  <Trophy className="w-16 h-16 text-yellow-400 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-yellow-400 mb-3 font-cinzel">
+                      First Place – 2025 Metro Orlando NPHC Alumni Step Show
+                    </h3>
+                    <p className="text-gray-300 mb-4">
+                      Theme: "25: A Silver Opportunity for Unity in Motion"
+                    </p>
+                    <p className="text-gray-200 leading-relaxed">
+                      Award:{" "}
+                      <span className="text-yellow-400 font-semibold">
+                        $2,000 prize and trophy
+                      </span>{" "}
+                      for excellence in performance, teamwork, and
+                      representation of Alpha Phi Alpha Fraternity, Inc.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </section>
         </div>
         <Footer />
       </div>

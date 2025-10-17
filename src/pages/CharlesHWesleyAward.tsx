@@ -1,11 +1,22 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { Award, Users, Calendar, Trophy, FileText } from "lucide-react";
+import { useRef, useState } from "react";
+import { Award, Users, Calendar, Trophy, FileText, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const CharlesHWesleyAward = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    title: string;
+    fullCaption: string;
+  } | null>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -25,17 +36,25 @@ const CharlesHWesleyAward = () => {
       images: [
         {
           src: "/lovable-uploads/wesley-award/national-programs-1.jpg",
-          caption:
-            "Go To High School Go To College Program - Mentoring young students on the importance of education",
+          title: "Go To High School Go To College Program",
+          shortCaption:
+            "Mentoring young students on the importance of education",
+          fullCaption:
+            "Go To High School Go To College Program - Xi Iota and Delta Xi Lambda partnered to mentor young students, emphasizing the critical importance of education and higher learning as pathways to success.",
         },
         {
           src: "/lovable-uploads/wesley-award/national-programs-2.jpg",
-          caption:
-            "A Voteless People Is A Hopeless People - Voter registration and civic engagement initiative",
+          title: "A Voteless People Is A Hopeless People – October 29, 2024",
+          shortCaption: "Voter registration and civic engagement initiative",
+          fullCaption:
+            "A Voteless People Is A Hopeless People - October 29, 2024. Xi Iota hosted a voter education seminar in collaboration with the UCF NAACP Chapter and Equal Ground, supported by DXL alumni. The event informed attendees about ballot measures, voting rights, and civic engagement, continuing Alpha's historical advocacy for political empowerment.",
         },
         {
           src: "/lovable-uploads/wesley-award/national-programs-3.jpg",
-          caption: "Project Alpha - Health and wellness education for youth",
+          title: "Project Alpha",
+          shortCaption: "Health and wellness education for youth",
+          fullCaption:
+            "Project Alpha - Health and wellness education program targeting at-risk youth, providing critical information about health decisions and life skills.",
         },
       ],
     },
@@ -48,23 +67,45 @@ const CharlesHWesleyAward = () => {
       images: [
         {
           src: "/lovable-uploads/wesley-award/alpha-functions-1.jpg",
-          caption:
-            "Founders' Day Celebration - Honoring the legacy of our seven jewels",
+          title: "Founders' Day Celebration – December 4, 2024",
+          shortCaption: "Honoring the legacy of our seven jewels",
+          fullCaption:
+            "Founders' Day Celebration - December 4, 2024. Annual commemoration honoring the legacy of our seven jewels and the founding of Alpha Phi Alpha Fraternity, Inc. on December 4, 1906.",
         },
         {
           src: "/lovable-uploads/wesley-award/alpha-functions-2.jpg",
-          caption:
-            "Black and Gold Ball - Annual formal celebrating our brotherhood and sisterhood",
+          title: "Black and Gold Ball",
+          shortCaption: "Annual formal celebrating brotherhood and sisterhood",
+          fullCaption:
+            "Black and Gold Ball - Annual formal event celebrating the bonds of brotherhood and sisterhood, bringing together undergraduates and alumni in an elegant evening of fellowship.",
         },
         {
           src: "/lovable-uploads/wesley-award/alpha-functions-3.jpg",
-          caption:
-            "MLK Day of Service - Serving the community in honor of Dr. Martin Luther King Jr.",
+          title: "MLK Day of Service – January 20, 2025",
+          shortCaption: "Serving the community in honor of Dr. King",
+          fullCaption:
+            'MLK Day of Service - January 20, 2025. Xi Iota and DXL partnered with Orlando Alphas and the NAACP for the MLK Million Dollar Pack Initiative, assembling meal kits for local families. The collaboration embodied Alpha\'s mission of "Service to All."',
         },
         {
           src: "/lovable-uploads/wesley-award/alpha-functions-4.jpg",
-          caption:
-            "Chapter Fundraising Event - Supporting our programs and initiatives",
+          title: "Chapter Fundraising Event",
+          shortCaption: "Supporting our programs and initiatives",
+          fullCaption:
+            "Chapter Fundraising Event - Collaborative fundraising efforts between Xi Iota and Delta Xi Lambda to support chapter programs, scholarships, and community service initiatives.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/alpha-functions-5.jpg",
+          title: "MLK Commemorative Luncheon – January 17, 2025",
+          shortCaption: "Honoring Dr. King's leadership and legacy",
+          fullCaption:
+            "MLK Commemorative Luncheon - January 17, 2025. The Xi Iota Chapter attended DXL's MLK Commemorative Luncheon, honoring Dr. King's leadership and Alpha's historical role in civil rights. The event served as a moment of unity and reflection on purpose and progress.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/alpha-functions-6.jpg",
+          title: "Orlando MLK Parade – January 18, 2025",
+          shortCaption: "Marching together for equality and justice",
+          fullCaption:
+            "Orlando MLK Parade - January 18, 2025. Brothers from both chapters proudly marched together in the annual MLK Parade, representing Alpha Phi Alpha and honoring Dr. King's enduring legacy of equality, justice, and service.",
         },
       ],
     },
@@ -78,18 +119,31 @@ const CharlesHWesleyAward = () => {
       images: [
         {
           src: "/lovable-uploads/wesley-award/recognition-1.jpg",
-          caption:
-            "Outstanding Chapter Award - Recognition for excellence in service and brotherhood",
+          title: "Outstanding Chapter Award – 2024-2025",
+          shortCaption: "Recognition for excellence in service and brotherhood",
+          fullCaption:
+            "Outstanding Chapter Award - 2024-2025 Academic Year. Xi Iota Chapter recognized for demonstrating excellence in service, leadership, and brotherhood throughout the academic year.",
         },
         {
           src: "/lovable-uploads/wesley-award/recognition-2.jpg",
-          caption:
-            "Scholarship Presentation - Supporting academic excellence in our community",
+          title: "Scholarship Presentation",
+          shortCaption: "Supporting academic excellence in our community",
+          fullCaption:
+            "Scholarship Presentation - Joint scholarship program supporting academic excellence, providing financial assistance to deserving students pursuing higher education.",
         },
         {
           src: "/lovable-uploads/wesley-award/recognition-3.jpg",
-          caption:
-            "Community Partnership Certificate - Collaboration with local organizations",
+          title: "Community Partnership Certificate",
+          shortCaption: "Collaboration with local organizations",
+          fullCaption:
+            "Community Partnership Certificate - Recognition of successful collaboration with local community organizations to address critical needs and serve Orlando residents.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/recognition-4.jpg",
+          title: "First Place – 2025 Metro Orlando NPHC Alumni Step Show",
+          shortCaption: "$2,000 prize for excellence in performance",
+          fullCaption:
+            'First Place - 2025 Metro Orlando NPHC Alumni Step Show. Theme: "25: A Silver Opportunity for Unity in Motion". Award: $2,000 prize and trophy for excellence in performance, teamwork, and representation of Alpha Phi Alpha Fraternity, Inc.',
         },
       ],
     },
@@ -101,18 +155,102 @@ const CharlesHWesleyAward = () => {
       images: [
         {
           src: "/lovable-uploads/wesley-award/conferences-1.jpg",
-          caption:
-            "FFAC Regional Conference - Xi Iota Chapter delegation representing UCF",
+          title: "FFAC Regional Conference",
+          shortCaption: "Xi Iota delegation representing UCF",
+          fullCaption:
+            "FFAC Regional Conference - Xi Iota Chapter delegation representing UCF and engaging in regional fraternity programming and leadership development.",
         },
         {
           src: "/lovable-uploads/wesley-award/conferences-2.jpg",
-          caption:
-            "National Convention Attendance - Brothers participating in fraternity-wide programming",
+          title: "94th Southern Regional Convention – March 7-10, 2025",
+          shortCaption: "Leadership workshops and networking",
+          fullCaption:
+            "94th Southern Regional Convention - Atlanta, GA (March 7–10, 2025). Both chapters attended the regional convention, participating in leadership workshops, Alpha trainings, and networking sessions. Xi Iota and DXL also held a joint brotherhood dinner, fostering mentorship and fraternal unity.",
         },
         {
           src: "/lovable-uploads/wesley-award/conferences-3.jpg",
-          caption:
-            "Leadership Summit - Chapter officers developing skills and networking",
+          title: "Leadership Summit",
+          shortCaption: "Chapter officers developing skills",
+          fullCaption:
+            "Leadership Summit - Chapter officers participating in intensive leadership development training, skill-building workshops, and networking opportunities with brothers from across the region.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/conferences-4.jpg",
+          title: "Fellowship Luncheon with Xi Iota Alumni – April 4, 2025",
+          shortCaption: "Mentorship and professional development",
+          fullCaption:
+            "Fellowship Luncheon with Xi Iota Alumni - April 4, 2025. After completing the literacy event, Xi Iota brothers joined alumni from DXL for a brotherhood luncheon emphasizing mentorship, leadership, and professional development.",
+        },
+      ],
+    },
+    {
+      title: "Community Service Initiatives",
+      points: 25,
+      icon: Users,
+      description:
+        "Joint service projects demonstrating Alpha's commitment to serving our community",
+      images: [
+        {
+          src: "/lovable-uploads/wesley-award/service-1.jpg",
+          title:
+            "Brother's Keeper Service Project – June 14, Aug 24, Nov 2, 2024",
+          shortCaption: "Supporting elder brothers through hands-on service",
+          fullCaption:
+            "Brother's Keeper Service Project - June 14, 2024 & August 24, 2024 & November 2, 2024. Xi Iota and Delta Xi Lambda collaborated to support DXL charter member Bro. Felton A. Johnson through Alpha's national initiative, Brother's Keeper. Brothers completed yard work, removed debris, and maintained the property across multiple service dates, reinforcing Alpha's value of lifelong brotherhood and intergenerational care.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/service-2.jpg",
+          title:
+            "Community Food Distribution with Zeta Phi Beta – June 18, 2024",
+          shortCaption:
+            "Cross-organizational collaboration for community benefit",
+          fullCaption:
+            "Community Food Distribution with Zeta Phi Beta - June 18, 2024. Xi Iota and DXL joined the Sigma Epsilon Chapter of Zeta Phi Beta Sorority, Inc. to distribute food and household items to Orlando residents, promoting collaboration across Greek organizations for community benefit.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/service-3.jpg",
+          title:
+            "Livingston Street Church Food Drives – Aug 21 & Sept 18, 2024",
+          shortCaption: "Addressing food insecurity in Orlando",
+          fullCaption:
+            "Livingston Street Church Food Drives - August 21 & September 18, 2024. Both chapters partnered with Livingston Street Church of God to distribute food and household supplies to underserved families. These recurring service initiatives demonstrate consistency in addressing food insecurity in Orlando.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/service-4.jpg",
+          title: "Literacy Domain Day at Callahan Head Start – October 8, 2024",
+          shortCaption: "Promoting literacy and youth development",
+          fullCaption:
+            "Literacy Domain Day at Callahan Head Start - October 8, 2024. Both chapters participated in Literacy Domain Day, where brothers read to children and distributed books to promote literacy and educational engagement. The event emphasized mentorship and Alpha's dedication to youth development.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/service-5.jpg",
+          title: "Community Food Distribution with YMOD – November 9, 2024",
+          shortCaption: "Partnerships across community organizations",
+          fullCaption:
+            "Community Food Distribution with YMOD - November 9, 2024. Xi Iota joined forces with DXL and the Young Men of Distinction (YMOD) program to distribute food to Orlando families in need. The event fostered partnerships across community organizations while promoting collective service.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/service-6.jpg",
+          title:
+            "Christmas Gift Giveaway at Forsyth Woods Elementary – Dec 3, 2024",
+          shortCaption: "Spreading holiday joy to students",
+          fullCaption:
+            "Christmas Gift Giveaway at Forsyth Woods Elementary - December 3, 2024. Brothers from both chapters celebrated the holiday season by providing gifts to students at Forsyth Woods Elementary School, spreading joy and ensuring that every child experienced a memorable Christmas.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/service-7.jpg",
+          title: "Second Harvest Food Bank Collaboration – December 16, 2024",
+          shortCaption: "Large-scale servant leadership and impact",
+          fullCaption:
+            "Second Harvest Food Bank Collaboration - December 16, 2024. Xi Iota and Delta Xi Lambda worked alongside community volunteers at Second Harvest Food Bank, packaging 1,455 boxes and 21,825 meals for families across Central Florida. This project reflected large-scale servant leadership and measurable community impact.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/service-8.jpg",
+          title:
+            "Head Start Literacy Event & Disney's Children's Gala – April 4, 2025",
+          shortCaption: "Education and empowerment through literacy",
+          fullCaption:
+            "Head Start Literacy Event & Disney's Celebrate the Children's Gala - April 4, 2025. Xi Iota brothers joined DXL at Head Start Orlando to read to children and assist with Disney's Children's Gala, advancing Alpha's mission of education and empowerment through literacy.",
         },
       ],
     },
@@ -262,7 +400,7 @@ const CharlesHWesleyAward = () => {
                           {category.images.map((image, imgIndex) => (
                             <motion.div
                               key={imgIndex}
-                              className="group relative"
+                              className="group relative cursor-pointer"
                               initial={{ opacity: 0, y: 30 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               transition={{
@@ -270,6 +408,13 @@ const CharlesHWesleyAward = () => {
                                 delay: imgIndex * 0.1,
                               }}
                               viewport={{ once: true }}
+                              onClick={() =>
+                                setSelectedImage({
+                                  src: image.src,
+                                  title: image.title,
+                                  fullCaption: image.fullCaption,
+                                })
+                              }
                             >
                               <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-2 border-yellow-400/20 group-hover:border-yellow-400/50 transition-all duration-300 overflow-hidden relative">
                                 {/* Image placeholder - replace with actual images */}
@@ -278,13 +423,20 @@ const CharlesHWesleyAward = () => {
                                 </div>
 
                                 {/* Hover overlay */}
-                                <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 transition-all duration-300"></div>
+                                <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 transition-all duration-300 flex items-center justify-center">
+                                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold bg-black/50 px-4 py-2 rounded-lg">
+                                    Click to view details
+                                  </span>
+                                </div>
                               </div>
 
-                              {/* Caption */}
+                              {/* Title */}
                               <div className="mt-3 px-2">
+                                <h4 className="text-yellow-400 font-semibold text-base mb-1 font-cinzel">
+                                  {image.title}
+                                </h4>
                                 <p className="text-gray-300 text-sm leading-relaxed">
-                                  {image.caption}
+                                  {image.shortCaption}
                                 </p>
                               </div>
                             </motion.div>
@@ -298,6 +450,29 @@ const CharlesHWesleyAward = () => {
             </div>
           </section>
         </div>
+
+        {/* Image Detail Modal */}
+        <Dialog
+          open={selectedImage !== null}
+          onOpenChange={(open) => !open && setSelectedImage(null)}
+        >
+          <DialogContent className="bg-gradient-to-br from-gray-900 to-black border-2 border-yellow-400/40 max-w-3xl">
+            <DialogTitle className="text-2xl font-bold text-yellow-400 font-cinzel mb-4">
+              {selectedImage?.title}
+            </DialogTitle>
+            <DialogDescription className="text-gray-300 text-lg leading-relaxed">
+              {selectedImage?.fullCaption}
+            </DialogDescription>
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-yellow-400 transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </DialogContent>
+        </Dialog>
+
         <Footer />
       </div>
     </div>
