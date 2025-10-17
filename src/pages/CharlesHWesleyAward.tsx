@@ -177,6 +177,19 @@ const CharlesHWesleyAward = () => {
           fullCaption:
             'First Place - 2025 Metro Orlando NPHC Alumni Step Show. Theme: "25: A Silver Opportunity for Unity in Motion". Award: $2,000 prize and trophy for excellence in performance, teamwork, and representation of Alpha Phi Alpha Fraternity, Inc.',
         },
+        {
+          src: [
+            "/CHWPhotos/dec4/IMG_7454.png",
+            "/CHWPhotos/dec4/IMG_6980.jpg",
+            "/CHWPhotos/dec4/IMG_7456.png",
+            "/CHWPhotos/dec4/IMG_7457.png",
+            "/CHWPhotos/dec4/IMG_7458.png",
+          ],
+          title: "Founder's Day Breakfast Celebration – December 4, 2024",
+          shortCaption: "Recognizing chapter achievements and excellence",
+          fullCaption:
+            "Founder's Day Breakfast Celebration - December 4, 2024. Xi Iota and Delta Xi Lambda came together to celebrate Founder's Day with a joint breakfast honoring both undergraduate and graduate chapter successes throughout the year. Awards were presented including Outstanding Brother of the Year and Most Spirited Brother, recognizing excellence in scholarship, service, and brotherhood. Brothers also received complimentary professional headshots, promoting career readiness and professional development. This event exemplified the strong partnership between both chapters while honoring the legacy of Alpha Phi Alpha's founding on December 4, 1906.",
+        },
       ],
     },
     {
@@ -225,12 +238,18 @@ const CharlesHWesleyAward = () => {
             "Community Food Distribution with Zeta Phi Beta - June 18, 2025. Xi Iota and DXL joined the Sigma Epsilon Chapter of Zeta Phi Beta Sorority, Inc. to distribute food and household items to Orlando residents, promoting collaboration across Greek organizations for community benefit.",
         },
         {
-          src: "/CHWPhotos/sept18.png",
-          title:
-            "Livingston Street Church Food Drives – Aug 21 & Sept 18, 2025",
+          src: "/CHWPhotos/aug22.png",
+          title: "Livingston Street Church Food Drive – August 21, 2025",
           shortCaption: "Addressing food insecurity in Orlando",
           fullCaption:
-            "Livingston Street Church Food Drives - August 21 & September 18, 2025. Both chapters partnered with Livingston Street Church of God to distribute food and household supplies to underserved families. These recurring service initiatives demonstrate consistency in addressing food insecurity in Orlando.",
+            "Livingston Street Church Food Drive - August 21, 2025. Xi Iota and Delta Xi Lambda partnered with Livingston Street Church of God to distribute food and household supplies to underserved families. This service initiative demonstrated commitment to addressing food insecurity in the Orlando community.",
+        },
+        {
+          src: "/CHWPhotos/sept18.png",
+          title: "Livingston Street Church Food Drive – September 18, 2025",
+          shortCaption: "Continued partnership addressing hunger",
+          fullCaption:
+            "Livingston Street Church Food Drive - September 18, 2025. Both chapters returned to partner with Livingston Street Church of God for another food distribution event, providing essential supplies to families in need. This recurring service demonstrates consistency in addressing food insecurity in Orlando.",
         },
         {
           src: "/CHWPhotos/oct8.png",
