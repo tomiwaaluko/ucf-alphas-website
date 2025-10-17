@@ -75,6 +75,18 @@ const CharlesHWesleyAward = () => {
             "Go To High School Go To College Program - Xi Iota and Delta Xi Lambda partnered to mentor young students, emphasizing the critical importance of education and higher learning as pathways to success.",
         },
         {
+          src: [
+            "/CHWPhotos/feb21/IMG_7446.png",
+            "/CHWPhotos/feb21/IMG_7447.png",
+          ],
+          title:
+            "Campus Visit with the King Solomon Foundation – February 21, 2025",
+          shortCaption:
+            "Encouraging higher education and leadership development",
+          fullCaption:
+            "Campus Visit with the King Solomon Foundation - February 21, 2025. In partnership with the King Solomon Foundation, an initiative led by brothers of Delta Xi Lambda, Xi Iota hosted a campus visit for high school students to the University of Central Florida. Undergraduate brothers provided campus tours and shared personal experiences about college life, academic success, and leadership. The event encouraged students to pursue higher education while highlighting Alpha Phi Alpha's mission of developing leaders and advocating for educational equity.",
+        },
+        {
           src: "/lovable-uploads/wesley-award/national-programs-2.jpg",
           title: "A Voteless People Is A Hopeless People – October 29, 2024",
           shortCaption: "Voter registration and civic engagement initiative",
@@ -112,7 +124,10 @@ const CharlesHWesleyAward = () => {
             "Black and Gold Ball - Annual formal event celebrating the bonds of brotherhood and sisterhood, bringing together undergraduates and alumni in an elegant evening of fellowship.",
         },
         {
-          src: "/lovable-uploads/wesley-award/alpha-functions-3.jpg",
+          src: [
+            "/CHWPhotos/jan20/IMG_7444.png",
+            "/CHWPhotos/jan20/IMG_7445.png",
+          ],
           title: "MLK Day of Service – January 20, 2025",
           shortCaption: "Serving the community in honor of Dr. King",
           fullCaption:
@@ -126,14 +141,20 @@ const CharlesHWesleyAward = () => {
             "Chapter Fundraising Event - Collaborative fundraising efforts between Xi Iota and Delta Xi Lambda to support chapter programs, scholarships, and community service initiatives.",
         },
         {
-          src: "/lovable-uploads/wesley-award/alpha-functions-5.jpg",
+          src: [
+            "/CHWPhotos/jan17/IMG_7440.png",
+            "/CHWPhotos/jan17/IMG_7441.png",
+          ],
           title: "MLK Commemorative Luncheon – January 17, 2025",
           shortCaption: "Honoring Dr. King's leadership and legacy",
           fullCaption:
             "MLK Commemorative Luncheon - January 17, 2025. The Xi Iota Chapter attended DXL's MLK Commemorative Luncheon, honoring Dr. King's leadership and Alpha's historical role in civil rights. The event served as a moment of unity and reflection on purpose and progress.",
         },
         {
-          src: "/lovable-uploads/wesley-award/alpha-functions-6.jpg",
+          src: [
+            "/CHWPhotos/jan18/IMG_7442.png",
+            "/CHWPhotos/jan18/IMG_7443.png",
+          ],
           title: "Orlando MLK Parade – January 18, 2025",
           shortCaption: "Marching together for equality and justice",
           fullCaption:
@@ -150,7 +171,7 @@ const CharlesHWesleyAward = () => {
         "Plaques, certificates, letters of sponsorship of activities or events, scholarships presented or received, etc.",
       images: [
         {
-          src: "/lovable-uploads/wesley-award/recognition-4.jpg",
+          src: "/CHWPhotos/mar3/image0.jpg",
           title: "First Place – 2025 Metro Orlando NPHC Alumni Step Show",
           shortCaption: "$2,000 prize for excellence in performance",
           fullCaption:
@@ -172,7 +193,7 @@ const CharlesHWesleyAward = () => {
             "FFAC Regional Conference - Xi Iota Chapter delegation representing UCF and engaging in regional fraternity programming and leadership development.",
         },
         {
-          src: "/lovable-uploads/wesley-award/conferences-2.jpg",
+          src: "/CHWPhotos/mar11/image0.jpg",
           title: "94th Southern Regional Convention – March 7-10, 2025",
           shortCaption: "Leadership workshops and networking",
           fullCaption:
@@ -256,7 +277,11 @@ const CharlesHWesleyAward = () => {
             "Second Harvest Food Bank Collaboration - December 16, 2024. Xi Iota and Delta Xi Lambda worked alongside community volunteers at Second Harvest Food Bank, packaging 1,455 boxes and 21,825 meals for families across Central Florida. This project reflected large-scale servant leadership and measurable community impact.",
         },
         {
-          src: ["/CHWPhotos/apr4.png", "/CHWPhotos/april4.png"],
+          src: [
+            "/CHWPhotos/apr4.png",
+            "/CHWPhotos/april4.png",
+            "/CHWPhotos/apr4/image0.jpg",
+          ],
           title:
             "Head Start Literacy Event & Disney's Children's Gala – April 4, 2025",
           shortCaption: "Education and empowerment through literacy",
