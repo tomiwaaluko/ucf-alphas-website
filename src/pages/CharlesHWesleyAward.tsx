@@ -35,6 +35,28 @@ const CharlesHWesleyAward = () => {
         "Showcasing our chapter's active involvement in fraternity-wide initiatives",
       images: [
         {
+          src: "/CHWPhotos/jun14.png",
+          title: "Brother's Keeper – June 14, 2024",
+          shortCaption: "Supporting elder brothers through hands-on service",
+          fullCaption:
+            "Brother's Keeper – June 14, 2024. Both chapters served an elderly Alpha brother by cleaning and maintaining his property. This early-year act of service reinforced the fraternity's value of intergenerational brotherhood.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/national-programs-4.jpg",
+          title: "Brother's Keeper Service Project – August 24, 2024",
+          shortCaption:
+            "Supporting DXL charter member through national initiative",
+          fullCaption:
+            "Brother's Keeper Service Project – August 24, 2024. Xi Iota and Delta Xi Lambda collaborated to support DXL charter member Bro. Felton A. Johnson through Alpha's national initiative, Brother's Keeper. Brothers completed yard work, removed debris, and maintained the property, reinforcing Alpha's value of lifelong brotherhood and intergenerational care.",
+        },
+        {
+          src: "/lovable-uploads/wesley-award/national-programs-5.jpg",
+          title: "Brother's Keeper Yard Service – November 2, 2024",
+          shortCaption: "Ongoing support for elder brothers",
+          fullCaption:
+            "Brother's Keeper Yard Service – November 2, 2024. Undergraduates and alumni reunited to assist Bro. Felton Johnson, performing additional yard cleanup and home care. This ongoing collaboration demonstrates consistency in supporting elder brothers through hands-on service.",
+        },
+        {
           src: "/lovable-uploads/wesley-award/national-programs-1.jpg",
           title: "Go To High School Go To College Program",
           shortCaption:
@@ -118,27 +140,6 @@ const CharlesHWesleyAward = () => {
         "Plaques, certificates, letters of sponsorship of activities or events, scholarships presented or received, etc.",
       images: [
         {
-          src: "/lovable-uploads/wesley-award/recognition-1.jpg",
-          title: "Outstanding Chapter Award – 2024-2025",
-          shortCaption: "Recognition for excellence in service and brotherhood",
-          fullCaption:
-            "Outstanding Chapter Award - 2024-2025 Academic Year. Xi Iota Chapter recognized for demonstrating excellence in service, leadership, and brotherhood throughout the academic year.",
-        },
-        {
-          src: "/lovable-uploads/wesley-award/recognition-2.jpg",
-          title: "Scholarship Presentation",
-          shortCaption: "Supporting academic excellence in our community",
-          fullCaption:
-            "Scholarship Presentation - Joint scholarship program supporting academic excellence, providing financial assistance to deserving students pursuing higher education.",
-        },
-        {
-          src: "/lovable-uploads/wesley-award/recognition-3.jpg",
-          title: "Community Partnership Certificate",
-          shortCaption: "Collaboration with local organizations",
-          fullCaption:
-            "Community Partnership Certificate - Recognition of successful collaboration with local community organizations to address critical needs and serve Orlando residents.",
-        },
-        {
           src: "/lovable-uploads/wesley-award/recognition-4.jpg",
           title: "First Place – 2025 Metro Orlando NPHC Alumni Step Show",
           shortCaption: "$2,000 prize for excellence in performance",
@@ -191,15 +192,7 @@ const CharlesHWesleyAward = () => {
         "Joint service projects demonstrating Alpha's commitment to serving our community",
       images: [
         {
-          src: "/lovable-uploads/wesley-award/service-1.jpg",
-          title:
-            "Brother's Keeper Service Project – June 14, Aug 24, Nov 2, 2024",
-          shortCaption: "Supporting elder brothers through hands-on service",
-          fullCaption:
-            "Brother's Keeper Service Project - June 14, 2024 & August 24, 2024 & November 2, 2024. Xi Iota and Delta Xi Lambda collaborated to support DXL charter member Bro. Felton A. Johnson through Alpha's national initiative, Brother's Keeper. Brothers completed yard work, removed debris, and maintained the property across multiple service dates, reinforcing Alpha's value of lifelong brotherhood and intergenerational care.",
-        },
-        {
-          src: "/lovable-uploads/wesley-award/service-2.jpg",
+          src: "/CHWPhotos/jun18.png",
           title:
             "Community Food Distribution with Zeta Phi Beta – June 18, 2024",
           shortCaption:
@@ -208,7 +201,7 @@ const CharlesHWesleyAward = () => {
             "Community Food Distribution with Zeta Phi Beta - June 18, 2024. Xi Iota and DXL joined the Sigma Epsilon Chapter of Zeta Phi Beta Sorority, Inc. to distribute food and household items to Orlando residents, promoting collaboration across Greek organizations for community benefit.",
         },
         {
-          src: "/lovable-uploads/wesley-award/service-3.jpg",
+          src: "/CHWPhotos/sept18.png",
           title:
             "Livingston Street Church Food Drives – Aug 21 & Sept 18, 2024",
           shortCaption: "Addressing food insecurity in Orlando",
@@ -216,7 +209,7 @@ const CharlesHWesleyAward = () => {
             "Livingston Street Church Food Drives - August 21 & September 18, 2024. Both chapters partnered with Livingston Street Church of God to distribute food and household supplies to underserved families. These recurring service initiatives demonstrate consistency in addressing food insecurity in Orlando.",
         },
         {
-          src: "/lovable-uploads/wesley-award/service-4.jpg",
+          src: "/CHWPhotos/oct8.png",
           title: "Literacy Domain Day at Callahan Head Start – October 8, 2024",
           shortCaption: "Promoting literacy and youth development",
           fullCaption:
@@ -417,10 +410,12 @@ const CharlesHWesleyAward = () => {
                               }
                             >
                               <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-2 border-yellow-400/20 group-hover:border-yellow-400/50 transition-all duration-300 overflow-hidden relative">
-                                {/* Image placeholder - replace with actual images */}
-                                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-black">
-                                  <Award className="w-16 h-16 text-yellow-400/20" />
-                                </div>
+                                {/* Actual Image */}
+                                <img
+                                  src={image.src}
+                                  alt={image.title}
+                                  className="absolute inset-0 w-full h-full object-cover"
+                                />
 
                                 {/* Hover overlay */}
                                 <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 transition-all duration-300 flex items-center justify-center">
@@ -456,20 +451,33 @@ const CharlesHWesleyAward = () => {
           open={selectedImage !== null}
           onOpenChange={(open) => !open && setSelectedImage(null)}
         >
-          <DialogContent className="bg-gradient-to-br from-gray-900 to-black border-2 border-yellow-400/40 max-w-3xl">
-            <DialogTitle className="text-2xl font-bold text-yellow-400 font-cinzel mb-4">
-              {selectedImage?.title}
-            </DialogTitle>
-            <DialogDescription className="text-gray-300 text-lg leading-relaxed">
-              {selectedImage?.fullCaption}
-            </DialogDescription>
+          <DialogContent className="bg-gradient-to-br from-gray-900 to-black border-2 border-yellow-400/40 max-w-4xl max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-yellow-400 transition-colors"
+              className="absolute top-4 right-4 text-gray-400 hover:text-yellow-400 transition-colors z-50"
               aria-label="Close"
             >
               <X className="w-6 h-6" />
             </button>
+
+            <DialogTitle className="text-2xl font-bold text-yellow-400 font-cinzel mb-4 pr-8">
+              {selectedImage?.title}
+            </DialogTitle>
+
+            {/* Expanded Image */}
+            {selectedImage?.src && (
+              <div className="mb-6 rounded-xl overflow-hidden border-2 border-yellow-400/30">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.title}
+                  className="w-full h-auto object-contain max-h-[50vh]"
+                />
+              </div>
+            )}
+
+            <DialogDescription className="text-gray-300 text-lg leading-relaxed">
+              {selectedImage?.fullCaption}
+            </DialogDescription>
           </DialogContent>
         </Dialog>
 
