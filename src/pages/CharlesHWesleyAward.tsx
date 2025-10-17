@@ -1,7 +1,7 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 import {
   Award,
   Users,
@@ -27,6 +27,7 @@ const CharlesHWesleyAward = () => {
     fullCaption: string;
   } | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [carouselIndex, setCarouselIndex] = useState(0);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -34,6 +35,100 @@ const CharlesHWesleyAward = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  // Shuffle and select 6 random images on each page load
+  const featuredImages = useMemo(() => {
+    const allCarouselImages = [
+      {
+        src: "/CHWPhotos/districtconference2024/IMG_7480.png",
+        title: "2024 District Conference",
+        caption: "Host chapter with 30+ brothers registered",
+      },
+      {
+        src: "/CHWPhotos/mar11/image0.jpg",
+        title: "94th Southern Regional Convention",
+        caption: "Leadership workshops and networking in Atlanta",
+      },
+      {
+        src: "/CHWPhotos/jun16/IMG_7477.png",
+        title: "Xi Iota Charter Day Celebration",
+        caption: "Celebrating chapter legacy with brotherhood",
+      },
+      {
+        src: "/CHWPhotos/feb21/IMG_7446.png",
+        title: "Campus Visit with King Solomon Foundation",
+        caption: "Encouraging higher education and leadership",
+      },
+      {
+        src: "/CHWPhotos/oct29/IMG_7470.png",
+        title: "A Voteless People Is A Hopeless People",
+        caption: "Civic engagement and voter registration",
+      },
+      {
+        src: "/CHWPhotos/jan20/IMG_7444.png",
+        title: "MLK Day of Service",
+        caption: "Serving the community in honor of Dr. King",
+      },
+      {
+        src: "/CHWPhotos/jun14.png",
+        title: "Brother's Keeper",
+        caption: "Supporting elder brothers through hands-on service",
+      },
+      {
+        src: "/CHWPhotos/sept20/IMG_7467.png",
+        title: "Divine Nine Plots Ribbon-Cutting",
+        caption: "Honoring Greek legacy on UCF campus",
+      },
+      {
+        src: "/CHWPhotos/jan17/IMG_7440.png",
+        title: "MLK Commemorative Luncheon",
+        caption: "Honoring Dr. King's leadership and legacy",
+      },
+      {
+        src: "/CHWPhotos/nov9/IMG_7437.png",
+        title: "Second Harvest Food Bank",
+        caption: "Fighting hunger in Central Florida",
+      },
+      {
+        src: "/CHWPhotos/dec3/IMG_7432.png",
+        title: "Forsyth Woods Elementary Christmas",
+        caption: "Spreading holiday joy to students",
+      },
+      {
+        src: "/CHWPhotos/mar22.png",
+        title: "YMOD All-Star Basketball Game",
+        caption: "Combining athletics and education advocacy",
+      },
+      {
+        src: "/CHWPhotos/projectalpha/IMG_7474.png",
+        title: "Project Alpha",
+        caption: "Educating young men on health and responsibility",
+      },
+      {
+        src: "/CHWPhotos/wineandcheese.jpg",
+        title: "Wine & Cheese Experience",
+        caption: "Collaborative fundraising for philanthropy",
+      },
+      {
+        src: "/CHWPhotos/mar3/image0.jpg",
+        title: "Step Show First Place",
+        caption: "$2,000 prize for excellence in performance",
+      },
+    ];
+
+    const shuffled = [...allCarouselImages].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 6);
+  }, []);
+
+  const nextSlide = () => {
+    setCarouselIndex((prev) => (prev + 1) % featuredImages.length);
+  };
+
+  const prevSlide = () => {
+    setCarouselIndex(
+      (prev) => (prev - 1 + featuredImages.length) % featuredImages.length
+    );
+  };
 
   const categories = [
     {
@@ -188,6 +283,27 @@ const CharlesHWesleyAward = () => {
           shortCaption: "Marching together for equality and justice",
           fullCaption:
             "Orlando MLK Parade - January 18, 2025. Brothers from both chapters proudly marched together in the annual MLK Parade, representing Alpha Phi Alpha and honoring Dr. King's enduring legacy of equality, justice, and service.",
+        },
+        {
+          src: "/CHWPhotos/wineandcheese.jpg",
+          title: "Wine & Cheese Experience Fundraiser",
+          shortCaption: "Collaborative fundraising raising over $500",
+          fullCaption:
+            "Wine & Cheese Experience Fundraiser - The Xi Iota Chapter helped fundraise for Delta Xi Lambda's Wine & Cheese Experience, a sophisticated evening featuring a variety of wines, gourmet cheeses, entertainment including DJ Andre Mack & DJ Intel, and a Monte Carlo Night with Blackjack, Roulette, and Craps tables hosted by CRB Entertainment. Through their collaborative efforts, Xi Iota was able to raise over $500 in support of DXL's philanthropic initiatives. The event showcased the power of partnership between both chapters in creating memorable experiences while supporting important causes.",
+        },
+        {
+          src: "/CHWPhotos/fundraiser1.png",
+          title: "Double Good Popcorn Fundraiser",
+          shortCaption: "Xi Iota-hosted fundraiser supporting DXL programs",
+          fullCaption:
+            "Double Good Popcorn Fundraiser - The Xi Iota Chapter hosted a Double Good popcorn fundraiser to support Delta Xi Lambda's programs and initiatives. Brothers actively promoted and sold gourmet popcorn products, demonstrating their commitment to supporting DXL's mission. This fundraiser was part of a collaborative effort that raised over $1,000 total across multiple fundraising campaigns.",
+        },
+        {
+          src: "/CHWPhotos/fundraiser2.png",
+          title: "Poppin Popcorn Fundraiser",
+          shortCaption: "Second successful fundraising collaboration",
+          fullCaption:
+            "Poppin Popcorn Fundraiser - The Xi Iota Chapter hosted a Poppin Popcorn fundraiser, continuing their support for Delta Xi Lambda's educational and community initiatives. Combined with other fundraising efforts, DXL was able to contribute over $1,000 total across both popcorn fundraisers. This sustained fundraising partnership demonstrated the chapters' commitment to supporting each other's growth and ability to serve the community through programs like the Hankins/Johnson Education Foundation, which has awarded over $385,000 in college scholarships and supported 400+ YMODs.",
         },
       ],
     },
@@ -445,8 +561,8 @@ const CharlesHWesleyAward = () => {
               ))}
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
-              <motion.div className="mb-8" style={{ y: textY }}>
+            <div className="max-w-7xl mx-auto px-4 relative z-10">
+              <motion.div className="text-center mb-12" style={{ y: textY }}>
                 <motion.div
                   className="inline-block mb-6"
                   initial={{ scale: 0, rotate: -180 }}
@@ -466,7 +582,7 @@ const CharlesHWesleyAward = () => {
                 </motion.h1>
 
                 <motion.p
-                  className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+                  className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8"
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
@@ -474,6 +590,150 @@ const CharlesHWesleyAward = () => {
                   Recognizing Excellence in Chapter Collaboration and Service
                 </motion.p>
               </motion.div>
+
+              {/* Carousel and Description Grid */}
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Carousel */}
+                <motion.div
+                  className="relative"
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                >
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-4 border-yellow-400/30 shadow-2xl">
+                    <motion.img
+                      key={carouselIndex}
+                      src={featuredImages[carouselIndex].src}
+                      alt={featuredImages[carouselIndex].title}
+                      className="w-full h-full object-cover"
+                      initial={{ opacity: 0, scale: 1.1 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                    />
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+                    {/* Caption */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="text-xl font-bold mb-1">
+                        {featuredImages[carouselIndex].title}
+                      </h3>
+                      <p className="text-sm text-gray-300">
+                        {featuredImages[carouselIndex].caption}
+                      </p>
+                    </div>
+
+                    {/* Navigation Buttons */}
+                    <button
+                      onClick={prevSlide}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-yellow-400/80 text-white hover:text-black p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                      onClick={nextSlide}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-yellow-400/80 text-white hover:text-black p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+
+                    {/* Slide Indicators */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                      {featuredImages.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCarouselIndex(idx)}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            idx === carouselIndex
+                              ? "bg-yellow-400 w-8"
+                              : "bg-white/50"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Award Description */}
+                <motion.div
+                  className="space-y-6"
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                  <div className="bg-gradient-to-br from-yellow-400/10 to-yellow-600/10 border-2 border-yellow-400/30 rounded-2xl p-8 backdrop-blur-sm">
+                    <h2 className="text-2xl font-bold text-yellow-400 mb-4 font-cinzel flex items-center gap-3">
+                      <Award className="w-8 h-8" />
+                      About the Award
+                    </h2>
+                    <p className="text-gray-300 leading-relaxed mb-4">
+                      The{" "}
+                      <strong className="text-yellow-400">
+                        Charles H. Wesley Award
+                      </strong>{" "}
+                      is Alpha Phi Alpha Fraternity's highest honor recognizing
+                      exemplary collaboration between undergraduate and graduate
+                      chapters. Named after our esteemed historian and eighth
+                      General President, this prestigious award celebrates
+                      chapters that demonstrate exceptional partnership in
+                      service, leadership, and the advancement of our
+                      fraternity's noble ideals.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed mb-4">
+                      The award evaluates chapters across five key areas:{" "}
+                      <strong className="text-yellow-400">
+                        National Programs
+                      </strong>{" "}
+                      (30 points),{" "}
+                      <strong className="text-yellow-400">
+                        Alpha Functions
+                      </strong>{" "}
+                      (20 points),{" "}
+                      <strong className="text-yellow-400">
+                        Joint Recognition
+                      </strong>{" "}
+                      (15 points),{" "}
+                      <strong className="text-yellow-400">
+                        Conference Participation
+                      </strong>{" "}
+                      (10 points), and{" "}
+                      <strong className="text-yellow-400">
+                        Community Service
+                      </strong>{" "}
+                      (25 points).
+                    </p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-black/60 to-gray-900/60 border-2 border-yellow-400/30 rounded-2xl p-8 backdrop-blur-sm">
+                    <h3 className="text-xl font-bold text-yellow-400 mb-4 font-cinzel">
+                      Our Commitment
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      The{" "}
+                      <strong className="text-yellow-400">
+                        Xi Iota Chapter
+                      </strong>{" "}
+                      (undergraduate) and{" "}
+                      <strong className="text-yellow-400">
+                        Delta Xi Lambda Chapter
+                      </strong>{" "}
+                      (graduate) embody the spirit of the Charles H. Wesley
+                      Award through our unwavering commitment to{" "}
+                      <em className="text-yellow-400">
+                        "First of All, Servants of All, We Shall Transcend All."
+                      </em>{" "}
+                      Our partnership demonstrates that when undergraduate
+                      energy meets graduate wisdom, extraordinary service to
+                      humanity becomes inevitable. Together, we strive to
+                      exemplify the highest standards of fraternal
+                      collaboration, community impact, and leadership
+                      development.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </motion.section>
 
