@@ -343,7 +343,7 @@ const CharlesHWesleyAward = () => {
       icon: FileText,
       description: (
         <div>
-          <p className="mb-4">List with documentation</p>
+          {/* <p className="mb-4">List with documentation</p> */}
           <div className="bg-black/30 p-4 rounded-lg border border-yellow-400/20">
             <p className="font-semibold mb-3 text-yellow-400">
               The Xi Iota and Delta Xi Lambda Chapters have attended these
@@ -681,29 +681,6 @@ const CharlesHWesleyAward = () => {
                       service, leadership, and the advancement of our
                       fraternity's noble ideals.
                     </p>
-                    <p className="text-gray-300 leading-relaxed mb-4">
-                      The award evaluates chapters across five key areas:{" "}
-                      <strong className="text-yellow-400">
-                        National Programs
-                      </strong>{" "}
-                      (30 points),{" "}
-                      <strong className="text-yellow-400">
-                        Alpha Functions
-                      </strong>{" "}
-                      (20 points),{" "}
-                      <strong className="text-yellow-400">
-                        Joint Recognition
-                      </strong>{" "}
-                      (15 points),{" "}
-                      <strong className="text-yellow-400">
-                        Conference Participation
-                      </strong>{" "}
-                      (10 points), and{" "}
-                      <strong className="text-yellow-400">
-                        Community Service
-                      </strong>{" "}
-                      (25 points).
-                    </p>
                   </div>
 
                   <div className="bg-gradient-to-br from-black/60 to-gray-900/60 border-2 border-yellow-400/30 rounded-2xl p-8 backdrop-blur-sm">
@@ -764,14 +741,9 @@ const CharlesHWesleyAward = () => {
                           </motion.div>
 
                           <div className="flex-1">
-                            <div className="flex items-start justify-between gap-4 mb-4">
-                              <h3 className="text-2xl md:text-3xl font-bold text-white font-cinzel leading-tight">
-                                {category.title}
-                              </h3>
-                              <div className="flex-shrink-0 bg-gradient-to-br from-yellow-400 to-yellow-600 text-black font-bold text-2xl px-6 py-3 rounded-full shadow-xl border-2 border-yellow-300">
-                                {category.points} pts
-                              </div>
-                            </div>
+                            <h3 className="text-2xl md:text-3xl font-bold text-white font-cinzel leading-tight mb-4">
+                              {category.title}
+                            </h3>
 
                             <p className="text-lg text-gray-300 leading-relaxed">
                               {category.description}
