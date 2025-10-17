@@ -3,9 +3,11 @@ import Footer from "../components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Award, Trophy } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FFACAwards = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -162,6 +164,7 @@ const FFACAwards = () => {
 
                 {/* Charles H. Wesley Award Button */}
                 <motion.button
+                  onClick={() => navigate("/charles-h-wesley-award")}
                   className="group relative aspect-square bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 border-2 border-yellow-400/40 rounded-3xl overflow-hidden hover:border-yellow-400 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/30 backdrop-blur-sm"
                   whileHover={{ y: -5 }}
                   whileTap={{ scale: 0.98 }}

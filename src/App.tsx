@@ -30,6 +30,7 @@ import Lineage from "./pages/Lineage";
 import LineageDetail from "./pages/LineageDetail";
 import Contact from "./pages/Contact";
 import FFACAwards from "./pages/FFACAwards";
+import CharlesHWesleyAward from "./pages/CharlesHWesleyAward";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -77,6 +78,10 @@ const App = () => (
           <Route path="/lineage/:lineId" element={<LineageDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ffac-awards" element={<FFACAwards />} />
+          <Route
+            path="/charles-h-wesley-award"
+            element={<CharlesHWesleyAward />}
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
