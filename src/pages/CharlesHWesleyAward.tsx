@@ -52,27 +52,45 @@ const CharlesHWesleyAward = () => {
             "Brother's Keeper – June 14, 2025. Both chapters served an elderly Alpha brother by cleaning and maintaining his property. This early-year act of service reinforced the fraternity's value of intergenerational brotherhood.",
         },
         {
-          src: "/lovable-uploads/wesley-award/national-programs-4.jpg",
-          title: "Brother's Keeper Service Project – August 24, 2025",
-          shortCaption:
-            "Supporting DXL charter member through national initiative",
-          fullCaption:
-            "Brother's Keeper Service Project – August 24, 2025. Xi Iota and Delta Xi Lambda collaborated to support DXL charter member Bro. Felton A. Johnson through Alpha's national initiative, Brother's Keeper. Brothers completed yard work, removed debris, and maintained the property, reinforcing Alpha's value of lifelong brotherhood and intergenerational care.",
-        },
-        {
-          src: "/lovable-uploads/wesley-award/national-programs-5.jpg",
+          src: "/CHWPhotos/nov2/image0.jpg",
           title: "Brother's Keeper Yard Service – November 2, 2024",
           shortCaption: "Ongoing support for elder brothers",
           fullCaption:
             "Brother's Keeper Yard Service – November 2, 2024. Undergraduates and alumni reunited to assist Bro. Felton Johnson, performing additional yard cleanup and home care. This ongoing collaboration demonstrates consistency in supporting elder brothers through hands-on service.",
         },
         {
-          src: "/lovable-uploads/wesley-award/national-programs-1.jpg",
-          title: "Go To High School Go To College Program",
-          shortCaption:
-            "Mentoring young students on the importance of education",
+          src: "/CHWPhotos/oct20.png",
+          title: "Brother's Keeper Initiative – October 20, 2024",
+          shortCaption: "Supporting DXL charter member Bro. Felton A. Johnson",
           fullCaption:
-            "Go To High School Go To College Program - Xi Iota and Delta Xi Lambda partnered to mentor young students, emphasizing the critical importance of education and higher learning as pathways to success.",
+            "Brother's Keeper Initiative - October 20, 2024. Brother Nelson from Xi Iota joined the Delta Xi Lambda Chapter to host Alpha's national initiative, Brother's Keeper. The brothers joined forces to support DXL charter member, Bro. Felton A. Johnson, by assisting with various yard activities including maintaining the yard, clearing out debris, and disposing of unwanted items such as old trash and furniture. This service exemplified the fraternity's commitment to intergenerational brotherhood and care for elder members.",
+        },
+        {
+          src: "/CHWPhotos/mar22.png",
+          title:
+            "Go To High School Go To College – YMOD All-Star Game – March 22, 2025",
+          shortCaption:
+            "Combining athletics and education advocacy through basketball",
+          fullCaption:
+            "Go To High School Go To College – YMOD All-Star Game - March 22, 2025. Xi Iota showed support to Delta Xi Lambda's YMOD (Youth Mentoring and Outreach Development) program by participating in an all-star basketball game with young students. Brothers combined the fun of athletics with meaningful mentorship, teaching students the importance of seeking higher education and exploring multiple career options. This innovative approach demonstrated how engagement through sports can be a powerful platform for educational advocacy.",
+        },
+        {
+          src: "/CHWPhotos/mar23.png",
+          title:
+            "Go To High School Go To College – UCF Campus Tour – March 23, 2025",
+          shortCaption:
+            "Partnering with UCF Athletics for out-of-state student outreach",
+          fullCaption:
+            "Go To High School Go To College – UCF Campus Tour - March 23, 2025. The Delta Xi Lambda chapter collaborated with the UCF Athletics Department and invited brothers of Xi Iota to host a comprehensive campus tour for out-of-state high school students. This partnership showcased the university's academic programs, athletic facilities, and campus life while brothers shared their experiences and encouraged students to pursue higher education at UCF. The collaboration with UCF Athletics demonstrated Alpha's commitment to building strategic partnerships that expand educational opportunities for young people.",
+        },
+        {
+          src: "/CHWPhotos/october29.png",
+          title:
+            "Go To High School Go To College – Middle School Campus Tour – October 29, 2024",
+          shortCaption:
+            "Early educational exposure for South Florida middle schoolers",
+          fullCaption:
+            "Go To High School Go To College – Middle School Campus Tour - October 29, 2024. The Delta Xi Lambda and Xi Iota chapters collaborated to host a campus tour specifically designed for middle school students from South Florida. Brothers recognized the importance of early exposure to higher education and provided age-appropriate guidance about college preparation, academic pathways, and the value of education. By reaching students at the middle school level, both chapters planted seeds of college aspirations and demonstrated Alpha's commitment to educational advocacy at all levels.",
         },
         {
           src: [
@@ -87,18 +105,27 @@ const CharlesHWesleyAward = () => {
             "Campus Visit with the King Solomon Foundation - February 21, 2025. In partnership with the King Solomon Foundation, an initiative led by brothers of Delta Xi Lambda, Xi Iota hosted a campus visit for high school students to the University of Central Florida. Undergraduate brothers provided campus tours and shared personal experiences about college life, academic success, and leadership. The event encouraged students to pursue higher education while highlighting Alpha Phi Alpha's mission of developing leaders and advocating for educational equity.",
         },
         {
-          src: "/lovable-uploads/wesley-award/national-programs-2.jpg",
+          src: [
+            "/CHWPhotos/oct29/IMG_7470.png",
+            "/CHWPhotos/oct29/IMG_7471.png",
+            "/CHWPhotos/oct29/IMG_7472.png",
+            "/CHWPhotos/oct29/IMG_7473.png",
+          ],
           title: "A Voteless People Is A Hopeless People – October 29, 2024",
           shortCaption: "Voter registration and civic engagement initiative",
           fullCaption:
             "A Voteless People Is A Hopeless People - October 29, 2024. Xi Iota hosted a voter education seminar in collaboration with the UCF NAACP Chapter and Equal Ground, supported by DXL alumni. The event informed attendees about ballot measures, voting rights, and civic engagement, continuing Alpha's historical advocacy for political empowerment.",
         },
         {
-          src: "/lovable-uploads/wesley-award/national-programs-3.jpg",
+          src: [
+            "/CHWPhotos/projectalpha/IMG_7474.png",
+            "/CHWPhotos/projectalpha/IMG_7475.png",
+            "/CHWPhotos/projectalpha/IMG_7476.png",
+          ],
           title: "Project Alpha",
           shortCaption: "Health and wellness education for youth",
           fullCaption:
-            "Project Alpha - Health and wellness education program targeting at-risk youth, providing critical information about health decisions and life skills.",
+            "Project Alpha - The Xi Iota Chapter and Delta Xi Lambda joined forces to showcase Alpha Phi Alpha's national Project Alpha initiative to the Young Men of Distinction (YMOD) program. This health and wellness education program targeted at-risk youth, providing critical information about health decisions, life skills, and personal development. Through this collaboration, brothers demonstrated the fraternity's commitment to youth empowerment and community education.",
         },
       ],
     },
@@ -110,18 +137,27 @@ const CharlesHWesleyAward = () => {
         "Founders' Day events, Black and Gold ball, MLK days, Fundraising, etc.",
       images: [
         {
-          src: "/lovable-uploads/wesley-award/alpha-3.jpg",
-          title: "Founders' Day Celebration – December 4, 2024",
-          shortCaption: "Honoring the legacy of our seven jewels",
+          src: [
+            "/CHWPhotos/jun16/IMG_7477.png",
+            "/CHWPhotos/jun16/IMG_7478.png",
+            "/CHWPhotos/jun16/IMG_7479.png",
+          ],
+          title: "Xi Iota Charter Day Celebration – June 16, 2025",
+          shortCaption:
+            "Celebrating chapter legacy with fellowship and brotherhood",
           fullCaption:
-            "Founders' Day Celebration - December 4, 2024. Annual commemoration honoring the legacy of our seven jewels and the founding of Alpha Phi Alpha Fraternity, Inc. on December 4, 1906.",
+            "Xi Iota Charter Day Celebration - June 16, 2025. The Xi Iota Chapter celebrated its Charter Day anniversary with a community cookout, bringing together brothers from Delta Xi Lambda and members of the UCF community. The event featured good food, fellowship, and brotherhood in a relaxed outdoor setting. DXL brothers came to show support and celebrate Xi Iota's legacy on campus, exemplifying the strong partnership between both chapters and their commitment to building lasting relationships within the Alpha Phi Alpha community.",
         },
         {
-          src: "/lovable-uploads/wesley-award/alpha-functions-2.jpg",
-          title: "Black and Gold Ball",
-          shortCaption: "Annual formal celebrating brotherhood and sisterhood",
+          src: [
+            "/CHWPhotos/sept20/IMG_7467.png",
+            "/CHWPhotos/sept20/IMG_7468.png",
+          ],
+          title:
+            "Divine Nine Plots Ribbon-Cutting Ceremony – September 20, 2024",
+          shortCaption: "Honoring Greek legacy on UCF campus",
           fullCaption:
-            "Black and Gold Ball - Annual formal event celebrating the bonds of brotherhood and sisterhood, bringing together undergraduates and alumni in an elegant evening of fellowship.",
+            "Divine Nine Plots Ribbon-Cutting Ceremony - September 20, 2024. A historic moment for the Divine Nine at UCF with the ribbon-cutting of newly built plots honoring the legacy of the National Pan-Hellenic Council organizations on campus. Brothers from Xi Iota and Delta Xi Lambda gathered alongside UCF alumni to celebrate this milestone achievement that recognizes and preserves the rich history and contributions of Black Greek Letter Organizations at the University of Central Florida. This ceremony symbolized unity, legacy, and the continued impact of the Divine Nine in the campus community.",
         },
         {
           src: [
@@ -132,13 +168,6 @@ const CharlesHWesleyAward = () => {
           shortCaption: "Serving the community in honor of Dr. King",
           fullCaption:
             'MLK Day of Service - January 20, 2025. Xi Iota and DXL partnered with Orlando Alphas and the NAACP for the MLK Million Dollar Pack Initiative, assembling meal kits for local families. The collaboration embodied Alpha\'s mission of "Service to All."',
-        },
-        {
-          src: "/lovable-uploads/wesley-award/alpha-functions-4.jpg",
-          title: "Chapter Fundraising Event",
-          shortCaption: "Supporting our programs and initiatives",
-          fullCaption:
-            "Chapter Fundraising Event - Collaborative fundraising efforts between Xi Iota and Delta Xi Lambda to support chapter programs, scholarships, and community service initiatives.",
         },
         {
           src: [
@@ -196,14 +225,65 @@ const CharlesHWesleyAward = () => {
       title: "Chapters Participation in Past Conferences and Conventions",
       points: 10,
       icon: FileText,
-      description: "List with documentation",
+      description: (
+        <div>
+          <p className="mb-4">List with documentation</p>
+          <div className="bg-black/30 p-4 rounded-lg border border-yellow-400/20">
+            <p className="font-semibold mb-3 text-yellow-400">
+              The Xi Iota and Delta Xi Lambda Chapters have attended these
+              conventions together since 2022:
+            </p>
+            <ul className="space-y-1.5 text-sm">
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2022 District Conference (Orlando)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2023 Regional Convention (Orlando)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2023 General Convention (Dallas)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2023 District Conference (St. Augustine)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2024 Regional Convention (Atlanta)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2024 District Conference (Orlando)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2025 Regional Convention (Atlanta)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2025 General Convention (Philadelphia)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>2025 District Conference (Jacksonville)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      ),
       images: [
         {
-          src: "/lovable-uploads/wesley-award/conferences-1.jpg",
-          title: "FFAC Regional Conference",
-          shortCaption: "Xi Iota delegation representing UCF",
+          src: [
+            "/CHWPhotos/districtconference2024/IMG_7480.png",
+            "/CHWPhotos/districtconference2024/IMG_7481.png",
+          ],
+          title: "2024 District Conference",
+          shortCaption: "Host chapter with 30+ brothers registered",
           fullCaption:
-            "FFAC Regional Conference - Xi Iota Chapter delegation representing UCF and engaging in regional fraternity programming and leadership development.",
+            "2024 District Conference - The Xi Iota Chapter and Delta Xi Lambda Chapter demonstrated strong attendance at the 2024 District Conference with over 30 brothers registered in total. Serving as the host chapter, both chapters showcased exemplary leadership and fraternal support. Xi Iota strongly supported Brother Tomiwa Aluko in his campaign for Outstanding Brother of the Year. Additionally, Xi Iota provided unwavering support for Delta Xi Lambda in their campaign for Outstanding Chapter of the Year, which DXL successfully won, advancing to compete at the regional level. This conference exemplified the powerful collaboration and mutual support between both chapters.",
         },
         {
           src: "/CHWPhotos/mar11/image0.jpg",
@@ -211,13 +291,6 @@ const CharlesHWesleyAward = () => {
           shortCaption: "Leadership workshops and networking",
           fullCaption:
             "94th Southern Regional Convention - Atlanta, GA (March 7–10, 2025). Both chapters attended the regional convention, participating in leadership workshops, Alpha trainings, and networking sessions. Xi Iota and DXL also held a joint brotherhood dinner, fostering mentorship and fraternal unity.",
-        },
-        {
-          src: "/lovable-uploads/wesley-award/conferences-3.jpg",
-          title: "Leadership Summit",
-          shortCaption: "Chapter officers developing skills",
-          fullCaption:
-            "Leadership Summit - Chapter officers participating in intensive leadership development training, skill-building workshops, and networking opportunities with brothers from across the region.",
         },
       ],
     },
