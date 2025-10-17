@@ -132,12 +132,12 @@ const Hero = () => {
             Learn More
           </motion.button>
           <motion.button
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/ffac-awards")}
             className="border-2 border-yellow-400 text-yellow-400 px-8 py-4 text-lg font-medium hover:bg-yellow-400 hover:text-black transition-all duration-300 uppercase tracking-wider"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contact Us
+            FFAC Awards
           </motion.button>
         </motion.div>
       </div>
