@@ -11,82 +11,40 @@ const leadershipData = [
     image: "/brothers/Treylon Chukes.jpeg",
     description:
       "Leading the chapter with vision and dedication to Alpha Phi Alpha's principles.",
-    responsibilities: [
-      "Chapter oversight",
-      "Strategic planning",
-      "External relations",
-    ],
   },
   {
-    name: "Abdul Ibrahim",
-    position: "Vice President",
-    image: "/leadership/abdul-ibrahim.jpg",
+    name: "Jacob Herrera",
+    position: "Vice President, Director of Education, Chaplain",
+    image: "/brothers/Jacob Herrera.jpeg",
     description:
-      "Supporting chapter operations and assisting in leadership initiatives.",
-    responsibilities: [
-      "Administrative support",
-      "Committee coordination",
-      "Member engagement",
-    ],
+      "Supporting chapter operations, overseeing educational programs, and providing spiritual guidance.",
   },
   {
     name: "Toluwani Aluko",
     position: "Secretary, Historian, Associate Editor to the Sphinx",
-    image: "/leadership/toluwani-aluko.jpg",
+    image: "/brothers/Toluwani Aluko.jpg",
     description:
       "Maintaining chapter records and preserving our historical legacy.",
-    responsibilities: [
-      "Meeting minutes",
-      "Historical documentation",
-      "Communications",
-    ],
   },
   {
     name: "Adams Brown",
     position: "Treasurer, Sergeant at Arms",
-    image: "/leadership/adams-brown.jpg",
+    image: "/brothers/Adams Brown.jpeg",
     description:
       "Managing chapter finances and maintaining order during meetings.",
-    responsibilities: [
-      "Financial management",
-      "Budget oversight",
-      "Meeting order",
-    ],
   },
   {
     name: "Corey Barnes",
     position: "Financial Secretary",
-    image: "/leadership/corey-barnes.jpg",
+    image: "/brothers/Corey Barnes.jpg",
     description: "Handling financial records and member dues administration.",
-    responsibilities: [
-      "Dues collection",
-      "Financial records",
-      "Member accounts",
-    ],
-  },
-  {
-    name: "Jacob Herrera",
-    position: "Director of Education, Chaplain",
-    image: "/leadership/jacob-herrera.jpg",
-    description:
-      "Overseeing educational programs and providing spiritual guidance.",
-    responsibilities: [
-      "Educational initiatives",
-      "Spiritual guidance",
-      "Academic support",
-    ],
   },
   {
     name: "Benjamin Blocker",
     position: "Parliamentarian",
-    image: "/leadership/benjamin-blocker.jpg",
+    image: "/brothers/Benjamin Blocker.jpeg",
     description:
       "Ensuring proper parliamentary procedure and governance standards.",
-    responsibilities: [
-      "Parliamentary procedure",
-      "Policy guidance",
-      "Rules compliance",
-    ],
   },
 ];
 
@@ -287,41 +245,6 @@ const Leadership = () => {
                         <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                           {leader.description}
                         </p>
-
-                        {/* Responsibilities */}
-                        <div className="space-y-2">
-                          <h4 className="text-yellow-400 font-semibold text-sm">
-                            Key Responsibilities:
-                          </h4>
-                          {leader.responsibilities.map(
-                            (responsibility, idx) => (
-                              <motion.div
-                                key={idx}
-                                className="flex items-center space-x-2"
-                                initial={{ x: 20, opacity: 0 }}
-                                whileInView={{ x: 0, opacity: 1 }}
-                                transition={{ duration: 0.5, delay: 0.1 * idx }}
-                                viewport={{ once: true }}
-                              >
-                                <motion.div
-                                  className="w-2 h-2 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full"
-                                  animate={{
-                                    scale: [1, 1.2, 1],
-                                    opacity: [0.7, 1, 0.7],
-                                  }}
-                                  transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    delay: idx * 0.3,
-                                  }}
-                                />
-                                <span className="text-gray-400 text-xs">
-                                  {responsibility}
-                                </span>
-                              </motion.div>
-                            )
-                          )}
-                        </div>
 
                         {/* Decorative line */}
                         <motion.div
