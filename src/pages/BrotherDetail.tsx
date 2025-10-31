@@ -144,8 +144,7 @@ const BrotherDetail = () => {
       name: "Corey Barnes Jr.",
       crossingSemester: "Fall 2024",
       position: "Neophyte",
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=600&fit=crop&crop=face",
+      image: "/brothers/Corey Barnes.jpg",
       bio: "Corey Barnes Jr. is a Mechanical Engineering major who brings technical innovation and problem-solving skills to the brotherhood. His passion for engineering design and sustainable technology aligns perfectly with the fraternity's commitment to community service and progress.\n\nCorey's analytical mindset and dedication to environmental sustainability drive his academic pursuits and personal projects. He is known for his collaborative approach to engineering challenges and his commitment to developing solutions that benefit both the community and the environment.",
       major: "Mechanical Engineering",
       year: "Junior",

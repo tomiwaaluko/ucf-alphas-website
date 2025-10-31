@@ -79,8 +79,7 @@ const MeetTheBrothers = () => {
         "Technical Excellence",
       ],
       quote: "Innovation distinguishes between a leader and a follower.",
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&crop=face",
+      image: "/brothers/Corey Barnes.jpg",
     },
     {
       id: 5,
