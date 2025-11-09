@@ -19,7 +19,7 @@ const ChapterHistory = () => {
       year: "1978",
       title: "The Beginning",
       description:
-        "Nine brothers at UCF saw the need for Alpha Phi Alpha on campus and initiated the pledge process.",
+        "Nine brothers at UCF saw the need for Alpha Phi Alpha on campus and initiated their process.",
       icon: Users,
     },
     {
@@ -229,9 +229,9 @@ const ChapterHistory = () => {
                 <p>
                   There were already two black fraternities, the Omegas and the
                   Sigmas, but those did not appeal to the needs of the nine
-                  brothers who initiated the pledge process. Most were familiar
-                  with Alpha Phi Alpha in some way so they went about finding
-                  out what would be needed to bring Alpha to UCF.
+                  brothers who initiated their process. Most were familiar with
+                  Alpha Phi Alpha in some way so they went about finding out
+                  what would be needed to bring Alpha to UCF.
                 </p>
                 <p>
                   The Graduate chapter in Orlando was brought into the process
@@ -241,11 +241,10 @@ const ChapterHistory = () => {
                   it certainly did.
                 </p>
                 <p>
-                  The pledge process itself was long and arduous and nine
-                  brothers soon became eight, then seven. The brothers who
-                  remained crossed the burning sands on June 16, 1979, with a
-                  gala event held in the Student Center, that summer to
-                  celebrate the occasion.
+                  The process itself was long and arduous and nine brothers soon
+                  became eight, then seven. The brothers who remained crossed
+                  the burning sands on June 16, 1979, with a gala event held in
+                  the Student Center, that summer to celebrate the occasion.
                 </p>
               </div>
             </motion.div>
@@ -253,7 +252,7 @@ const ChapterHistory = () => {
         </section>
 
         {/* Timeline Section */}
-        <section className="py-20 bg-gray-900/50">
+        {/* <section className="py-20 bg-gray-900/50">
           <div className="max-w-7xl mx-auto px-4">
             <motion.h2
               className="text-4xl md:text-5xl font-bold text-yellow-400 mb-16 text-center font-cinzel"
@@ -265,39 +264,30 @@ const ChapterHistory = () => {
               Chapter Timeline
             </motion.h2>
 
-            {/* New Horizontal Timeline Design */}
             <div className="relative">
-              {/* Main timeline line */}
               <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400/30 via-yellow-400 to-yellow-400/30 transform -translate-y-1/2"></div>
 
-              {/* Mobile vertical line */}
               <div className="md:hidden absolute left-8 top-0 bottom-0 w-1 bg-yellow-400"></div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
                 {timelineEvents.map((event, index) => (
                   <div key={event.year} className="relative">
-                    {/* Timeline connector for mobile */}
                     <div className="md:hidden absolute left-8 top-8 w-8 h-1 bg-yellow-400"></div>
 
-                    {/* Timeline dot */}
                     <div className="absolute top-8 left-8 md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 w-6 h-6 bg-yellow-400 rounded-full border-4 border-black z-10 shadow-lg hover:scale-110 transition-transform duration-300" />
 
-                    {/* Card */}
                     <div
                       className={`ml-20 md:ml-0 ${
                         index % 2 === 0 ? "md:mb-32" : "md:mt-32"
                       } bg-gradient-to-br from-black to-gray-900 border border-yellow-400/30 p-6 rounded-2xl hover:border-yellow-400/60 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/20 backdrop-blur-sm relative overflow-hidden group`}
                     >
-                      {/* Decorative corner */}
                       <div className="absolute top-2 right-2 w-6 h-6 border-r-2 border-t-2 border-yellow-400/40 group-hover:border-yellow-400 transition-colors duration-300"></div>
 
                       <div className="relative z-10">
-                        {/* Icon */}
                         <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-yellow-400/30 to-yellow-600/30 rounded-full mb-4 group-hover:from-yellow-400/50 group-hover:to-yellow-600/50 transition-all duration-300">
                           <event.icon className="w-6 h-6 text-yellow-400" />
                         </div>
 
-                        {/* Year badge */}
                         <div className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold mb-3 font-cinzel">
                           {event.year}
                         </div>
@@ -310,7 +300,6 @@ const ChapterHistory = () => {
                           {event.description}
                         </p>
 
-                        {/* Progress indicator */}
                         <div className="mt-4 flex space-x-1">
                           {Array.from({ length: 4 }).map((_, i) => (
                             <div
@@ -326,7 +315,6 @@ const ChapterHistory = () => {
                       </div>
                     </div>
 
-                    {/* Timeline number */}
                     <div className="absolute -top-3 left-12 md:left-1/2 md:transform md:-translate-x-1/2 bg-black border-2 border-yellow-400 rounded-full w-8 h-8 flex items-center justify-center text-yellow-400 font-bold text-sm font-cinzel z-20 hover:scale-110 transition-transform duration-300">
                       {index + 1}
                     </div>
@@ -334,21 +322,18 @@ const ChapterHistory = () => {
                 ))}
               </div>
 
-              {/* Timeline decorative elements */}
               <div className="hidden md:block">
-                {/* Start arrow */}
                 <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4">
                   <div className="w-0 h-0 border-t-4 border-b-4 border-r-8 border-transparent border-r-yellow-400"></div>
                 </div>
 
-                {/* End arrow */}
                 <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4">
                   <div className="w-0 h-0 border-t-4 border-b-4 border-l-8 border-transparent border-l-yellow-400"></div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Founding Members Section */}
         <section className="py-20">
@@ -380,7 +365,7 @@ const ChapterHistory = () => {
                     7
                   </div>
                   <h3 className="text-3xl font-bold text-yellow-400 mb-6 font-cinzel">
-                    Founding Members
+                    Charter Members
                   </h3>
                   <p className="text-yellow-400 mb-6 text-lg font-semibold">
                     Crossed June 16, 1979
@@ -418,8 +403,8 @@ const ChapterHistory = () => {
                     These seven visionary men laid the foundation for what would
                     become one of the most influential chapters of Alpha Phi
                     Alpha at UCF. Their courage to persevere through the
-                    challenging pledge process established a legacy that
-                    continues today.
+                    challenging process established a legacy that continues
+                    today.
                   </p>
                 </div>
 

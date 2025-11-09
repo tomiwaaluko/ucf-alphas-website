@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   Users,
   Heart,
@@ -19,44 +19,123 @@ const Service = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  // Slideshow media data - updated with real service event photos
-  const slideshowMedia = [
-    {
-      type: "image",
-      src: "/service-gallery/metro-orlando-food-distribution/IMG_7537.jpg",
-      title: "Metro Orlando Food Distribution",
-      description:
-        "Brothers dedicated their time serving the Metro Orlando community by assisting with food packaging and distribution for families in need",
-    },
-    {
-      type: "image",
-      src: "/service-gallery/headstart-literacy-disney-gala-service/IMG_7541.jpg",
-      title: "Head Start Literacy & Disney Gala Service",
-      description:
-        "Reading books to youth at Head Start to Literacy and assisting with Disney's 'Celebrate the Children's Gala'",
-    },
-    {
-      type: "image",
-      src: "/service-gallery/ucf-campus-tour-ksfan-mentorship/IMG_7545.jpg",
-      title: "UCF Campus Tour & KSFAN Mentorship",
-      description:
-        "Brothers toured students around UCF campus, sharing insights on college life and the legacy of Alpha",
-    },
-    {
-      type: "image",
-      src: "/service-gallery/black-history-month-jones-rollins-outreach/IMG_7550.jpg",
-      title: "Black History Month Outreach",
-      description:
-        "Visiting Jones High School and Rollins College to share the legacy of the Divine Nine and emphasize brotherhood and education",
-    },
-    {
-      type: "image",
-      src: "/service-gallery/forsyth-woods-elementary-christmas-gift-giving/IMG_7553.jpg",
-      title: "Forsyth Woods Elementary Christmas Gift Giving",
-      description:
-        "Providing Christmas gifts to children at Forsyth Woods Elementary, bringing holiday spirit to those in need",
-    },
-  ];
+  // All available slideshow images - 15 total images
+  const allSlideshowMedia = useMemo(
+    () => [
+      {
+        type: "image",
+        src: "/service-gallery/metro-orlando-food-distribution/IMG_7537.jpg",
+        title: "Metro Orlando Food Distribution",
+        description:
+          "Brothers dedicated their time serving the Metro Orlando community by assisting with food packaging and distribution for families in need",
+      },
+      {
+        type: "image",
+        src: "/service-gallery/headstart-literacy-disney-gala-service/IMG_7541.jpg",
+        title: "Head Start Literacy & Disney Gala Service",
+        description:
+          "Reading books to youth at Head Start to Literacy and assisting with Disney's 'Celebrate the Children's Gala'",
+      },
+      {
+        type: "image",
+        src: "/service-gallery/ucf-campus-tour-ksfan-mentorship/IMG_7545.jpg",
+        title: "UCF Campus Tour & KSFAN Mentorship",
+        description:
+          "Brothers toured students around UCF campus, sharing insights on college life and the legacy of Alpha",
+      },
+      {
+        type: "image",
+        src: "/service-gallery/black-history-month-jones-rollins-outreach/IMG_7550.jpg",
+        title: "Black History Month Outreach",
+        description:
+          "Visiting Jones High School and Rollins College to share the legacy of the Divine Nine and emphasize brotherhood and education",
+      },
+      {
+        type: "image",
+        src: "/service-gallery/forsyth-woods-elementary-christmas-gift-giving/IMG_7553.jpg",
+        title: "Forsyth Woods Elementary Christmas Gift Giving",
+        description:
+          "Providing Christmas gifts to children at Forsyth Woods Elementary, bringing holiday spirit to those in need",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/districtconference2024/IMG_7480.png",
+        title: "2024 District Conference",
+        description:
+          "Host chapter with 30+ brothers registered, showcasing exemplary leadership and fraternal support at the District Conference",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/mar11/image0.jpg",
+        title: "94th Southern Regional Convention",
+        description:
+          "Brothers attended the regional convention in Atlanta, participating in leadership workshops and networking sessions",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/jun16/IMG_7477.png",
+        title: "Xi Iota Charter Day Celebration",
+        description:
+          "Celebrating chapter legacy with a community cookout, bringing together brothers and UCF community members",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/feb21/IMG_7446.png",
+        title: "Campus Visit with King Solomon Foundation",
+        description:
+          "Hosting high school students at UCF, encouraging higher education and leadership development through campus tours",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/oct29/IMG_7470.png",
+        title: "A Voteless People Is A Hopeless People",
+        description:
+          "Voter education seminar in collaboration with UCF NAACP and Equal Ground, promoting civic engagement and political empowerment",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/jan20/IMG_7444.png",
+        title: "MLK Day of Service",
+        description:
+          "Brothers partnered with Orlando Alphas and NAACP for the MLK Million Dollar Pack Initiative, serving the community in honor of Dr. King",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/sept20/IMG_7467.png",
+        title: "Divine Nine Plots Ribbon-Cutting",
+        description:
+          "Historic ceremony honoring the legacy of the Divine Nine at UCF with newly built plots recognizing NPHC organizations",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/dec3/IMG_7432.png",
+        title: "Forsyth Woods Elementary Christmas",
+        description:
+          "Brothers provided Christmas gifts to students at Forsyth Woods Elementary, spreading holiday joy to children in need",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/projectalpha/IMG_7474.png",
+        title: "Project Alpha",
+        description:
+          "Health and wellness education program for at-risk youth, providing critical information about health decisions and life skills",
+      },
+      {
+        type: "image",
+        src: "/CHWPhotos/mar3/image0.jpg",
+        title: "Step Show First Place",
+        description:
+          "Xi Iota won first place at the 2025 Metro Orlando NPHC Alumni Step Show, earning a $2,000 prize for excellence in performance",
+      },
+    ],
+    []
+  );
+
+  // Randomly select 10 images on component mount
+  const slideshowMedia = useMemo(() => {
+    const shuffled = [...allSlideshowMedia].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 10);
+  }, [allSlideshowMedia]);
 
   // Auto-advance slideshow
   useEffect(() => {
@@ -86,7 +165,7 @@ const Service = () => {
         "Providing educational support and mentorship to students in our community.",
       initiatives: [
         "Tutoring Sessions",
-        "SAT Prep Courses",
+        "Scholarship Awards",
         "College Guidance",
       ],
     },
@@ -107,7 +186,7 @@ const Service = () => {
       description:
         "Promoting healthy lifestyles and providing health education resources.",
       initiatives: [
-        "Health Screenings",
+        "Attending Health Fairs",
         "Fitness Programs",
         "Mental Health Awareness",
       ],
@@ -128,7 +207,7 @@ const Service = () => {
   const stats = [
     { number: "500+", label: "Community Hours Served" },
     { number: "50+", label: "Families Assisted" },
-    { number: "15", label: "Partner Organizations" },
+    { number: "15+", label: "Primary Schools Engaged" },
     { number: "100+", label: "Students Mentored" },
   ];
 
