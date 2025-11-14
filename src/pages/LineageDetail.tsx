@@ -57,7 +57,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-red-600 to-red-800",
-    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
+    image: "/lineage/Fall24.jpg",
     motto: "",
     values: [],
     deanStaff: [

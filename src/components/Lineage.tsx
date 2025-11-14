@@ -21,7 +21,7 @@ const lineageCards = [
     name: "The Vanguard",
     fullName: "",
     semester: "Fall 2024",
-    image: "/placeholder.svg",
+    image: "/lineage/Fall24.jpg",
     icon: Crown,
     color: "from-yellow-400 to-amber-500",
     description: "",
