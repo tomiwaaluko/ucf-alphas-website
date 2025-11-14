@@ -17,7 +17,7 @@ const MeetTheBrothers = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const headerY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const brothers = [
+  const activeBrothers = [
     {
       id: 1,
       name: "Tomiwa Aluko",
@@ -35,21 +35,6 @@ const MeetTheBrothers = () => {
       quote:
         "Knowledge can be communicated, but not wisdom. One can find it, live it, be fortified by it, do wonders through it, but one cannot communicate and teach it.",
       image: "/brothers/Tomiwa Aluko.jpg",
-    },
-    {
-      id: 2,
-      name: "Nijel Beverly",
-      crossingSemester: "Spring 2022",
-      lineNumber: "#2",
-      major: "Business Administration - Integrated Business",
-      achievements: [
-        "UCF Athletics editor",
-        "First Generation",
-        "Event of the Year as program coordinator (KORT)",
-      ],
-      quote:
-        "Our deepest fear is not that we are inadequate, but that we are powerful beyond measure.",
-      image: "/brothers/Nijel Beverly.jpg",
     },
     {
       id: 3,
@@ -122,19 +107,6 @@ const MeetTheBrothers = () => {
       image: "/brothers/Benjamin Blocker.jpeg",
     },
     {
-      id: 8,
-      name: "Jevaughn Morris",
-      crossingSemester: "Fall 2024",
-      lineNumber: "#8",
-      major: "Information Technology",
-      achievements: [
-        "Spring '24 Deans List",
-        "2025 NSBE Communication Zone Committee Member of the Year",
-      ],
-      quote: "Never put off until tomorrow what can be done today",
-      image: "/brothers/Jevaughn Morris.jpg",
-    },
-    {
       id: 9,
       name: "Toluwani Aluko",
       crossingSemester: "Fall 2024",
@@ -164,7 +136,7 @@ const MeetTheBrothers = () => {
     {
       id: 11,
       name: "Theodore Alexander Johnson",
-      crossingSemester: "Fall 2024",
+      crossingSemester: "Spring 2024",
       lineNumber: "#11",
       major: "Business Analytics",
       achievements: [
@@ -176,6 +148,37 @@ const MeetTheBrothers = () => {
       quote:
         "I look into the eyes of so many people, and I wish to see them all shine as bright as they possibly can within this lifetime.",
       image: "/brothers/Theodore Johnson.jpeg",
+    },
+  ];
+
+  const recentGraduates = [
+    {
+      id: 2,
+      name: "Nijel Beverly",
+      crossingSemester: "Spring 2022",
+      lineNumber: "#2",
+      major: "Business Administration - Integrated Business",
+      achievements: [
+        "UCF Athletics editor",
+        "First Generation",
+        "Event of the Year as program coordinator (KORT)",
+      ],
+      quote:
+        "Our deepest fear is not that we are inadequate, but that we are powerful beyond measure.",
+      image: "/brothers/Nijel Beverly.jpg",
+    },
+    {
+      id: 8,
+      name: "Jevaughn Morris",
+      crossingSemester: "Fall 2024",
+      lineNumber: "#8",
+      major: "Information Technology",
+      achievements: [
+        "Spring '24 Deans List",
+        "2025 NSBE Communication Zone Committee Member of the Year",
+      ],
+      quote: "Never put off until tomorrow what can be done today",
+      image: "/brothers/Jevaughn Morris.jpg",
     },
   ];
   return (
@@ -286,52 +289,124 @@ const MeetTheBrothers = () => {
             viewport={{ once: true }}
           >
             <div className="max-w-7xl mx-auto px-4">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {brothers.map((brother, index) => (
-                  <motion.div
-                    key={brother.id}
-                    className="relative group cursor-pointer overflow-hidden"
-                    initial={{ y: 50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.1,
-                    }}
-                    viewport={{ once: true }}
-                    onHoverStart={() => setHoveredBrother(brother.id)}
-                    onHoverEnd={() => setHoveredBrother(null)}
-                  >
-                    <div className="aspect-[3/4] relative">
-                      <img
-                        src={brother.image}
-                        alt={brother.name}
-                        className="w-full h-full object-cover"
-                      />
+              {/* Active Brothers */}
+              <motion.div
+                className="mb-16"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4 font-cinzel text-center">
+                  Active Brothers
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-12"></div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {activeBrothers.map((brother, index) => (
+                    <motion.div
+                      key={brother.id}
+                      className="relative group cursor-pointer overflow-hidden"
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.1,
+                      }}
+                      viewport={{ once: true }}
+                      onHoverStart={() => setHoveredBrother(brother.id)}
+                      onHoverEnd={() => setHoveredBrother(null)}
+                    >
+                      <div className="aspect-[3/4] relative">
+                        <img
+                          src={brother.image}
+                          alt={brother.name}
+                          className="w-full h-full object-cover"
+                        />
 
-                      {/* Crossing Semester Badge */}
-                      <div className="absolute top-4 right-4 bg-black/80 text-yellow-400 px-3 py-1 rounded text-sm backdrop-blur-sm border border-yellow-400/30">
-                        {brother.crossingSemester}
-                      </div>
+                        {/* Crossing Semester Badge */}
+                        <div className="absolute top-4 right-4 bg-black/80 text-yellow-400 px-3 py-1 rounded text-sm backdrop-blur-sm border border-yellow-400/30">
+                          {brother.crossingSemester}
+                        </div>
 
-                      {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
-                        <h3 className="text-yellow-400 font-semibold text-xl mb-2 font-cinzel">
-                          {brother.name}
-                        </h3>
-                        <p className="text-white text-sm mb-4">
-                          {brother.major}
-                        </p>
-                        <Link
-                          to={`/brother/${brother.id}`}
-                          className="bg-yellow-400 text-black px-6 py-2 text-sm font-medium hover:bg-yellow-300 transition-colors duration-200 rounded"
-                        >
-                          View More
-                        </Link>
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
+                          <h3 className="text-yellow-400 font-semibold text-xl mb-2 font-cinzel">
+                            {brother.name}
+                          </h3>
+                          <p className="text-white text-sm mb-4">
+                            {brother.major}
+                          </p>
+                          <Link
+                            to={`/brother/${brother.id}`}
+                            className="bg-yellow-400 text-black px-6 py-2 text-sm font-medium hover:bg-yellow-300 transition-colors duration-200 rounded"
+                          >
+                            View More
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Recent Graduates */}
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4 font-cinzel text-center">
+                  Recent Graduates
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-12"></div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {recentGraduates.map((brother, index) => (
+                    <motion.div
+                      key={brother.id}
+                      className="relative group cursor-pointer overflow-hidden"
+                      initial={{ y: 50, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.1,
+                      }}
+                      viewport={{ once: true }}
+                      onHoverStart={() => setHoveredBrother(brother.id)}
+                      onHoverEnd={() => setHoveredBrother(null)}
+                    >
+                      <div className="aspect-[3/4] relative">
+                        <img
+                          src={brother.image}
+                          alt={brother.name}
+                          className="w-full h-full object-cover"
+                        />
+
+                        {/* Crossing Semester Badge */}
+                        <div className="absolute top-4 right-4 bg-black/80 text-yellow-400 px-3 py-1 rounded text-sm backdrop-blur-sm border border-yellow-400/30">
+                          {brother.crossingSemester}
+                        </div>
+
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
+                          <h3 className="text-yellow-400 font-semibold text-xl mb-2 font-cinzel">
+                            {brother.name}
+                          </h3>
+                          <p className="text-white text-sm mb-4">
+                            {brother.major}
+                          </p>
+                          <Link
+                            to={`/brother/${brother.id}`}
+                            className="bg-yellow-400 text-black px-6 py-2 text-sm font-medium hover:bg-yellow-300 transition-colors duration-200 rounded"
+                          >
+                            View More
+                          </Link>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </motion.section>
 

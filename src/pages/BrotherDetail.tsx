@@ -299,7 +299,7 @@ const BrotherDetail = () => {
     },
     "11": {
       name: "Theodore Alexander Johnson",
-      crossingSemester: "Fall 2024",
+      crossingSemester: "Spring 2024",
       position: "Assistant District Director",
       image: "/brothers/Theodore Johnson.jpeg",
       bio: "Theodore A. Johnson is an international transfer student and proud native of New Providence, The Bahamas. He is currently a sophomore at the University of Central Florida, where he is pursuing a degree in Business Analytics with aspirations of using data-driven solutions to impact the fields of finance, business, and community development.\n\nA dedicated leader and servant, Theodore became a spring 2024 initiate of Alpha Phi Alpha Fraternity, Incorporated through the Phi Mu Chapter at the University of The Bahamas. Since then, he has continued to embody the fraternity's values of scholarship, leadership, and service. At the University of The Bahamas, Theodore distinguished himself through active involvement in campus leadership and community engagement. He proudly represented the student body as Mr. Blue & White, served as Internal Auditor on the Executive Board of the Student Government Association, and held the position of Treasurer for the National Pan-Hellenic Council (NPHC). Within his fraternity chapter, he also served as Treasurer and Dean of Education, roles in which he helped to strengthen financial stewardship, programming, and the academic success of his peers.\n\nNow at UCF, Theodore continues to build on his legacy of service and leadership. His journey reflects a commitment to bridging cultures, uplifting his community, and developing as a global leader prepared to make meaningful contributions both in The Bahamas and internationally.",
@@ -673,11 +673,15 @@ const BrotherDetail = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-400 text-sm">
-                          Crossed
+                          {brother.name === "Theodore Alexander Johnson"
+                            ? "Transferred"
+                            : "Crossed"}
                         </h4>{" "}
                         <div>
                           <p className="text-white text-sm">
-                            {brother.crossingSemester}
+                            {brother.name === "Theodore Alexander Johnson"
+                              ? "Fall 2025"
+                              : brother.crossingSemester}
                           </p>
                         </div>
                       </div>

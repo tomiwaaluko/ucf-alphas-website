@@ -1,5 +1,5 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   Crown,
   Shield,
@@ -11,6 +11,7 @@ import {
   Flame,
   Users,
   ChevronRight,
+  ArrowUpDown,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -565,6 +566,7 @@ const lineageCards = [
 const Lineage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -580,6 +582,18 @@ const Lineage = () => {
   const handleLearnMore = (lineId: string) => {
     navigate(`/lineage/${lineId}`);
   };
+
+  // Sort lineage cards based on sort order
+  const sortedLineageCards = [...lineageCards].sort((a, b) => {
+    if (sortOrder === "newest") {
+      return 0; // Keep original order (newest first)
+    } else {
+      return 1; // Reverse order (oldest first)
+    }
+  });
+
+  const displayedCards =
+    sortOrder === "oldest" ? [...lineageCards].reverse() : lineageCards;
 
   return (
     <div
@@ -702,8 +716,30 @@ const Lineage = () => {
         {/* Linear Cards Section */}
         <section className="py-20 relative">
           <div className="max-w-6xl mx-auto px-4">
+            {/* Sort Button */}
+            <motion.div
+              className="flex justify-end mb-8"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.button
+                onClick={() =>
+                  setSortOrder(sortOrder === "newest" ? "oldest" : "newest")
+                }
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-yellow-400/40 transition-all duration-300 flex items-center gap-2 font-cinzel"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowUpDown className="w-5 h-5" />
+                {sortOrder === "newest"
+                  ? "Newest to Oldest"
+                  : "Oldest to Newest"}
+              </motion.button>
+            </motion.div>
+
             <div className="space-y-8">
-              {lineageCards.map((line, index) => {
+              {displayedCards.map((line, index) => {
                 const IconComponent = line.icon;
 
                 return (
