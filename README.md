@@ -19,12 +19,12 @@ The Xi Iota Chapter of Alpha Phi Alpha Fraternity, Inc. was chartered at the Uni
 - **Service**: Discover our community service initiatives and programs
 - **Lineage**: Explore our chapter's lineage and crossing history
 - **Advisors**: Meet our dedicated chapter advisors
-- **Jewels**: Learn about our founding fathers and their legacy
+- **Jewels**: Learn about our founders and their legacy
 - **Contact**: Get in touch with interactive contact forms and information
+- **Email Integration**: Contact form functionality powered by Resend API for reliable email delivery
 
 ### Upcoming Features
 
-- **Email Integration**: Contact form functionality powered by Resend API for reliable email delivery
 - **Enhanced Mobile Experience**: Continued optimization for mobile devices
 - **Advanced Search**: Search functionality across all content
 - **Analytics Dashboard**: Chapter engagement and website analytics
