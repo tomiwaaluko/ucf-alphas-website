@@ -118,12 +118,12 @@ const Navigation = () => {
                   >
                     Lineage
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/ffac-awards"
                     className="block px-6 py-3 text-white hover:text-yellow-400 hover:bg-yellow-400/10 transition-colors duration-200 font-medium"
                   >
                     FFAC Awards
-                  </Link>
+                  </Link> */}
                 </div>
               </div>{" "}
               <Link
@@ -273,13 +273,13 @@ const Navigation = () => {
                   >
                     Lineage
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/ffac-awards"
                     onClick={() => setIsOpen(false)}
                     className="block text-white hover:text-yellow-400 px-3 py-2"
                   >
                     FFAC Awards
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>
