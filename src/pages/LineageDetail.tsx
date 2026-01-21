@@ -192,7 +192,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
   },
   empire: {
     id: "empire",
-    name: "The Last Survivors of I.S.F.E.T",
+    name: "The Last Survivors of I.S.F.E.T.",
     nickname: "",
     year: 2021,
     semester: "Fall",
@@ -312,7 +312,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
   },
   transcend: {
     id: "transcend",
-    name: "UnLaw.P.H.U.L Answers",
+    name: "UnLaw.P.H.U.L. Answers",
     nickname: "",
     year: 2023,
     semester: "Spring",
@@ -390,7 +390,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
   },
   unlaw: {
     id: "unlaw",
-    name: "UnLaw.P.H.U.L Answers",
+    name: "UnLaw.P.H.U.L. Answers",
     nickname: "",
     year: 2023,
     semester: "Spring",
@@ -484,7 +484,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
         position: "DP",
       },
       {
-        name: "Brendan 'Winter S.O.L.D.I.E.R' Toney",
+        name: "Brendan 'Winter S.O.L.D.I.E.R.' Toney",
         position: "ADP",
       },
     ],
@@ -569,7 +569,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
       },
       {
         name: "Yuhan Ayala",
-        nickname: "P.H.A.L.L.O.U.T",
+        nickname: "P.H.A.L.L.O.U.T.",
         position: "5",
         year: 2020,
         achievements: [],
@@ -611,7 +611,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
       },
       {
         name: "Brendan Toney",
-        nickname: "Winter S.O.L.D.I.E.R",
+        nickname: "Winter S.O.L.D.I.E.R.",
         position: "11",
         year: 2020,
         achievements: [],
@@ -845,14 +845,14 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
       },
       {
         name: "Denis Louis",
-        nickname: "U.L.T.R.O .N",
+        nickname: "U.L.T.R.O .N.",
         position: "5",
         year: 2017,
         achievements: [],
       },
       {
         name: "Daniel Helligar",
-        nickname: "D.R.O.N.E",
+        nickname: "D.R.O.N.E.",
         position: "6",
         year: 2017,
         achievements: [],
@@ -866,7 +866,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
       },
       {
         name: "Stanley Pierre",
-        nickname: "Brain B.LA.S.T",
+        nickname: "Brain B.LA.S.T.",
         position: "8",
         year: 2017,
         achievements: [],
@@ -994,7 +994,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
       },
       {
         name: "Kyler Gray",
-        nickname: "Black I.C.E",
+        nickname: "Black I.C.E.",
         position: "2",
         year: 2015,
         achievements: [],
@@ -1029,7 +1029,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
       },
       {
         name: "Xavier Henderson",
-        nickname: "Phreeze PhrA.M.E",
+        nickname: "Phreeze PhrA.M.E.",
         position: "7",
         year: 2015,
         achievements: [],
@@ -1052,7 +1052,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-green-600 to-emerald-800",
-    image: "/lineage/Spring13Faces.jpg",
+    image: "/lineage/Spring13.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -1081,7 +1081,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
         achievements: [],
       },
       {
-        name: "Shane Bryant",
+        name: "Shane Bryan",
         nickname: "Purgatory",
         position: "3",
         year: 2013,
@@ -1102,7 +1102,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
         achievements: [],
       },
       {
-        name: "Dwayne Houstonxavier",
+        name: "Dwayne Houston",
         nickname: "Bruce Banner",
         position: "6",
         year: 2013,
@@ -1282,7 +1282,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
   },
   everlast: {
     id: "everlast",
-    name: "The Everlast-ing P.H.I.R.E",
+    name: "The Everlast-ing P.H.I.R.E.",
     nickname: "",
     year: 2009,
     semester: "Fall",

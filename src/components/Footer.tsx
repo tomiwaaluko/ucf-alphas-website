@@ -86,7 +86,7 @@ const Footer = () => {
             reserved.
           </p>
           <p className="text-gray-500 mt-2">
-            Founded December 4, 1906 • Cornell University, Ithaca, NY
+            Founded June 16, 1979 • University of Central Florida, Orlando, FL
           </p>
         </div>
       </div>
