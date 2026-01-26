@@ -169,7 +169,7 @@ const lineageCards = [
     name: "The S.A.C.R.I.PHICE",
     fullName: "",
     semester: "Fall 2010",
-    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
+    image: "/lineage/Fall2010.jpg",
     icon: Star,
     color: "from-gray-400 to-gray-600",
     description: "",
@@ -554,7 +554,7 @@ const lineageCards = [
     name: "The Minor Jewels",
     fullName: "Charter Line",
     semester: "June 16, 1979",
-    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
+    image: "/public/lineage/minorjewels.jpg",
     icon: Crown,
     color: "from-yellow-400 via-amber-500 to-yellow-600",
     description: "The seven young men who established Xi Iota Chapter",
@@ -687,7 +687,7 @@ const Lineage = () => {
                   label: "Total Brothers",
                   value: lineageCards.reduce(
                     (sum, line) => sum + line.members,
-                    0
+                    0,
                   ),
                 },
                 { label: "Years of Legacy", value: `${yearsOfLegacy}+` },

@@ -1218,7 +1218,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     description: "",
     fullDescription: "",
     color: "from-gray-600 to-gray-800",
-    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
+    image: "/lineage/Fall2010.jpg",
     motto: "",
     values: [],
     deanStaff: [
@@ -2720,7 +2720,7 @@ const lineageDetailData: { [key: string]: LineageDetailData } = {
     fullDescription:
       "On June 16, 1979, seven young men made history by establishing the Xi Iota Chapter of Alpha Phi Alpha Fraternity, Incorporated. These Minor Jewels laid the foundation for over four decades of brotherhood, scholarship, and service that continues to this day.",
     color: "from-yellow-400 via-amber-500 to-yellow-600",
-    image: "/lovable-uploads/105ac18a-2fb8-4c53-8a52-f90f03c7cee1.png",
+    image: "/public/lineage/minorjewels.jpg",
     motto: "First of the Finest",
     values: ["Foundation", "Legacy", "Brotherhood", "Excellence"],
     deanStaff: [],

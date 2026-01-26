@@ -148,7 +148,7 @@ const BrotherDetail = () => {
       bio: "Corey Barnes Jr. is a Mechanical Engineering major who brings technical innovation and problem-solving skills to the brotherhood. His passion for engineering design and sustainable technology aligns perfectly with the fraternity's commitment to community service and progress.\n\nCorey's analytical mindset and dedication to environmental sustainability drive his academic pursuits and personal projects. He is known for his collaborative approach to engineering challenges and his commitment to developing solutions that benefit both the community and the environment.",
       major: "Mechanical Engineering",
       year: "Junior",
-      hometown: "Birmingham, AL",
+      hometown: "Somewhere in Florida",
       interests: [
         "Engineering Design",
         "Sustainable Technology",
@@ -407,7 +407,7 @@ const BrotherDetail = () => {
       name: "Jaheim Golden",
       crossingSemester: "Fall 2025",
       position: "Active Member",
-      image: "/brothers/Jaheim Golden.png",
+      image: "/brothers/Jaheim Golden.jpg",
       bio: "My name is Jaheim Golden, a senior Health Services Administration major at UCF. I serve as President of Progressive Black Men Inc and Vice President of Black Men in Medicine, along with being a Community Health Ambassador and Social Media Ambassador. These leadership roles have strengthened my communication, organization, and problem solving skills. Outside of academics and service, I enjoy roller skating, making music, and designing graphics. Altogether, I bring a balance of professionalism, creativity, and a commitment to serving my community.",
       major: "Health Services Administration",
       year: "Senior",

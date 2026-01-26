@@ -201,7 +201,7 @@ const MeetTheBrothers = () => {
       ],
       quote:
         "Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.",
-      image: "/brothers/Jaheim Golden.png",
+      image: "/brothers/Jaheim Golden.jpg",
     },
     {
       id: 17,
