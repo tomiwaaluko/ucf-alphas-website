@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { supabase } from "../lib/supabaseClient";
 
 const Service = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -210,6 +211,16 @@ const Service = () => {
     { number: "15+", label: "Primary Schools Engaged" },
     { number: "100+", label: "Students Mentored" },
   ];
+
+  const handleAdminClick = async () => {
+    const redirectTo = `${window.location.origin}/admin/service-events`;
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo,
+      },
+    });
+  };
 
   return (
     <section
@@ -554,6 +565,14 @@ const Service = () => {
             </div>
           </div>
         </motion.div>
+      </div>
+      <div className="mt-8 flex justify-end">
+        <button
+          onClick={handleAdminClick}
+          className="text-xs text-gray-500 hover:text-yellow-400 transition-colors underline underline-offset-4"
+        >
+          Admin service events
+        </button>
       </div>
     </section>
   );

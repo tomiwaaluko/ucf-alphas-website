@@ -30,6 +30,7 @@ import Lineage from "./pages/Lineage";
 import LineageDetail from "./pages/LineageDetail";
 import Contact from "./pages/Contact";
 import FFACAwards from "./pages/FFACAwards";
+import AdminServiceEvents from "./pages/AdminServiceEvents";
 import CharlesHWesleyAward from "./pages/CharlesHWesleyAward";
 import OutstandingChapterAward from "./pages/OutstandingChapterAward";
 import NotFound from "./pages/NotFound";
@@ -79,6 +80,7 @@ const App = () => (
           <Route path="/lineage/:lineId" element={<LineageDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/ffac-awards" element={<FFACAwards />} />
+          <Route path="/admin/service-events" element={<AdminServiceEvents />} />
           <Route
             path="/charles-h-wesley-award"
             element={<CharlesHWesleyAward />}
