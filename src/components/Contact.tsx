@@ -78,7 +78,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["email@ucfalphas.org", "apa@ucf.edu"],
+      details: ["thesonsoft3@gmail.com", "apa@ucf.edu"],
       color: "from-yellow-400 to-yellow-500",
     },
     {
