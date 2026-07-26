@@ -46,7 +46,17 @@ const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
  */
 const rateLimitBuckets = new Map();
 
-function isRateLimited(ip) {
+/**
+ * Hard ceiling on distinct tracked keys.
+ *
+ * The expiry sweep alone is not enough: an attacker with an IPv6 /64 has 2^64
+ * source addresses and can insert unbounded distinct keys inside a single
+ * window, exhausting the instance's memory. Clearing is safe -- worst case a
+ * few callers get a fresh allowance.
+ */
+const MAX_TRACKED_KEYS = 10000;
+
+export function isRateLimited(ip) {
   const now = Date.now();
 
   // Opportunistic sweep so the map cannot grow without bound.
@@ -54,6 +64,10 @@ function isRateLimited(ip) {
     if (now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
       rateLimitBuckets.delete(key);
     }
+  }
+
+  if (rateLimitBuckets.size > MAX_TRACKED_KEYS) {
+    rateLimitBuckets.clear();
   }
 
   const entry = rateLimitBuckets.get(ip);
@@ -66,7 +80,7 @@ function isRateLimited(ip) {
   return entry.count > RATE_LIMIT_MAX;
 }
 
-function clientIp(req) {
+export function clientIp(req) {
   // Header choice matters: if the rate-limit key is attacker-controlled, the
   // attacker just varies it and gets a fresh bucket on every request.
   //
@@ -97,9 +111,12 @@ function clientIp(req) {
 export default async function handler(req, res) {
   try {
     const origin = req.headers.origin;
+    // Unconditional: the response body and headers depend on Origin on every
+    // path, including the 403 and the OPTIONS preflight, so any intermediary
+    // must key its cache on it.
+    res.setHeader("Vary", "Origin");
     if (origin && ALLOWED_ORIGINS.includes(origin)) {
       res.setHeader("Access-Control-Allow-Origin", origin);
-      res.setHeader("Vary", "Origin");
     }
     res.setHeader("Access-Control-Allow-Methods", "POST,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");

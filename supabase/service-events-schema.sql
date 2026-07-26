@@ -45,6 +45,22 @@ create table if not exists public.service_event_images (
   created_at timestamptz not null default timezone('utc'::text, now())
 );
 
+-- Image URLs are rendered into <img src> on the public site. The admin page
+-- validates these client-side, but a client-side check is not an invariant: an
+-- admin session can PostgREST-insert directly and bypass the page entirely.
+-- Enforce it where it actually holds.
+alter table public.service_events
+  drop constraint if exists service_events_primary_image_url_is_http;
+alter table public.service_events
+  add constraint service_events_primary_image_url_is_http
+  check (primary_image_url is null or primary_image_url ~* '^https?://');
+
+alter table public.service_event_images
+  drop constraint if exists service_event_images_image_url_is_http;
+alter table public.service_event_images
+  add constraint service_event_images_image_url_is_http
+  check (image_url ~* '^https?://');
+
 -- Helper table of allowed admin emails.
 --
 -- SECURITY: this table IS the privilege grant for the whole admin surface.
@@ -70,25 +86,56 @@ alter table public.allowed_admin_emails enable row level security;
 -- Belt and braces -- also drop the default PostgREST role grants.
 revoke all on public.allowed_admin_emails from anon, authenticated;
 
--- Helper function to determine if current auth user is an admin by email
+-- Determine whether the calling user is an admin.
+--
+-- SECURITY: locking down allowed_admin_emails (above) makes the admin *table*
+-- unwritable. It does not by itself make the admin *identity* unforgeable --
+-- that is this function's job, and getting it wrong reopens the same hole
+-- through a different door.
+--
+-- The naive version of this function trusted `auth.jwt() ->> 'email'` on its
+-- own. That claim is only as trustworthy as the weakest auth provider enabled
+-- on the project, and the anon key needed to reach /auth/v1/signup is published
+-- in the JS bundle. If the email/password provider is enabled with "Confirm
+-- email" turned off, anyone could sign up using an officer's address, receive a
+-- session whose `email` claim is that address, and be treated as an admin.
+--
+-- So the address alone is not enough. We additionally require a Google identity
+-- that asserts the same address: Google verifies the mailbox before asserting
+-- it, and auth.identities is written by GoTrue, not by the client. Email is
+-- compared case-insensitively because Supabase normalizes stored addresses to
+-- lowercase while allowlist rows are entered by hand.
 create or replace function public.is_admin()
 returns boolean
 language plpgsql
 security definer
-set search_path = public
+-- auth is needed here as well as public: this function reads auth.identities.
+set search_path = public, auth
 as $$
 declare
   current_email text;
 begin
-  current_email := (auth.jwt() ->> 'email');
-  if current_email is null then
+  current_email := lower(auth.jwt() ->> 'email');
+  if current_email is null or auth.uid() is null then
     return false;
   end if;
 
-  return exists (
+  -- The address must be one we granted, ...
+  if not exists (
     select 1
     from public.allowed_admin_emails a
-    where a.email = current_email
+    where lower(a.email) = current_email
+  ) then
+    return false;
+  end if;
+
+  -- ... and the caller must actually hold the Google identity for it.
+  return exists (
+    select 1
+    from auth.identities i
+    where i.user_id = auth.uid()
+      and i.provider = 'google'
+      and lower(i.identity_data ->> 'email') = current_email
   );
 end;
 $$;
@@ -176,15 +223,41 @@ using (public.is_admin());
 
 -- Create the bucket if it does not exist yet. `public = true` keeps object reads
 -- anonymous so the gallery renders for site visitors without signed URLs.
-insert into storage.buckets (id, name, public)
-values ('service-gallery', 'service-gallery', true)
-on conflict (id) do nothing;
+--
+-- `do update` rather than `do nothing`: this statement has to converge. With
+-- `do nothing`, a bucket that already exists as private (or without upload
+-- limits) would silently keep those settings and the file would appear to have
+-- succeeded.
+--
+-- The size and MIME limits are enforced by Storage itself. The `accept="image/*"`
+-- attribute on the admin form is a file-picker hint only -- it stops nothing.
+-- Without these, an admin session could upload an arbitrarily large file, or an
+-- HTML file that Storage would then serve as text/html from the public URL.
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values (
+  'service-gallery',
+  'service-gallery',
+  true,
+  10485760, -- 10 MB
+  array['image/jpeg', 'image/png', 'image/webp', 'image/avif']
+)
+on conflict (id) do update
+set public = excluded.public,
+    file_size_limit = excluded.file_size_limit,
+    allowed_mime_types = excluded.allowed_mime_types;
 
--- Anyone may read objects in this bucket (public gallery).
+-- Object *reads* for a public bucket bypass RLS entirely via
+-- /storage/v1/object/public/..., so the gallery renders without any SELECT
+-- policy at all. This policy therefore only governs the authenticated LIST/search
+-- API, and is deliberately scoped `to authenticated`: granting it to `anon` would
+-- let anyone enumerate every object name in the bucket, including images that
+-- are uploaded but not yet linked from any page.
 drop policy if exists "Service gallery objects are viewable by everyone" on storage.objects;
-create policy "Service gallery objects are viewable by everyone"
+drop policy if exists "Signed-in users can list service gallery objects" on storage.objects;
+create policy "Signed-in users can list service gallery objects"
 on storage.objects
 for select
+to authenticated
 using (bucket_id = 'service-gallery');
 
 -- Only admins may upload.
@@ -212,3 +285,70 @@ for delete
 to authenticated
 using (bucket_id = 'service-gallery' and public.is_admin());
 
+
+-- ---------------------------------------------------------------------------
+-- POST-APPLY: AUDIT AND VERIFICATION
+-- ---------------------------------------------------------------------------
+-- Read this section. The statements above close the hole going forward; they do
+-- NOT undo abuse that already happened.
+--
+-- `public.allowed_admin_emails` shipped without RLS, which means that for the
+-- whole window between that deploy and this migration it was writable by anyone
+-- holding the anon key -- and the anon key is published in the JS bundle. If
+-- someone inserted their own address during that window, the row survives this
+-- migration untouched and still grants admin. Worse, after the lockdown the row
+-- is no longer readable through the API, so the compromise gets quieter rather
+-- than louder.
+--
+-- Run each query below in the SQL editor after applying this file and actually
+-- look at the output.
+
+-- 1. Who currently holds admin? Delete anything that is not a known officer.
+--    select * from public.allowed_admin_emails order by email;
+
+-- 2. Any unexpected accounts, especially non-google ones?
+--    select id, email, created_at, email_confirmed_at,
+--           raw_app_meta_data ->> 'provider' as provider
+--    from auth.users
+--    order by created_at desc;
+
+-- 3. Any content that nobody remembers creating?
+--    select id, title, created_at, updated_at
+--    from public.service_events order by created_at desc limit 50;
+--
+--    select name, created_at, owner
+--    from storage.objects where bucket_id = 'service-gallery'
+--    order by created_at desc limit 50;
+
+-- 4. Confirm the lockdown actually took effect. Expected: rls_enabled = true,
+--    and all three privilege checks false.
+--    select
+--      (select relrowsecurity
+--         from pg_class
+--        where oid = 'public.allowed_admin_emails'::regclass) as rls_enabled,
+--      has_table_privilege('anon', 'public.allowed_admin_emails', 'SELECT') as anon_select,
+--      has_table_privilege('anon', 'public.allowed_admin_emails', 'INSERT') as anon_insert,
+--      has_table_privilege('authenticated', 'public.allowed_admin_emails', 'INSERT') as auth_insert;
+
+-- 5. Confirm no policies exist on the table (deny-by-default is intentional).
+--    Expected: zero rows.
+--    select policyname from pg_policies
+--     where schemaname = 'public' and tablename = 'allowed_admin_emails';
+
+-- 6. Declare the intended admin set here so it lives in version control rather
+--    than only as ambient database state, then uncomment and run to reconcile.
+--    Re-running is safe and idempotent.
+--
+--    with intended(email) as (
+--      values
+--        ('officer-one@example.com'),
+--        ('officer-two@example.com')
+--    )
+--    , inserted as (
+--      insert into public.allowed_admin_emails (email)
+--      select lower(email) from intended
+--      on conflict (email) do nothing
+--      returning email
+--    )
+--    delete from public.allowed_admin_emails
+--     where lower(email) not in (select lower(email) from intended);

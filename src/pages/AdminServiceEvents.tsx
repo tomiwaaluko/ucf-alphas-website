@@ -42,6 +42,12 @@ const AdminServiceEvents = () => {
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  // Distinct from `isAdmin === false`. "We could not determine your access" and
+  // "you are not an admin" are different situations and need different messages:
+  // the most likely cause of the former is that service-events-schema.sql has
+  // not been applied yet, so is_admin() does not exist. Telling an officer they
+  // are unauthorized would send them down entirely the wrong diagnostic path.
+  const [adminCheckFailed, setAdminCheckFailed] = useState(false);
   const [events, setEvents] = useState<ServiceEvent[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
@@ -66,10 +72,18 @@ const AdminServiceEvents = () => {
 
       if (!session) {
         const redirectTo = `${window.location.origin}/admin/service-events`;
-        await supabase.auth.signInWithOAuth({
+        const { error: signInError } = await supabase.auth.signInWithOAuth({
           provider: "google",
           options: { redirectTo },
         });
+        // If the redirect never happens (Supabase env unset, network failure)
+        // the page would otherwise sit on "Loading events..." forever with no
+        // explanation.
+        if (signInError) {
+          console.error("Google sign-in failed", signInError);
+          setError("Could not start sign-in. Please try again.");
+          setLoading(false);
+        }
         return;
       }
 
@@ -86,11 +100,17 @@ const AdminServiceEvents = () => {
         "is_admin"
       );
 
-      if (adminError || adminVerdict !== true) {
-        if (adminError) {
-          console.error("Admin check failed", adminError);
-        }
+      if (adminError) {
+        console.error("Admin check failed", adminError);
         setIsAdmin(false);
+        setAdminCheckFailed(true);
+        setLoading(false);
+        return;
+      }
+
+      if (adminVerdict !== true) {
+        setIsAdmin(false);
+        setAdminCheckFailed(false);
         setLoading(false);
         return;
       }
@@ -162,6 +182,23 @@ const AdminServiceEvents = () => {
     setError(null);
 
     try {
+      // Validate everything BEFORE the first write. Validating the external
+      // URLs after the insert would leave a committed, half-populated event
+      // behind whenever one is rejected.
+      const externalUrls = externalImageUrls
+        .split("\n")
+        .map((u) => u.trim())
+        .filter(Boolean);
+
+      const rejected = externalUrls.filter((url) => !isSafeImageUrl(url));
+      if (rejected.length > 0) {
+        throw new ValidationError(
+          `These image URLs were rejected (only http/https links are allowed): ${rejected.join(
+            ", "
+          )}`
+        );
+      }
+
       const tags =
         tagsInput
           .split(",")
@@ -209,7 +246,15 @@ const AdminServiceEvents = () => {
         const bucket = supabase.storage.from("service-gallery");
 
         for (const file of Array.from(files)) {
-          const path = `events/${eventId}/${Date.now()}-${file.name}`;
+          // The filename comes from the uploader's disk and is concatenated
+          // into the object key. Reduce it to a safe charset and cap its length
+          // so it cannot introduce path segments or control characters.
+          const safeName =
+            file.name
+              .replace(/[^a-zA-Z0-9._-]/g, "_")
+              .replace(/^\.+/, "")
+              .slice(-100) || "upload";
+          const path = `events/${eventId}/${Date.now()}-${safeName}`;
           const { error: uploadError } = await bucket.upload(path, file, {
             upsert: false,
           });
@@ -231,22 +276,8 @@ const AdminServiceEvents = () => {
         }
       }
 
-      if (externalImageUrls && eventId) {
-        const urls = externalImageUrls
-          .split("\n")
-          .map((u) => u.trim())
-          .filter(Boolean);
-
-        const rejected = urls.filter((url) => !isSafeImageUrl(url));
-        if (rejected.length > 0) {
-          throw new ValidationError(
-            `These image URLs were rejected (only http/https links are allowed): ${rejected.join(
-              ", "
-            )}`
-          );
-        }
-
-        for (const url of urls) {
+      if (externalUrls.length > 0 && eventId) {
+        for (const url of externalUrls) {
           imageUrls.push(url);
           await supabase.from("service_event_images").insert({
             event_id: eventId,
@@ -342,7 +373,24 @@ const AdminServiceEvents = () => {
           <div className="py-20 text-center text-gray-300">Loading events…</div>
         )}
 
-        {!loading && !isAdmin && (
+        {!loading && !isAdmin && adminCheckFailed && (
+          <div className="py-20 text-center">
+            <h2 className="text-xl font-semibold text-yellow-300">
+              Could not verify your access
+            </h2>
+            <p className="mt-3 text-sm text-gray-300">
+              The access check did not complete. This is not a denial — please
+              retry.
+            </p>
+            <p className="mt-1 text-sm text-gray-400">
+              If it keeps happening, the database schema
+              (`supabase/service-events-schema.sql`) may not have been applied
+              yet. Details are in the browser console.
+            </p>
+          </div>
+        )}
+
+        {!loading && !isAdmin && !adminCheckFailed && (
           <div className="py-20 text-center">
             <h2 className="text-xl font-semibold text-yellow-300">
               You do not have access to this page
