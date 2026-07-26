@@ -67,12 +67,30 @@ function isRateLimited(ip) {
 }
 
 function clientIp(req) {
-  // Vercel always sets x-forwarded-for; the client-supplied portion is
-  // untrusted, but the first entry is what Vercel's edge observed.
+  // Header choice matters: if the rate-limit key is attacker-controlled, the
+  // attacker just varies it and gets a fresh bucket on every request.
+  //
+  // `x-vercel-forwarded-for` is set by Vercel's edge and is not forgeable by
+  // the caller, so it is the first choice.
+  const vercelForwarded = req.headers["x-vercel-forwarded-for"];
+  if (typeof vercelForwarded === "string" && vercelForwarded.length > 0) {
+    return vercelForwarded.split(",")[0].trim();
+  }
+
+  const realIp = req.headers["x-real-ip"];
+  if (typeof realIp === "string" && realIp.length > 0) {
+    return realIp.trim();
+  }
+
+  // Fallback. Take the LAST entry, not the first: a proxy appends the address
+  // it observed, so the last hop is the only entry our trusted proxy wrote.
+  // Anything earlier in the list may have been supplied by the caller.
   const forwarded = req.headers["x-forwarded-for"];
   if (typeof forwarded === "string" && forwarded.length > 0) {
-    return forwarded.split(",")[0].trim();
+    const parts = forwarded.split(",");
+    return parts[parts.length - 1].trim();
   }
+
   return req.socket?.remoteAddress || "unknown";
 }
 
@@ -97,9 +115,13 @@ export default async function handler(req, res) {
         .json({ success: false, error: "Method not allowed. Use POST." });
     }
 
-    // Reject cross-origin POSTs from origins we do not recognise. Browsers
-    // always attach Origin to a cross-site POST; same-origin form posts and
-    // server-side callers may omit it.
+    // Reject browser requests from origins we do not recognise.
+    //
+    // Scope of this control, stated honestly: a non-browser client (curl, a
+    // script) can simply omit Origin or forge it, so this does NOT stop
+    // automated abuse. It stops a third-party *web page* from driving this
+    // endpoint with a user's browser. The rate limiter above is the control
+    // that applies to scripted callers.
     if (origin && !ALLOWED_ORIGINS.includes(origin)) {
       return res.status(403).json({ success: false, error: "Forbidden" });
     }
