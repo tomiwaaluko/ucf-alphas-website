@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { supabase } from "../lib/supabaseClient";
 import { motion } from "framer-motion";
-import { Plus, LogOut } from "lucide-react";
+import { LogOut, Trash2 } from "lucide-react";
 
 type ServiceEvent = {
   id: string;
@@ -23,6 +23,17 @@ const AdminServiceEvents = () => {
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [events, setEvents] = useState<ServiceEvent[]>([]);
   const [error, setError] = useState<string | null>(null);
+   const [saving, setSaving] = useState(false);
+
+  const [activeEventId, setActiveEventId] = useState<string | null>(null);
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [location, setLocation] = useState("");
+  const [attendeeCount, setAttendeeCount] = useState<string>("");
+  const [description, setDescription] = useState("");
+  const [tagsInput, setTagsInput] = useState("");
+  const [externalImageUrls, setExternalImageUrls] = useState("");
+  const [files, setFiles] = useState<FileList | null>(null);
 
   useEffect(() => {
     const load = async () => {
@@ -63,6 +74,188 @@ const AdminServiceEvents = () => {
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     navigate("/service");
+  };
+
+  const resetForm = () => {
+    setActiveEventId(null);
+    setTitle("");
+    setDate("");
+    setLocation("");
+    setAttendeeCount("");
+    setDescription("");
+    setTagsInput("");
+    setExternalImageUrls("");
+    setFiles(null);
+  };
+
+  const selectEvent = (event: ServiceEvent) => {
+    setActiveEventId(event.id);
+    setTitle(event.title);
+    setDate(event.date);
+    setLocation(event.location);
+    setAttendeeCount(event.attendee_count?.toString() ?? "");
+    setDescription(event.description ?? "");
+    setTagsInput((event.tags ?? []).join(", "));
+    setExternalImageUrls("");
+    setFiles(null);
+  };
+
+  const refreshEvents = async () => {
+    const { data, error: eventsError } = await supabase
+      .from("service_events")
+      .select("*")
+      .order("date", { ascending: false });
+
+    if (eventsError) {
+      setError(eventsError.message);
+    } else {
+      setEvents((data || []) as ServiceEvent[]);
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setSaving(true);
+    setError(null);
+
+    try {
+      const tags =
+        tagsInput
+          .split(",")
+          .map((t) => t.trim())
+          .filter(Boolean) || [];
+
+      const basePayload = {
+        title,
+        date,
+        location,
+        attendee_count: attendeeCount ? Number(attendeeCount) : null,
+        description: description || null,
+        tags: tags.length ? tags : null,
+      };
+
+      let eventId = activeEventId;
+      let primaryImageUrl: string | null = null;
+
+      if (!eventId) {
+        const { data, error: insertError } = await supabase
+          .from("service_events")
+          .insert(basePayload)
+          .select("*")
+          .single();
+
+        if (insertError) {
+          throw insertError;
+        }
+
+        eventId = (data as ServiceEvent).id;
+      } else {
+        const { error: updateError } = await supabase
+          .from("service_events")
+          .update(basePayload)
+          .eq("id", eventId);
+
+        if (updateError) {
+          throw updateError;
+        }
+      }
+
+      const imageUrls: string[] = [];
+
+      if (files && files.length > 0 && eventId) {
+        const bucket = supabase.storage.from("service-gallery");
+
+        for (const file of Array.from(files)) {
+          const path = `events/${eventId}/${Date.now()}-${file.name}`;
+          const { error: uploadError } = await bucket.upload(path, file, {
+            upsert: false,
+          });
+
+          if (uploadError) {
+            throw uploadError;
+          }
+
+          const {
+            data: { publicUrl },
+          } = bucket.getPublicUrl(path);
+
+          imageUrls.push(publicUrl);
+
+          await supabase.from("service_event_images").insert({
+            event_id: eventId,
+            image_url: publicUrl,
+          });
+        }
+      }
+
+      if (externalImageUrls && eventId) {
+        const urls = externalImageUrls
+          .split("\n")
+          .map((u) => u.trim())
+          .filter(Boolean);
+
+        for (const url of urls) {
+          imageUrls.push(url);
+          await supabase.from("service_event_images").insert({
+            event_id: eventId,
+            image_url: url,
+          });
+        }
+      }
+
+      if (eventId && imageUrls.length > 0) {
+        primaryImageUrl = imageUrls[0];
+        await supabase
+          .from("service_events")
+          .update({ primary_image_url: primaryImageUrl })
+          .eq("id", eventId);
+      }
+
+      await refreshEvents();
+      resetForm();
+    } catch (err: unknown) {
+      const message =
+        err && typeof err === "object" && "message" in err
+          ? String((err as { message: string }).message)
+          : "Failed to save event";
+      setError(message);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleDelete = async (id: string, title: string) => {
+    const confirmed = window.confirm(
+      `Are you sure you want to delete "${title}"? This cannot be undone.`
+    );
+    if (!confirmed) return;
+
+    setSaving(true);
+    setError(null);
+
+    try {
+      const { error: deleteError } = await supabase
+        .from("service_events")
+        .delete()
+        .eq("id", id);
+
+      if (deleteError) {
+        throw deleteError;
+      }
+
+      await refreshEvents();
+      if (activeEventId === id) {
+        resetForm();
+      }
+    } catch (err: unknown) {
+      const message =
+        err && typeof err === "object" && "message" in err
+          ? String((err as { message: string }).message)
+          : "Failed to delete event";
+      setError(message);
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -108,53 +301,191 @@ const AdminServiceEvents = () => {
         )}
 
         {!loading && !error && (
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="flex items-center justify-center rounded-2xl border-2 border-dashed border-yellow-400/60 bg-black/40 px-4 py-6 text-yellow-300 hover:bg-black/70 transition-colors"
-            >
-              <Plus className="w-5 h-5 mr-2" />
-              <span className="font-semibold text-sm">New event (form WIP)</span>
-            </motion.button>
-
-            {events.map((event) => (
-              <motion.div
-                key={event.id}
-                whileHover={{ scale: 1.02, y: -4 }}
-                className="rounded-2xl border border-yellow-400/30 bg-black/60 overflow-hidden"
+          <div className="flex flex-col items-center">
+            <section className="w-full max-w-xl mx-auto">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <button
+                  type="button"
+                  onClick={resetForm}
+                  className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                >
+                  + New blank form
+                </button>
+              </div>
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-2xl border border-yellow-400/40 bg-black/60 p-4 space-y-4"
               >
-                {event.primary_image_url && (
-                  <div className="h-40 w-full overflow-hidden">
-                    <img
-                      src={event.primary_image_url}
-                      alt={event.title}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                )}
-                <div className="p-4 space-y-2">
-                  <h2 className="font-semibold text-lg text-yellow-300">
-                    {event.title}
+                <div className="flex items-center justify-between mb-2">
+                  <h2 className="text-lg font-semibold text-yellow-300">
+                    {activeEventId ? "Edit Event" : "New Event"}
                   </h2>
-                  <p className="text-sm text-gray-300">
-                    {event.date} • {event.location}
-                  </p>
-                  {event.tags && event.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-1">
-                      {event.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-yellow-400/40 bg-yellow-400/10 px-2 py-0.5 text-xs text-yellow-200"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  {activeEventId && (
+                    <button
+                      type="button"
+                      onClick={resetForm}
+                      className="text-xs text-gray-400 hover:text-yellow-300 underline underline-offset-4"
+                    >
+                      Clear form
+                    </button>
                   )}
                 </div>
-              </motion.div>
-            ))}
+
+                <div className="space-y-2">
+                  <label className="block text-sm text-gray-200">
+                    Title
+                    <input
+                      required
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                      className="mt-1 w-full rounded-lg border border-gray-600 bg-black/60 px-3 py-2 text-sm text-white focus:border-yellow-400 focus:outline-none"
+                    />
+                  </label>
+
+                  <label className="block text-sm text-gray-200">
+                    Date
+                    <input
+                      required
+                      type="date"
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                      className="mt-1 w-full rounded-lg border border-gray-600 bg-black/60 px-3 py-2 text-sm text-white focus:border-yellow-400 focus:outline-none"
+                    />
+                  </label>
+
+                  <label className="block text-sm text-gray-200">
+                    Location
+                    <input
+                      required
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      className="mt-1 w-full rounded-lg border border-gray-600 bg-black/60 px-3 py-2 text-sm text-white focus:border-yellow-400 focus:outline-none"
+                    />
+                  </label>
+
+                  <label className="block text-sm text-gray-200">
+                    Attendee count
+                    <input
+                      type="number"
+                      min={0}
+                      value={attendeeCount}
+                      onChange={(e) => setAttendeeCount(e.target.value)}
+                      className="mt-1 w-full rounded-lg border border-gray-600 bg-black/60 px-3 py-2 text-sm text-white focus:border-yellow-400 focus:outline-none"
+                    />
+                  </label>
+
+                  <label className="block text-sm text-gray-200">
+                    Description
+                    <textarea
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      rows={4}
+                      className="mt-1 w-full rounded-lg border border-gray-600 bg-black/60 px-3 py-2 text-sm text-white focus:border-yellow-400 focus:outline-none"
+                    />
+                  </label>
+
+                  <label className="block text-sm text-gray-200">
+                    Tags (comma separated)
+                    <input
+                      value={tagsInput}
+                      onChange={(e) => setTagsInput(e.target.value)}
+                      placeholder="Service, MLK, Food Drive"
+                      className="mt-1 w-full rounded-lg border border-gray-600 bg-black/60 px-3 py-2 text-sm text-white focus:border-yellow-400 focus:outline-none"
+                    />
+                  </label>
+
+                  <label className="block text-sm text-gray-200">
+                    Upload images (stored in Supabase)
+                    <input
+                      type="file"
+                      multiple
+                      accept="image/*"
+                      onChange={(e) => setFiles(e.target.files)}
+                      className="mt-1 w-full text-xs text-gray-300"
+                    />
+                  </label>
+
+                  <label className="block text-sm text-gray-200">
+                    External image URLs (optional, one per line)
+                    <textarea
+                      value={externalImageUrls}
+                      onChange={(e) => setExternalImageUrls(e.target.value)}
+                      rows={3}
+                      className="mt-1 w-full rounded-lg border border-gray-600 bg-black/60 px-3 py-2 text-xs text-white focus:border-yellow-400 focus:outline-none"
+                    />
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={saving}
+                  className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-500 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {saving
+                    ? "Saving…"
+                    : activeEventId
+                    ? "Save changes"
+                    : "Create event"}
+                </button>
+              </form>
+            </section>
+
+            <section className="w-full mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {events.map((event) => (
+                <motion.div
+                  key={event.id}
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  className={`rounded-2xl border ${
+                    activeEventId === event.id
+                      ? "border-yellow-400"
+                      : "border-yellow-400/30"
+                  } bg-black/60 overflow-hidden cursor-pointer`}
+                  onClick={() => selectEvent(event)}
+                >
+                  {event.primary_image_url && (
+                    <div className="h-32 w-full overflow-hidden">
+                      <img
+                        src={event.primary_image_url}
+                        alt={event.title}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="p-4 space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <h2 className="font-semibold text-sm text-yellow-300">
+                        {event.title}
+                      </h2>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          void handleDelete(event.id, event.title);
+                        }}
+                        className="rounded-full bg-red-500/20 p-1 text-red-300 hover:bg-red-500/40"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </button>
+                    </div>
+                    <p className="text-xs text-gray-300">
+                      {event.date} • {event.location}
+                    </p>
+                    {event.tags && event.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1">
+                        {event.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full border border-yellow-400/40 bg-yellow-400/10 px-2 py-0.5 text-[10px] text-yellow-200"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </section>
           </div>
         )}
       </main>
