@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { supabase } from "../lib/supabaseClient";
+import { isSafeImageUrl } from "../lib/urlSafety";
 import { motion } from "framer-motion";
 import { LogOut, Trash2 } from "lucide-react";
 
@@ -17,13 +18,33 @@ type ServiceEvent = {
   primary_image_url: string | null;
 };
 
+/**
+ * An error whose message we authored, so it is safe to show the user verbatim.
+ * Anything else is assumed to carry raw database text and gets replaced.
+ */
+class ValidationError extends Error {}
+
+/**
+ * Turn any thrown value into a message safe to render.
+ *
+ * Supabase/PostgREST errors carry raw Postgres text (constraint names, column
+ * names, policy names). Surfacing that to the browser hands an attacker a map
+ * of the schema, so the real error goes to the console and the user gets a
+ * fixed string.
+ */
+const safeErrorMessage = (err: unknown, fallback: string): string => {
+  console.error(fallback, err);
+  return fallback;
+};
+
 const AdminServiceEvents = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [events, setEvents] = useState<ServiceEvent[]>([]);
   const [error, setError] = useState<string | null>(null);
-   const [saving, setSaving] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   const [activeEventId, setActiveEventId] = useState<string | null>(null);
   const [title, setTitle] = useState("");
@@ -54,13 +75,35 @@ const AdminServiceEvents = () => {
 
       setUserEmail(session.user.email ?? null);
 
+      // A session only proves "signed in with Google" -- anyone on earth can
+      // get one. Authorization is a separate question, so ask the database.
+      // is_admin() is SECURITY DEFINER over allowed_admin_emails, which is
+      // locked down by RLS; this RPC is the only way to read that verdict.
+      // RLS still enforces this server-side on every write -- the check here
+      // exists so a non-admin sees an honest denial instead of a form whose
+      // every submission fails with a Postgres error.
+      const { data: adminVerdict, error: adminError } = await supabase.rpc(
+        "is_admin"
+      );
+
+      if (adminError || adminVerdict !== true) {
+        if (adminError) {
+          console.error("Admin check failed", adminError);
+        }
+        setIsAdmin(false);
+        setLoading(false);
+        return;
+      }
+
+      setIsAdmin(true);
+
       const { data, error: eventsError } = await supabase
         .from("service_events")
         .select("*")
         .order("date", { ascending: false });
 
       if (eventsError) {
-        setError(eventsError.message);
+        setError(safeErrorMessage(eventsError, "Failed to load events."));
       } else {
         setEvents((data || []) as ServiceEvent[]);
       }
@@ -107,7 +150,7 @@ const AdminServiceEvents = () => {
       .order("date", { ascending: false });
 
     if (eventsError) {
-      setError(eventsError.message);
+      setError(safeErrorMessage(eventsError, "Failed to refresh events."));
     } else {
       setEvents((data || []) as ServiceEvent[]);
     }
@@ -194,6 +237,15 @@ const AdminServiceEvents = () => {
           .map((u) => u.trim())
           .filter(Boolean);
 
+        const rejected = urls.filter((url) => !isSafeImageUrl(url));
+        if (rejected.length > 0) {
+          throw new ValidationError(
+            `These image URLs were rejected (only http/https links are allowed): ${rejected.join(
+              ", "
+            )}`
+          );
+        }
+
         for (const url of urls) {
           imageUrls.push(url);
           await supabase.from("service_event_images").insert({
@@ -214,11 +266,11 @@ const AdminServiceEvents = () => {
       await refreshEvents();
       resetForm();
     } catch (err: unknown) {
-      const message =
-        err && typeof err === "object" && "message" in err
-          ? String((err as { message: string }).message)
-          : "Failed to save event";
-      setError(message);
+      setError(
+        err instanceof ValidationError
+          ? err.message
+          : safeErrorMessage(err, "Failed to save event.")
+      );
     } finally {
       setSaving(false);
     }
@@ -248,11 +300,7 @@ const AdminServiceEvents = () => {
         resetForm();
       }
     } catch (err: unknown) {
-      const message =
-        err && typeof err === "object" && "message" in err
-          ? String((err as { message: string }).message)
-          : "Failed to delete event";
-      setError(message);
+      setError(safeErrorMessage(err, "Failed to delete event."));
     } finally {
       setSaving(false);
     }
@@ -294,13 +342,38 @@ const AdminServiceEvents = () => {
           <div className="py-20 text-center text-gray-300">Loading events…</div>
         )}
 
-        {error && !loading && (
+        {!loading && !isAdmin && (
+          <div className="py-20 text-center">
+            <h2 className="text-xl font-semibold text-yellow-300">
+              You do not have access to this page
+            </h2>
+            <p className="mt-3 text-sm text-gray-300">
+              {userEmail ? (
+                <>
+                  <span className="font-semibold text-yellow-200">
+                    {userEmail}
+                  </span>{" "}
+                  is not an authorized administrator.
+                </>
+              ) : (
+                <>This account is not an authorized administrator.</>
+              )}
+            </p>
+            <p className="mt-1 text-sm text-gray-400">
+              Contact a chapter officer if you believe this is a mistake.
+            </p>
+          </div>
+        )}
+
+        {error && !loading && isAdmin && (
           <div className="mb-6 rounded-xl border border-red-500/60 bg-red-500/10 px-4 py-3 text-sm text-red-200">
             {error}
           </div>
         )}
 
-        {!loading && !error && (
+        {/* The form stays mounted when an error is showing -- a failed save
+            should surface the banner above it, not blank the whole page. */}
+        {!loading && isAdmin && (
           <div className="flex flex-col items-center">
             <section className="w-full max-w-xl mx-auto">
               <div className="flex items-center justify-center gap-3 mb-3">

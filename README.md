@@ -244,19 +244,37 @@ npm run build
 
 ### Environment Configuration
 
-For email functionality with Resend API, the following environment variables will be required:
+> [!IMPORTANT]
+> **Never prefix a secret with `VITE_`.** Vite inlines every `VITE_*` variable
+> into the JavaScript bundle at build time, so anything named that way is
+> published to every visitor. The Resend API key must stay un-prefixed: it is
+> read server-side by `api/contact.js`, which never runs in the browser.
+
+Email is sent by the `api/contact.js` serverless function. It needs these
+**server-side** variables (set them in the Vercel dashboard, and in a local
+`.env` for `vercel dev`):
 
 ```env
-# .env.local (for local development)
-VITE_RESEND_API_KEY=your_resend_api_key_here
-VITE_CONTACT_EMAIL=thesonsoft3@gmail.com
+RESEND_API_KEY=your_resend_api_key_here   # server-only, never VITE_-prefixed
+FROM_EMAIL=noreply@yourverifieddomain.com # must be a Resend-verified sender
+TO_EMAIL=chapter-inbox@example.com        # where submissions are delivered
+ALLOWED_ORIGINS=https://ucfalphas.com,https://www.ucfalphas.com
+```
+
+The only variables that may be `VITE_`-prefixed are ones safe to publish:
+
+```env
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key   # public by design; safety
+                                                # depends on RLS being correct
 ```
 
 For production deployment on Vercel:
 
-1. Add environment variables in Vercel dashboard
-2. Configure Resend API key in project settings
-3. Set up proper email templates and sender verification
+1. Add the server-side variables above in the Vercel dashboard
+2. Verify your sending domain at resend.com/domains
+3. Apply `supabase/service-events-schema.sql` in the Supabase SQL editor —
+   it enables the Row Level Security that makes the anon key safe to publish
 
 ## Contributing
 

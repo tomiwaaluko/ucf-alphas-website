@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Least privilege: this workflow only ever reads the repository.
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The default GITHUB_TOKEN is not needed after checkout; leaving it in
+          # the git config would expose it to any later step.
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          # Matches package.json engines and .nvmrc.
+          node-version: 20.x
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npx vitest run
+
+      - name: Build
+        run: npm run build
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: npm
+
+      # Fails the build on a high or critical advisory in the dependency tree.
+      # Nothing checked this before, so vulnerable transitive deps could ship
+      # to production unnoticed.
+      - name: npm audit
+        run: npm audit --audit-level=high

@@ -30,16 +30,19 @@ dist-ssr
 *.sw?
 .vercel
 
-# Documentation and development files (exclude from production)
-*.md
-!README.md
-API_README.md
+# Local-only scratch documentation.
+#
+# This used to be a blanket `*.md` + `!README.md`, which silently excluded
+# docs/ and would have swallowed SECURITY.md and CONTRIBUTING.md. Ignore
+# specific throwaway files instead of every markdown file in the repo.
 DEPLOYMENT_CHECKLIST.md
 
-# Testing files
-*test*.ts
-*test*.js
-test-*
+# Local API smoke-test scripts.
+#
+# Previously `*test*.ts` / `*test*.js` / `test-*`, which would have silently
+# excluded any real unit test named *.test.ts from version control.
+test-contact-api.js
+test-*.local.*
 
 # Development scripts
 *.ps1

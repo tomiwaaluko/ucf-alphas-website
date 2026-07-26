@@ -1,141 +1,195 @@
 import { Resend } from "resend";
+import {
+  escapeHtml,
+  escapeHtmlWithBreaks,
+  sanitizeHeaderValue,
+} from "./_lib/sanitize.js";
+
+/**
+ * Origins permitted to call this endpoint.
+ *
+ * Previously this sent `Access-Control-Allow-Origin: *` together with
+ * `Access-Control-Allow-Credentials: true` -- a combination browsers reject
+ * outright, and one that advertised an intent to accept credentialed
+ * cross-origin calls. The allowlist is env-driven so preview deployments can
+ * be added without a code change.
+ */
+const ALLOWED_ORIGINS = (
+  process.env.ALLOWED_ORIGINS ||
+  "https://ucfalphas.com,https://www.ucfalphas.com"
+)
+  .split(",")
+  .map((o) => o.trim())
+  .filter(Boolean);
+
+/** Per-field input caps. Nothing here was previously length-limited at all. */
+const MAX_LENGTHS = {
+  name: 100,
+  email: 254, // RFC 5321 maximum
+  subject: 200,
+  message: 5000,
+};
+
+/** Rate limit: requests allowed per IP per window. */
+const RATE_LIMIT_MAX = 3;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+
+/**
+ * Best-effort in-memory rate limiter.
+ *
+ * NOTE: serverless instances are per-region and recycled, so this is a speed
+ * bump rather than a guarantee -- a distributed attacker hitting cold instances
+ * can still get through. It exists because the endpoint previously had NO
+ * throttle at all: anyone could curl it in a loop, burn the Resend quota, and
+ * flood the chapter inbox. For a hard guarantee, move this to Upstash/Redis or
+ * Vercel's WAF rate limiting.
+ */
+const rateLimitBuckets = new Map();
+
+function isRateLimited(ip) {
+  const now = Date.now();
+
+  // Opportunistic sweep so the map cannot grow without bound.
+  for (const [key, entry] of rateLimitBuckets) {
+    if (now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
+      rateLimitBuckets.delete(key);
+    }
+  }
+
+  const entry = rateLimitBuckets.get(ip);
+  if (!entry || now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
+    rateLimitBuckets.set(ip, { windowStart: now, count: 1 });
+    return false;
+  }
+
+  entry.count += 1;
+  return entry.count > RATE_LIMIT_MAX;
+}
+
+function clientIp(req) {
+  // Vercel always sets x-forwarded-for; the client-supplied portion is
+  // untrusted, but the first entry is what Vercel's edge observed.
+  const forwarded = req.headers["x-forwarded-for"];
+  if (typeof forwarded === "string" && forwarded.length > 0) {
+    return forwarded.split(",")[0].trim();
+  }
+  return req.socket?.remoteAddress || "unknown";
+}
 
 export default async function handler(req, res) {
-  // Add detailed logging for production debugging
-  console.log("=== Contact API Called ===");
-  console.log("Timestamp:", new Date().toISOString());
-  console.log("Method:", req.method);
-  console.log("Vercel Environment:", process.env.VERCEL_ENV);
-  console.log("Environment check:", {
-    hasResendKey: !!process.env.RESEND_API_KEY,
-    hasFromEmail: !!process.env.FROM_EMAIL,
-    hasToEmail: !!process.env.TO_EMAIL,
-    apiKeyPrefix: process.env.RESEND_API_KEY?.substring(0, 8) || "MISSING",
-  });
-
   try {
-    // Set CORS headers
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-      "Access-Control-Allow-Methods",
-      "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-    );
-    res.setHeader(
-      "Access-Control-Allow-Headers",
-      "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-    );
+    const origin = req.headers.origin;
+    if (origin && ALLOWED_ORIGINS.includes(origin)) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+      res.setHeader("Vary", "Origin");
+    }
+    res.setHeader("Access-Control-Allow-Methods", "POST,OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.setHeader("X-Content-Type-Options", "nosniff");
 
-    // Handle OPTIONS preflight request
     if (req.method === "OPTIONS") {
-      console.log("✓ Handling OPTIONS preflight");
-      return res.status(200).end();
+      return res.status(204).end();
     }
 
-    // Only allow POST requests
     if (req.method !== "POST") {
-      console.log("❌ Method not allowed:", req.method);
-      return res.status(405).json({
+      return res
+        .status(405)
+        .json({ success: false, error: "Method not allowed. Use POST." });
+    }
+
+    // Reject cross-origin POSTs from origins we do not recognise. Browsers
+    // always attach Origin to a cross-site POST; same-origin form posts and
+    // server-side callers may omit it.
+    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+      return res.status(403).json({ success: false, error: "Forbidden" });
+    }
+
+    const contentType = req.headers["content-type"] || "";
+    if (!contentType.includes("application/json")) {
+      return res
+        .status(415)
+        .json({ success: false, error: "Content-Type must be application/json." });
+    }
+
+    if (isRateLimited(clientIp(req))) {
+      return res.status(429).json({
         success: false,
-        error: "Method not allowed. Use POST.",
-        received: req.method,
+        error: "Too many requests. Please try again later.",
       });
     }
 
-    console.log("Body received:", JSON.stringify(req.body, null, 2));
-
-    // Validate environment variables with detailed logging
     const apiKey = process.env.RESEND_API_KEY;
     const fromEmail = process.env.FROM_EMAIL;
     const toEmail = process.env.TO_EMAIL;
 
-    console.log("Environment variables loaded:", {
-      apiKey: apiKey ? `${apiKey.substring(0, 8)}...` : "❌ MISSING",
-      fromEmail: fromEmail || "❌ MISSING",
-      toEmail: toEmail || "❌ MISSING",
-    });
-
-    if (!apiKey) {
-      console.error("❌ Missing RESEND_API_KEY");
+    // Config problems are logged server-side; the client gets a generic
+    // message. The old version told callers exactly which env var was missing.
+    if (!apiKey || !fromEmail || !toEmail) {
+      console.error("Contact API misconfigured:", {
+        hasResendKey: !!apiKey,
+        hasFromEmail: !!fromEmail,
+        hasToEmail: !!toEmail,
+      });
       return res.status(500).json({
         success: false,
-        error: "Server configuration error: Missing API key",
-        details: "RESEND_API_KEY not found in environment variables",
-        help: "Set RESEND_API_KEY in Vercel environment variables and redeploy",
+        error: "The contact form is temporarily unavailable.",
       });
     }
 
-    if (!fromEmail) {
-      console.error("❌ Missing FROM_EMAIL");
-      return res.status(500).json({
-        success: false,
-        error: "Server configuration error: Missing FROM_EMAIL",
-        details: "FROM_EMAIL not found in environment variables",
-        help: "Set FROM_EMAIL in Vercel environment variables and redeploy",
-      });
-    }
-
-    if (!toEmail) {
-      console.error("❌ Missing TO_EMAIL");
-      return res.status(500).json({
-        success: false,
-        error: "Server configuration error: Missing TO_EMAIL",
-        details: "TO_EMAIL not found in environment variables",
-        help: "Set TO_EMAIL in Vercel environment variables and redeploy",
-      });
-    }
-
-    // Validate request body
     const { name, email, subject, message } = req.body || {};
 
-    console.log("Request data:", {
-      name: name ? "✓ provided" : "❌ missing",
-      email: email ? "✓ provided" : "❌ missing",
-      subject: subject ? "✓ provided" : "❌ missing",
-      message: message ? "✓ provided" : "❌ missing",
-    });
-
     if (!name || !email || !subject || !message) {
-      console.log("❌ Missing required fields");
       return res.status(400).json({
         success: false,
         error: "Missing required fields",
         required: ["name", "email", "subject", "message"],
-        received: {
-          name: !!name,
-          email: !!email,
-          subject: !!subject,
-          message: !!message,
-        },
       });
     }
 
-    // Validate email format
+    if (
+      [name, email, subject, message].some((v) => typeof v !== "string")
+    ) {
+      return res
+        .status(400)
+        .json({ success: false, error: "All fields must be strings." });
+    }
+
+    const trimmed = {
+      name: name.trim(),
+      email: email.trim(),
+      subject: subject.trim(),
+      message: message.trim(),
+    };
+
+    for (const [field, max] of Object.entries(MAX_LENGTHS)) {
+      if (trimmed[field].length > max) {
+        return res.status(400).json({
+          success: false,
+          error: `Field "${field}" exceeds the maximum length of ${max} characters.`,
+        });
+      }
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      console.log("❌ Invalid email format:", email);
-      return res.status(400).json({
-        success: false,
-        error: "Invalid email format",
-        provided: email,
-      });
+    if (!emailRegex.test(trimmed.email)) {
+      return res
+        .status(400)
+        .json({ success: false, error: "Invalid email format" });
     }
 
-    console.log("✅ All validations passed, initializing Resend...");
-
-    // Initialize Resend
     const resend = new Resend(apiKey);
 
-    console.log("📧 Attempting to send email from:", fromEmail);
-    console.log("📧 Sending to:", toEmail);
+    const safeName = escapeHtml(trimmed.name);
+    const safeEmail = escapeHtml(trimmed.email);
+    const safeSubject = escapeHtml(trimmed.subject);
+    const safeMessage = escapeHtmlWithBreaks(trimmed.message);
+    const mailtoHref = `mailto:${encodeURIComponent(trimmed.email)}`;
 
-    // Send email
-    console.log("Sending email via Resend API...");
     const { data, error } = await resend.emails.send({
       from: fromEmail,
       to: toEmail,
-      replyTo: email,
-      subject: `New Contact Form: ${subject}`,
+      replyTo: trimmed.email,
+      subject: sanitizeHeaderValue(`New Contact Form: ${trimmed.subject}`),
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
           <div style="background-color: #000; padding: 30px; border-radius: 10px; margin-bottom: 20px;">
@@ -143,40 +197,37 @@ export default async function handler(req, res) {
               New Contact Form Submission
             </h1>
           </div>
-          
+
           <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
             <h2 style="color: #333; border-bottom: 2px solid #fbbf24; padding-bottom: 10px;">
               Contact Details
             </h2>
-            
+
             <div style="margin: 20px 0;">
               <strong style="color: #fbbf24;">Name:</strong>
-              <p style="margin: 5px 0; color: #333; font-size: 16px;">${name}</p>
+              <p style="margin: 5px 0; color: #333; font-size: 16px;">${safeName}</p>
             </div>
-            
+
             <div style="margin: 20px 0;">
               <strong style="color: #fbbf24;">Email:</strong>
               <p style="margin: 5px 0; color: #333; font-size: 16px;">
-                <a href="mailto:${email}" style="color: #fbbf24; text-decoration: none;">${email}</a>
+                <a href="${mailtoHref}" style="color: #fbbf24; text-decoration: none;">${safeEmail}</a>
               </p>
             </div>
-            
+
             <div style="margin: 20px 0;">
               <strong style="color: #fbbf24;">Subject:</strong>
-              <p style="margin: 5px 0; color: #333; font-size: 16px;">${subject}</p>
+              <p style="margin: 5px 0; color: #333; font-size: 16px;">${safeSubject}</p>
             </div>
-            
+
             <div style="margin: 20px 0;">
               <strong style="color: #fbbf24;">Message:</strong>
               <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #fbbf24;">
-                <p style="margin: 0; color: #333; font-size: 16px; line-height: 1.6;">${message.replace(
-                  /\n/g,
-                  "<br>"
-                )}</p>
+                <p style="margin: 0; color: #333; font-size: 16px; line-height: 1.6;">${safeMessage}</p>
               </div>
             </div>
           </div>
-          
+
           <div style="text-align: center; margin-top: 20px; color: #666;">
             <p>This email was sent from the UCF Alphas website contact form.</p>
             <p style="font-size: 14px;">
@@ -188,69 +239,33 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      console.error("❌ Resend API error:", JSON.stringify(error, null, 2));
-
-      // Handle specific Resend errors with helpful messages
-      if (error.message?.includes("API key")) {
-        return res.status(401).json({
-          success: false,
-          error: "Invalid API key configuration",
-          details: "The Resend API key is invalid or has been revoked",
-          help: "Generate a new API key at resend.com/api-keys",
-        });
-      }
-
-      if (
-        error.message?.includes("domain") ||
-        error.message?.includes("verified")
-      ) {
-        return res.status(403).json({
-          success: false,
-          error: "Email sending failed: Unverified sender",
-          details: "The FROM_EMAIL address or domain needs to be verified",
-          help: "Use onboarding@resend.dev or verify your domain at resend.com/domains",
-        });
-      }
+      // Full detail to the server log; a generic message to the caller. The
+      // old version returned error.message and a JSON dump of the raw error,
+      // which leaked provider and configuration internals.
+      console.error("Resend API error:", error);
 
       if (error.message?.includes("rate limit")) {
         return res.status(429).json({
           success: false,
-          error: "Too many requests",
-          details: "Rate limit exceeded. Please try again later.",
+          error: "Too many requests. Please try again later.",
         });
       }
 
-      return res.status(500).json({
-        success: false,
-        error: "Failed to send email",
-        details: error.message || "Unknown error occurred",
-        rawError:
-          typeof error === "object" ? JSON.stringify(error) : String(error),
-      });
+      return res
+        .status(500)
+        .json({ success: false, error: "Failed to send message." });
     }
 
-    console.log("✅ Email sent successfully!");
-    console.log("Email ID:", data?.id);
+    console.log("Contact email sent:", data?.id);
 
     return res.status(200).json({
       success: true,
       message: "Email sent successfully! We'll get back to you soon.",
-      data: { id: data?.id },
     });
   } catch (error) {
-    console.error("❌ Unexpected error:", error);
-    console.error("Error name:", error?.name);
-    console.error("Error message:", error?.message);
-    console.error("Error stack:", error?.stack);
-
-    return res.status(500).json({
-      success: false,
-      error: "Internal server error",
-      details: error.message || String(error),
-      stack:
-        process.env.NODE_ENV === "development"
-          ? error?.stack?.substring(0, 500)
-          : undefined,
-    });
+    console.error("Unexpected error in contact handler:", error);
+    return res
+      .status(500)
+      .json({ success: false, error: "Internal server error" });
   }
 }
