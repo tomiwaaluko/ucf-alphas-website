@@ -23,4 +23,11 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // vitest was installed with a setup file and jsdom, but was never wired up,
+  // so `npm test` could not run at all. CI runs `vitest run` now.
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: ["./src/test/setup.ts"],
+  },
 }));
