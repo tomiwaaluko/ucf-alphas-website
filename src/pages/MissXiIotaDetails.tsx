@@ -6,20 +6,20 @@ import { ArrowLeft } from "lucide-react";
 
 // Sample data - this would match the data from MissBlackAndGold.tsx
 const currentMissXiIota = {
-  name: "Taylor Fordham",
-  year: "2025-2026",
-  image: "/missbgcourt/Taylor-Fordham.png",
-  bio: "Hello! My name is Taylor Fordham, and I'm a nursing major currently attending the BSN program at UCF's main campus. My favorite color is pink, which perfectly matches my compassionate and creative personality. I'm passionate about helping others, which is why I love working with elementary students to build their foundations in math and reading. You can usually find me crocheting, dancing or reading manga—right now, I'm especially obsessed with Chainsaw Man. I'm excited to bring empathy, energy, and a personal touch to my future career in nursing, where I hope to make a lasting impact on every life I encounter.",
+  name: "Briahna Hill",
+  year: "2026-2027",
+  image: "/missbgcourt/Briahna Hill.jpg",
+  bio: "Briahna Hill is a believer that every individual carries a gift, uniquely their own, and when it is nurtured can unlock the greatest version of themselves. For her, this gift is expressed through her multimedia creativity, compassion, and desire to help herself and others become the best versions of themselves. As a transformational leader, Briahna is a firm believer in the limitless potential of tomorrow's leaders, who are shaped by the guidance of today's mentors. By earning over 1,500 service hours mentoring youth, with an ultimate goal of attending medical school to become a doctor, Briahna believes that continued growth is a necessity for high achievement. One of her greatest achievements will not be just the titles before her name, but the lives that she has forever touched.",
   achievements: [
-    "Formally Accepted to the UCF BSN program (main campus)",
-    "Interned at a Public Defender's office",
-    "Works as a Certified Nursing Assistant",
-    "Member of African Student Organization",
-    "Member of UCF Mock Trial",
+    "Dean's List for 5 semesters",
+    "Fall 2024 initiate of the Pi Psi Chapter of Alpha Kappa Alpha Sorority, Incorporated",
+    "Greek Gala Excellence in Community Service award recipient",
+    "University of Miami Health Career Motivators Program attendee",
+    "President of Jewels Inc and Black Psychology Club at UCF",
   ],
-  platform: "Engaging and Enriching Generations through Education",
-  hometown: "Daytona Beach, Florida",
-  major: "Nursing",
+  platform: "Youth Mentorship",
+  hometown: "Broward County, Florida",
+  major: "Psychology",
   university: "University of Central Florida",
 };
 

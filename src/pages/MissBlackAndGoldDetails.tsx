@@ -6,20 +6,20 @@ import { ArrowLeft } from "lucide-react";
 
 // Sample data - this would match the data from MissBlackAndGold.tsx
 const currentMissBlackAndGold = {
-  name: "Maia-Tené McCarthy",
-  year: "2025-2026",
-  image: "/missbgcourt/Maia-McCarthy.jpeg",
-  bio: "Maia-Tené McCarthy is a passionate advocate, creative, and leader committed to using her voice and talents to uplift others. As a first-generation college student with proud Jamaican roots, she carries her heritage and family's sacrifices into every space she enters. She is a member of Alpha Kappa Psi, where she has sharpened her business and leadership skills to support her goals in film and law. As Miss Black & Gold, a film student, and a future legal professional, she is dedicated to merging storytelling with advocacy to create space for underrepresented voices. Whether managing film sets, writing scripts, or speaking up for change, she leads with purpose, clarity, and heart. She does not just chase dreams—she builds pathways for others to follow.",
+  name: "Trinity Smoot",
+  year: "2026-2027",
+  image: "/missbgcourt/Trinity Smoot.jpg",
+  bio: "Raised in West Palm Beach, Florida, Trinity Smoot is a Health Sciences major on the Pre-Clinical track with a minor in Journalism Studies at the University of Central Florida. With aspirations of becoming a sports medicine physician, she hopes to combine her passion for medicine, athletics, and advocacy to ensure that every young athlete has the opportunity to participate, grow, and thrive through sports. Trinity has seen firsthand the confidence, discipline, leadership, and community that sports can build. Through her platform, Youth Sports for All Abilities, she champions accessible athletic opportunities for children of all abilities and works to challenge the idea that a disability should ever define a child's potential. Sports doesn't just build athletes—it builds leaders.",
   achievements: [
-    "Dean's list every semester since enrollment",
-    "Member of Alpha Kappa Psi Professional Business Fraternity",
-    "Film major with Certification in Litigation & Advocacy",
-    "Minor in Music",
-    "First-generation college student",
+    "Miss Black & Gold 2026, Xi Iota Chapter of Alpha Phi Alpha Fraternity, Incorporated",
+    "Member of SISTUHS Incorporated",
+    "Secretary of Black Undergraduate Kinesiology Association",
+    "Special Olympics Florida Volunteer",
+    "Troy McQuagge Hope Endowed Scholarship Recipient",
   ],
-  platform: "Advocating for Opportunities for Students of Color in Film",
-  hometown: "Brooklyn, New York / Montego Bay, Jamaica",
-  major: "Film Major | Music Minor",
+  platform: "Building confidence, discipline, and opportunity through youth sports",
+  hometown: "West Palm Beach, Florida",
+  major: "Health Sciences, Pre-Clinical Track. Minor in Journalism Studies",
   university: "University of Central Florida",
 };
 
