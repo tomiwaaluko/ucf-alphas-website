@@ -61,6 +61,12 @@ const currentMissYellowRose = {
 
 const previousWinners = [
   {
+    name: "Maia-Tené McCarthy",
+    year: "2025-2026",
+    image: "/missbgcourt/previouswinners/Maia-McCarthy-2025.jpg",
+    major: "Film. Certification in Litigation & Advocacy. Minor in Music",
+  },
+  {
     name: "Grace Castelin",
     year: "2024-2025",
     image: "/missbgcourt/previouswinners/Grace-Castelin.png",
