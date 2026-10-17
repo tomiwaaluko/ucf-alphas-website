@@ -137,7 +137,7 @@ const MeetTheBrothers = () => {
       id: 12,
       name: "Ralph Volny",
       crossingSemester: "Fall 2025",
-      lineNumber: "",
+      lineNumber: "#1",
       major: "Finance",
       achievements: ["Dean's List", "Gospel and Cultural Choir"],
       quote: "Believe you can, you're halfway there. — Theodore Roosevelt",
@@ -147,7 +147,7 @@ const MeetTheBrothers = () => {
       id: 13,
       name: "Marquise Williamson",
       crossingSemester: "Fall 2025",
-      lineNumber: "",
+      lineNumber: "#2",
       major: "Biology Pre-Health",
       achievements: [
         "Strong work ethic and discipline",
@@ -160,7 +160,7 @@ const MeetTheBrothers = () => {
       id: 14,
       name: "Yan Morrison",
       crossingSemester: "Fall 2025",
-      lineNumber: "",
+      lineNumber: "#3",
       major: "Kinesiology / Health Services Administration",
       achievements: [
         "Fall '23 Presidents List",
@@ -175,7 +175,7 @@ const MeetTheBrothers = () => {
       id: 15,
       name: "Noah Benoit",
       crossingSemester: "Fall 2025",
-      lineNumber: "",
+      lineNumber: "#4",
       major: "Aerospace Engineering",
       achievements: [
         "Chapter President of the Xi Iota Chapter",
@@ -191,7 +191,7 @@ const MeetTheBrothers = () => {
       id: 16,
       name: "Jaheim Golden",
       crossingSemester: "Fall 2025",
-      lineNumber: "",
+      lineNumber: "#5",
       major: "Health Services Administration",
       achievements: [
         "Dean's List Fall 2024",
@@ -208,7 +208,7 @@ const MeetTheBrothers = () => {
       id: 17,
       name: "Da'Juan Thornton",
       crossingSemester: "Fall 2025",
-      lineNumber: "",
+      lineNumber: "#6",
       major: "Integrated Business",
       achievements: [
         "Licensed Life Insurance Agent",

@@ -48,6 +48,137 @@ interface LineageDetailData {
 }
 
 const lineageDetailData: { [key: string]: LineageDetailData } = {
+  merchants: {
+    id: "merchants",
+    name: "The 5 Merchants Of Arctic Rebirth",
+    nickname: "",
+    year: 2026,
+    semester: "Spring",
+    description: "",
+    fullDescription: "",
+    color: "from-cyan-600 to-blue-800",
+    image: "/lineage/Spring26.jpg",
+    motto: "",
+    values: [],
+    deanStaff: [
+      {
+        name: "Adams '6ixth Sense' Brown Jr.",
+        position: "DP",
+      },
+      {
+        name: "Treylon 'PHInal Lap' Chukes",
+        position: "ADP",
+      },
+    ],
+    members: [
+      {
+        name: "Alexander Miller",
+        nickname: "unPHazed",
+        position: "1",
+        year: 2026,
+        achievements: [],
+      },
+      {
+        name: "Mustapha Strachan II",
+        nickname: "Bullet P.R.O.O.F.",
+        position: "2",
+        year: 2026,
+        achievements: [],
+      },
+      {
+        name: "Wayne Brady III",
+        nickname: "V3rsatile",
+        position: "3",
+        year: 2026,
+        achievements: [],
+      },
+      {
+        name: "Kurt Reid JR",
+        nickname: "WildC4rd",
+        position: "4",
+        year: 2026,
+        achievements: [],
+      },
+      {
+        name: "Isaiah Jacobs",
+        nickname: "A.T.L.A.S.",
+        position: "5",
+        year: 2026,
+        achievements: [],
+      },
+    ],
+  },
+  jokers: {
+    id: "jokers",
+    name: "The 6ix J.O.K.E.R.S of Pressur1zed Chaos",
+    nickname: "",
+    year: 2025,
+    semester: "Fall",
+    description: "",
+    fullDescription: "",
+    color: "from-rose-600 to-red-800",
+    image: "/lineage/Fall25.jpg",
+    motto: "",
+    values: [],
+    deanStaff: [
+      {
+        name: "Benjamin 'Pressure Point' Blocker",
+        position: "DP",
+      },
+      {
+        name: "Abdul 'PHlashbang' Ibrahim",
+        position: "ADP",
+      },
+      {
+        name: "Adams '6ixth Sense' Brown Jr.",
+        position: "ADP",
+      },
+    ],
+    members: [
+      {
+        name: "Ralph Volny",
+        nickname: "OrPHeus",
+        position: "1",
+        year: 2025,
+        achievements: [],
+      },
+      {
+        name: "Marquise Williamson",
+        nickname: "Kid PHlash",
+        position: "2",
+        year: 2025,
+        achievements: [],
+      },
+      {
+        name: "Yan Morrison",
+        nickname: "PHoton",
+        position: "3",
+        year: 2025,
+        achievements: [],
+      },
+      {
+        name: "Noah Benoit",
+        nickname: "T4NK",
+        position: "4",
+        year: 2025,
+        achievements: [],
+      },
+      {
+        name: "Jaheim Golden",
+        nickname: "PHresh Prince",
+        position: "5",
+        year: 2025,
+        achievements: [],
+      },
+      {
+        name: "Da'Juan Thornton",
+        nickname: "Poker PHace",
+        position: "6",
+        year: 2025,
+        achievements: [],
+      },
+    ],
+  },
   conquer: {
     id: "conquer",
     name: "The Vanguard",

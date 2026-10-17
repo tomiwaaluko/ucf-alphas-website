@@ -29,6 +29,7 @@ const BrotherDetail = () => {
   interface BrotherData {
     name: string;
     crossingSemester: string;
+    lineNumber?: string;
     position: string;
     image: string;
     bio: string;
@@ -326,6 +327,7 @@ const BrotherDetail = () => {
     "12": {
       name: "Ralph Volny",
       crossingSemester: "Fall 2025",
+      lineNumber: "#1",
       position: "Active Member",
       image: "/brothers/Ralph Volny.png",
       bio: "I am a Finance major at the University of central Florida. I am family oriented and they are my strength. I look to live an active lifestyle. After undergrad I wish to continue my educational journey by going to law school.",
@@ -342,6 +344,7 @@ const BrotherDetail = () => {
     "13": {
       name: "Marquise Williamson",
       crossingSemester: "Fall 2025",
+      lineNumber: "#2",
       position: "Active Member",
       image: "/brothers/Marquise  Williamson.png",
       bio: "I'm a determined and hardworking individual who takes pride in getting the job done well. Discipline is one of my biggest strengths, and I'm someone people know they can trust and rely on. Outside of work, I enjoy fishing and spending time with friends as it keeps me grounded and motivated. Overall, I bring a strong work ethic, consistency, and a positive attitude to everything I do.",
@@ -358,6 +361,7 @@ const BrotherDetail = () => {
     "14": {
       name: "Yan Morrison",
       crossingSemester: "Fall 2025",
+      lineNumber: "#3",
       position: "Active Member",
       image: "/brothers/Yan Morrison.png",
       bio: "Senior in Kinesiology with a minor and health services administration at the University of Central Florida. I am passionate about the intersection of patient care and healthcare operations, and I aspire to build a career in physical therapy and healthcare business management.",
@@ -384,6 +388,7 @@ const BrotherDetail = () => {
     "15": {
       name: "Noah Benoit",
       crossingSemester: "Fall 2025",
+      lineNumber: "#4",
       position: "Active Member",
       image: "/brothers/Noah Benoit.jpg",
       bio: "I am an Aerospace Engineering sophomore at the University of Central Florida. In the future, I'd like to have a specialization in space but right now I'd love to learn about the many facets of Aerospace. I am a member of the Excel/Compass program and a member of the Burnett Honors College at UCF. Outside of school, I enjoy spending time with friends, going to the gym, playing my guitar, and riding my bike.",
@@ -410,6 +415,7 @@ const BrotherDetail = () => {
     "16": {
       name: "Jaheim Golden",
       crossingSemester: "Fall 2025",
+      lineNumber: "#5",
       position: "Active Member",
       image: "/brothers/Jaheim Golden.jpg",
       bio: "My name is Jaheim Golden, a senior Health Services Administration major at UCF. I serve as President of Progressive Black Men Inc and Vice President of Black Men in Medicine, along with being a Community Health Ambassador and Social Media Ambassador. These leadership roles have strengthened my communication, organization, and problem solving skills. Outside of academics and service, I enjoy roller skating, making music, and designing graphics. Altogether, I bring a balance of professionalism, creativity, and a commitment to serving my community.",
@@ -434,6 +440,7 @@ const BrotherDetail = () => {
     "17": {
       name: "Da'Juan Thornton",
       crossingSemester: "Fall 2025",
+      lineNumber: "#6",
       position: "Active Member",
       image: "/brothers/Dajuan Thornton.jpg",
       bio: "I am highly ambitious and career-driven, with a clear focus on building a strong foundation in finance and commercial banking. My professional goals center around becoming a financial analyst or commercial banker, where I can combine my analytical mindset with my passion for helping others make informed financial decisions. My entrepreneurial spirit is reflected in my creation of Goldstone Financials and my experience as a licensed life insurance agent with Symmetry Financial Group, where I've explored carriers like Mutual of Omaha and Foresters. My drive, professionalism, and commitment to continuous growth reflect my dedication to advancing in the financial industry and making a lasting impact through my work.",
