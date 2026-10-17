@@ -233,7 +233,7 @@ const MissBlackAndGold = () => {
                 >
                   <span className="text-yellow-400">Introducing Our</span>
                   <br />
-                  <span className="text-white">2025-2026</span>
+                  <span className="text-white">2026-2027</span>
                   <br />
                   <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                     Royal Court
