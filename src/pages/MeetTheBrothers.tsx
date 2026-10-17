@@ -111,7 +111,7 @@ const MeetTheBrothers = () => {
       lineNumber: "#10",
       major: "Biology Pre-Health",
       achievements: [
-        "Chapter President of Xi Iota Chapter",
+        "Chapter President of the Xi Iota Chapter (2025–2026)",
         "Charter member and former First Vice President of Black Men in Medicine UCF Chapter",
       ],
       quote: "It's not over when you fail, it's over when you quit",
@@ -178,6 +178,7 @@ const MeetTheBrothers = () => {
       lineNumber: "",
       major: "Aerospace Engineering",
       achievements: [
+        "Chapter President of the Xi Iota Chapter",
         "Sophomore",
         "Member of NSBE, Honors Congress, JLC",
         "Burnett Honors College",

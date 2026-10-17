@@ -281,9 +281,9 @@ const BrotherDetail = () => {
     "10": {
       name: "Treylon Chukes",
       crossingSemester: "Fall 2024",
-      position: "Chapter President",
+      position: "Former Chapter President",
       image: "/brothers/Treylon Chukes.jpeg",
-      bio: "Treylon Chukes is a dedicated and motivated individual with a strong passion for medicine and helping others. He is an undergraduate student at UCF majoring in Biology on the Pre-Health track, and he has had the opportunity to grow through various leadership and academic roles.\n\nTreylon serves as the Chapter President of the Xi Iota Chapter and has also served as a charter member and former First Vice President of the Black Men in Medicine UCF Chapter. These experiences have helped him develop a sense of discipline, empathy, and purpose, especially as he works toward a career in anesthesia.\n\nOutside of academics, Treylon enjoys working on mechanical projects, and he always looks for ways to give back to his community and grow as a leader.",
+      bio: "Treylon Chukes is a dedicated and motivated individual with a strong passion for medicine and helping others. He is an undergraduate student at UCF majoring in Biology on the Pre-Health track, and he has had the opportunity to grow through various leadership and academic roles.\n\nTreylon was Chapter President of the Xi Iota Chapter (2025–2026) and has also served as a charter member and former First Vice President of the Black Men in Medicine UCF Chapter. These experiences have helped him develop a sense of discipline, empathy, and purpose, especially as he works toward a career in anesthesia.\n\nOutside of academics, Treylon enjoys working on mechanical projects, and he always looks for ways to give back to his community and grow as a leader.",
       major: "Biology Pre-Health",
       year: "Junior",
       hometown: "Quincy, FL/ USA",
@@ -291,7 +291,7 @@ const BrotherDetail = () => {
       linkedin: "https://www.linkedin.com/in/tchukes",
       email: "tr319165@ucf.edu",
       achievements: [
-        "Chapter President of Xi Iota Chapter",
+        "Chapter President of the Xi Iota Chapter (2025–2026)",
         "Charter member and former First Vice President of Black Men in Medicine UCF Chapter",
       ],
       quote: "It's not over when you fail, it's over when you quit",
@@ -393,7 +393,11 @@ const BrotherDetail = () => {
       interests: ["Playing Bass Guitar", "Building Computers", "Gym", "Gaming"],
       linkedin: "https://www.linkedin.com/in/noah-benoit-",
       email: "no727925@ucf.edu",
-      achievements: ["Burnett Honors College", "Excel/Compass Program"],
+      achievements: [
+        "Chapter President of the Xi Iota Chapter",
+        "Burnett Honors College",
+        "Excel/Compass Program",
+      ],
       quote: "It always seems impossible until it's done. — Nelson Mandela",
       organizations: [
         "NSBE",

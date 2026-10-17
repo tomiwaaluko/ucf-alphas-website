@@ -6,25 +6,25 @@ import { useRef } from "react";
 // Leadership data - organized for better presentation
 const leadershipData = [
   {
-    name: "Treylon Chukes",
+    name: "Noah Benoit",
     position: "President",
-    image: "/brothers/Treylon Chukes.jpeg",
+    image: "/brothers/Noah Benoit Officer.jpg",
     description:
       "Leading the chapter with vision and dedication to Alpha Phi Alpha's principles.",
   },
   {
-    name: "Jacob Herrera",
-    position: "Vice President, Director of Education, Chaplain",
-    image: "/brothers/Jacob Herrera.jpeg",
-    description:
-      "Supporting chapter operations, overseeing educational programs, and providing spiritual guidance.",
-  },
-  {
     name: "Toluwani Aluko",
-    position: "Secretary, Historian, Associate Editor to the Sphinx",
+    position: "Vice President, Secretary, Associate Editor to the Sphinx",
     image: "/brothers/Toluwani Aluko.jpg",
     description:
       "Maintaining chapter records and preserving our historical legacy.",
+  },
+  {
+    name: "Jacob Herrera",
+    position: "Director of Education, Chaplain",
+    image: "/brothers/Jacob Herrera.jpeg",
+    description:
+      "Supporting chapter operations, overseeing educational programs, and providing spiritual guidance.",
   },
   {
     name: "Adams Brown",
@@ -40,11 +40,17 @@ const leadershipData = [
     description: "Handling financial records and member dues administration.",
   },
   {
-    name: "Benjamin Blocker",
+    name: "Mustapha Strachan II",
     position: "Parliamentarian",
-    image: "/brothers/Benjamin Blocker.jpeg",
+    image: "/brothers/Mustapha Strachan II.jpg",
     description:
       "Ensuring proper parliamentary procedure and governance standards.",
+  },
+  {
+    name: "Wayne Brady III",
+    position: "Historian",
+    image: "/brothers/Wayne Brady III.jpg",
+    description: "Preserving the chapter's historical legacy.",
   },
 ];
 

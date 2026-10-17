@@ -69,7 +69,7 @@ const Greeting = () => {
                 <p className="font-medium text-white">Sincerely,</p>
                 <div className="mt-4 space-y-1">
                   <p className="text-yellow-400 font-semibold text-xl">
-                    Treylon Chukes
+                    Noah Benoit
                   </p>
                   <p className="text-gray-400">Chapter President</p>
                   <p className="text-gray-400">
@@ -92,8 +92,8 @@ const Greeting = () => {
             <div className="relative">
               <div className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 p-1">
                 <img
-                  src="/brothers/Treylon Chukes.jpeg"
-                  alt="Treylon Chukes, President of Xi Iota Chapter"
+                  src="/brothers/Noah Benoit Officer.jpg"
+                  alt="Noah Benoit, President of Xi Iota Chapter"
                   className="w-full h-auto shadow-2xl"
                 />
                 <div className="absolute inset-1 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
