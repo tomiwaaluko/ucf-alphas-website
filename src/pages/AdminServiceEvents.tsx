@@ -28,6 +28,12 @@ const AdminServiceEvents = () => {
     const load = async () => {
       setLoading(true);
       setError(null);
+      if (!supabase) {
+        setError("Supabase is not configured.");
+        setLoading(false);
+        return;
+      }
+
       const {
         data: { session },
       } = await supabase.auth.getSession();
@@ -61,7 +67,7 @@ const AdminServiceEvents = () => {
   }, []);
 
   const handleSignOut = async () => {
-    await supabase.auth.signOut();
+    await supabase?.auth.signOut();
     navigate("/service");
   };
 

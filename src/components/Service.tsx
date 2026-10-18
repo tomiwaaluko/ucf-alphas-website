@@ -213,6 +213,7 @@ const Service = () => {
   ];
 
   const handleAdminClick = async () => {
+    if (!supabase) return;
     const redirectTo = `${window.location.origin}/admin/service-events`;
     await supabase.auth.signInWithOAuth({
       provider: "google",
