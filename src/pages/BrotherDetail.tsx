@@ -390,7 +390,7 @@ const BrotherDetail = () => {
       crossingSemester: "Fall 2025",
       lineNumber: "#4",
       position: "Active Member",
-      image: "/brothers/Noah Benoit.jpg",
+      image: "/brothers/Noah Benoit Officer.jpg",
       bio: "I am an Aerospace Engineering sophomore at the University of Central Florida. In the future, I'd like to have a specialization in space but right now I'd love to learn about the many facets of Aerospace. I am a member of the Excel/Compass program and a member of the Burnett Honors College at UCF. Outside of school, I enjoy spending time with friends, going to the gym, playing my guitar, and riding my bike.",
       major: "Aerospace Engineering",
       year: "Sophomore",
