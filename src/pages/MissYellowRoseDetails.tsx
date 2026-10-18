@@ -6,20 +6,20 @@ import { ArrowLeft } from "lucide-react";
 
 // Sample data - this would match the data from MissBlackAndGold.tsx
 const currentMissYellowRose = {
-  name: "Courtney Edgecombe",
-  year: "2025-2026",
-  image: "/missbgcourt/courtney-edgecombe.jpeg",
-  bio: "Born and raised in Nassau, Bahamas, Courtney Edgecombe is a proud international student at the University of Central Florida, majoring in Real Estate. She wants to become a real estate developer one day. Courtney is not only ambitious but also deeply values mentorship, empowerment, and service. Her journey has been filled with challenges, but she remains steadfast in her belief that faith and resilience will open doors to unimaginable opportunities.",
+  name: "Elishama Providence",
+  year: "2026-2027",
+  image: "/missbgcourt/Elishama Providence.jpg",
+  bio: "Born in Brooklyn, New York, and raised in Altamonte Springs, Florida, Elishama Providence is a proud first-generation student majoring in nursing at the University of Central Florida. She is pursuing her second degree in Bachelor of Science in Nursing with the dream of becoming a neonatal nurse practitioner, where she hopes to provide advocacy and compassionate care while making a lasting impact within the community. She carries light into every room, reminding others that faith, hope, and grace still exist.",
   achievements: [
-    "Lewis foundation scholar",
-    "President of NCNW",
+    "First-generation college student",
+    "Works as a Neonatal ICU registered nurse",
+    "Community Service Chair of Fanm Kreyol Inc",
     "Miss Yellow Rose",
-    "Member of National Council of Negro Women",
-    "Member of Rekonstruktion Dance Troupe",
+    "Member of Club Kreyol",
   ],
-  platform: "Sustainable living",
-  hometown: "Nassau, Bahamas",
-  major: "Real estate",
+  platform: "Mental Health Mentorship within the Education Community",
+  hometown: "Altamonte Springs, Florida",
+  major: "Nursing",
   university: "University of Central Florida",
 };
 

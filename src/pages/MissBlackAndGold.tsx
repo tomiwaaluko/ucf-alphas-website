@@ -6,60 +6,66 @@ import { Button } from "@/components/ui/button";
 
 // Sample data - replace with actual information
 const currentMissBlackAndGold = {
-  name: "Maia-Tené McCarthy",
-  year: "2025-2026",
-  image: "/missbgcourt/Maia-McCarthy.jpeg",
-  bio: "I'm a passionate advocate, creative, and leader committed to using my voice and talents to uplift others. As a first-generation college student with proud Jamaican roots, I carry my heritage and family's sacrifices into every space I enter. I'm a member of Alpha Kappa Psi, where I've sharpened my business and leadership skills to support my goals in film and law. As Miss Black & Gold, a film student, and a future legal professional, I'm dedicated to merging storytelling with advocacy to create space for underrepresented voices. Whether I'm managing film sets, writing scripts, or speaking up for change, I lead with purpose, clarity, and heart. I don't just chase dreams—I build pathways for others to follow.",
+  name: "Trinity Smoot",
+  year: "2026-2027",
+  image: "/missbgcourt/Trinity Smoot.jpg",
+  bio: "Raised in West Palm Beach, Florida, Trinity Smoot is a Health Sciences major on the Pre-Clinical track with a minor in Journalism Studies at the University of Central Florida. With aspirations of becoming a sports medicine physician, she hopes to combine her passion for medicine, athletics, and advocacy to ensure that every young athlete has the opportunity to participate, grow, and thrive through sports. Trinity has seen firsthand the confidence, discipline, leadership, and community that sports can build. Through her platform, Youth Sports for All Abilities, she champions accessible athletic opportunities for children of all abilities and works to challenge the idea that a disability should ever define a child's potential. Sports doesn't just build athletes—it builds leaders.",
   achievements: [
-    "Dean's list every semester since I've been here",
-    "Member of Alpha Kappa Psi Professional Business Fraternity",
-    "Film major with Certification in Litigation & Advocacy",
-    "Minor in Music",
-    "First-generation college student",
+    "Miss Black & Gold 2026, Xi Iota Chapter of Alpha Phi Alpha Fraternity, Incorporated",
+    "Member of SISTUHS Incorporated",
+    "Secretary of Black Undergraduate Kinesiology Association",
+    "Special Olympics Florida Volunteer",
+    "Troy McQuagge Hope Endowed Scholarship Recipient",
   ],
-  platform: "Advocating for Opportunities for Students of Color in Film",
-  hometown: "Brooklyn, New York / Montego Bay, Jamaica",
-  major: "Film major. Certification in Litigation & Advocacy. Minor in Music",
+  platform: "Building confidence, discipline, and opportunity through youth sports",
+  hometown: "West Palm Beach, Florida",
+  major: "Health Sciences, Pre-Clinical Track. Minor in Journalism Studies",
   university: "University of Central Florida",
 };
 
 const currentMissXiIota = {
-  name: "Taylor Fordham",
-  year: "2025-2026",
-  image: "/missbgcourt/Taylor-Fordham.png",
-  bio: "Hello! My name is Taylor Fordham, and I'm a nursing major currently attending the BSN program at UCF's main campus. My favorite color is pink, which perfectly matches my compassionate and creative personality. I'm passionate about helping others, which is why I love working with elementary students to build their foundations in math and reading. You can usually find me crocheting, dancing or reading manga—right now, I'm especially obsessed with Chainsaw Man. I'm excited to bring empathy, energy, and a personal touch to my future career in nursing, where I hope to make a lasting impact on every life I encounter.",
+  name: "Briahna Hill",
+  year: "2026-2027",
+  image: "/missbgcourt/Briahna Hill.jpg",
+  bio: "Briahna Hill is a believer that every individual carries a gift, uniquely their own, and when it is nurtured can unlock the greatest version of themselves. For her, this gift is expressed through her multimedia creativity, compassion, and desire to help herself and others become the best versions of themselves. As a transformational leader, Briahna is a firm believer in the limitless potential of tomorrow's leaders, who are shaped by the guidance of today's mentors. By earning over 1,500 service hours mentoring youth, with an ultimate goal of attending medical school to become a doctor, Briahna believes that continued growth is a necessity for high achievement. One of her greatest achievements will not be just the titles before her name, but the lives that she has forever touched.",
   achievements: [
-    "Formally Accepted to the UCF BSN program (main campus)",
-    "Interned at a Public Defender's office",
-    "Works as a Certified Nursing Assistant",
-    "Member of African Student Organization",
-    "Member of UCF Mock Trial",
+    "Dean's List for 5 semesters",
+    "Fall 2024 initiate of the Pi Psi Chapter of Alpha Kappa Alpha Sorority, Incorporated",
+    "Greek Gala Excellence in Community Service award recipient",
+    "University of Miami Health Career Motivators Program attendee",
+    "President of Jewels Inc and Black Psychology Club at UCF",
   ],
-  platform: "Engaging and Enriching Generations through Education",
-  hometown: "Daytona Beach, Florida",
-  major: "Nursing Major",
+  platform: "Youth Mentorship",
+  hometown: "Broward County, Florida",
+  major: "Psychology",
   university: "University of Central Florida",
 };
 
 const currentMissYellowRose = {
-  name: "Courtney Edgecombe",
-  year: "2025-2026",
-  image: "/missbgcourt/courtney-edgecombe.jpeg",
-  bio: "Born and raised in Nassau, Bahamas, Courtney Edgecombe is a proud international student at the University of Central Florida, majoring in Real Estate. She wants to become a real estate developer one day. Courtney is not only ambitious but also deeply values mentorship, empowerment, and service. Her journey has been filled with challenges, but she remains steadfast in her belief that faith and resilience will open doors to unimaginable opportunities.",
+  name: "Elishama Providence",
+  year: "2026-2027",
+  image: "/missbgcourt/Elishama Providence.jpg",
+  bio: "Born in Brooklyn, New York, and raised in Altamonte Springs, Florida, Elishama Providence is a proud first-generation student majoring in nursing at the University of Central Florida. She is pursuing her second degree in Bachelor of Science in Nursing with the dream of becoming a neonatal nurse practitioner, where she hopes to provide advocacy and compassionate care while making a lasting impact within the community. She carries light into every room, reminding others that faith, hope, and grace still exist.",
   achievements: [
-    "Lewis foundation scholar",
-    "President of NCNW",
+    "First-generation college student",
+    "Works as a Neonatal ICU registered nurse",
+    "Community Service Chair of Fanm Kreyol Inc",
     "Miss Yellow Rose",
-    "Member of National Council of Negro Women",
-    "Member of Rekonstruktion Dance Troupe",
+    "Member of Club Kreyol",
   ],
-  platform: "Sustainable living",
-  hometown: "Nassau, Bahamas",
-  major: "Real Estate Major",
+  platform: "Mental Health Mentorship within the Education Community",
+  hometown: "Altamonte Springs, Florida",
+  major: "Nursing",
   university: "University of Central Florida",
 };
 
 const previousWinners = [
+  {
+    name: "Maia-Tené McCarthy",
+    year: "2025-2026",
+    image: "/missbgcourt/previouswinners/Maia-McCarthy-2025.jpg",
+    major: "Film. Certification in Litigation & Advocacy. Minor in Music",
+  },
   {
     name: "Grace Castelin",
     year: "2024-2025",
@@ -233,7 +239,7 @@ const MissBlackAndGold = () => {
                 >
                   <span className="text-yellow-400">Introducing Our</span>
                   <br />
-                  <span className="text-white">2025-2026</span>
+                  <span className="text-white">2026-2027</span>
                   <br />
                   <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                     Royal Court

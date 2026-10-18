@@ -29,6 +29,7 @@ const BrotherDetail = () => {
   interface BrotherData {
     name: string;
     crossingSemester: string;
+    lineNumber?: string;
     position: string;
     image: string;
     bio: string;
@@ -281,9 +282,9 @@ const BrotherDetail = () => {
     "10": {
       name: "Treylon Chukes",
       crossingSemester: "Fall 2024",
-      position: "Chapter President",
+      position: "Former Chapter President",
       image: "/brothers/Treylon Chukes.jpeg",
-      bio: "Treylon Chukes is a dedicated and motivated individual with a strong passion for medicine and helping others. He is an undergraduate student at UCF majoring in Biology on the Pre-Health track, and he has had the opportunity to grow through various leadership and academic roles.\n\nTreylon serves as the Chapter President of the Xi Iota Chapter and has also served as a charter member and former First Vice President of the Black Men in Medicine UCF Chapter. These experiences have helped him develop a sense of discipline, empathy, and purpose, especially as he works toward a career in anesthesia.\n\nOutside of academics, Treylon enjoys working on mechanical projects, and he always looks for ways to give back to his community and grow as a leader.",
+      bio: "Treylon Chukes is a dedicated and motivated individual with a strong passion for medicine and helping others. He is an undergraduate student at UCF majoring in Biology on the Pre-Health track, and he has had the opportunity to grow through various leadership and academic roles.\n\nTreylon was Chapter President of the Xi Iota Chapter (2025–2026) and has also served as a charter member and former First Vice President of the Black Men in Medicine UCF Chapter. These experiences have helped him develop a sense of discipline, empathy, and purpose, especially as he works toward a career in anesthesia.\n\nOutside of academics, Treylon enjoys working on mechanical projects, and he always looks for ways to give back to his community and grow as a leader.",
       major: "Biology Pre-Health",
       year: "Junior",
       hometown: "Quincy, FL/ USA",
@@ -291,7 +292,7 @@ const BrotherDetail = () => {
       linkedin: "https://www.linkedin.com/in/tchukes",
       email: "tr319165@ucf.edu",
       achievements: [
-        "Chapter President of Xi Iota Chapter",
+        "Chapter President of the Xi Iota Chapter (2025–2026)",
         "Charter member and former First Vice President of Black Men in Medicine UCF Chapter",
       ],
       quote: "It's not over when you fail, it's over when you quit",
@@ -326,6 +327,7 @@ const BrotherDetail = () => {
     "12": {
       name: "Ralph Volny",
       crossingSemester: "Fall 2025",
+      lineNumber: "#1",
       position: "Active Member",
       image: "/brothers/Ralph Volny.png",
       bio: "I am a Finance major at the University of central Florida. I am family oriented and they are my strength. I look to live an active lifestyle. After undergrad I wish to continue my educational journey by going to law school.",
@@ -342,6 +344,7 @@ const BrotherDetail = () => {
     "13": {
       name: "Marquise Williamson",
       crossingSemester: "Fall 2025",
+      lineNumber: "#2",
       position: "Active Member",
       image: "/brothers/Marquise  Williamson.png",
       bio: "I'm a determined and hardworking individual who takes pride in getting the job done well. Discipline is one of my biggest strengths, and I'm someone people know they can trust and rely on. Outside of work, I enjoy fishing and spending time with friends as it keeps me grounded and motivated. Overall, I bring a strong work ethic, consistency, and a positive attitude to everything I do.",
@@ -358,6 +361,7 @@ const BrotherDetail = () => {
     "14": {
       name: "Yan Morrison",
       crossingSemester: "Fall 2025",
+      lineNumber: "#3",
       position: "Active Member",
       image: "/brothers/Yan Morrison.png",
       bio: "Senior in Kinesiology with a minor and health services administration at the University of Central Florida. I am passionate about the intersection of patient care and healthcare operations, and I aspire to build a career in physical therapy and healthcare business management.",
@@ -384,8 +388,9 @@ const BrotherDetail = () => {
     "15": {
       name: "Noah Benoit",
       crossingSemester: "Fall 2025",
+      lineNumber: "#4",
       position: "Active Member",
-      image: "/brothers/Noah Benoit.jpg",
+      image: "/brothers/Noah Benoit Officer.jpg",
       bio: "I am an Aerospace Engineering sophomore at the University of Central Florida. In the future, I'd like to have a specialization in space but right now I'd love to learn about the many facets of Aerospace. I am a member of the Excel/Compass program and a member of the Burnett Honors College at UCF. Outside of school, I enjoy spending time with friends, going to the gym, playing my guitar, and riding my bike.",
       major: "Aerospace Engineering",
       year: "Sophomore",
@@ -393,7 +398,11 @@ const BrotherDetail = () => {
       interests: ["Playing Bass Guitar", "Building Computers", "Gym", "Gaming"],
       linkedin: "https://www.linkedin.com/in/noah-benoit-",
       email: "no727925@ucf.edu",
-      achievements: ["Burnett Honors College", "Excel/Compass Program"],
+      achievements: [
+        "Chapter President of the Xi Iota Chapter",
+        "Burnett Honors College",
+        "Excel/Compass Program",
+      ],
       quote: "It always seems impossible until it's done. — Nelson Mandela",
       organizations: [
         "NSBE",
@@ -406,6 +415,7 @@ const BrotherDetail = () => {
     "16": {
       name: "Jaheim Golden",
       crossingSemester: "Fall 2025",
+      lineNumber: "#5",
       position: "Active Member",
       image: "/brothers/Jaheim Golden.jpg",
       bio: "My name is Jaheim Golden, a senior Health Services Administration major at UCF. I serve as President of Progressive Black Men Inc and Vice President of Black Men in Medicine, along with being a Community Health Ambassador and Social Media Ambassador. These leadership roles have strengthened my communication, organization, and problem solving skills. Outside of academics and service, I enjoy roller skating, making music, and designing graphics. Altogether, I bring a balance of professionalism, creativity, and a commitment to serving my community.",
@@ -430,6 +440,7 @@ const BrotherDetail = () => {
     "17": {
       name: "Da'Juan Thornton",
       crossingSemester: "Fall 2025",
+      lineNumber: "#6",
       position: "Active Member",
       image: "/brothers/Dajuan Thornton.jpg",
       bio: "I am highly ambitious and career-driven, with a clear focus on building a strong foundation in finance and commercial banking. My professional goals center around becoming a financial analyst or commercial banker, where I can combine my analytical mindset with my passion for helping others make informed financial decisions. My entrepreneurial spirit is reflected in my creation of Goldstone Financials and my experience as a licensed life insurance agent with Symmetry Financial Group, where I've explored carriers like Mutual of Omaha and Foresters. My drive, professionalism, and commitment to continuous growth reflect my dedication to advancing in the financial industry and making a lasting impact through my work.",
